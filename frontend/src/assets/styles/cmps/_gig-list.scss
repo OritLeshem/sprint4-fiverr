@@ -1,7 +1,6 @@
 .gig-list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: .75em;
 
     @media (min-width: $mobile-breakpoint) {
         grid-template-columns: repeat(2, 1fr);
@@ -9,10 +8,12 @@
 
     @media (min-width: $narrow-breakpoint) {
         grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
     }
 
     @media (min-width: $normal-breakpoint) {
         grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
     }
 
 }

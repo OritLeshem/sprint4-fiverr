@@ -5,23 +5,52 @@
 
     img {
         height: 100%;
-        aspect-ratio: 3 / 2;
+        aspect-ratio: 16 / 9;
     }
 
-    .content{
+    .content {
         padding: 1em;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
     }
-    
+
+    .rating {
+        font-size: .875em;
+    }
+
     footer {
         width: 100%;
         border-top: 1px solid $clr7;
+        padding: .625em .75em;
         @include flex;
 
         button {
+            margin: 0;
+            padding: 0;
             background-color: transparent;
+            color: $clr6;
+        }
+
+        button:first-of-type {
+            padding-right: .5em;
+        }
+    }
+
+    .price {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        font-size: 1.125em;
+
+        small {
+            text-transform: uppercase;
+            font-size: .56em;
             color: $clr6;
         }
     }
 
 }
-
