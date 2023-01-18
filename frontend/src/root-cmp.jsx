@@ -18,22 +18,20 @@ import { SellerDetails } from './pages/seller-details'
 export function RootCmp() {
 
     return (
-        <div>
+        <>
             <AppHeader />
-            <main>
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/about" element={<AboutUs />} />
-                    <Route path="/gig" element={<GigIndex />} />
-                    <Route path="/gig/:gigId" element={<GigDetails />} />
-                    <Route path="/seller/:sellerId" element={<SellerDetails />} />
-                    {/* <Route path="/review" element={<ReviewIndex />} /> */}
-                    {/* <Route path="/chat" element={<ChatApp />} /> */}
-                    {/* <Route path="/admin" element={<AdminApp />} /> */}
-                </Routes>
-            </main>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/gig" element={<GigIndex />} />
+                <Route path="/gig/:gigId" element={<GigDetails />} />
+                <Route path="/seller/:sellerId" element={<SellerDetails />} />
+                {/* <Route path="/review" element={<ReviewIndex />} /> */}
+                {/* <Route path="/chat" element={<ChatApp />} /> */}
+                {/* <Route path="/admin" element={<AdminApp />} /> */}
+            </Routes>
             <AppFooter />
-        </div>
+        </>
     )
 }
 

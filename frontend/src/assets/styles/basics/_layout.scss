@@ -1,29 +1,43 @@
-.main-container {
+.main-layout {
     display: grid;
-    grid-template-columns: 20px 1fr 20px;
-
+    grid-template-columns: $layoutPadding 1fr $layoutPadding;
+    
     > * {
         grid-column: 2;
+    }
 
-        &.full {
-            grid-column: 1 /-1;
-        }
+    .full {
+        grid-column: 1 / -1;
     }
     
-    @include for-mobile-layout {
-       @include gtcMainLayout($mobile-breakpoint)
+    .side-start {
+        grid-column: 1 / -2;
     }
+    
+    .side-end {
+        grid-column: -1 / 2;
+    }
+
     
     @include for-narrow-layout {
-        @include gtcMainLayout($narrow-breakpoint)
+        grid-template-columns:
+        minmax($layoutPadding, 1fr)  
+        minmax($narrow-breakpoint, auto) 
+        minmax($layoutPadding, 1fr) ;
     }
     
     @include for-normal-layout {
-        @include gtcMainLayout($normal-breakpoint)
+        grid-template-columns:
+        minmax($layoutPadding, 1fr)  
+        minmax($normal-breakpoint, auto) 
+        minmax($layoutPadding, 1fr) ;
     }
     
     @include for-wide-layout {
-        @include gtcMainLayout($width-breakpoint)
+        grid-template-columns:
+        minmax($layoutPadding, 1fr)  
+        minmax($width-breakpoint, auto) 
+        minmax($layoutPadding, 1fr) ;
     }
 }
 

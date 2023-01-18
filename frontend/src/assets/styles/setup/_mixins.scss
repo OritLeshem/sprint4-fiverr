@@ -59,11 +59,6 @@
     }
 }
 
-@mixin gtcMainLayout($width) {
-    grid-template-columns:
-        minmax($layoutPadding, 1fr) minmax(auto, $width) minmax($layoutPadding, 1fr);
-}
-
 @mixin flex {
     display: flex;
     justify-content: space-between;

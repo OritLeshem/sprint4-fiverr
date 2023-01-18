@@ -50,13 +50,13 @@ export function AppHeader() {
     return (
         <header className="app-header">
             <nav className='app-header-nav'>
-                <h3>Fiverr</h3>
+                <h3>logo</h3>
                 <Search onSetFilter={onSetFilter} />
 
-                {/* <NavLink to="/">fiverr</NavLink> */}
-                <Link className='gig-header-link' to="gig">Explore</Link>
-                <Link className='gig-header-link' to="gig">Become a seller</Link>
-                <Link className="gig-header-link sign-in-btn">Sign in</Link>
+                <NavLink to="/">fiverr</NavLink>
+                <NavLink to="gig">Explore</NavLink>
+                {/* <NavLink to="about">About</NavLink> */}
+                <button className="sign-in-btn">Sign in</button>
                 <button className="join-btn">Join</button>
                 {/* {user &&
                     <span className="user-info">
@@ -74,7 +74,7 @@ export function AppHeader() {
                     </section>
                 } */}
             </nav>
-            <CategoryMenu />
+            <CategoryMenu onSetFilter={onSetFilter}/>
         </header>
     )
 }

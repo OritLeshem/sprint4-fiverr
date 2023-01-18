@@ -1,0 +1,27 @@
+.gig-preview {
+    @include flex;
+    flex-direction: column;
+    border: 1px solid $clr7;
+
+    img {
+        height: 100%;
+        aspect-ratio: 3 / 2;
+    }
+
+    .content{
+        padding: 1em;
+    }
+    
+    footer {
+        width: 100%;
+        border-top: 1px solid $clr7;
+        @include flex;
+
+        button {
+            background-color: transparent;
+            color: $clr6;
+        }
+    }
+
+}
+

@@ -11,7 +11,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <Router>
-      <RootCmp />
+      <section className="app main-layout">
+        <RootCmp />
+      </section>
     </Router>
   </Provider>
 )

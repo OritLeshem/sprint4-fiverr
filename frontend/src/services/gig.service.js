@@ -18,10 +18,10 @@ export const gigService = {
 
 window.cs = gigService
 function getDefaultFilter() {
-    return { title: '' }
+    return { title: '', tags: [] }
 }
 
-async function query(filterBy = { title: '' }) {
+async function query(filterBy = { title: ''}) {
     var gigs = await storageService.query(STORAGE_KEY)
     if (filterBy.title) {
         const regex = new RegExp(filterBy.title, 'i')
@@ -30,6 +30,10 @@ async function query(filterBy = { title: '' }) {
     // if (filterBy.price) {
     //     gigs = gigs.filter(gig => gig.price <= filterBy.price)
     // }
+    if (filterBy.tags.length) {
+        console.log(filterBy.tags);
+        gigs = gigs.filter(gig => gig.tags.some(tag=>filterBy.tags.includes(tag)))
+    }
     return gigs
 }
 
@@ -74,35 +78,28 @@ function _createGigs() {
     let gigs = utilService.loadFromStorage(STORAGE_KEY)
     if (!gigs || !gigs.length) {
         gigs = []
-        gigs.unshift(_createGig('I wiil design an outstanding logo', 53))
-        gigs.unshift(_createGig('I will do 3 modern minimalist logo design', 67))
-        gigs.unshift(_createGig('I will do 3 modern minimalist logo design', 94))
-        gigs.unshift(_createGig('I will provide automated travel affiliate websites for passive income', 53))
+        gigs.unshift(_createGig('I wiil design an outstanding logo', 53,["design","graphic-design"]))
+        gigs.unshift(_createGig('I will do 3 modern minimalist logo design', 67,["design"]))
+        gigs.unshift(_createGig('I will do 3 modern minimalist logo design', 94,["digital-marketing"]))
         utilService.saveToStorage(STORAGE_KEY, gigs)
     }
 }
 
-function _createGig(title, price, imgUrl) {
-    const gig = getEmptyGig(title, price, imgUrl)
+function _createGig(title, price,tags, imgUrl) {
+    const gig = getEmptyGig(title, price,tags, imgUrl)
     gig._id = utilService.makeId()
     return gig
 }
 
-function getEmptyGig(title = '', price = 0, imgUrl = '../assets/img/demo.jpg') {
+function getEmptyGig(title = '', price = 0,tags=[], imgUrl = '../assets/img/demo.jpg') {
     return {
         _id: '',
         title,
         price,
+        tags,
         imgUrl,
     }
 }
-
-
-
-
-
-
-
 
 
 // TEST DATA
