@@ -4,7 +4,7 @@ export function GigPreview({ gig }) {
 
     return <>
         <div className="img-container">
-            <img src={require('../assets/img/demo.jpg')} alt="" />
+            <img src={gig.imgUrl[0]} alt="" />
         </div>
         <div className="content">
             <span>{gig.owner && gig.owner.fullname}</span>

@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 
-export default function ImageSlider({ slides }) {
+export default function ImageSlider({ gig }) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const slides = [
+    { url: `${gig.imgUrl[0]}`, title: '1' },
+    { url: `${gig.imgUrl[1]}`, title: '2' },
+    { url: `${gig.imgUrl[2]}`, title: '3' }
+  ]
   const sliderStyles = {
     height: '100%',
     position: 'relative'
