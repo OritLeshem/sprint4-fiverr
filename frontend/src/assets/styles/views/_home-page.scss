@@ -1,0 +1,59 @@
+.slides-container {
+    height: 80vh;
+    position: relative;
+    top: 0;
+
+    h1 {
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    background-color: #023a15;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    animation: fade 2s linear;
+    transition: opacity .9s;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    padding: $layoutPadding;
+
+    h1 {
+        color: $clr3;
+        font-size: 2.5rem;
+
+        span:last-of-type {
+            display: block;
+        }
+
+        i {
+            padding: .4em;
+        }
+    }
+}
+
+.trusted-by{
+    margin-bottom: 6rem;
+}
+
+.main-content {
+    margin-bottom: 3rem;
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: .75em;
+    }
+}

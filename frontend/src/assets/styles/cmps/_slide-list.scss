@@ -1,0 +1,10 @@
+.slide-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.25rem;
+
+    img {
+        border-radius: .25rem;
+        height: 21.56rem;
+    }
+}
