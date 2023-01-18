@@ -1,0 +1,18 @@
+.gig-program {
+  color: $clr5;
+  border: 1px solid $clr6;
+  padding: 50px;
+
+  // background-color: red;
+  .gig-program-subscribe {
+    color: $clr1;
+  }
+
+  .gig-program-basic {
+    font-family: macan-bold;
+  }
+
+  .green-sheck {
+    color: $clr1;
+  }
+}

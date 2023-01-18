@@ -16,6 +16,8 @@
 @import "views/about-us";
 @import "views/home-page";
 @import "views/gig-index";
+@import "views/gig-details";
+@import "views/gig-payment";
 @import "views/review-app";
 @import "views/user-details";
 
@@ -29,8 +31,4 @@
 @import "cmps/category-menu";
 @import "cmps/gig-search";
 @import "cmps/top-filter-bar";
-
-
-
-
-
+@import "cmps/gig-program";
