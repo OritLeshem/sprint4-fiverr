@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import ImageSlider from "../cmps/image-slider"
 import { gigService } from "../services/gig.service";
 import { showErrorMsg } from "../services/event-bus.service.js"
+import { GigProgarm } from "../cmps/gig-program";
 
 
 export function GigDetails() {
@@ -34,18 +35,20 @@ export function GigDetails() {
 
     if (!gig) return <div>Loading...</div>
     return <section className="gig-details">
-        gig details
-        <h2>{gig.title}</h2>
-        <h3>user details</h3>
-        {/* <img src={require('../assets/img/demo.jpg')} alt="" /> */}
-        < div style={containerStyles}>
-            <ImageSlider
-                //  slides={slides}
-                gig={gig} />
-        </div>
+        <div className="gig-details-info">
+            <h2>{gig.title}</h2>
+            <h3>user details</h3>
+            {/* <img src={require('../assets/img/demo.jpg')} alt="" /> */}
+            < div style={containerStyles}>
+                <ImageSlider
+                    //  slides={slides}
+                    gig={gig} />
+            </div>
 
-        <h4>What people loved about this seller</h4>
-        <h4>About This Gig</h4>
-        <p>{gig.description}</p>
+            <h4>What people loved about this seller</h4>
+            <h4>About This Gig</h4>
+            <p>{gig.description}</p>
+        </div>
+        <GigProgarm gig={gig} />
     </section >
 }
