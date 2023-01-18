@@ -8,6 +8,7 @@ import { gigService } from '../services/gig.service.js'
 import { GigList } from '../cmps/gig-list.jsx'
 import { SET_FILTER } from '../store/gig.reducer'
 import { Search } from '../cmps/gig-search.jsx'
+import { TopFilterBar } from '../cmps/top-filter-bar.jsx'
 
 
 
@@ -71,6 +72,7 @@ export function GigIndex() {
         <div>
             {/* <h3>Gigs App</h3> */}
             {/* <button onClick={onAddGig}>Add Gig ⛐</button> */}
+            <TopFilterBar/>
             <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
 
         </div>

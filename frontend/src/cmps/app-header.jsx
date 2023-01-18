@@ -9,6 +9,7 @@ import { Search } from './gig-search'
 import { SET_FILTER } from '../store/gig.reducer'
 import { loadGigs, addGig, updateGig, removeGig, addToCart } from '../store/gig.actions.js'
 import { CategoryMenu } from './category-menu'
+import { gigService } from '../services/gig.service'
 
 
 export function AppHeader() {
@@ -48,13 +49,13 @@ export function AppHeader() {
     }
 
     return (
-        <header className="app-header">
+        <header className="app-header full main-layout">
             <nav className='app-header-nav'>
                 <h3>Fiverr</h3>
                 <Search onSetFilter={onSetFilter} />
 
                 {/* <NavLink to="/">fiverr</NavLink> */}
-                <Link className='gig-header-link' to="gig">Explore</Link>
+                <Link className='gig-header-link' to="gig" onClick={() =>onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
                 <Link className='gig-header-link' to="gig">Become a seller</Link>
                 <Link className="gig-header-link sign-in-btn">Sign in</Link>
                 <button className="join-btn">Join</button>

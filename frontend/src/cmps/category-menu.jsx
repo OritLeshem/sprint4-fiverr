@@ -13,20 +13,17 @@ export function CategoryMenu({onSetFilter}) {
         onSetFilter(filterByToEdit)
     }
 
-    return <div className="categories-menu wrapper main-layout full">
-        <nav className="categories-menu main-layout">
-            <ul className="categories full">
-                <li><Link onClick={() => filterByCategory(["graphic-design", "design"])}>Graphic & Design</Link></li>
-                <li><Link onClick={() => filterByCategory(["digital-marketing", "digital"])}>Digital Marketing</Link></li>
-                <li><Link onClick={() => console.log('filterByGraphic')}>Writing & Translation</Link></li>
-                <li><Link onClick={() => console.log('filterByGraphic')}>Video & Animation</Link></li>
-                <li><Link onClick={() => console.log('filterByGraphic')}>Music & Audio</Link></li>
-                <li><Link onClick={() => console.log('filterByGraphic')}>Programming & Tech</Link></li>
-                <li><Link onClick={() => console.log('filterByGraphic')}>Business</Link></li>
-                <li><Link onClick={() => console.log('filterByGraphic')}>Lifestyle</Link></li>
-                <li><Link onClick={() => console.log('filterByGraphic')}>Trending</Link></li>
+    return <nav className="categories-menu">
+            <ul className="categories">
+                <li><Link to="/gig" onClick={() => filterByCategory(["graphic-design", "design"])}>Graphic & Design</Link></li>
+                <li><Link to="/gig" onClick={() => filterByCategory(["digital-marketing", "digital"])}>Digital Marketing</Link></li>
+                <li><Link to="/gig" onClick={() => console.log('filterByGraphic')}>Writing & Translation</Link></li>
+                <li><Link to="/gig" onClick={() => console.log('filterByGraphic')}>Video & Animation</Link></li>
+                <li><Link to="/gig" onClick={() => console.log('filterByGraphic')}>Music & Audio</Link></li>
+                <li><Link to="/gig" onClick={() => console.log('filterByGraphic')}>Programming & Tech</Link></li>
+                <li><Link to="/gig" onClick={() => console.log('filterByGraphic')}>Business</Link></li>
+                <li><Link to="/gig" onClick={() => console.log('filterByGraphic')}>Lifestyle</Link></li>
+                <li><Link to="/gig" onClick={() => console.log('filterByGraphic')}>Trending</Link></li>
             </ul>
         </nav>
-
-    </div>
 }
