@@ -6,5 +6,12 @@
     img {
         border-radius: .25rem;
         height: 21.56rem;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .85;
+        }
     }
+
+    
 }
