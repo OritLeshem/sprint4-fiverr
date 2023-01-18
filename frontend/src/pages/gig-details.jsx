@@ -36,10 +36,28 @@ export function GigDetails() {
     if (!gig) return <div>Loading...</div>
     return <section className="gig-details">
         <div className="gig-details-info">
-            <h2>{gig.title}</h2>
-            <h3>user details</h3>
+            <span> Graphics & design  >  Logo Design </span>
+            <h1>{gig.title}</h1>
+            <div className="gig-details-user-details">
+
+                <img className="gig-details-user-img" src={gig.owner.imgUrl} alt="user-img" />
+                <p className="user-fullname">{gig.owner.fullname}</p>
+                <p>|</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
+                    <path fill="#ffb33e"
+                        d="M 1728 647 q 0 22 -26 48 l -363 354 l 86 500 q 1 7 1 20 q 0 21 -10.5 35.5 t -30.5 14.5 q -19 0 -40 -12 l -449 -236 l -449 236 q -22 12 -40 12 q -21 0 -31.5 -14.5 t -10.5 -35.5 q 0 -6 2 -20 l 86 -500 l -364 -354 q -25 -27 -25 -48 q 0 -37 56 -46 l 502 -73 l 225 -455 q 19 -41 49 -41 t 49 41 l 225 455 l 502 73 q 56 9 56 46 Z">
+                    </path>
+                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
+                        <path fill="#ffb33e"
+                            d="M 1728 647 q 0 22 -26 48 l -363 354 l 86 500 q 1 7 1 20 q 0 21 -10.5 35.5 t -30.5 14.5 q -19 0 -40 -12 l -449 -236 l -449 236 q -22 12 -40 12 q -21 0 -31.5 -14.5 t -10.5 -35.5 q 0 -6 2 -20 l 86 -500 l -364 -354 q -25 -27 -25 -48 q 0 -37 56 -46 l 502 -73 l 225 -455 q 19 -41 49 -41 t 49 41 l 225 455 l 502 73 q 56 9 56 46 Z">
+                        </path>
+                    </svg></p>
+                <p>(10) 1 Order in Queue</p>
+            </div>
+            {/* <img className="gig-details-user-img" src={require('../assets/img/avatar.png')} alt="user-img" /> */}
             {/* <img src={require('../assets/img/demo.jpg')} alt="" /> */}
-            < div style={containerStyles}>
+            < div className="containerStyles" >
                 <ImageSlider
                     //  slides={slides}
                     gig={gig} />

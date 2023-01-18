@@ -56,7 +56,8 @@ export function AppHeader() {
     return (
         <header className="app-header full main-layout">
             <nav className='app-header-nav'>
-                <h3>Fiverr</h3>
+                <Link to="/"><h3>Fiverr</h3></Link>
+                
                 <Search onSetFilter={onSetFilter} />
 
                 {/* <NavLink to="/">fiverr</NavLink> */}

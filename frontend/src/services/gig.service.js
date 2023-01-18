@@ -20,7 +20,7 @@ function getDefaultFilter() {
     return { title: '', tags: [], daysToMake: '', minPrice:'', maxPrice:'' }
 }
 
-async function query(filterBy = { title: '', tags:[], daysToMake:'' }) {
+async function query(filterBy = { title: '', tags: [], daysToMake: '' }) {
     console.log(filterBy);
     var gigs = await storageService.query(STORAGE_KEY)
     if (filterBy.title) {
@@ -95,7 +95,7 @@ function _createGigs() {
                 owner: {
                     _id: "u102",
                     fullname: "Dudu Sa",
-                    imgUrl: '',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -121,7 +121,7 @@ function _createGigs() {
                 owner: {
                     _id: "u103",
                     fullname: "Ssudu Dda",
-                    imgUrl: '',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -147,7 +147,7 @@ function _createGigs() {
                 owner: {
                     _id: "u104",
                     fullname: "Puki Dfa",
-                    imgUrl: '',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -173,7 +173,7 @@ function _createGigs() {
                 owner: {
                     _id: "u105",
                     fullname: "Jo Bara",
-                    imgUrl: '',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -199,7 +199,7 @@ function _createGigs() {
                 owner: {
                     _id: "u106",
                     fullname: "Bobo Basa",
-                    imgUrl: '',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -226,7 +226,7 @@ function _createGigs() {
                 owner: {
                     _id: "u107",
                     fullname: "Zozo Ta",
-                    imgUrl: '',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -252,7 +252,7 @@ function _createGigs() {
                 owner: {
                     _id: "u108",
                     fullname: "Mumu Asa",
-                    imgUrl: '',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -279,7 +279,7 @@ function _createGigs() {
                 owner: {
                     _id: "u109",
                     fullname: "Quti Vvfa",
-                    imgUrl: '',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -305,7 +305,7 @@ function _createGigs() {
                 owner: {
                     _id: "u110",
                     fullname: "Nura Kersa",
-                    imgUrl: '',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -332,7 +332,7 @@ function _createGigs() {
                 owner: {
                     _id: "u111",
                     fullname: "Bobo Basa",
-                    imgUrl: '',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
                     rate: 4
                 },

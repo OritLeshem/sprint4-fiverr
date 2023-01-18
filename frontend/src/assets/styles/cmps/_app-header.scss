@@ -1,5 +1,8 @@
 .app-header {
     background-color: $clr3;
+    // position: absolute;
+    // background-color: transparent;
+    z-index: 2;
 
     .app-header-nav {
         display: flex;
@@ -12,9 +15,6 @@
         color: $clr5;
         text-decoration: none;
         transition: color 70ms cubic-bezier(.75, 0, .25, 1);
-
-
-
 
         &:hover {
             color: $clr1;
