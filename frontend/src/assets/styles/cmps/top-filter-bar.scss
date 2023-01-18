@@ -1,3 +1,23 @@
-.filter-menu{
+.top-filter-bar{
+display: flex;
+margin-top: 16px;
+}
 
+.filter-menu{
+    font-weight: 600;
+    border: 1px solid #dadbdd;
+    padding: 6px 12px;
+    border-radius: 4px;
+    min-width: 50px;
+    margin: 0 6px;
+    cursor: pointer;
+    position: relative;
+}
+
+.price-filter-scroll{
+    background-color:$clr5;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
 }

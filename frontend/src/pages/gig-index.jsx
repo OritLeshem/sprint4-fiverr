@@ -53,9 +53,11 @@ export function GigIndex() {
         }
     }
 
-
-    function hello() {
-        console.log('hellllo')
+    function onSetFilter(filterBy) {
+        dispatch({ type: SET_FILTER, filterBy })
+        // const queryStringParams = `?categories=${filterBy.tags[0]}`
+        // const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + queryStringParams
+        // window.history.pushState({ path: newUrl }, '', newUrl)
     }
 
     // function onAddToCart(gig){
@@ -72,7 +74,7 @@ export function GigIndex() {
         <div>
             {/* <h3>Gigs App</h3> */}
             {/* <button onClick={onAddGig}>Add Gig ⛐</button> */}
-            <TopFilterBar/>
+            <TopFilterBar onSetFilter={onSetFilter}/>
             <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
 
         </div>
