@@ -17,10 +17,11 @@ export const gigService = {
 
 window.cs = gigService
 function getDefaultFilter() {
-    return { title: '', tags: [] }
+    return { title: '', tags: [], daysToMake: '' }
 }
 
-async function query(filterBy = { title: '' }) {
+async function query(filterBy = { title: '', tags:[], daysToMake:'' }) {
+    console.log(filterBy);
     var gigs = await storageService.query(STORAGE_KEY)
     if (filterBy.title) {
         const regex = new RegExp(filterBy.title, 'i')
@@ -30,8 +31,10 @@ async function query(filterBy = { title: '' }) {
     //     gigs = gigs.filter(gig => gig.price <= filterBy.price)
     // }
     if (filterBy.tags.length) {
-        console.log(filterBy.tags);
         gigs = gigs.filter(gig => gig.tags.some(tag => filterBy.tags.includes(tag)))
+    }
+    if (filterBy.daysToMake) {
+        gigs = gigs.filter(gig => gig.daysToMake <= filterBy.daysToMake)
     }
     return gigs
 }
