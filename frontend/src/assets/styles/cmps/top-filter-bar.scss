@@ -15,9 +15,24 @@ margin-top: 16px;
 }
 
 .price-filter-scroll{
-    background-color:$clr5;
+    width: 317px;
+    height: 169px;
+    border:1px solid $clr5;
+    background-color: $clr3;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 4px;
     padding: 20px;
     position: absolute;
-    top: 50%;
-    right: 50%;
+    top: 45px;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    input{
+        width: 120px;
+        height: 24px;
+    }
+label{
+    display: block;
+}
+    
 }

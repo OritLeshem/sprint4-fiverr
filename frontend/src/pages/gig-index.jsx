@@ -27,7 +27,6 @@ export function GigIndex() {
 
 
     useEffect(() => {
-        // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
         loadGigs(filterBy)
     }, [filterBy])
 
@@ -38,8 +37,6 @@ export function GigIndex() {
             tags: [searchParams.get('category')] || '',
         }
 
-        // if (!filterBy.title && !filterBy.tags&&!filterBy.delivery) return
-        // console.log(filterBy);
         onSetFilter(filterBy)
     }
 

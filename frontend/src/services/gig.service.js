@@ -17,7 +17,7 @@ export const gigService = {
 
 window.cs = gigService
 function getDefaultFilter() {
-    return { title: '', tags: [], daysToMake: '' }
+    return { title: '', tags: [], daysToMake: '', minPrice:'', maxPrice:'' }
 }
 
 async function query(filterBy = { title: '', tags:[], daysToMake:'' }) {
@@ -35,6 +35,12 @@ async function query(filterBy = { title: '', tags:[], daysToMake:'' }) {
     }
     if (filterBy.daysToMake) {
         gigs = gigs.filter(gig => gig.daysToMake <= filterBy.daysToMake)
+    }
+    if (filterBy.minPrice) {
+        gigs = gigs.filter(gig => gig.price >= filterBy.minPrice)
+    }
+    if (filterBy.maxPrice) {
+        gigs = gigs.filter(gig => gig.price <= filterBy.maxPrice)
     }
     return gigs
 }
