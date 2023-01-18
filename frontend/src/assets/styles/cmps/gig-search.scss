@@ -1,0 +1,40 @@
+.gig-search {
+  display: flex;
+
+  input {
+    // display: block;
+    border-right: 0;
+    border: 1px solid $clr8;
+
+    padding: 10px 2px 10px 16px;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+    // flex: 1 1 auto;
+    width: 35vw;
+
+
+
+    &::placeholder {
+      padding: 10px;
+    }
+
+  }
+
+  .btn-gig-search {
+    width: fit-content;
+    background-color: $clr2;
+    border: 1px solid $clr8;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.875;
+    padding: 8px 16px;
+    text-align: center;
+    transition: 70ms cubic-bezier(.75, 0, .25, 1);
+    font-family: macan-regular;
+    // text-indent: 10px;
+
+
+
+
+
+  }
+}

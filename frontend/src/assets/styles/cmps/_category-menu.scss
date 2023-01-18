@@ -1,0 +1,26 @@
+.categories-menu{
+    ul {
+    font-size: 1rem;
+    color:$clr5;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 0;
+    }
+    li {
+        display: inline-block;
+        flex-shrink: 0;
+        padding: 0 10px;
+        position: relative;
+    }
+    a{
+        color: #62646a;
+        display: block;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 8px 0;
+        position: relative;
+        text-decoration: none;
+    }
+}

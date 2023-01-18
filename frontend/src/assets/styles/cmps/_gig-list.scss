@@ -1,0 +1,36 @@
+.gig-list {
+    // background-color: red;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .75em;
+
+    img {
+        aspect-ratio: 3 / 2;
+    }
+
+    .gig-preview {
+        border: 1px solid $clr7;
+    }
+
+    li button {
+        background-color: transparent;
+    }
+
+    footer {
+        width: 100%;
+        border-top: 1px solid $clr7;
+    }
+
+    @media (min-width: $narrow-breakpoint) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $normal-breakpoint) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: $width-breakpoint) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}

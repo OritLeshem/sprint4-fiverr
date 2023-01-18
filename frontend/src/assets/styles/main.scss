@@ -1,0 +1,34 @@
+// Setup
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+@import "setup/typography";
+
+// Basics
+@import "basics/helpers";
+@import "basics/layout";
+@import "basics/base";
+@import "basics/links";
+@import "basics/forms";
+
+
+// Views
+@import "views/about-us";
+@import "views/home-page";
+@import "views/gig-index";
+@import "views/review-app";
+@import "views/user-details";
+
+// Components
+@import "cmps/app-header";
+@import "cmps/app-footer";
+@import "cmps/user-msg";
+@import "cmps/shopping-cart";
+@import "cmps/gig-list";
+@import "cmps/category-menu";
+@import "cmps/gig-search";
+
+
+
+
+
