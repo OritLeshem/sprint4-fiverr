@@ -14,6 +14,7 @@ import { AboutUs } from './pages/about-us'
 import { AdminApp } from './pages/admin-app'
 import { GigDetails } from './pages/gig-details'
 import { SellerDetails } from './pages/seller-details'
+import { GigPayment } from './pages/gig-payment'
 
 export function RootCmp() {
 
@@ -25,6 +26,7 @@ export function RootCmp() {
                 <Route path="/about" element={<AboutUs />} />
                 <Route path="/gig" element={<GigIndex />} />
                 <Route path="/gig/:gigId" element={<GigDetails />} />
+                <Route path="/payment" element={<GigPayment />} />
                 <Route path="/seller/:sellerId" element={<SellerDetails />} />
                 {/* <Route path="/review" element={<ReviewIndex />} /> */}
                 {/* <Route path="/chat" element={<ChatApp />} /> */}

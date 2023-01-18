@@ -1,0 +1,16 @@
+.gig-payment {
+    display: flex;
+    padding: 2rem 0;
+    gap: 1rem;
+
+    .main-content {
+        background-color: $clr9;
+        padding: 1em;
+        flex-basis: 58%;
+    }
+    
+    .side-content {
+        background-color: $clr9;
+        flex-basis: 42%;
+    }
+}
