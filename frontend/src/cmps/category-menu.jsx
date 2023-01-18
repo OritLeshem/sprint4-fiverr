@@ -15,15 +15,15 @@ export function CategoryMenu({onSetFilter}) {
 
     return <nav className="categories-menu">
             <ul className="categories">
-                <li><Link to="/gig" onClick={() => filterByCategory(["graphic-design", "design","logo-design"])}>Graphic & Design</Link></li>
-                <li><Link to="/gig" onClick={() => filterByCategory(["digital-marketing", "digital"])}>Digital Marketing</Link></li>
-                <li><Link to="/gig" onClick={() => filterByCategory(["writing", "translation"])}>Writing & Translation</Link></li>
-                <li><Link to="/gig" onClick={() => filterByCategory(["video", "animation"])}>Video & Animation</Link></li>
-                <li><Link to="/gig" onClick={() => filterByCategory(["music", "audio"])}>Music & Audio</Link></li>
-                <li><Link to="/gig" onClick={() => filterByCategory(["programming", "tech"])}>Programming & Tech</Link></li>
-                <li><Link to="/gig" onClick={() => filterByCategory(["business"])}>Business</Link></li>
-                <li><Link to="/gig" onClick={() => filterByCategory(["lifestyle"])}>Lifestyle</Link></li>
-                <li><Link to="/gig" onClick={() => filterByCategory(["trending"])}>Trending</Link></li>
+                <li onClick={() => filterByCategory(["graphic-design", "design","logo-design"])}>Graphic & Design</li>
+                <li onClick={() => filterByCategory(["digital-marketing", "digital"])}>Digital Marketing</li>
+                <li onClick={() => filterByCategory(["writing-translation", "translation"])}>Writing & Translation</li>
+                <li onClick={() => filterByCategory(["video-animation", "animation"])}>Video & Animation</li>
+                <li onClick={() => filterByCategory(["music-audio", "audio"])}>Music & Audio</li>
+                <li onClick={() => filterByCategory(["programming-tech", "tech"])}>Programming & Tech</li>
+                <li onClick={() => filterByCategory(["business"])}>Business</li>
+                <li onClick={() => filterByCategory(["lifestyle"])}>Lifestyle</li>
+                <li onClick={() => filterByCategory(["trending"])}>Trending</li>
             </ul>
         </nav>
 }

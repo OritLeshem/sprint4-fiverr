@@ -101,7 +101,7 @@ function _createGigs() {
                     "https://cdn.pixabay.com/photo/2022/04/10/09/45/background-7123019_960_720.jpg"
                 ],
                 tags: [
-                    "logo-design",
+                    "graphic-design",
                     "artisitic",
                     "proffesional",
                     "accessible"
@@ -127,7 +127,7 @@ function _createGigs() {
                     "https://cdn.pixabay.com/photo/2023/01/05/08/17/bird-7698384_960_720.jpg"
                 ],
                 tags: [
-                    "logo-design",
+                    "graphic-design",
                     "artisitic",
                     "proffesional",
                     "accessible"
@@ -153,7 +153,7 @@ function _createGigs() {
                     "https://cdn.pixabay.com/photo/2022/05/30/08/57/flowers-7230812_960_720.jpg"
                 ],
                 tags: [
-                    "logo-design",
+                    "digital-marketing",
                     "artisitic",
                     "proffesional",
                     "accessible"
@@ -179,7 +179,7 @@ function _createGigs() {
                     "https://cdn.pixabay.com/photo/2018/10/19/10/26/bicycle-3758314_960_720.png"
                 ],
                 tags: [
-                    "logo-design",
+                    "writing-translation",
                     "artisitic",
                     "proffesional",
                     "accessible"
@@ -205,7 +205,7 @@ function _createGigs() {
                     "https://cdn.pixabay.com/photo/2022/12/03/15/14/christmas-7632906_960_720.jpg"
                 ],
                 tags: [
-                    "logo-design",
+                    "music-audio",
                     "artisitic",
                     "proffesional",
                     "accessible"
@@ -232,7 +232,7 @@ function _createGigs() {
                     "https://cdn.pixabay.com/photo/2022/08/14/08/26/abstract-art-7385225_960_720.jpg"
                 ],
                 tags: [
-                    "logo-design",
+                    "lifestyle",
                     "artisitic",
                     "proffesional",
                     "accessible"
@@ -258,7 +258,7 @@ function _createGigs() {
                     "https://cdn.pixabay.com/photo/2021/11/18/21/57/christmas-6807486_960_720.jpg"
                 ],
                 tags: [
-                    "logo-design",
+                    "lifestyle",
                     "artisitic",
                     "proffesional",
                     "accessible"
@@ -285,7 +285,7 @@ function _createGigs() {
                     "https://cdn.pixabay.com/photo/2012/04/11/18/28/car-29281_960_720.png"
                 ],
                 tags: [
-                    "logo-design",
+                    "graphic-design",
                     "artisitic",
                     "proffesional",
                     "accessible"
@@ -312,7 +312,7 @@ function _createGigs() {
 
                 ],
                 tags: [
-                    "logo-design",
+                    "digital-marketing",
                     "artisitic",
                     "proffesional",
                     "accessible"
@@ -339,7 +339,7 @@ function _createGigs() {
 
                 ],
                 tags: [
-                    "logo-design",
+                    "digital-marketing",
                     "artisitic",
                     "proffesional",
                     "accessible"

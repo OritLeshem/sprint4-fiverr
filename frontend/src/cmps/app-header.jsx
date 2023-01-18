@@ -16,13 +16,18 @@ export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
     const dispatch = useDispatch()
 
-
-
     function onSetFilter(filterBy) {
         console.log('filter index1', filterBy)
         dispatch({ type: SET_FILTER, filterBy })
-
+        
+        let queryStringParams
+        if (filterBy.tags)  queryStringParams= `?category=${filterBy.tags[0]}`
+        if (filterBy.title) queryStringParams= `?title=${filterBy.title}`
+        // const queryStringParams = `?category=${filterBy.tags[0]}`
+        const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + queryStringParams
+        window.history.pushState({ path: newUrl }, '', newUrl)
     }
+
     async function onLogin(credentials) {
         try {
             const user = await login(credentials)

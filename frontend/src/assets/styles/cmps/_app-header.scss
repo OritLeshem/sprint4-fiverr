@@ -1,11 +1,11 @@
 .app-header {
     background-color: $clr3;
 
-
     .app-header-nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        border-bottom: 1px solid #e4e5e7;
     }
 
     .gig-header-link {

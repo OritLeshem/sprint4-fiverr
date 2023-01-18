@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useSearchParams } from 'react-router-dom'
 
 import { loadGigs, addGig, updateGig, removeGig, addToCart } from '../store/gig.actions.js'
 
@@ -17,10 +18,31 @@ export function GigIndex() {
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
     const dispatch = useDispatch()
+    const [searchParams] = useSearchParams()
+    console.log(searchParams.get('category'))
+   
+    useEffect(() => {
+        if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
+    }, [])
+
 
     useEffect(() => {
+        // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
         loadGigs(filterBy)
     }, [filterBy])
+
+    function renderUiByQueryStringParams() {
+
+        const filterBy = {
+            title: searchParams.get('title') || '',
+            tags: [searchParams.get('category')] || '',
+        }
+
+        // if (!filterBy.title && !filterBy.tags&&!filterBy.delivery) return
+        // console.log(filterBy);
+        onSetFilter(filterBy)
+    }
+
 
     async function onRemoveGig(gigId) {
         try {
@@ -54,10 +76,8 @@ export function GigIndex() {
     }
 
     function onSetFilter(filterBy) {
+        console.log(filterBy);
         dispatch({ type: SET_FILTER, filterBy })
-        // const queryStringParams = `?categories=${filterBy.tags[0]}`
-        // const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + queryStringParams
-        // window.history.pushState({ path: newUrl }, '', newUrl)
     }
 
     // function onAddToCart(gig){
@@ -74,7 +94,7 @@ export function GigIndex() {
         <div>
             {/* <h3>Gigs App</h3> */}
             {/* <button onClick={onAddGig}>Add Gig ⛐</button> */}
-            <TopFilterBar onSetFilter={onSetFilter}/>
+            <TopFilterBar onSetFilter={onSetFilter} />
             <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
 
         </div>
