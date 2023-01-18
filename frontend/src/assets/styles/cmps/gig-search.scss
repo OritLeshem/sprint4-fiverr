@@ -2,14 +2,15 @@
   display: flex;
 
   input {
-    border: none;
-    border-top: 1px solid $clr8;
-    border-left: 1px solid $clr8;
-    border-bottom: 1px solid $clr8;
+    // display: block;
+    border-right: 0;
+    border: 1px solid $clr8;
 
-    border-radius: 4px;
+    padding: 10px 2px 10px 16px;
+    border-radius: 4px 0 0 4px;
     font-size: 1rem;
-    width: 50vw;
+    // flex: 1 1 auto;
+    width: 35vw;
 
 
 

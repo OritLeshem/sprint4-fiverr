@@ -1,13 +1,26 @@
 .app-header {
     background-color: $clr3;
-    padding: 10px;
 
 
     .app-header-nav {
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
+    .gig-header-link {
+        color: $clr5;
+        text-decoration: none;
+        transition: color 70ms cubic-bezier(.75, 0, .25, 1);
+
+
+
+
+        &:hover {
+            color: $clr1;
+
+        }
+    }
 
     .user-info {
         // background-color: $clr2;
@@ -38,18 +51,17 @@
     nav {
         font-size: .8em;
         background-color: $clr3;
-        padding: 5px;
     }
 
     // nav a:first-child {
     //     margin-right: 30px;
     // }
 
-    nav a:not(:first-child) {
-        border-top: 1px solid $clr1;
-        padding: 0 5px;
-        margin: 10px;
-    }
+    // nav a:not(:first-child) {
+    //     border-top: 1px solid $clr1;
+    //     padding: 0 5px;
+    //     margin: 10px;
+    // }
 
     nav .active {
         color: $clr1;
@@ -59,6 +71,9 @@
         background-color: transparent;
         border: 1px solid $clr1;
         color: $clr1;
+        padding: 10px 16px;
+        border-radius: 4px;
+        transition: background-color 70ms cubic-bezier(.75, 0, .25, 1);
 
         &:hover {
             background-color: $clr1;
