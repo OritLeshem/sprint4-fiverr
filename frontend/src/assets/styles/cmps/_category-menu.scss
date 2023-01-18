@@ -1,16 +1,9 @@
 .categories-menu{
     border-bottom: 1px solid #e4e5e7;
-    opacity: 1;
+    // opacity: 1;
     margin:0;
     padding:0;
-    width:100%;
-    display: block;
-    nav{
-        box-sizing: border-box;
-        margin: 0 auto;
-        max-width: 1400px;
-        position: relative;
-    }
+    // display:flex;
     ul {
     font-size: 1rem;
     color:$clr5;
@@ -18,12 +11,12 @@
     justify-content: space-between;
     margin: 0 auto;
     padding: 0;
+    grid-column: 2;
     }
     li {
-        // display: inline-block;
         flex-shrink: 0;
         padding: 0 10px;
-        position: relative;
+        // position: relative;
     }
     li:last-child {
         padding-right: 0;
@@ -37,7 +30,7 @@
         font-size: 16px;
         line-height: 24px;
         padding: 8px 0;
-        position: relative;
+        // position: relative;
         text-decoration: none;
     }
     a:hover{
