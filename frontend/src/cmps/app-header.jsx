@@ -49,7 +49,7 @@ export function AppHeader() {
     }
 
     return (
-        <header className="app-header">
+        <header className="app-header full main-layout">
             <nav className='app-header-nav'>
                 <h3>Fiverr</h3>
                 <Search onSetFilter={onSetFilter} />
