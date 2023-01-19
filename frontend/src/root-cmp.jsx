@@ -20,19 +20,21 @@ export function RootCmp() {
 
     return (
         <>
-            <AppHeader />
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/about" element={<AboutUs />} />
-                <Route path="/gig" element={<GigIndex />} />
-                <Route path="/gig/:gigId" element={<GigDetails />} />
-                <Route path="/payment/:gigId" element={<GigPayment />} />
-                <Route path="/seller/:sellerId" element={<SellerDetails />} />
-                {/* <Route path="/review" element={<ReviewIndex />} /> */}
-                {/* <Route path="/chat" element={<ChatApp />} /> */}
-                {/* <Route path="/admin" element={<AdminApp />} /> */}
-            </Routes>
-            <AppFooter />
+            <section className="app main-layout">
+                <AppHeader />
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/about" element={<AboutUs />} />
+                    <Route path="/gig" element={<GigIndex />} />
+                    <Route path="/gig/:gigId" element={<GigDetails />} />
+                    <Route path="/payment/:gigId" element={<GigPayment />} />
+                    <Route path="/seller/:sellerId" element={<SellerDetails />} />
+                    {/* <Route path="/review" element={<ReviewIndex />} /> */}
+                    {/* <Route path="/chat" element={<ChatApp />} /> */}
+                    {/* <Route path="/admin" element={<AdminApp />} /> */}
+                </Routes>
+                <AppFooter />
+            </section>
         </>
     )
 }

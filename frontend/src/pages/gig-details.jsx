@@ -36,7 +36,7 @@ export function GigDetails() {
     if (!gig) return <div>Loading...</div>
     return <section className="gig-details">
         <div className="gig-details-info">
-            <span> Graphics & design  >  Logo Design </span>
+            <span>Graphics & design</span><span>Logo Design</span>
             <h1>{gig.title}</h1>
             <div className="gig-details-user-details">
 

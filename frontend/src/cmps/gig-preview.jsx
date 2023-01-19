@@ -27,8 +27,8 @@ export function GigPreview({ gig }) {
 
         <footer>
             <div className="btn-container">
-                <button className="fa-solid bars"></button>
-                <button className="fa-solid heart"></button>
+                {/* <button className="fa-solid bars"></button> */}
+                <button className="fa-solid heart" title="save to list"></button>
             </div>
             <Link className="price" to={`/gig/${gig._id}`}>
                 <small>Starting at</small>

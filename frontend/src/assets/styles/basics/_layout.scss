@@ -36,7 +36,7 @@
     @include for-wide-layout {
         grid-template-columns:
         minmax($layoutPadding, 1fr)  
-        minmax($width-breakpoint, auto) 
+        minmax(auto, $width-breakpoint) 
         minmax($layoutPadding, 1fr) ;
     }
 }

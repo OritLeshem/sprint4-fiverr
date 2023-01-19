@@ -4,10 +4,9 @@ import { SlideList } from '../cmps/slide-list'
 
 export function HomePage() {
 
-
     return (
-        <section className="home-page full main-layout">
-            <div className="slides-container full">
+        <section className="home-page full">
+            <div className="slides-container">
                 <HomePageSlider />
             </div>
 
@@ -22,7 +21,7 @@ export function HomePage() {
 
             <div className="trusted-by"></div>
 
-            <div className="main-content">
+            <div className="main-content main-layout">
                 <h2>Popular professional services</h2>
                 <SlideList />
             </div>

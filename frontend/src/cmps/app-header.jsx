@@ -54,7 +54,7 @@ export function AppHeader() {
     }
 
     return (
-        <header className="app-header full main-layout">
+        <header className="app-header">
             <nav className='app-header-nav'>
                 <Link to="/"><h3>Fiverr</h3></Link>
                 
