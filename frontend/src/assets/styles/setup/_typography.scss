@@ -28,11 +28,15 @@
     src: url(../../fonts/font-awesome/fa-regular-400.ttf);
 }
 
+@font-face {
+    font-family: fa-brands;
+    src: url(../../fonts/font-awesome/fa-brands-400.ttf);
+}
+
 /* solid */
 
 .fa-solid:after {
     font-family: fa-solid;
-    color: var(--clr-font);
 }
 
 .fa-solid.xmark:after {
@@ -75,14 +79,14 @@
     content: "\f00c";
 }
 
-// .fa-solid .fa-arrow-right:after {
-//     content: "\f061";
-// }
+.fa-solid.magnifying-glass:after {
+    content: "\f002";
+}
 
 /* regular */
+
 .fa-regular:after {
     font-family: fa-regular;
-    color: var(--clr-font);
 }
 
 .fa-regular.pen-to-sgure:after {
@@ -93,6 +97,36 @@
     content: "\f2ed";
 }
 
-.fa-solid.magnifying-glass:after {
-    content: "\f002";
+.fa-regular.circle-check:after {
+    content: "\f058";
+}
+
+/* brands */
+
+.fa-brands:after {
+    font-family: fa-brands;
+}
+
+.fa-brands.twitter:after {
+    content: "\f099";
+}
+
+.fa-brands.facebook:after {
+    content: "\f09a";
+}
+
+.fa-brands.linkedin:after {
+    content: "\f08c";
+}
+
+.fa-brands.pinterest:after {
+    content: "\f0d2";
+}
+
+.fa-brands.pinterest:after {
+    content: "\f0d2";
+}
+
+.fa-brands.instagram:after {
+    content: "\f16d";
 }

@@ -15,6 +15,8 @@ import { AdminApp } from './pages/admin-app'
 import { GigDetails } from './pages/gig-details'
 import { SellerDetails } from './pages/seller-details'
 import { GigPayment } from './pages/gig-payment'
+import { UserMsg } from './cmps/user-msg'
+
 
 export function RootCmp() {
 
@@ -35,6 +37,8 @@ export function RootCmp() {
                 </Routes>
                 <AppFooter />
             </section>
+            <UserMsg />
+
         </>
     )
 }

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react"
 export function HomePageSlider() {
     const [currentIndex, setCurrentIndex] = useState(0)
     let intervalIdRef = useRef(null)
+
     const slides = [
         { url: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049977/bg-hero-1-900-x2.png' },
         { url: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203043/bg-hero-2-900-x2.png' },
@@ -10,11 +11,6 @@ export function HomePageSlider() {
         { url: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049967/bg-hero-4-900-x2.png' },
         { url: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049979/bg-hero-5-900-x2.png' },
     ]
-
-    const sliderStyles = {
-        height: '100%',
-        position: 'relative'
-    }
 
     useEffect(() => {
         if (currentIndex === slides.length - 1) {
@@ -38,10 +34,7 @@ export function HomePageSlider() {
         backgroundImage: `url(${slides[currentIndex].url})`,
     }
 
-    return <section style={sliderStyles} className="home-page-slider">
-        <div className="hero-img" style={slideStyles}>
-            {/* <img src="" alt="" /> */}
-        </div>
-        
+    return <section className="home-page-slider">
+        <div className="hero-img" style={slideStyles}></div>  
     </section>
 }

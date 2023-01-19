@@ -1,4 +1,26 @@
-// .app-footer {
-//     background-color: $clr7;
-//     min-height: 200px;
-// }
+.app-footer {
+    @include flex;
+    border-top: 1px solid $clr7;
+    padding: 1rem 0 1rem 0;
+
+    .social-link {
+        display: flex;
+
+        .fa-brands {
+            font-size: 1.3rem;
+            margin-inline-start: 1em;
+        }
+    }
+
+    .footer-rights {
+        display: flex;
+        align-items: center;
+        color: $clr6;
+
+        p {
+            font-size: .875rem;
+            margin: 0 0 0 1.7em;
+        }
+    }
+
+}

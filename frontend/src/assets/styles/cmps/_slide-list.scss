@@ -1,11 +1,11 @@
 .slide-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.25rem;
+    grid-template-columns: 1fr;
+    gap: 1.125rem;
+    margin-bottom: 3rem;
 
     img {
         border-radius: .25rem;
-        height: 21.56rem;
         cursor: pointer;
 
         &:hover {
@@ -13,5 +13,20 @@
         }
     }
 
+    @media (min-width: $mobile-breakpoint) {
+        grid-template-columns: repeat(2, 1fr);
+    }
     
+    @media (min-width: $narrow-breakpoint) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1060px) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.25rem;
+    }
+
+    @media (min-width: $normal-breakpoint) {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
