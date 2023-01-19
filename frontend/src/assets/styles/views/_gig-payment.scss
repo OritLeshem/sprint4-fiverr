@@ -3,14 +3,115 @@
     padding: 2rem 0;
     gap: 1rem;
 
+    header {
+        color: #404145;
+        font-family: macan-bold;
+        padding: 1em;
+        font-size: 16px;
+        vertical-align: baseline;
+        line-height: 140%;
+    }
+
     .main-content {
         background-color: $clr9;
-        padding: 1em;
         flex-basis: 58%;
     }
-    
-    .side-content {
-        background-color: $clr9;
-        flex-basis: 42%;
+
+
+}
+
+
+
+#payment-form {
+    font-size: 14px;
+
+    .payment-option {
+        background-color: $clr3;
+        padding: 16px;
+        width: 100%;
+        border: 1px solid $clr7;
     }
+
+    .credit-card-details {
+        display: flex;
+        padding: 1em;
+        margin-left: 20px;
+    }
+
+    .buyer-details {
+        display: flex;
+        padding: 1em;
+        margin-left: 20px;
+    }
+
+    .payment-input {
+        border-radius: 3px;
+        margin-right: 1rem;
+    }
+
+    .payment-input input {
+        height: 40px;
+        width: 250px;
+        border-radius: 3px;
+        border: 1px solid $clr7;
+        margin-right: 1rem;
+    }
+
+    .security-and-expire input {
+        width: 125px;
+        height: 40px;
+    }
+
+
+}
+
+.side-content {
+    padding: 15px;
+    color: $clr5;
+    background-color: $clr9;
+    flex-basis: 42%;
+
+    header {
+
+        display: flex;
+        border-bottom: 1px solid $clr7;
+
+    }
+
+    img {
+        width: 80px;
+        margin-right: 10px;
+    }
+
+    .basic {
+        color: #404145;
+        font-family: macan-bold;
+
+        line-height: 140%;
+        text-align: left;
+        letter-spacing: 7px;
+
+    }
+
+    .basic-and-price {
+
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .price {}
+
+    .green-check {
+        color: $clr1;
+
+    }
+
+    li {
+        vertical-align: baseline;
+        line-height: 140%;
+        padding-bottom: 15px;
+    }
+
 }
