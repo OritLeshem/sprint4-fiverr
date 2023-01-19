@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import routes from '../routes'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -15,17 +15,22 @@ import { gigService } from '../services/gig.service'
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     function onSetFilter(filterBy) {
-        console.log('filter index1', filterBy)
         dispatch({ type: SET_FILTER, filterBy })
-        
+
+        if(!filterBy.tags && !filterBy.title){
+            navigate('/gig') 
+            return
+        }
+        console.log('filter index1', filterBy)
         let queryStringParams
-        if (filterBy.tags)  queryStringParams= `?category=${filterBy.tags[0]}`
-        if (filterBy.title) queryStringParams= `?title=${filterBy.title}`
-        // const queryStringParams = `?category=${filterBy.tags[0]}`
-        const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + queryStringParams
-        window.history.pushState({ path: newUrl }, '', newUrl)
+        if (filterBy.tags) queryStringParams = `?category=${filterBy.tags[0]}`
+        if (filterBy.title) queryStringParams = `?title=${filterBy.title}`
+        // const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + queryStringParams
+        // window.history.pushState({ path: newUrl }, '', newUrl)
+        navigate(`/gig${queryStringParams}`)
     }
 
     async function onLogin(credentials) {
@@ -57,11 +62,11 @@ export function AppHeader() {
         <header className="app-header">
             <nav className='app-header-nav'>
                 <Link to="/"><h3>Fiverr</h3></Link>
-                
+
                 <Search onSetFilter={onSetFilter} />
 
                 {/* <NavLink to="/">fiverr</NavLink> */}
-                <Link className='gig-header-link' to="gig" onClick={() =>onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
+                <Link className='gig-header-link' to="gig" onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
                 <Link className='gig-header-link' to="gig">Become a seller</Link>
                 <Link className="gig-header-link sign-in-btn">Sign in</Link>
                 <button className="join-btn">Join</button>

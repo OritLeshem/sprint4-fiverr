@@ -11,34 +11,33 @@ import { SET_FILTER } from '../store/gig.reducer'
 import { Search } from '../cmps/gig-search.jsx'
 import { TopFilterBar } from '../cmps/top-filter-bar.jsx'
 
-
-
 export function GigIndex() {
 
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
     const dispatch = useDispatch()
-    const [searchParams] = useSearchParams()
-    console.log(searchParams.get('category'))
-   
-    useEffect(() => {
-        if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
-    }, [])
+    const [searchParams, setSearchParams] = useSearchParams()
 
+    // useEffect(() => {
+    //     if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
+    // }, [])
 
     useEffect(() => {
+        // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
         loadGigs(filterBy)
-    }, [filterBy])
+    }, [filterBy,searchParams])
 
-    function renderUiByQueryStringParams() {
-
-        const filterBy = {
-            title: searchParams.get('title') || '',
-            tags: [searchParams.get('category')] || '',
-        }
-
-        onSetFilter(filterBy)
-    }
+    // function renderUiByQueryStringParams() {
+    //     if (filterBy.title){
+    //         filterBy.title = searchParams.get('title')
+    //         setSearchParams(searchParams.get('title'))
+    //     }
+    //     if (filterBy.tags) {
+    //         filterBy.tags = [searchParams.get('category')]
+    //         setSearchParams(searchParams.get('category'))
+    //     }
+    //     onSetFilter(filterBy)
+    // }
 
 
     async function onRemoveGig(gigId) {
@@ -73,7 +72,6 @@ export function GigIndex() {
     }
 
     function onSetFilter(filterBy) {
-        console.log(filterBy);
         dispatch({ type: SET_FILTER, filterBy })
     }
 
