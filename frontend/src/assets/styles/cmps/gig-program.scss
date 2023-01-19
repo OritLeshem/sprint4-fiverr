@@ -1,10 +1,9 @@
 .gig-program {
-  margin-top: 30px;
   height: fit-content;
   color: $clr5;
   border: 1px solid $clr7;
 
-  width: 33.6%;
+  // width: 33.6%;
 
 
   .gig-program-name {
@@ -43,6 +42,10 @@
 
 }
 
+.gig-details-side {
+  width: 33.6%;
+}
+
 .gig-program-link-continue {
   width: 100%;
   background-color: $clr1;
@@ -55,6 +58,8 @@
   line-height: 100%;
   padding: 12px 24px;
   text-align: center;
+  position:relative;
+  display: inline-block;
 
   &:hover {
     background-color: #026a5d;
@@ -62,10 +67,33 @@
   }
 
   span {
-    margin-left: 150px;
+    // margin-right: 100px;
+    float: right;
   }
 }
 
 .contact-seller {
+  box-sizing: border-box;
   margin-top: 16px;
+  width: 100%;
+  background-color: $clr9;
+  text-align: center;
+  padding: 24px;
+
+  button {
+    width: 100%;
+    padding: 12px 24px;
+    margin: 0;
+    background-color: transparent;
+    color: $clr2;
+    font-family: macan-semibold;
+    border: 1px solid $clr2;
+    border-radius: 4px
+  }
+
+  button:hover {
+    background-color: $clr5;
+    color: $clr3;
+  }
+
 }
