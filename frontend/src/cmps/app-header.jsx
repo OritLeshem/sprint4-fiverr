@@ -65,26 +65,11 @@ export function AppHeader() {
 
                 <Search onSetFilter={onSetFilter} />
 
-                {/* <NavLink to="/">fiverr</NavLink> */}
                 <Link className='gig-header-link' to="gig" onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
                 <Link className='gig-header-link' to="gig">Become a seller</Link>
                 <Link className="gig-header-link sign-in-btn">Sign in</Link>
                 <button className="join-btn">Join</button>
-                {/* {user &&
-                    <span className="user-info">
-                        <Link to={`user/${user._id}`}>
-                            {user.imgUrl && <img src={user.imgUrl} />}
-                            {user.fullname}
-                        </Link>
-                        <span className="score">{user.score?.toLocaleString()}</span>
-                        <button onClick={onLogout}>Logout</button>
-                    </span>
-                }
-                {!user &&
-                    <section className="user-info">
-                        <LoginSignup onLogin={onLogin} onSignup={onSignup} />
-                    </section>
-                } */}
+
             </nav>
             <CategoryMenu onSetFilter={onSetFilter} />
         </header>

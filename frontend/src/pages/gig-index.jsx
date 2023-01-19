@@ -86,12 +86,12 @@ export function GigIndex() {
     }
 
     return (
-        <div>
+        <section className="gig-index">
             {/* <h3>Gigs App</h3> */}
             {/* <button onClick={onAddGig}>Add Gig ⛐</button> */}
             <TopFilterBar onSetFilter={onSetFilter} />
             <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
 
-        </div>
+        </section>
     )
 }
