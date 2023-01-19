@@ -21,7 +21,7 @@ export function GigPayment() {
         catch (err) {
             console.log('had issue in gig details', err)
             showErrorMsg('cannot load toy')
-            navigate('/gig')
+            // navigate('/gig')
         }
     }
 
