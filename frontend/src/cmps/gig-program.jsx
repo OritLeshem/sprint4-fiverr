@@ -16,7 +16,7 @@ export function GigProgarm({ gig }) {
         <li><span className="green-check fa-solid fa-check"></span> <span>Include 3D mockup</span></li>
         <li><span className="fa-solid fa-check"></span> <span>Vector file</span></li>
       </ul>
-      <Link className="gig-program-link-continue" to={`/payment/:${gig._id}`} >Continue <span className="fa-solid arrow-rigth"></span></Link>
+      <Link className="gig-program-link-continue" to={`/payment/${gig._id}`} >Continue <span className="fa-solid arrow-rigth"></span></Link>
     </div>
     <div className="contact-seller"><button className="contact-seller-btn" >Contact Seller</button></div>
 
