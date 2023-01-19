@@ -1,7 +1,11 @@
 .gig-details {
   display: flex;
-  display: flex;
   justify-content: space-between;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 32px;
+  margin: 0 auto;
+  max-width: 1304px;
 
   .gig-details-info {
     width: 60%;
@@ -9,15 +13,12 @@
     span {
       display: block;
       color: #446ee7;
-      padding-top: 30px;
-      padding-bottom: 20px;
     }
 
     h1 {
       word-wrap: break-word;
       overflow-wrap: break-word;
       font-size: 28px;
-      // padding-bottom: 16px;
       line-height: 1.4;
     }
 
@@ -35,6 +36,19 @@
   width: 100%;
   height: 380px;
   margin: 0 auto;
+  margin-bottom: 64px;
+}
+
+.gig-review-section{
+  font-size: 20px;
+    line-height: 28px;
+    padding-bottom: 25px;
+}
+
+.gig-description h4{
+  font-size: 20px;
+  line-height: 28px;
+  padding-bottom: 25px;
 }
 
 .gig-details-user-details {

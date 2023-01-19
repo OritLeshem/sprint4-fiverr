@@ -26,9 +26,6 @@ async function query(filterBy = { title: '', tags: [], daysToMake: '' }) {
         const regex = new RegExp(filterBy.title, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
     }
-    // if (filterBy.price) {
-    //     gigs = gigs.filter(gig => gig.price <= filterBy.price)
-    // }
     if (filterBy.tags?.length) {
         gigs = gigs.filter(gig => gig.tags.some(tag => filterBy.tags.includes(tag)))
     }
@@ -88,7 +85,7 @@ function _createGigs() {
 
             {
                 _id: 'i102',
-                title: "I will provide automated social websites for passive income",
+                title: "I will provide a great logo for you",
 
                 price: 15,
                 owner: {
@@ -141,7 +138,7 @@ function _createGigs() {
             },
             {
                 _id: 'i104',
-                title: "I will provide automated social websites for passive income",
+                title: "I will create a beautiful web design ",
                 price: 18,
                 owner: {
                     _id: "u104",

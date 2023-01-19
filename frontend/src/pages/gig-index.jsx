@@ -18,26 +18,27 @@ export function GigIndex() {
     const dispatch = useDispatch()
     const [searchParams, setSearchParams] = useSearchParams()
 
-    // useEffect(() => {
-    //     if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
-    // }, [])
+    useEffect(() => {
+        if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
+    }, [])
 
     useEffect(() => {
         // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
         loadGigs(filterBy)
     }, [filterBy,searchParams])
 
-    // function renderUiByQueryStringParams() {
-    //     if (filterBy.title){
-    //         filterBy.title = searchParams.get('title')
-    //         setSearchParams(searchParams.get('title'))
-    //     }
-    //     if (filterBy.tags) {
-    //         filterBy.tags = [searchParams.get('category')]
-    //         setSearchParams(searchParams.get('category'))
-    //     }
-    //     onSetFilter(filterBy)
-    // }
+    function renderUiByQueryStringParams() {
+        if (searchParams.get('title')){
+            filterBy.title = searchParams.get('title')
+            setSearchParams(`title=${searchParams.get('title')}`)
+        }
+        
+        if (searchParams.get('category')) {
+            filterBy.tags = [searchParams.get('category')]
+            setSearchParams(`category=${searchParams.get('category')}`)
+        }
+        onSetFilter(filterBy)
+    }
 
 
     async function onRemoveGig(gigId) {

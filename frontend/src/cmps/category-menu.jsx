@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useEffect, useState } from "react"
 
 import { gigService } from "../services/gig.service.js"
@@ -12,7 +11,6 @@ export function CategoryMenu({ onSetFilter }) {
     }, [filterByToEdit])
 
     function filterByCategory(categories) {
-        console.log('categories!!!!!!!!!',categories);
         setFilterByToEdit((prevFilter) => ({ ...prevFilter, tags: categories }))
     }
 
