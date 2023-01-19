@@ -17,7 +17,7 @@ export const gigService = {
 
 window.cs = gigService
 function getDefaultFilter() {
-    return { title: '', tags: [], daysToMake: '', minPrice:'', maxPrice:'' }
+    return { title: '', tags: [], daysToMake: '', minPrice: '', maxPrice: '' }
 }
 
 async function query(filterBy = { title: '', tags: [], daysToMake: '' }) {
@@ -90,15 +90,15 @@ function _createGigs() {
                 _id: 'i102',
                 title: "I will provide automated social websites for passive income",
 
-                price: 12,
+                price: 15,
                 owner: {
                     _id: "u102",
                     fullname: "Dudu Sa",
                     imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
-                    rate: 4
+                    rate: 5
                 },
-                daysToMake: 3,
+                daysToMake: 2,
                 description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
                 imgUrl: [
                     "https://cdn.pixabay.com/photo/2022/04/10/09/45/background-7123020_960_720.jpg",
@@ -142,15 +142,15 @@ function _createGigs() {
             {
                 _id: 'i104',
                 title: "I will provide automated social websites for passive income",
-                price: 12,
+                price: 18,
                 owner: {
                     _id: "u104",
                     fullname: "Puki Dfa",
                     imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
-                    rate: 4
+                    rate: 2
                 },
-                daysToMake: 3,
+                daysToMake: 1,
                 description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
                 imgUrl: [
                     "https://cdn.pixabay.com/photo/2022/11/15/04/54/automotive-7593064_960_720.jpg",
@@ -168,15 +168,15 @@ function _createGigs() {
             {
                 _id: 'i105',
                 title: "I will provide automated social websites for passive income",
-                price: 12,
+                price: 10,
                 owner: {
                     _id: "u105",
                     fullname: "Jo Bara",
                     imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
-                    rate: 4
+                    rate: 5
                 },
-                daysToMake: 3,
+                daysToMake: 4,
                 description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
                 imgUrl: [
                     "https://cdn.pixabay.com/photo/2018/10/19/10/26/bicycle-3758313_960_720.png",
@@ -194,15 +194,15 @@ function _createGigs() {
             {
                 _id: 'i106',
                 title: "I will provide automated social websites for passive income",
-                price: 12,
+                price: 20,
                 owner: {
                     _id: "u106",
                     fullname: "Bobo Basa",
                     imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
-                    rate: 4
+                    rate: 1
                 },
-                daysToMake: 3,
+                daysToMake: 5,
                 description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
                 imgUrl: [
                     "https://cdn.pixabay.com/photo/2020/02/08/00/32/icon-4828765_960_720.jpg",
@@ -221,15 +221,15 @@ function _createGigs() {
                 _id: 'i107',
                 title: "I will provide automated social websites for passive income",
 
-                price: 12,
+                price: 8,
                 owner: {
                     _id: "u107",
                     fullname: "Zozo Ta",
                     imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
-                    rate: 4
+                    rate: 2
                 },
-                daysToMake: 3,
+                daysToMake: 2,
                 description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
                 imgUrl: [
                     "https://cdn.pixabay.com/photo/2022/08/14/08/26/abstract-art-7385224_960_720.jpg",
@@ -247,15 +247,15 @@ function _createGigs() {
             {
                 _id: 'i108',
                 title: "I will provide automated social websites for passive income",
-                price: 12,
+                price: 5,
                 owner: {
                     _id: "u108",
                     fullname: "Mumu Asa",
                     imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
-                    rate: 4
+                    rate: 3
                 },
-                daysToMake: 3,
+                daysToMake: 2,
                 description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
                 imgUrl: [
                     "https://cdn.pixabay.com/photo/2022/06/21/16/18/orange-7276122_960_720.jpg",
@@ -274,7 +274,7 @@ function _createGigs() {
             {
                 _id: 'i109',
                 title: "I will provide automated social websites for passive income",
-                price: 12,
+                price: 25,
                 owner: {
                     _id: "u109",
                     fullname: "Quti Vvfa",
@@ -282,7 +282,7 @@ function _createGigs() {
                     level: "basic/premium",
                     rate: 4
                 },
-                daysToMake: 3,
+                daysToMake: 7,
                 description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
                 imgUrl: [
                     "https://cdn.pixabay.com/photo/2016/04/01/09/24/automobile-1299344_960_720.png",
@@ -300,15 +300,15 @@ function _createGigs() {
             {
                 _id: 'i110',
                 title: "I will provide automated social websites for passive income",
-                price: 12,
+                price: 30,
                 owner: {
                     _id: "u110",
                     fullname: "Nura Kersa",
                     imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
-                    rate: 4
+                    rate: 1
                 },
-                daysToMake: 3,
+                daysToMake: 6,
                 description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
                 imgUrl: [
                     "https://cdn.pixabay.com/photo/2021/02/08/12/48/camera-5994642_960_720.png",
@@ -327,7 +327,7 @@ function _createGigs() {
             {
                 _id: 'i111',
                 title: "I will provide automated social websites for passive income",
-                price: 12,
+                price: 17,
                 owner: {
                     _id: "u111",
                     fullname: "Bobo Basa",
