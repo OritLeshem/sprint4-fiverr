@@ -567,11 +567,11 @@ function _createGigs() {
                 likedByUsers: ['mini-user'] // for user-wishlist : use $in
             },
             {
-                _id: 'i110',
+                _id: 'i120',
                 title: "I will translate english to german or translate german to english professionally",
                 price: 30,
                 owner: {
-                    _id: "u110",
+                    _id: "u120",
                     fullname: "Nura Kersa",
                     imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
@@ -594,11 +594,11 @@ function _createGigs() {
                 likedByUsers: ['mini-user'] // for user-wishlist : use $in
             },
             {
-                _id: 'i111',
+                _id: 'i121',
                 title: "I will write SEO health, nutrition and fitness articles blog posts",
                 price: 17,
                 owner: {
-                    _id: "u111",
+                    _id: "u121",
                     fullname: "Bobo Basa",
                     imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
