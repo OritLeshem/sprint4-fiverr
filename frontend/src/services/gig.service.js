@@ -500,9 +500,9 @@ function _createGigs() {
                 daysToMake: 2,
                 description: "I will be your female singer songwriter in english and in french.",
                 imgUrl: [
-
-                    "https://cdn.pixabay.com/photo/2022/09/10/18/23/print-7445476_960_720.png",
                     "https://cdn.pixabay.com/photo/2022/08/14/08/26/abstract-art-7385225_960_720.jpg",
+                    "https://cdn.pixabay.com/photo/2022/09/10/18/23/print-7445476_960_720.png",
+
                     "https://cdn.pixabay.com/photo/2022/08/14/08/26/abstract-art-7385224_960_720.jpg"
                 ],
                 tags: [
@@ -609,8 +609,9 @@ function _createGigs() {
                 daysToMake: 3,
                 description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
                 imgUrl: [
-                    "https://cdn.pixabay.com/photo/2022/06/18/16/55/cute-7270285_960_720.png",
                     "https://cdn.pixabay.com/photo/2021/01/19/02/37/cat-5929889_960_720.png",
+                    "https://cdn.pixabay.com/photo/2022/06/18/16/55/cute-7270285_960_720.png",
+
                     "https://cdn.pixabay.com/photo/2022/05/13/12/44/room-7193628_960_720.png"
 
                 ],
