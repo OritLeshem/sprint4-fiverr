@@ -28,8 +28,8 @@ export function getActionUpdateGig(gig) {
 export async function loadGigs(filterBy) {
     try {
         const gigs = await gigService.query(filterBy)
-        console.log('Gigs from DB:', gigs)
-        console.log('filterby action gig:', filterBy)
+        // console.log('Gigs from DB:', gigs)
+        // console.log('filterby action gig:', filterBy)
 
         store.dispatch({
             type: SET_GIGS,

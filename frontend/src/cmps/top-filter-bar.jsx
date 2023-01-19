@@ -4,11 +4,10 @@ import { gigService } from "../services/gig.service"
 export function TopFilterBar({ onSetFilter }) {
 
     const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
-    const [isPriceFilterShown, setIsPriceFilterShown] = useState(true)
-    const toggled = useRef(null)
+    const [isPriceFilterShown, setIsPriceFilterShown] = useState(false)
 
-
-    function handleChange({target}) {
+    function handleChange(e) {
+        const {target}=e
         let { value, name: field, type } = target
         value = (type === 'number') ? +value : value
         setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
@@ -23,13 +22,9 @@ export function TopFilterBar({ onSetFilter }) {
     }, [filterByToEdit])
 
     function onTogglePriceFilter(ev) {
-        console.log(ev.target.className);
         ev.preventDefault()
-        toggled.current=true
-        if(toggled.current=true){
-            if(ev.target.className==="filter-menu filter-price") setIsPriceFilterShown(!isPriceFilterShown)
-            else return
-        }
+        if (ev.target.className === "filter-menu filter-price") setIsPriceFilterShown(!isPriceFilterShown)
+        else return
     }
 
     return <div className="top-filter-bar">

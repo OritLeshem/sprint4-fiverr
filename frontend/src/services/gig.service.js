@@ -21,7 +21,6 @@ function getDefaultFilter() {
 }
 
 async function query(filterBy = { title: '', tags: [], daysToMake: '' }) {
-    console.log(filterBy);
     var gigs = await storageService.query(STORAGE_KEY)
     if (filterBy.title) {
         const regex = new RegExp(filterBy.title, 'i')
@@ -30,7 +29,7 @@ async function query(filterBy = { title: '', tags: [], daysToMake: '' }) {
     // if (filterBy.price) {
     //     gigs = gigs.filter(gig => gig.price <= filterBy.price)
     // }
-    if (filterBy.tags.length) {
+    if (filterBy.tags?.length) {
         gigs = gigs.filter(gig => gig.tags.some(tag => filterBy.tags.includes(tag)))
     }
     if (filterBy.daysToMake) {

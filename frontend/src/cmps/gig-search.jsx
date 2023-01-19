@@ -20,15 +20,16 @@ export function Search({ onSetFilter }) {
 
   function handleChange({ target }) {
     let { value, name: field, type } = target
+    console.log('value', value);
     value = (type === 'number') ? +value : value
     setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
   }
-  console.log(filterByToEdit)
 
   function onSubmitFilter(ev) {
     // update father cmp that filters change on submit
     ev.preventDefault()
     onSetFilter(filterByToEdit)
+    setFilterByToEdit('')
   }
 
 
