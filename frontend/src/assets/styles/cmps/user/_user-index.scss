@@ -1,0 +1,13 @@
+.user-index {
+  display: flex;
+  justify-content: space-between;
+
+  .user-index-info {
+    flex-basis: 33%;
+  }
+
+  .user-index-main-container {
+    flex-basis: 66%;
+
+  }
+}

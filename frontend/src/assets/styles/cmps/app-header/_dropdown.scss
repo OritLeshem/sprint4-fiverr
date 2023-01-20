@@ -1,0 +1,20 @@
+.dropdown {
+    min-width: 180px;
+    right: 32px;
+    background-color: $clr3;
+    position: absolute;
+    border: 1px solid $clr7;
+
+    ul {
+        font-family: macan-light;
+        padding: em(5px, 16px) em(15px, 16px);
+    }
+
+    li {
+        padding: em(5px, 16px) 0;
+
+        &:hover {
+            color: $clr1;
+        }
+    }
+}

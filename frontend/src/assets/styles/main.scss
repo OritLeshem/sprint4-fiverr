@@ -22,9 +22,13 @@
 @import "views/user/user-details";
 @import "views/gig/gig-edit";
 
+@import "cmps/user/user-index";
+
+
 // Components
 @import "cmps/app-header/app-header";
 @import "cmps/app-header/modal";
+@import "cmps/app-header/dropdown";
 @import "cmps/user/login-signup";
 @import "cmps/slider/slide-list";
 @import "cmps/app-footer";
@@ -38,6 +42,5 @@
 @import "cmps/gig/gig-program";
 @import "cmps/slider/details-carousel";
 
-@import "cmps/user/user-index";
 @import "cmps/user/user-list";
 @import "cmps/user/user-profile";
