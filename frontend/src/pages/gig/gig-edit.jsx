@@ -15,6 +15,7 @@ export function GigEdit() {
     const navigate = useNavigate()
     const { gigId } = useParams()
     const [gigToEdit, setGigToEdit] = useState(gigService.getEmptyGig())
+    const [imgToGig, setToEdit] = useState()
     const gigForFormik = { ...gigToEdit, tags2: '' }
 
     useEffect(() => {
@@ -47,12 +48,12 @@ export function GigEdit() {
     })
 
     const goBack = () => {
-        navigate('/user/userId')
+        navigate('/gig')
     }
 
     function onUploaded(data) {
-        setGigToEdit((prevgig) => ({ ...prevgig, imgUrl: [...prevgig.imgUrl, data] }))
-
+        gigToEdit.imgUrl.push(data)
+        setToEdit((prevImg) => ({ ...prevImg, data}))
     }
 
     const onSave = async (values) => {
@@ -63,7 +64,6 @@ export function GigEdit() {
             gigToEdit.description = values.description
             gigToEdit.price = values.price
             gigToEdit.daysToMake = values.daysToMake
-            console.log(gigToEdit);
             await addGig(gigToEdit, goBack)
         } catch (err) {
             console.log('Cannot save gig: ', err)
