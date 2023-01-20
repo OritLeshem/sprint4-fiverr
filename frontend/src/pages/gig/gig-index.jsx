@@ -2,14 +2,14 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
 
-import { loadGigs, addGig, updateGig, removeGig, addToCart } from '../store/gig.actions.js'
+import { loadGigs, addGig, updateGig, removeGig, addToCart } from '../../store/gig.actions.js'
 
-import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
-import { gigService } from '../services/gig.service.js'
-import { GigList } from '../cmps/gig-list.jsx'
-import { SET_FILTER } from '../store/gig.reducer'
-import { Search } from '../cmps/gig-search.jsx'
-import { TopFilterBar } from '../cmps/top-filter-bar.jsx'
+import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
+import { gigService } from '../../services/gig.service.js'
+import { GigList } from '../../cmps/gig/gig-list.jsx'
+import { SET_FILTER } from '../../store/gig.reducer'
+import { Search } from '../../cmps/app-header/header-search.jsx'
+import { TopFilterBar } from '../../cmps/gig/top-filter-bar.jsx'
 
 export function GigIndex() {
 
@@ -25,14 +25,14 @@ export function GigIndex() {
     useEffect(() => {
         // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
         loadGigs(filterBy)
-    }, [filterBy,searchParams])
+    }, [filterBy, searchParams])
 
     function renderUiByQueryStringParams() {
-        if (searchParams.get('title')){
+        if (searchParams.get('title')) {
             filterBy.title = searchParams.get('title')
             setSearchParams(`title=${searchParams.get('title')}`)
         }
-        
+
         if (searchParams.get('category')) {
             filterBy.tags = [searchParams.get('category')]
             setSearchParams(`category=${searchParams.get('category')}`)

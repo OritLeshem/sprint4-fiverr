@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom"
-import ImageSlider from "../cmps/image-slider"
-import { gigService } from "../services/gig.service";
-import { showErrorMsg } from "../services/event-bus.service.js"
-import { GigProgram } from "../cmps/gig-program";
+import ImageSlider from "../../cmps/slide/image-slider"
+import { gigService } from "../../services/gig.service";
+import { showErrorMsg } from "../../services/event-bus.service.js"
+import { GigProgram } from "../../cmps/gig/gig-program";
 
 
 export function GigDetails() {
@@ -65,10 +65,10 @@ export function GigDetails() {
             {/* </div> */}
             <div className="gig-review-section">
                 <h4>What people loved about this seller</h4>
-                </div>
-                <div className="gig-description">
-                    <h4>About This Gig</h4>
-                    <p>{gig.description}</p>
+            </div>
+            <div className="gig-description">
+                <h4>About This Gig</h4>
+                <p>{gig.description}</p>
                 <div className="gig-about-seller">
                     <h4>About The Seller</h4>
                     <div className="gig-about-seller-details">

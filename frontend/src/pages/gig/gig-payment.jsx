@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
-import { gigService } from "../services/gig.service"
+import { showErrorMsg, showSuccessMsg } from "../../services/event-bus.service"
+import { gigService } from "../../services/gig.service"
 
 export function GigPayment() {
     const [gig, setGig] = useState()

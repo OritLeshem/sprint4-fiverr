@@ -6,7 +6,7 @@ export function GigList({ gigs, onRemoveGig, onUpdateGig }) {
         {gigs.map(gig =>
             <li className="gig-preview" key={gig._id}>
                 <GigPreview gig={gig} />
-                    {/* <button onClick={() => { onRemoveGig(gig._id) }}>x</button>
+                {/* <button onClick={() => { onRemoveGig(gig._id) }}>x</button>
                     <button onClick={() => { onUpdateGig(gig) }}>Edit</button> */}
 
                 {/* <button onClick={() => { onAddGigMsg(gig) }}>Add gig msg</button> */}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-import { gigService } from "../services/gig.service.js"
+import { gigService } from "../../services/gig.service.js"
 
 export function CategoryMenu({ onSetFilter }) {
 

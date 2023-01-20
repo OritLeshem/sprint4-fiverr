@@ -1,20 +1,16 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
-
-import routes from './routes'
-
-import { AppHeader } from './cmps/app-header'
+import { AppHeader } from './cmps/app-header/app-header'
 import { AppFooter } from './cmps/app-footer'
-import { UserDetails } from './pages/user-details'
+import { UserDetails } from './pages/user/user-details'
 import { HomePage } from './pages/home-page'
-import { GigIndex } from './pages/gig-index'
+import { GigIndex } from './pages/gig/gig-index'
 import { ChatApp } from './pages/chat-app'
 import { ReviewIndex } from './pages/review-index'
 import { AboutUs } from './pages/about-us'
 import { AdminApp } from './pages/admin-app'
-import { GigDetails } from './pages/gig-details'
-import { SellerDetails } from './pages/seller-details'
-import { GigPayment } from './pages/gig-payment'
+import { GigDetails } from './pages/gig/gig-details'
+import { GigPayment } from './pages/gig/gig-payment'
 import { UserMsg } from './cmps/user-msg'
 
 
@@ -30,7 +26,6 @@ export function RootCmp() {
                     <Route path="/gig" element={<GigIndex />} />
                     <Route path="/gig/:gigId" element={<GigDetails />} />
                     <Route path="/payment/:gigId" element={<GigPayment />} />
-                    <Route path="/seller/:sellerId" element={<SellerDetails />} />
                     {/* <Route path="/review" element={<ReviewIndex />} /> */}
                     {/* <Route path="/chat" element={<ChatApp />} /> */}
                     {/* <Route path="/admin" element={<AdminApp />} /> */}

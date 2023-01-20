@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react"
-import { gigService } from "../services/gig.service"
+import { gigService } from "../../services/gig.service"
 import { useDispatch, useSelector } from 'react-redux'
 
 export function TopFilterBar({ onSetFilter }) {
@@ -12,9 +12,9 @@ export function TopFilterBar({ onSetFilter }) {
         const { target } = e
         let { value, name: field, type } = target
         value = (type === 'number') ? +value : value
-        let newFilterBy= ({ ...filterBy, [field]: value })
+        let newFilterBy = ({ ...filterBy, [field]: value })
         setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
-        if(field==="daysToMake") onSetFilter(newFilterBy)
+        if (field === "daysToMake") onSetFilter(newFilterBy)
     }
 
     function onSubmit() {
@@ -23,7 +23,7 @@ export function TopFilterBar({ onSetFilter }) {
     }
 
     function onClear() {
-        let newFilterBy= ({ ...filterBy, maxPrice: '', minPrice:'' })
+        let newFilterBy = ({ ...filterBy, maxPrice: '', minPrice: '' })
         setFilterByToEdit(newFilterBy)
         onSetFilter(newFilterBy)
     }

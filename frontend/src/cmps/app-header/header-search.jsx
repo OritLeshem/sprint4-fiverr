@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
 
-import { gigService } from "../services/gig.service"
+import { gigService } from "../../services/gig.service"
 
 export function Search({ onSetFilter }) {
   const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
-import { HomePageSlider } from '../cmps/home-page-slider'
-import { SlideList } from '../cmps/slide-cmps/slide-list'
+import { HomePageSlider } from '../cmps/home-page/home-page-slider'
+import { SlideList } from '../cmps/slide/slide-list'
 import { gigService } from '../services/gig.service'
 
 export function HomePage() {

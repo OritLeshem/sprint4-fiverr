@@ -1,15 +1,14 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import routes from '../routes'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-import { login, logout, signup } from '../store/user.actions.js'
-import { LoginSignup } from './login-signup.jsx'
-import { Search } from './gig-search'
-import { SET_FILTER } from '../store/gig.reducer'
-import { loadGigs, addGig, updateGig, removeGig, addToCart } from '../store/gig.actions.js'
-import { CategoryMenu } from './category-menu'
-import { gigService } from '../services/gig.service'
+import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
+import { login, logout, signup } from '../../store/user.actions.js'
+import { LoginSignup } from '../user/login-signup.jsx'
+import { Search } from './header-search'
+import { SET_FILTER } from '../../store/gig.reducer'
+import { loadGigs, addGig, updateGig, removeGig, addToCart } from '../../store/gig.actions.js'
+import { CategoryMenu } from './header-category-menu'
+import { gigService } from '../../services/gig.service'
 
 
 export function AppHeader() {
