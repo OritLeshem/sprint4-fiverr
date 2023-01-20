@@ -1,20 +1,24 @@
 .user-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
     color: $clr3;
-    padding: 10px;
-    font-size: 1.4em;
     position: fixed;
     top: 0;
-    right: 0;
     width: 100%;
     background-color: grey;
-}
+    padding: .5em 0;
 
-.user-msg button {
-    float: right;
-    border: 0;
-    border-radius: 50%;
-    margin: 5px;
-    background-color: #222;
+    button {
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        float: right;
+        border: 0;
+        border-radius: 50%;
+        margin: 5px;
+    }
 }
 
 .user-msg.success {

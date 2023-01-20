@@ -1,5 +1,6 @@
 .gig-search {
   display: flex;
+  width: 100%;
 
   input {
     font-size: 1rem;
@@ -7,13 +8,13 @@
     border-right: 0;
     padding: .625em .125em .625em 1em;
     border-radius: .25em 0 0 .25em;
-    width: 35vw;
   }
 
   .btn-gig-search {
     font-size: .875rem;
     width: fit-content;
     background-color: $clr2;
+    color: $clr3;
     border-radius: 0 .25em .25em 0;
     padding: .5em 1em;
     transition: 70ms cubic-bezier(.75, 0, .25, 1);

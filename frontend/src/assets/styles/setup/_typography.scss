@@ -109,6 +109,18 @@
     font-family: fa-regular;
 }
 
+.fa-regular.heart:after {
+    content: "\f004";
+}
+
+.fa-regular.envelope:after {
+    content: "\f0e0";
+}
+
+.fa-regular.bell:after {
+    content: "\f0f3";
+}
+
 .fa-regular.pen-to-sgure:after {
     content: "\f044";
 }
