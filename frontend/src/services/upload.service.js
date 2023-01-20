@@ -2,8 +2,8 @@ export const uploadService = {
   uploadImg
 }
 function uploadImg(ev) {
-  const CLOUD_NAME = "dcwibf9o5"
-  const UPLOAD_PRESET = "vt0iqgff"
+  const CLOUD_NAME = "dnjusxgg3"
+  const UPLOAD_PRESET = "otumftrp"
   const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
 
   const formData = new FormData()
@@ -16,6 +16,7 @@ function uploadImg(ev) {
   })
     .then(res => res.json())
     .then(res => {
+      console.log(res)
       return res
     })
     .catch(err => console.error(err))

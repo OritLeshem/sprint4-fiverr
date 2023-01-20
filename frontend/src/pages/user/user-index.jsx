@@ -75,10 +75,15 @@ export function UserIndex() {
     }
 
     return (
-        <section className="gig-index">
-            <button onClick={onAddGig}>Add +</button>
-            <UserProfile />
-            <UserList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
+        <section className="user-index">
+
+            <div className="user-index-info">  <UserProfile /></div>
+            <main className="user-index-main-container">
+                <button onClick={onAddGig}>Add +</button>
+                <UserList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
+            </main>
+
+
 
         </section>
     )
