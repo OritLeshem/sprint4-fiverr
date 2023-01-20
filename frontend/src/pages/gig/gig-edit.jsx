@@ -12,7 +12,7 @@ import { gigService } from '../../services/gig.service'
 import { ImgUploader } from '../../cmps/img-uploader'
 
 export function GigEdit() {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const { gigId } = useParams()
     const [gigToEdit, setGigToEdit] = useState(gigService.getEmptyGig())
     const gigForFormik = { ...gigToEdit, tags2: '' }
@@ -47,7 +47,8 @@ export function GigEdit() {
     })
 
     const goBack = () => {
-        navigate('/user/userId')
+        console.log('go back')
+        // navigate('/gig')
     }
 
     function onUploaded(data) {
@@ -55,7 +56,7 @@ export function GigEdit() {
 
     }
 
-    const onSubmit = async (values) => {
+    const onSave = async (values) => {
         try {
             gigToEdit.tags.push(values.tags)
             gigToEdit.tags.push(values.tags2)
@@ -74,7 +75,7 @@ export function GigEdit() {
         <Formik
             initialValues={gigForFormik}
             validationSchema={GigSchema}
-            onSubmit={onSubmit}
+            onSubmit={onSave}
             enableReinitialize
         >
             {({ errors, touched, values }) => {
