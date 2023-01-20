@@ -28,16 +28,20 @@ export function LoginSignup(props) {
     }
 
     function onLogin(ev = null) {
+        console.log('credentials:', credentials)
         if (ev) ev.preventDefault()
         if (!credentials.username) return
         props.onLogin(credentials)
+        props.onCloseModal()
         clearState()
     }
 
     function onSignup(ev = null) {
+        console.log('credentials:', credentials)
         if (ev) ev.preventDefault()
         if (!credentials.username || !credentials.password || !credentials.fullname) return
         props.onSignup(credentials)
+        props.onCloseModal()
         clearState()
     }
 
@@ -49,69 +53,61 @@ export function LoginSignup(props) {
         setCredentials({ ...credentials, imgUrl })
     }
 
-    return (
-        <div className="login-page">
-            <p>
-                <button className="btn-link" onClick={toggleSignup}>{!isSignup ? 'Signup' : 'Login'}</button>
-            </p>
-            {!isSignup && <form className="login-form" onSubmit={onLogin}>
-                <select
+    const { username, password } = credentials
+    return <section className="login-signup">
+        {!isSignup && <h4>Join Filterr</h4> &&
+            <button className="close-modal-btn" onClick={() => props.onCloseModal()}>X</button>}
+        {!isSignup && <form className="login-form" onSubmit={onLogin}>
+            <input
+                type="text"
+                name="username"
+                value={username}
+                placeholder="Username"
+                onChange={handleChange}
+                required
+                autoFocus
+            />
+            <input
+                type="password"
+                name="password"
+                value={password}
+                placeholder="Password"
+                onChange={handleChange}
+                required
+            />
+            <button>Continue</button>
+        </form>}
+        <div className="signup-section">
+            {isSignup && <h4>Sign In to Filterr</h4> &&
+                <button className="close-modal-btn" onClick={() => props.onCloseModal()}>X</button>}
+            {isSignup && <form className="signup-form" onSubmit={onSignup}>
+                <input
+                    type="text"
+                    name="fullname"
+                    value={credentials.fullname}
+                    placeholder="Fullname"
+                    onChange={handleChange}
+                    required
+                />
+                <input
+                    type="text"
                     name="username"
                     value={credentials.username}
+                    placeholder="Username"
                     onChange={handleChange}
-                >
-                    <option value="">Select User</option>
-                    {users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
-                </select>
-                {/* <input
-                        type="text"
-                        name="username"
-                        value={username}
-                        placeholder="Username"
-                        onChange={handleChange}
-                        required
-                        autoFocus
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        value={password}
-                        placeholder="Password"
-                        onChange={handleChange}
-                        required
-                    /> */}
-                <button>Login!</button>
+                    required
+                />
+                <input
+                    type="password"
+                    name="password"
+                    value={credentials.password}
+                    placeholder="Password"
+                    onChange={handleChange}
+                    required
+                />
+                <button>Continue</button>
             </form>}
-            <div className="signup-section">
-                {isSignup && <form className="signup-form" onSubmit={onSignup}>
-                    <input
-                        type="text"
-                        name="fullname"
-                        value={credentials.fullname}
-                        placeholder="Fullname"
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="username"
-                        value={credentials.username}
-                        placeholder="Username"
-                        onChange={handleChange}
-                        required
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        value={credentials.password}
-                        placeholder="Password"
-                        onChange={handleChange}
-                        required
-                    />
-                    <ImgUploader onUploaded={onUploaded} />
-                    <button >Signup!</button>
-                </form>}
-            </div>
+            <button className="btn-link" onClick={toggleSignup}>{isSignup ? 'Not a member yet? Join now' : 'Already a member? Sign In'}</button>
         </div>
-    )
+    </section>
 }

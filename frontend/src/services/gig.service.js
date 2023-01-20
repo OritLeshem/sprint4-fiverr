@@ -699,12 +699,13 @@ function _createGig(title, price, tags, imgUrl) {
     return gig
 }
 
-function getEmptyGig(title = '', price = 0, tags = [], imgUrl = '../assets/img/demo.jpg') {
+function getEmptyGig(title = '', price = 0, tags = [],daysToMake='', imgUrl = '../assets/img/demo.jpg') {
     return {
         _id: '',
         title,
         price,
         tags,
+        daysToMake,
         imgUrl,
     }
 }
