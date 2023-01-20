@@ -1,7 +1,43 @@
-.user-profile {
-  background-color: pink;
+.user-profile-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border: 1px solid $clr7;
+
+  .user-profile-btn-online {
+    border-radius: 12px;
+    border: 1px solid $clr1 ;
+    color: $clr1;
+    background-color: transparent;
+  }
 
   .user-profile-img {
     width: 100px;
+  }
+
+  .profile-edit-btn {
+    background-color: transparent;
+    color: $clr7;
+
+  }
+
+  .profile-edit-preview-btn {
+    display: block;
+    background-color: transparent;
+    font-size: 14px;
+    padding: 10px 16px;
+    border: 1px solid $clr5;
+    color: $clr5;
+    border-radius: 4px;
+
+    &:hover {
+      transition: background-color 70ms cubic-bezier(.75, 0, .25, 1);
+      background-color: $clr5;
+      color: $clr3 ;
+    }
+
   }
 }

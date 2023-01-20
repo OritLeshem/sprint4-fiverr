@@ -1,3 +1,5 @@
+import { ImgUploader } from "../img-uploader"
+
 export function UserProfile() {
   const user = {
     _id: "u102",
@@ -26,18 +28,21 @@ export function UserProfile() {
     <div className="user-profile">
       User Profile
       <div className="user-profile-info" >
-        <button></button>
+        <button className="user-profile-btn-online">online</button>
         <div className="user-profile-img" ><img src={user.imgUrl}></img></div>
         <h2>{user.username}</h2>
+        <button className="profile-edit-btn fa-solid fa-pencil"></button>
+        <button className="profile-edit-preview-btn"> Preview Fiverr Profile</button>
         <div><span>From</span> <span className="fa-solid fa-location-dot"></span><span>Canada</span></div>
         <div><span>Member since</span> <span className="fa-solid fa-user"></span><span>Apr 2020</span></div>
       </div>
-      <div className="user-profile-Language">
+      <ImgUploader />
+      {/* <div className="user-profile-Language">
         <div>Languages</div>
         <div>English  - Basic</div>
         <div>Linked Accounts</div>
         <div>Google</div>
-      </div>
+      </div> */}
 
 
     </div>
