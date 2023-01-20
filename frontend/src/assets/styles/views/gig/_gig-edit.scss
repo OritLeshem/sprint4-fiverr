@@ -87,3 +87,17 @@
     }
 }
 
+.upload-img-list{
+    display: flex;
+    width: 90%;
+    height: 100px;
+}
+
+.upload-img-gig{
+    margin-right: 15px;
+    img{
+        height: 100px;
+        width: 100%;
+        background-repeat:no-repeat;
+    }
+}

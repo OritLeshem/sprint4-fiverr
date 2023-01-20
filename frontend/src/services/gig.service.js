@@ -699,7 +699,7 @@ function _createGig(title, price, tags, imgUrl) {
     return gig
 }
 
-function getEmptyGig(title = '',description='', price = 0, tags = [],daysToMake='', imgUrl = ['https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png']) {
+function getEmptyGig(title = '',description='', price = 0, tags = [],daysToMake='', imgUrl = []) {
     return {
         _id: '',
         title,
