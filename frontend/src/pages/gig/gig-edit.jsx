@@ -12,7 +12,7 @@ import { gigService } from '../../services/gig.service'
 import { ImgUploader } from '../../cmps/img-uploader'
 
 export function GigEdit() {
-
+    const navigate = useNavigate()
     const { gigId } = useParams()
     const [gigToEdit, setGigToEdit] = useState(gigService.getEmptyGig())
     const gigForFormik = { ...gigToEdit, tags2: '' }
@@ -32,11 +32,11 @@ export function GigEdit() {
             .min(2, 'Too Short!')
             .max(50, 'Too Long!')
             .required('Required'),
-        description:Yup.string()
-        .min(2, 'Too Short!')
-        .max(50, 'Too Long!')
-        .required('Required'),
-            price: Yup.number().min(1, 'minimum 1$').required('Required'),
+        description: Yup.string()
+            .min(2, 'Too Short!')
+            .max(50, 'Too Long!')
+            .required('Required'),
+        price: Yup.number().min(1, 'minimum 1$').required('Required'),
         tags: Yup.string()
             // .min(1, 'Please select an option')
             .required('Required'),
@@ -46,15 +46,16 @@ export function GigEdit() {
 
     })
 
-    //   const goBack = () => {
-    //     navigate('/gig')
-    //   }
-
-    function onUploaded(data){
-        setGigToEdit((prevgig) => ({ ...prevgig, imgUrl:[...prevgig.imgUrl,data]}))
+    const goBack = () => {
+        navigate('/user/userId')
     }
 
-    const onSave = async (values) => {
+    function onUploaded(data) {
+        setGigToEdit((prevgig) => ({ ...prevgig, imgUrl: [...prevgig.imgUrl, data] }))
+
+    }
+
+    const onSubmit = async (values) => {
         try {
             gigToEdit.tags.push(values.tags)
             gigToEdit.tags.push(values.tags2)
@@ -63,7 +64,7 @@ export function GigEdit() {
             gigToEdit.price = values.price
             gigToEdit.daysToMake = values.daysToMake
             console.log(gigToEdit);
-            //   await addGig(gigToEdit, goBack)
+            await addGig(gigToEdit, goBack)
         } catch (err) {
             console.log('Cannot save gig: ', err)
         }
@@ -73,7 +74,7 @@ export function GigEdit() {
         <Formik
             initialValues={gigForFormik}
             validationSchema={GigSchema}
-            onSubmit={onSave}
+            onSubmit={onSubmit}
             enableReinitialize
         >
             {({ errors, touched, values }) => {
@@ -139,13 +140,13 @@ export function GigEdit() {
                                     {errors.daysToMake && touched.daysToMake ? <div>Please select an option</div> : null}
                                 </div>
                             </div>
-                        <ImgUploader onUploaded={onUploaded}/>
-                        {gigToEdit.imgUrl && <ul className="upload-img-list">{gigToEdit.imgUrl.map((img,index)=><li key={index} className="upload-img-gig"><img src={img}/></li>)}</ul>}
+                            <ImgUploader onUploaded={onUploaded} />
+                            {gigToEdit.imgUrl && <ul className="upload-img-list">{gigToEdit.imgUrl.map((img, index) => <li key={index} className="upload-img-gig"><img src={img} /></li>)}</ul>}
                         </div >
                         <div className="gig-edit-btn-wrapper">
-                        <Button variant='contained' type='submit'>
-                            Submit
-                        </Button>
+                            <Button variant='contained' type='submit'>
+                                Submit
+                            </Button>
                         </div>
                     </Form >
                 )
