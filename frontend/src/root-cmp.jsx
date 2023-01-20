@@ -33,7 +33,6 @@ export function RootCmp() {
                 <AppFooter />
             </section>
             <UserMsg />
-
         </>
     )
 }

@@ -1,10 +1,11 @@
 .user-msg {
-    color: white;
+    color: $clr3;
     padding: 10px;
     font-size: 1.4em;
     position: fixed;
     top: 0;
     right: 0;
+    width: 100%;
     background-color: grey;
 }
 
@@ -17,7 +18,7 @@
 }
 
 .user-msg.success {
-    background-color: rgb(41, 189, 73);
+    background-color: $clr1;
 }
 
 .user-msg.error {
