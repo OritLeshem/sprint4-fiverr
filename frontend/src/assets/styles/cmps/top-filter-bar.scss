@@ -29,8 +29,7 @@
     position: absolute;
     top: 45px;
     left: 0;
-    display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
     input {
         width: 120px;
@@ -40,5 +39,33 @@
     label {
         display: block;
     }
+}
 
+.filter-price-btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        border-radius: 4px;
+    }
+}
+
+.price-filter-inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.angle-down {
+    font-size: 12px;
+}
+
+.top-filter-bar {
+    select {
+        border-radius: none;
+    }
+    select:active {
+        background-color: grey;
+    }
 }

@@ -24,7 +24,7 @@ export function AppHeader() {
             navigate('/gig')
             return
         }
-        console.log('filter index1', filterBy)
+
         let queryStringParams
         if (filterBy.tags) queryStringParams = `?category=${filterBy.tags[0]}`
         if (filterBy.title) queryStringParams = `?title=${filterBy.title}`

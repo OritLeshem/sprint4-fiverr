@@ -45,13 +45,17 @@
     padding-bottom: 25px;
 }
 
-.gig-description h4{
+.gig-details h4{
   font-size: 20px;
   line-height: 28px;
   padding-bottom: 25px;
 }
 
-.gig-details-user-details {
+.gig-details p{
+  font-size:1rem;
+}
+
+.gig-details-user-details,.gig-about-seller-details {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
@@ -67,3 +71,20 @@
     margin-right: 10px;
   }
 }
+
+  .gig-about-seller-img{
+    width: 110px;
+    border-radius: 50%;
+  }
+
+  .gig-about-seller-container{
+    border:1px solid $clr8;
+    border-radius: 3px;
+    margin-top: 0;
+    padding: 24px;
+  }
+
+  .seller-container-header{
+    background-color: aqua;
+    display: flex;
+  }

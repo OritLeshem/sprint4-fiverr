@@ -46,7 +46,7 @@ export function GigPayment() {
                         <label htmlFor="card">Card Numbuer</label>
                         <input type="text"
                             name="card"
-                        // value={}
+                            value='5326-1011-8754-8979'
                         />
                     </div>
                     <div className="payment-input security-and-expire">
@@ -54,7 +54,7 @@ export function GigPayment() {
                         <input type="text"
                             name="date"
                             autoComplete="cc-exp"
-                            placeholder="MM/YY"
+                            placeholder="03/28"
                         // value={}
                         />
                     </div>
@@ -63,7 +63,7 @@ export function GigPayment() {
                         <label htmlFor="code" >Security Code</label>
                         <input type="number"
                             name="code"
-                        // value={}
+                            value='345'
                         />
                     </div>
                 </div>
@@ -73,16 +73,21 @@ export function GigPayment() {
                         <label htmlFor="firstname" >First Name</label>
                         <input type="text"
                             name="firstname"
-                        // value={}
+                            value='John'
                         />
                     </div>
                     <div className="payment-input">
                         <label htmlFor="lastname" >Last Name</label>
                         <input type="text"
                             name="lastname"
-                        // value={}
+                            value='Deere'
                         />
                     </div>
+                </div>
+                <div className="paypal">
+                    <label htmlFor="credit and debit ">PayPal
+                        <input name="credit and debit" type="checkbox" />
+                    </label>
                 </div>
             </form>
         </div>
@@ -100,14 +105,18 @@ export function GigPayment() {
                     <li ><span className="green-check fa-solid fa-check"></span> <span> 1 concept included </span></li>
                     <li> <span className="green-check fa-solid fa-check"></span> <span>Include source file</span></li>
                     <li><span className="green-check fa-solid fa-check"></span> <span>Include 3D mockup</span></li>
+                    <li> <span className="green-check fa-solid fa-check"></span> <span>Include source file</span></li>
+                    <li><span className="green-check fa-solid fa-check"></span> <span>Include 3D mockup</span></li>
                 </ul>
-                <div><span>VAT</span><span>$4.39</span></div>
+                <div className="promo-code">Enter promo code</div>
+                <div className="payment-taxes"><span>Service</span><span>$8.39</span></div>
+                <div className="payment-taxes"><span>VAT</span><span>$4.39</span></div>
 
                 <div>
-                    <div><span>Total</span><span>$30.40</span></div>
-                    <div><span>Total delivery time</span><span>1 day</span></div>
+                    <div className="payment-taxes total"><span>Total</span><span>$30.40</span></div>
+                    <div className="payment-taxes"><span>Total delivery time</span><span>1 day</span></div>
                 </div>
-                <button type="submit" form="payment-form">Confirm & Pay</button>
+                <button className="payment-btn" type="submit" form="payment-form">Confirm & Pay</button>
             </section>
         </aside>}
     </section>

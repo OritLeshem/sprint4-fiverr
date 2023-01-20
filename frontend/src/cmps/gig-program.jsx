@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export function GigProgarm({ gig }) {
+export function GigProgram({ gig }) {
   return <div className="gig-details-side">
     <div className="gig-program">
       <h1 className="gig-program-name">Basic</h1>
