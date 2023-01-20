@@ -51,8 +51,7 @@ export function GigEdit() {
     //   }
 
     function onUploaded(data){
-        console.log(data);
-        gigToEdit.imgUrl.push(data) 
+        setGigToEdit((prevgig) => ({ ...prevgig, imgUrl:[...prevgig.imgUrl,data]}))
     }
 
     const onSave = async (values) => {
@@ -141,8 +140,8 @@ export function GigEdit() {
                                 </div>
                             </div>
                         <ImgUploader onUploaded={onUploaded}/>
+                        {gigToEdit.imgUrl && <ul className="upload-img-list">{gigToEdit.imgUrl.map((img,index)=><li key={index} className="upload-img-gig"><img src={img}/></li>)}</ul>}
                         </div >
-                        <div><img src={gigToEdit.imgUrl[0]}/></div>
                         <div className="gig-edit-btn-wrapper">
                         <Button variant='contained' type='submit'>
                             Submit
