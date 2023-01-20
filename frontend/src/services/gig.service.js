@@ -297,11 +297,11 @@ function _createGigs() {
                 likedByUsers: ['mini-user'] // for user-wishlist : use $in
             },
             {
-                _id: 'i110',
+                _id: 'i130',
                 title: "I will translate english to german or translate german to english professionally",
                 price: 30,
                 owner: {
-                    _id: "u110",
+                    _id: "u130",
                     fullname: "Nura Kersa",
                     imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
