@@ -9,12 +9,13 @@ import TextField from '@mui/material/TextField'
 import { addGig } from '../../store/gig/gig.actions'
 
 import { gigService } from '../../services/gig.service'
+import { ImgUploader } from '../../cmps/img-uploader'
 
 export function GigEdit() {
 
     const { gigId } = useParams()
     const [gigToEdit, setGigToEdit] = useState(gigService.getEmptyGig())
-    console.log(gigToEdit);
+    const gigForFormik = { ...gigToEdit, tags2: '' }
 
     useEffect(() => {
         if (!gigId) return
@@ -31,8 +32,15 @@ export function GigEdit() {
             .min(2, 'Too Short!')
             .max(50, 'Too Long!')
             .required('Required'),
-        price: Yup.number().min(1, 'Too Short!').required('Required'),
+        description:Yup.string()
+        .min(2, 'Too Short!')
+        .max(50, 'Too Long!')
+        .required('Required'),
+            price: Yup.number().min(1, 'minimum 1$').required('Required'),
         tags: Yup.string()
+            // .min(1, 'Please select an option')
+            .required('Required'),
+        tags2: Yup.string()
             // .min(1, 'Please select an option')
             .required('Required')
 
@@ -42,13 +50,21 @@ export function GigEdit() {
     //     navigate('/gig')
     //   }
 
+    function onUploaded(data){
+        console.log(data);
+        gigToEdit.imgUrl.push(data) 
+    }
+
     const onSave = async (values) => {
-        console.log(values);
         try {
-            values.tags = [values.tags]
-            values.tags1 = [values.tags]
-            console.log(values);
-            //   await addGig(values, goBack)
+            gigToEdit.tags.push(values.tags)
+            gigToEdit.tags.push(values.tags2)
+            gigToEdit.title = values.title
+            gigToEdit.description = values.description
+            gigToEdit.price = values.price
+            gigToEdit.daysToMake = values.daysToMake
+            console.log(gigToEdit);
+            //   await addGig(gigToEdit, goBack)
         } catch (err) {
             console.log('Cannot save gig: ', err)
         }
@@ -56,7 +72,7 @@ export function GigEdit() {
 
     return (
         <Formik
-            initialValues={gigToEdit}
+            initialValues={gigForFormik}
             validationSchema={GigSchema}
             onSubmit={onSave}
             enableReinitialize
@@ -64,39 +80,75 @@ export function GigEdit() {
             {({ errors, touched, values }) => {
                 return (
                     <Form className='gig-edit-form'>
+                        <div className='gig-edit-form-wrapper'>
+                            <div className="gig-form-title">
+                                <label htmlFor="title">Gig title</label>
+                                <Field type="text" id="title" name="title" placeholder="I will..." />
+                                {errors.title && touched.title ? <div>{errors.title}</div> : null}
+                            </div>
 
-                        <div className="gig-form-title">
-                            <label htmlFor="title">Gig title</label>
-                            <Field type="text" id="title" name="title" />
-                            {errors.title && touched.title ? <div>{errors.title}</div> : null}
-                        </div>
+                            <div className="gig-form-description">
+                                <label htmlFor="description">Gig description</label>
+                                <Field type="text" id="description" name="description" />
+                                {errors.description && touched.description ? <div>{errors.description}</div> : null}
+                            </div>
 
-                        <div className="gig-form-price">
-                            <label htmlFor="price">Price</label>
-                            <Field name="price" id="price" label="price" />
-                            {errors.price && touched.price ? <div>{errors.price}</div> : null}
-                        </div>
-                        
-                        <label htmlFor="tags">Category</label>
-                        <Field as={Select} name='tags'>
-                            <MenuItem value=''>Select A Categry</MenuItem>
-                            <MenuItem value='graphic-design'>Graphic-design</MenuItem>
-                            <MenuItem value='music-audio'>music-audio</MenuItem>
-                            <MenuItem value='lifestyle'>Lifestyle</MenuItem>
-                        </Field>
-                        {errors.tags && touched.tags ? <div>Please select an option</div> : null}
+                            <div className="gig-form-category">
+                                <label htmlFor="tags">Category</label>
+                                <div className="gig-form-category1">
+                                    <Field as={Select} name='tags'>
+                                        <MenuItem value=''>Select A Categry</MenuItem>
+                                        <MenuItem value='graphic-design'>Graphic & design</MenuItem>
+                                        <MenuItem value='digital-marketing'>Digital Marketing</MenuItem>
+                                        <MenuItem value='writing-translation'>Writing & Translation</MenuItem>
+                                        <MenuItem value='video-animation'>Video & Animation</MenuItem>
+                                        <MenuItem value='music-audio'>Music & Audio</MenuItem>
+                                        <MenuItem value='programming-Tech'>Programming & Tech</MenuItem>
+                                        <MenuItem value='business'>Business</MenuItem>
+                                        <MenuItem value='lifestyle'>Lifestyle</MenuItem>
+                                        <MenuItem value='data'>Data</MenuItem>
+                                        <MenuItem value='data'>Photography</MenuItem>
+                                    </Field>
+                                    {errors.tags && touched.tags ? <div>Please select an option</div> : null}
+                                </div>
 
-                        <label htmlFor="daysToMake">Days to make</label>
-                        <Field as={Select} name='daysToMake'>
-                            <MenuItem value='1'>Express</MenuItem>
-                            <MenuItem value='3'>Up to 3 days</MenuItem>
-                            <MenuItem value='7'>Up to 7 days</MenuItem>
-                        </Field>
-                        {errors.daysToMake && touched.daysToMake ? <div>Please select an option</div> : null}
+                                <div className="gig-form-category2">
+                                    <Field as={Select} name='tags2'>
+                                        <MenuItem value=''>Select A Categry</MenuItem>
+                                        <MenuItem value='graphic-design'>Graphic&design</MenuItem>
+                                        <MenuItem value='music-audio'>music&audio</MenuItem>
+                                        <MenuItem value='lifestyle'>Lifestyle</MenuItem>
+                                    </Field>
+                                    {errors.tags2 && touched.tags2 ? <div>Please select an option</div> : null}
+                                </div>
+                            </div >
+
+                            <div className="gig-form-inputs">
+                                <div className="gig-form-price">
+                                    <label htmlFor="price">Price</label>
+                                    <Field name="price" id="price" label="price" />
+                                    {errors.price && touched.price ? <div>{errors.price}</div> : null}
+                                </div>
+
+                                <div className="gig-form-days">
+                                    <label htmlFor="daysToMake">Days to make</label>
+                                    <Field as={Select} name='daysToMake'>
+                                        <MenuItem value='1'>Express</MenuItem>
+                                        <MenuItem value='3'>Up to 3 days</MenuItem>
+                                        <MenuItem value='7'>Up to 7 days</MenuItem>
+                                    </Field>
+                                    {errors.daysToMake && touched.daysToMake ? <div>Please select an option</div> : null}
+                                </div>
+                            </div>
+                        <ImgUploader onUploaded={onUploaded}/>
+                        </div >
+                        <div><img src={gigToEdit.imgUrl[0]}/></div>
+                        <div className="gig-edit-btn-wrapper">
                         <Button variant='contained' type='submit'>
                             Submit
                         </Button>
-                    </Form>
+                        </div>
+                    </Form >
                 )
             }}
         </Formik >
