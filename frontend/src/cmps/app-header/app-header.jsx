@@ -9,12 +9,30 @@ import { SET_FILTER } from '../../store/gig/gig.reducer'
 import { loadGigs, addGig, updateGig, removeGig, addToCart } from '../../store/gig/gig.actions.js'
 import { CategoryMenu } from './header-category-menu'
 import { gigService } from '../../services/gig.service'
+import { useEffect, useRef, useState } from 'react'
+import { Modal } from './modal'
 
 
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const [isModal, setIsModal] = useState(false)
+
+    // useEffect(() => {
+    //     const handleClick = () => {
+    //         if (isModal.current) isModal.current = !isModal.current
+    //     }
+
+    //     document.addEventListener('click', handleClick)
+    //     return () => {
+    //         document.removeEventListener('click', handleClick)
+    //     }
+    // }, [])
+
+    useEffect(()=> {
+
+    }, [isModal])
 
     function onSetFilter(filterBy) {
         dispatch({ type: SET_FILTER, filterBy })
@@ -57,15 +75,24 @@ export function AppHeader() {
         }
     }
 
+    function onOpenModal() {
+        setIsModal(true)
+    }
+
+    function onCloseModal() {
+        setIsModal(false)
+    }
+
     return (
         <header className="app-header">
             <nav className="app-header-nav">
+                {isModal && <Modal onLogin={onLogin} onSignup={onSignup} onCloseModal={onCloseModal}/>}
                 <Link to="/"><h3>Fiverr</h3></Link>
                 <Search onSetFilter={onSetFilter} />
                 <Link className='gig-header-link' to="gig" onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
                 <Link className='gig-header-link' to="gig">Become a seller</Link>
-                <Link className="gig-header-link sign-in-btn">Sign in</Link>
-                <button className="join-btn">Join</button>
+                <Link className="gig-header-link sign-in-btn" onClick={() => onOpenModal()}>Sign in</Link>
+                <button className="join-btn" onClick={() => onOpenModal()}>Join</button>
             </nav>
             <CategoryMenu onSetFilter={onSetFilter} />
         </header >
