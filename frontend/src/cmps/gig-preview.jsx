@@ -8,7 +8,7 @@ export function GigPreview({ gig }) {
         </Link>
 
         <div className="content">
-            <div className="seller-info">
+            <div className="owner-info">
                 <img src={gig.owner && gig.owner.imgUrl} alt="" />
                 <div className="owner">
                     <Link>{gig.owner && gig.owner.fullname}</Link>

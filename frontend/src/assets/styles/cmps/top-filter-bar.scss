@@ -1,9 +1,9 @@
-.top-filter-bar{
-display: flex;
-margin-top: 16px;
+.top-filter-bar {
+    display: flex;
+    margin-top: 16px;
 }
 
-.filter-menu{
+.filter-menu {
     font-family: macan-semibold;
     border: 1px solid #dadbdd;
     padding: 6px 12px;
@@ -14,10 +14,10 @@ margin-top: 16px;
     position: relative;
 }
 
-.price-filter-scroll{
+.price-filter-scroll {
     width: 317px;
     height: 169px;
-    border:1px solid $clr5;
+    border: 1px solid $clr5;
     background-color: $clr3;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 4px;
@@ -25,14 +25,43 @@ margin-top: 16px;
     position: absolute;
     top: 45px;
     left: 0;
-    display: flex;
-    justify-content: space-around;
-    input{
+    justify-content: space-between;
+
+    input {
         width: 120px;
         height: 24px;
     }
-label{
-    display: block;
+
+    label {
+        display: block;
+    }
 }
-    
+
+.filter-price-btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        border-radius: 4px;
+    }
+}
+
+.price-filter-inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.angle-down {
+    font-size: 12px;
+}
+
+.top-filter-bar {
+    select {
+        border-radius: none;
+    }
+    select:active {
+        background-color: grey;
+    }
 }

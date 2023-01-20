@@ -29,7 +29,6 @@ export function Search({ onSetFilter }) {
     // update father cmp that filters change on submit
     ev.preventDefault()
     onSetFilter(filterByToEdit)
-    setFilterByToEdit('')
   }
 
 

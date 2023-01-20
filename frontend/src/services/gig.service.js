@@ -30,7 +30,8 @@ async function query(filterBy = { title: '', tags: [], daysToMake: '' }) {
         gigs = gigs.filter(gig => gig.tags.some(tag => filterBy.tags.includes(tag)))
     }
     if (filterBy.daysToMake) {
-        gigs = gigs.filter(gig => gig.daysToMake <= filterBy.daysToMake)
+        console.log(filterBy.daysToMake);
+        gigs = gigs.filter(gig => +gig.daysToMake <= +filterBy.daysToMake)
     }
     if (filterBy.minPrice) {
         gigs = gigs.filter(gig => gig.price >= filterBy.minPrice)
