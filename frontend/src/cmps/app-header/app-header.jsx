@@ -45,6 +45,7 @@ export function AppHeader() {
             showErrorMsg('Cannot login')
         }
     }
+
     async function onSignup(credentials) {
         try {
             const user = await signup(credentials)
@@ -53,6 +54,7 @@ export function AppHeader() {
             showErrorMsg('Cannot signup')
         }
     }
+
     async function onLogout() {
         try {
             await logout()
@@ -71,43 +73,41 @@ export function AppHeader() {
         setIsModal(false)
     }
 
-    return (
-        <header className="app-header">
-            <nav className="app-header-nav">
-                <div className="left">
-                    <Link to="/"><h3>Fiverr</h3></Link>
-                    <Search onSetFilter={onSetFilter} />
-                </div>
-                <div className="right">
-                    <Link className='gig-header-link' to="gig"
-                        onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
-                    <Link className='gig-header-link' to="gig">Become a seller</Link>
-                    {user &&
-                        <section className="user">
-                            <button className="fa-regular bell"></button>
-                            <button className="fa-regular envelope"></button>
-                            <Link className="fa-regular heart"></Link>
-                            <button>Orders</button>
-                            <div className="user-avatar">
-                                {user.imgUrl && <img src={user.imgUrl}
-                                    onClick={() => setIsDropdown(!isDropdown)} />}
-                                {isDropdown && <Dropdown onLogout={onLogout} />}
-                            </div>
-                        </section>
-                    }
-                    {!user &&
-                        <section className="user-info">
-                            {isModal && <Modal onLogin={onLogin} onSignup={onSignup}
-                                onCloseModal={onCloseModal} />}
-                            <Link className="gig-header-link sign-in-btn"
-                                onClick={() => onOpenModal()}>Sign in</Link>
-                            <button className="join-btn"
-                                onClick={() => onOpenModal()}>Join</button>
-                        </section>
-                    }
-                </div>
-            </nav>
-            <CategoryMenu onSetFilter={onSetFilter} />
-        </header >
-    )
+    return <header className="app-header">
+        <nav className="app-header-nav">
+            <div className="left">
+                <Link to="/"><h3>Fiverr</h3></Link>
+                <Search onSetFilter={onSetFilter} />
+            </div>
+            <div className="right">
+                <Link className='gig-header-link' to="gig"
+                    onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
+                <Link className='gig-header-link' to="gig">Become a seller</Link>
+                {user &&
+                    <section className="user">
+                        <button className="fa-regular bell"></button>
+                        <button className="fa-regular envelope"></button>
+                        <Link className="fa-regular heart"></Link>
+                        <button>Orders</button>
+                        <div className="user-avatar">
+                            {user.imgUrl && <img src={user.imgUrl}
+                                onClick={() => setIsDropdown(!isDropdown)} />}
+                            {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown}/>}
+                        </div>
+                    </section>
+                }
+                {!user &&
+                    <section className="user-info">
+                        {isModal && <Modal onLogin={onLogin} onSignup={onSignup}
+                            onCloseModal={onCloseModal} />}
+                        <Link className="gig-header-link sign-in-btn"
+                            onClick={() => onOpenModal()}>Sign in</Link>
+                        <button className="join-btn"
+                            onClick={() => onOpenModal()}>Join</button>
+                    </section>
+                }
+            </div>
+        </nav>
+        <CategoryMenu onSetFilter={onSetFilter} />
+    </header >
 }
