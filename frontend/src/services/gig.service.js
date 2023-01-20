@@ -11,7 +11,9 @@ export const gigService = {
     save,
     remove,
     getEmptyGig,
-    getDefaultFilter
+    getDefaultFilter,
+    getGigFirstSlides,
+    getGigLastSlides
     // addGigMsg
 }
 
@@ -77,6 +79,67 @@ async function save(gig) {
 
 //     return msg
 // }
+
+function getGigFirstSlides() {
+    return [
+        {
+            url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_305,dpr_2.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png',
+            desc: 'Build your brand',
+            category: 'Logo Design'
+        },
+        {
+            url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_305,dpr_2.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png',
+            desc: 'Customize your site',
+            category: 'WordPress'
+        },
+        {
+            url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_305,dpr_2.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741669/voiceover-2x.png',
+            desc: 'hare your message',
+            category: 'Voice Over'
+        },
+        {
+            url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741663/animated-explainer-2x.png',
+            desc: 'Engage your audience',
+            category: 'Video Explainer'
+        },
+        {
+            url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png',
+            desc: 'Reach more customers',
+            category: 'Social Media'
+        }
+    ]
+}
+
+function getGigLastSlides() {
+    return [
+        {
+            url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741668/seo-2x.png',
+            desc: 'Unlock growth online',
+            category: 'SEO'
+        },
+        {
+            url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741664/illustration-2x.png',
+            desc: 'Color your dreams',
+            category: 'Illustration'
+        },
+        {
+            url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741674/translation-2x.png',
+            desc: 'Go global',
+            category: 'Translation'
+        },
+        {
+            url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741664/data-entry-2x.png',
+            desc: 'Learn your business',
+            category: 'Data Entry'
+        },
+        {
+            url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png',
+            desc: 'Showcase your story',
+            category: 'Book Covers'
+        }
+    ]
+
+}
 
 function _createGigs() {
     let gigs = utilService.loadFromStorage(STORAGE_KEY)

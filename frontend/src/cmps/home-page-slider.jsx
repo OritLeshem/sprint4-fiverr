@@ -34,7 +34,13 @@ export function HomePageSlider() {
         backgroundImage: `url(${slides[currentIndex].url})`,
     }
 
-    return <section className="home-page-slider">
-        <div className="hero-img" style={slideStyles}></div>  
+    return <section className="home-page-slider full main-layout">
+        <div className="hero-img full" style={slideStyles}></div>
+        <div className="hero-container main-header">
+            <h1>
+                <span>Find the perfect</span><i>freelance</i>
+                <span>services for your business</span>
+            </h1>
+        </div>
     </section>
 }

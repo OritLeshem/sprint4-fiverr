@@ -20,8 +20,8 @@ export function AppHeader() {
     function onSetFilter(filterBy) {
         dispatch({ type: SET_FILTER, filterBy })
 
-        if(!filterBy.tags && !filterBy.title){
-            navigate('/gig') 
+        if (!filterBy.tags && !filterBy.title) {
+            navigate('/gig')
             return
         }
         console.log('filter index1', filterBy)
@@ -60,18 +60,15 @@ export function AppHeader() {
 
     return (
         <header className="app-header">
-            <nav className='app-header-nav'>
+            <nav className="app-header-nav">
                 <Link to="/"><h3>Fiverr</h3></Link>
-
                 <Search onSetFilter={onSetFilter} />
-
                 <Link className='gig-header-link' to="gig" onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
                 <Link className='gig-header-link' to="gig">Become a seller</Link>
                 <Link className="gig-header-link sign-in-btn">Sign in</Link>
                 <button className="join-btn">Join</button>
-
             </nav>
             <CategoryMenu onSetFilter={onSetFilter} />
-        </header>
+        </header >
     )
 }

@@ -1,22 +1,10 @@
-import { useEffect, useRef, useState } from "react"
-import { gigService } from "../services/gig.service.js"
-import { utilService } from "../services/util.service.js"
+import { useRef, useState } from "react"
 
+import { gigService } from "../services/gig.service"
 
 export function Search({ onSetFilter }) {
-
   const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
-
-  const debounceFilter = useRef(utilService.debounce(onSetFilter, 500))
-
   const elInputRef = useRef(null)
-
-
-
-  // useEffect(() => {
-  //   // update father cmp that filters change very type
-  //   debounceFilter.current(filterByToEdit)
-  // }, [filterByToEdit])
 
   function handleChange({ target }) {
     let { value, name: field, type } = target
@@ -34,7 +22,6 @@ export function Search({ onSetFilter }) {
 
 
   return <form className="gig-search" onSubmit={onSubmitFilter}>
-    {/* <label htmlFor="name">Name</label> */}
     <input type="text"
       className="gig-search"
       id="title"

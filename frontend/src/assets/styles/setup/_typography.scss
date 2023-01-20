@@ -39,12 +39,16 @@
     font-family: fa-solid;
 }
 
-.fa-solid.xmark:after {
-    content: "\f00d";
+.fa-solid.chevron-left:after {
+    content: "\f053";
 }
 
-.fa-solid.arrow-left:after {
-    content: "\f060";
+.fa-solid.chevron-right:after {
+    content: "\f054";
+}
+
+.fa-solid.xmark:after {
+    content: "\f00d";
 }
 
 .fa-solid.sort-up:after {
