@@ -55,7 +55,7 @@ export function GigEdit() {
 
     }
 
-    const onSubmit = async (values) => {
+    const onSave = async (values) => {
         try {
             gigToEdit.tags.push(values.tags)
             gigToEdit.tags.push(values.tags2)
@@ -74,7 +74,7 @@ export function GigEdit() {
         <Formik
             initialValues={gigForFormik}
             validationSchema={GigSchema}
-            onSubmit={onSubmit}
+            onSubmit={onSave}
             enableReinitialize
         >
             {({ errors, touched, values }) => {
