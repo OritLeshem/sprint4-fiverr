@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 import { loadGigs, addGig, updateGig, removeGig, addToCart } from '../../store/gig/gig.actions.js'
 
@@ -11,6 +11,7 @@ import { SET_FILTER } from '../../store/gig/gig.reducer'
 import { Search } from '../../cmps/app-header/header-search.jsx'
 import { TopFilterBar } from '../../cmps/gig/top-filter-bar.jsx'
 import { UserProfile } from '../../cmps/user/user-profile.jsx'
+import { userService } from '../../services/user.service.js'
 
 export function UserIndex() {
 
@@ -18,12 +19,14 @@ export function UserIndex() {
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
     const dispatch = useDispatch()
     const [searchParams, setSearchParams] = useSearchParams()
+    const user = userService.getLoggedinUser()
+    console.log('user index', user)
 
 
 
     useEffect(() => {
         // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
-        loadGigs(filterBy, 'u102')
+        loadGigs(filterBy, user._id)
         console.log(gigs)
     }, [filterBy, searchParams])
 
@@ -79,7 +82,7 @@ export function UserIndex() {
 
             <div className="user-index-info">  <UserProfile /></div>
             <main className="user-index-main-container">
-                <button onClick={onAddGig}>Add +</button>
+                <Link to="/gig/edit">Add +</Link>
                 <UserList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
             </main>
 

@@ -25,6 +25,7 @@ export function GigEdit() {
 
     const loadGig = async () => {
         const gig = await gigService.getById(gigId)
+        console.log('gig from edit:', gig)
         setGigToEdit(gig)
     }
 
@@ -53,7 +54,7 @@ export function GigEdit() {
 
     function onUploaded(data) {
         gigToEdit.imgUrl.push(data)
-        setToEdit((prevImg) => ({ ...prevImg, data}))
+        setToEdit((prevImg) => ({ ...prevImg, data }))
     }
 
     const onSave = async (values) => {
@@ -64,7 +65,8 @@ export function GigEdit() {
             gigToEdit.description = values.description
             gigToEdit.price = values.price
             gigToEdit.daysToMake = values.daysToMake
-            await addGig(gigToEdit, goBack)
+            await addGig(gigToEdit)
+            navigate('/gig')
         } catch (err) {
             console.log('Cannot save gig: ', err)
         }
