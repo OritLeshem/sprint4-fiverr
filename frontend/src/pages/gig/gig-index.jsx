@@ -2,12 +2,12 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
 
-import { loadGigs, addGig, updateGig, removeGig, addToCart } from '../../store/gig.actions.js'
+import { loadGigs, addGig, updateGig, removeGig, addToCart } from '../../store/gig/gig.actions.js'
 
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
 import { gigService } from '../../services/gig.service.js'
 import { GigList } from '../../cmps/gig/gig-list.jsx'
-import { SET_FILTER } from '../../store/gig.reducer'
+import { SET_FILTER } from '../../store/gig/gig.reducer'
 import { Search } from '../../cmps/app-header/header-search.jsx'
 import { TopFilterBar } from '../../cmps/gig/top-filter-bar.jsx'
 

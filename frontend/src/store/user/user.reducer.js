@@ -1,4 +1,4 @@
-import { userService } from '../services/user.service.js'
+import { userService } from '../../services/user.service.js'
 
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
@@ -13,7 +13,7 @@ const initialState = {
     count: 10,
     user: userService.getLoggedinUser(),
     users: [],
-    watchedUser : null
+    watchedUser: null
 }
 
 export function userReducer(state = initialState, action) {
