@@ -22,8 +22,9 @@ function getDefaultFilter() {
     return { title: '', tags: [], daysToMake: '', minPrice: '', maxPrice: '' }
 }
 
-async function query(filterBy = { title: '', tags: [], daysToMake: '' }) {
+async function query(filterBy = { title: '', tags: [], daysToMake: '' }, userId) {
     var gigs = await storageService.query(STORAGE_KEY)
+    if (userId) gigs = gigs.filter(gig => gig.owner._id === userId)
     if (filterBy.title) {
         const regex = new RegExp(filterBy.title, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
@@ -179,11 +180,11 @@ function _createGigs() {
                 title: "I will do elegant professional business logo design services",
                 price: 12,
                 owner: {
-                    _id: "u103",
-                    fullname: "Ssudu Dda",
+                    _id: "u102",
+                    fullname: "Dudu Sa",
                     imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
-                    rate: 4
+                    rate: 5
                 },
                 daysToMake: 3,
                 description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
@@ -203,14 +204,13 @@ function _createGigs() {
             {
                 _id: 'i104',
                 title: "I will do 3 modern minimalist logo design",
-                title: "I will create a beautiful web design ",
                 price: 18,
                 owner: {
-                    _id: "u104",
-                    fullname: "Puki Dfa",
+                    _id: "u102",
+                    fullname: "Dudu Sa",
                     imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
                     level: "basic/premium",
-                    rate: 2
+                    rate: 5
                 },
                 daysToMake: 1,
                 description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
