@@ -20,6 +20,7 @@
 @import "views/gig/gig-payment";
 @import "views/review-app";
 @import "views/user/user-details";
+@import "views/gig/gig-edit";
 
 // Components
 @import "cmps/app-header/app-header";
@@ -36,3 +37,7 @@
 @import "cmps/gig/top-filter-bar";
 @import "cmps/gig/gig-program";
 @import "cmps/slider/details-carousel";
+
+@import "cmps/user/user-index";
+@import "cmps/user/user-list";
+@import "cmps/user/user-profile";

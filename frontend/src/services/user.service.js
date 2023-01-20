@@ -37,7 +37,7 @@ function remove(userId) {
     // return httpService.delete(`user/${userId}`)
 }
 
-async function update({_id, score}) {
+async function update({ _id, score }) {
     const user = await storageService.get('user', _id)
     user.score = score
     await storageService.put('user', user)
@@ -81,7 +81,7 @@ async function changeScore(by) {
 
 
 function saveLocalUser(user) {
-    user = {_id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, score: user.score}
+    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, score: user.score }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -99,3 +99,27 @@ function getLoggedinUser() {
 
 
 
+const users = [
+    {
+        _id: "u102",
+        fullname: "User 2",
+        imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+        username: "user2",
+        password: "secret",
+        level: "basic/premium",
+        reviews: [
+            {
+                id: "madeId",
+                gig: "{optional-mini-gig}",
+                txt: "Very kind and works fast",
+                rate: 4,
+                by: {
+                    _id: "u103",
+                    fullname: "user3",
+                    imgUrl: "https://cdn.pixabay.com/photo/2021/07/01/02/01/avatar-6377965_960_720.png"
+                }
+            }
+        ],
+    }
+
+]
