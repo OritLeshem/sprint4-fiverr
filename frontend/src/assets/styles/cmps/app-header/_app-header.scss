@@ -2,6 +2,7 @@
     z-index: 2;
 
     .gig-header-link {
+        font-family: macan-semibold;
         color: $clr5;
         transition: color 70ms cubic-bezier(.75, 0, .25, 1);
 
@@ -21,8 +22,8 @@
         }
     }
 
-
     .join-btn {
+        font-family: macan-semibold;
         background-color: transparent;
         border: 1px solid $clr1;
         color: $clr1;
@@ -47,7 +48,7 @@
 .app-header-nav {
     @include flex;
     border-bottom: 1px solid #e4e5e7;
-    padding: .5em 0;
+    padding: 1em 0;
 
     .left {
         @include flex;

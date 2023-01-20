@@ -51,7 +51,15 @@
 }
 
 .trusted-by {
+    background-color: $clr9;
+    color: #b5b6ba;
     margin-bottom: 6rem;
+    display: flex;
+    align-items: center;
+
+    .img-container {
+        width: em(96px, 16px);
+    }
 }
 
 .main-content {
@@ -64,9 +72,8 @@
 
 .selling-proposition {
     background-color: #f1fdf7;
-    padding: 4rem 2rem;
-    @include flex;
-    margin-bottom: 6rem;
+    padding: em(96px, 18px) 0;
+    margin-bottom: em(96px, 18px);
 
     .img-container {
         flex-basis: 53%;
