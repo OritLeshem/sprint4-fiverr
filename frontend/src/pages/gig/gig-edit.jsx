@@ -12,7 +12,7 @@ import { gigService } from '../../services/gig.service'
 import { ImgUploader } from '../../cmps/img-uploader'
 
 export function GigEdit() {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const { gigId } = useParams()
     const [gigToEdit, setGigToEdit] = useState(gigService.getEmptyGig())
     const [imgToGig, setToEdit] = useState()
