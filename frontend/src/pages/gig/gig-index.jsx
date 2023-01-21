@@ -88,7 +88,8 @@ export function GigIndex() {
 
     return (
         <section className="gig-index">
-            {/* <h3>Gigs App</h3> */}
+            {searchParams.get('category') &&<h3>{searchParams.get('category')}</h3> ||<h3>ALL</h3>}
+            {gigs.length>0 &&<p>{gigs.length} Services available</p> ||<p>No Services available</p>}
             {/* <button onClick={onAddGig}>Add Gig ⛐</button> */}
             <TopFilterBar onSetFilter={onSetFilter} />
             <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
