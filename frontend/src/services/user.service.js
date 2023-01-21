@@ -1,7 +1,10 @@
 import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
+import { utilService } from './util.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
+const STORAGE_KEY = 'user'
+_createUsers()
 
 export const userService = {
     login,
@@ -99,27 +102,414 @@ function getLoggedinUser() {
 
 
 
-const users = [
-    {
-        _id: "u102",
-        fullname: "User 2",
-        imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
-        username: "user2",
-        password: "secret",
-        level: "basic/premium",
-        reviews: [
+
+function _createUsers() {
+    let users = utilService.loadFromStorage(STORAGE_KEY)
+    if (!users || !users.length) {
+        users = [
             {
-                id: "madeId",
-                gig: "{optional-mini-gig}",
-                txt: "Very kind and works fast",
-                rate: 4,
-                by: {
-                    _id: "u103",
-                    fullname: "user3",
-                    imgUrl: "https://cdn.pixabay.com/photo/2021/07/01/02/01/avatar-6377965_960_720.png"
-                }
+                _id: "u102",
+                fullname: "Dudu Sa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
+                username: "user2",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 4,
+                        by: {
+                            _id: "u103",
+                            fullname: "user3",
+                            imgUrl: "https://cdn.pixabay.com/photo/2021/07/01/02/01/avatar-6377965_960_720.png"
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u105",
+                fullname: "Jo Bara",
+                imgUrl: 'https://cdn.pixabay.com/photo/2017/08/06/15/13/woman-2593366_960_720.jpg',
+                username: "user5",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 4,
+                        by: {
+                            _id: "u104",
+                            fullname: "user4",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u106",
+                fullname: "Bobo Basa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664_960_720.jpg',
+                username: "user6",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 4,
+                        by: {
+                            _id: "u107",
+                            fullname: "Zozo Ta",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u107",
+                fullname: "Zozo Ta",
+                imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/16/01/woman-1846127_960_720.jpg',
+                username: "user7",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 4,
+                        by: {
+                            _id: "u104",
+                            fullname: "user4",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u108",
+                fullname: "Mumu Asa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2017/05/31/04/59/beautiful-2359121_960_720.jpg',
+                username: "user8",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 4,
+                        by: {
+                            _id: "u107",
+                            fullname: "Zozo Ta",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/16/01/woman-1846127_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u109",
+                fullname: "Quti Vvfa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2018/03/12/20/57/woman-3220835_960_720.jpg',
+                username: "user8",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 4,
+                        by: {
+                            _id: "u107",
+                            fullname: "Zozo Ta",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/16/01/woman-1846127_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u130",
+                fullname: "Nura Kersa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2018/03/12/20/57/woman-3220835_960_720.jpg',
+                username: "user130",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 1,
+                        by: {
+                            _id: "u107",
+                            fullname: "Zozo Ta",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/16/01/woman-1846127_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u111",
+                fullname: "Bobo Basa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/03/35/girl-1867092_960_720.jpg',
+                username: "user130",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 2,
+                        by: {
+                            _id: "u130",
+                            fullname: "Nura Kersa",
+
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/05/46/young-woman-1867618_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u112",
+                fullname: "Dudu Sa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg',
+                username: "user112",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 5,
+                        by: {
+                            _id: "u130",
+                            fullname: "Nura Kersa",
+
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/05/46/young-woman-1867618_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u113",
+                fullname: "Ssudu Dda",
+                imgUrl: 'https://cdn.pixabay.com/photo/2017/06/26/02/47/man-2442565_960_720.jpg',
+                username: "user113",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 5,
+                        by: {
+                            _id: "u130",
+                            fullname: "Nura Kersa",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/05/46/young-woman-1867618_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u114",
+                fullname: "Puki Dfa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg',
+                username: "user114",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 2,
+                        by: {
+                            _id: "u113",
+                            fullname: "Ssudu Dda",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2017/06/26/02/47/man-2442565_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u114",
+                fullname: "Puki Dfa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg',
+                username: "user114",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 2,
+                        by: {
+                            _id: "u113",
+                            fullname: "Ssudu Dda",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2017/06/26/02/47/man-2442565_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u115",
+                fullname: "Jo Bara",
+                imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+                username: "user115",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 5,
+                        by: {
+                            _id: "u113",
+                            fullname: "Ssudu Dda",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2017/06/26/02/47/man-2442565_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u116",
+                fullname: "Bobo Basa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg',
+                username: "user116",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 5,
+                        by: {
+                            _id: "u115",
+                            fullname: "Jo Bara",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u117",
+                fullname: "Zozo Ta",
+                imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg',
+                username: "user117",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 2,
+                        by: {
+                            _id: "u115",
+                            fullname: "Jo Bara",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u118",
+                fullname: "Mumu Asa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2017/04/01/21/06/portrait-2194457_960_720.jpg',
+                username: "user117",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 3,
+                        by: {
+                            _id: "u115",
+                            fullname: "Jo Bara",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u119",
+                fullname: "Quti Vvfa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2018/11/08/23/52/man-3803551_960_720.jpg',
+                username: "user119",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 4,
+                        by: {
+                            _id: "u115",
+                            fullname: "Jo Bara",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u120",
+                fullname: "Nura Kersa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2018/04/27/03/50/portrait-3353699_960_720.jpg',
+                username: "user120",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 1,
+                        by: {
+                            _id: "u115",
+                            fullname: "Jo Bara",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+                        }
+                    }
+                ],
+            },
+            {
+                _id: "u121",
+                fullname: "Bobo Basa",
+                imgUrl: 'https://cdn.pixabay.com/photo/2018/04/27/03/50/portrait-3353699_960_720.jpg',
+                username: "user121",
+                password: "secret",
+                level: "basic/premium",
+                reviews: [
+                    {
+                        id: "madeId",
+                        gig: "{optional-mini-gig}",
+                        txt: "Very kind and works fast",
+                        rate: 1,
+                        by: {
+                            _id: "u115",
+                            fullname: "Jo Bara",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+                        }
+                    }
+                ],
             }
-        ],
+        ]
+        utilService.saveToStorage(STORAGE_KEY, users)
     }
 
-]
+}

@@ -8,9 +8,9 @@ export const gigs = [
     owner: {
       _id: "u102",
       fullname: "Dudu Sa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
       level: "basic/premium",
-      rate: 5
+      rate: 3
     },
     daysToMake: 2,
     description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
@@ -32,11 +32,11 @@ export const gigs = [
     title: "I will do elegant professional business logo design services",
     price: 12,
     owner: {
-      _id: "u103",
-      fullname: "Ssudu Dda",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      _id: "u102",
+      fullname: "Dudu Sa",
+      imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
       level: "basic/premium",
-      rate: 4
+      rate: 5
     },
     daysToMake: 3,
     description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
@@ -56,14 +56,13 @@ export const gigs = [
   {
     _id: 'i104',
     title: "I will do 3 modern minimalist logo design",
-    title: "I will create a beautiful web design ",
     price: 18,
     owner: {
-      _id: "u104",
-      fullname: "Puki Dfa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      _id: "u102",
+      fullname: "Dudu Sa",
+      imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
       level: "basic/premium",
-      rate: 2
+      rate: 3
     },
     daysToMake: 1,
     description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
@@ -87,7 +86,7 @@ export const gigs = [
     owner: {
       _id: "u105",
       fullname: "Jo Bara",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2017/08/06/15/13/woman-2593366_960_720.jpg',
       level: "basic/premium",
       rate: 5
     },
@@ -113,7 +112,7 @@ export const gigs = [
     owner: {
       _id: "u106",
       fullname: "Bobo Basa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664_960_720.jpg',
       level: "basic/premium",
       rate: 1
     },
@@ -140,7 +139,7 @@ export const gigs = [
     owner: {
       _id: "u107",
       fullname: "Zozo Ta",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/16/01/woman-1846127_960_720.jpg',
       level: "basic/premium",
       rate: 2
     },
@@ -166,7 +165,7 @@ export const gigs = [
     owner: {
       _id: "u108",
       fullname: "Mumu Asa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2017/05/31/04/59/beautiful-2359121_960_720.jpg',
       level: "basic/premium",
       rate: 3
     },
@@ -193,7 +192,7 @@ export const gigs = [
     owner: {
       _id: "u109",
       fullname: "Quti Vvfa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2018/03/12/20/57/woman-3220835_960_720.jpg',
       level: "basic/premium",
       rate: 4
     },
@@ -219,7 +218,7 @@ export const gigs = [
     owner: {
       _id: "u130",
       fullname: "Nura Kersa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/05/46/young-woman-1867618_960_720.jpg',
       level: "basic/premium",
       rate: 1
     },
@@ -246,9 +245,9 @@ export const gigs = [
     owner: {
       _id: "u111",
       fullname: "Bobo Basa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/03/35/girl-1867092_960_720.jpg',
       level: "basic/premium",
-      rate: 4
+      rate: 2
     },
     daysToMake: 3,
     description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
@@ -273,7 +272,7 @@ export const gigs = [
     owner: {
       _id: "u112",
       fullname: "Dudu Sa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg',
       level: "basic/premium",
       rate: 5
     },
@@ -299,9 +298,9 @@ export const gigs = [
     owner: {
       _id: "u113",
       fullname: "Ssudu Dda",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2017/06/26/02/47/man-2442565_960_720.jpg',
       level: "basic/premium",
-      rate: 4
+      rate: 5
     },
     daysToMake: 3,
     description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
@@ -326,7 +325,7 @@ export const gigs = [
     owner: {
       _id: "u114",
       fullname: "Puki Dfa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg',
       level: "basic/premium",
       rate: 2
     },
@@ -353,7 +352,7 @@ export const gigs = [
     owner: {
       _id: "u115",
       fullname: "Jo Bara",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
       level: "basic/premium",
       rate: 5
     },
@@ -380,7 +379,7 @@ export const gigs = [
     owner: {
       _id: "u116",
       fullname: "Bobo Basa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg',
       level: "basic/premium",
       rate: 1
     },
@@ -408,7 +407,7 @@ export const gigs = [
     owner: {
       _id: "u117",
       fullname: "Zozo Ta",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg',
       level: "basic/premium",
       rate: 2
     },
@@ -417,7 +416,6 @@ export const gigs = [
     imgUrl: [
       "https://cdn.pixabay.com/photo/2022/08/14/08/26/abstract-art-7385225_960_720.jpg",
       "https://cdn.pixabay.com/photo/2022/09/10/18/23/print-7445476_960_720.png",
-
       "https://cdn.pixabay.com/photo/2022/08/14/08/26/abstract-art-7385224_960_720.jpg"
     ],
     tags: [
@@ -435,7 +433,7 @@ export const gigs = [
     owner: {
       _id: "u118",
       fullname: "Mumu Asa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2017/04/01/21/06/portrait-2194457_960_720.jpg',
       level: "basic/premium",
       rate: 3
     },
@@ -463,7 +461,7 @@ export const gigs = [
     owner: {
       _id: "u119",
       fullname: "Quti Vvfa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2018/11/08/23/52/man-3803551_960_720.jpg',
       level: "basic/premium",
       rate: 4
     },
@@ -490,7 +488,7 @@ export const gigs = [
     owner: {
       _id: "u120",
       fullname: "Nura Kersa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2018/04/27/03/50/portrait-3353699_960_720.jpg',
       level: "basic/premium",
       rate: 1
     },
@@ -517,9 +515,9 @@ export const gigs = [
     owner: {
       _id: "u121",
       fullname: "Bobo Basa",
-      imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+      imgUrl: 'https://cdn.pixabay.com/photo/2015/01/12/10/45/man-597178_960_720.jpg',
       level: "basic/premium",
-      rate: 4
+      rate: 1
     },
     daysToMake: 3,
     description: "Best Gig for Travel Affiliates Programs absolutely automated websites!!! Up to 3,000,000 Hotels, 600 Airlines, Over 1,000 Cruises, 23,000 tours & activities from 2,200 global destinations, and a variety of Car Rental companies on one website. Start Earning Money more traffic makes generate more money. Each time your users click on the deals suggested by the Search Engine, you will be making affiliate commissions, also on booking.",
@@ -540,6 +538,412 @@ export const gigs = [
   }
 ]
 
+
+const users = [
+  {
+    _id: "u102",
+    fullname: "Dudu Sa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
+    username: "user2",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 4,
+        by: {
+          _id: "u103",
+          fullname: "user3",
+          imgUrl: "https://cdn.pixabay.com/photo/2021/07/01/02/01/avatar-6377965_960_720.png"
+        }
+      }
+    ],
+  },
+  {
+    _id: "u105",
+    fullname: "Jo Bara",
+    imgUrl: 'https://cdn.pixabay.com/photo/2017/08/06/15/13/woman-2593366_960_720.jpg',
+    username: "user5",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 4,
+        by: {
+          _id: "u104",
+          fullname: "user4",
+          imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u106",
+    fullname: "Bobo Basa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664_960_720.jpg',
+    username: "user6",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 4,
+        by: {
+          _id: "u107",
+          fullname: "Zozo Ta",
+          imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u107",
+    fullname: "Zozo Ta",
+    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/16/01/woman-1846127_960_720.jpg',
+    username: "user7",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 4,
+        by: {
+          _id: "u104",
+          fullname: "user4",
+          imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u108",
+    fullname: "Mumu Asa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2017/05/31/04/59/beautiful-2359121_960_720.jpg',
+    username: "user8",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 4,
+        by: {
+          _id: "u107",
+          fullname: "Zozo Ta",
+          imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/16/01/woman-1846127_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u109",
+    fullname: "Quti Vvfa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2018/03/12/20/57/woman-3220835_960_720.jpg',
+    username: "user8",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 4,
+        by: {
+          _id: "u107",
+          fullname: "Zozo Ta",
+          imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/16/01/woman-1846127_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u130",
+    fullname: "Nura Kersa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2018/03/12/20/57/woman-3220835_960_720.jpg',
+    username: "user130",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 1,
+        by: {
+          _id: "u107",
+          fullname: "Zozo Ta",
+          imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/16/01/woman-1846127_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u111",
+    fullname: "Bobo Basa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/03/35/girl-1867092_960_720.jpg',
+    username: "user130",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 2,
+        by: {
+          _id: "u130",
+          fullname: "Nura Kersa",
+
+          imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/05/46/young-woman-1867618_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u112",
+    fullname: "Dudu Sa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg',
+    username: "user112",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 5,
+        by: {
+          _id: "u130",
+          fullname: "Nura Kersa",
+
+          imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/05/46/young-woman-1867618_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u113",
+    fullname: "Ssudu Dda",
+    imgUrl: 'https://cdn.pixabay.com/photo/2017/06/26/02/47/man-2442565_960_720.jpg',
+    username: "user113",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 5,
+        by: {
+          _id: "u130",
+          fullname: "Nura Kersa",
+          imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/05/46/young-woman-1867618_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u114",
+    fullname: "Puki Dfa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg',
+    username: "user114",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 2,
+        by: {
+          _id: "u113",
+          fullname: "Ssudu Dda",
+          imgUrl: 'https://cdn.pixabay.com/photo/2017/06/26/02/47/man-2442565_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u114",
+    fullname: "Puki Dfa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg',
+    username: "user114",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 2,
+        by: {
+          _id: "u113",
+          fullname: "Ssudu Dda",
+          imgUrl: 'https://cdn.pixabay.com/photo/2017/06/26/02/47/man-2442565_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u115",
+    fullname: "Jo Bara",
+    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+    username: "user115",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 5,
+        by: {
+          _id: "u113",
+          fullname: "Ssudu Dda",
+          imgUrl: 'https://cdn.pixabay.com/photo/2017/06/26/02/47/man-2442565_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u116",
+    fullname: "Bobo Basa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg',
+    username: "user116",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 5,
+        by: {
+          _id: "u115",
+          fullname: "Jo Bara",
+          imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u117",
+    fullname: "Zozo Ta",
+    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg',
+    username: "user117",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 2,
+        by: {
+          _id: "u115",
+          fullname: "Jo Bara",
+          imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u118",
+    fullname: "Mumu Asa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2017/04/01/21/06/portrait-2194457_960_720.jpg',
+    username: "user117",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 3,
+        by: {
+          _id: "u115",
+          fullname: "Jo Bara",
+          imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u119",
+    fullname: "Quti Vvfa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2018/11/08/23/52/man-3803551_960_720.jpg',
+    username: "user119",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 4,
+        by: {
+          _id: "u115",
+          fullname: "Jo Bara",
+          imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u120",
+    fullname: "Nura Kersa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2018/04/27/03/50/portrait-3353699_960_720.jpg',
+    username: "user120",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 1,
+        by: {
+          _id: "u115",
+          fullname: "Jo Bara",
+          imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+        }
+      }
+    ],
+  },
+  {
+    _id: "u121",
+    fullname: "Bobo Basa",
+    imgUrl: 'https://cdn.pixabay.com/photo/2018/04/27/03/50/portrait-3353699_960_720.jpg',
+    username: "user121",
+    password: "secret",
+    level: "basic/premium",
+    reviews: [
+      {
+        id: "madeId",
+        gig: "{optional-mini-gig}",
+        txt: "Very kind and works fast",
+        rate: 1,
+        by: {
+          _id: "u115",
+          fullname: "Jo Bara",
+          imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
+        }
+      }
+    ],
+  }
+]
+
+
 const orders = [
   {
     "_id": "o1225",
@@ -551,29 +955,7 @@ const orders = [
       "price": 20
     },
     "status": "pending"
-  }
-]
-
-const users = [
-  {
-    "_id": "u101",
-    "fullname": "User 1",
-    "imgUrl": 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
-    "username": "user1",
-    "password": "secret",
-    "level": "basic/premium",
-    "reviews": [
-      {
-        "id": "madeId",
-        "gig": "{optional-mini-gig}",
-        "txt": "Very kind and works fast",
-        "rate": 4,
-        "by": {
-          "_id": "u102",
-          "fullname": "user2",
-          "imgUrl": "/img/img2.jpg"
-        }
-      }
-    ],
   },
+
+
 ]
