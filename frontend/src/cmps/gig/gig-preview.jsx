@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
+import { SlideGigPreview } from '../slide/slide-gig-preview'
 
 export function GigPreview({ gig }) {
 
     return <>
         <Link to={`/gig/${gig._id}`} className="img-container">
-            <img src={gig.imgUrl[0]} alt="" />
+            <SlideGigPreview gig={gig}/>
+            {/* <img src={gig.imgUrl[0]} alt="" /> */}
         </Link>
 
         <div className="content">
