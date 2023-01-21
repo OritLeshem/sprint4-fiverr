@@ -25,7 +25,7 @@ export default function UserBuyTable({ orders }) {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Order id</TableCell>
+            <TableCell>Order</TableCell>
             <TableCell align="right">Seller</TableCell>
             <TableCell align="right">Gig title</TableCell>
             <TableCell align="right">Price</TableCell>
