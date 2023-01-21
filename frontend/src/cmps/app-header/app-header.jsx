@@ -73,41 +73,43 @@ export function AppHeader() {
         setIsModal(false)
     }
 
-    return <header className="app-header">
-        <nav className="app-header-nav">
-            <div className="left">
-                <Link to="/"><h3>Fiverr</h3></Link>
-                <Search onSetFilter={onSetFilter} />
-            </div>
-            <div className="right">
-                <Link className='gig-header-link' to="gig"
-                    onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
-                <Link className='gig-header-link' to="gig">Become a seller</Link>
-                {user &&
-                    <section className="user">
-                        <button className="fa-regular bell"></button>
-                        <button className="fa-regular envelope"></button>
-                        <Link className="fa-regular heart"></Link>
-                        <button>Orders</button>
-                        <div className="user-avatar">
+    return <>
+        <section className="app-header">
+            <nav className="app-header-nav">
+                <div>
+                    <Link to="/"><h3 className="logo">finderr<span>.</span></h3></Link>
+                    <Search onSetFilter={onSetFilter} />
+                </div>
+                <div>
+                    <Link to="gig"
+                        onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
+                    <Link to="gig">Become a seller</Link>
+                    {user &&
+                        <>
+                            <button className="fa-regular bell"></button>
+                            <button className="fa-regular envelope"></button>
+                            <Link className="fa-regular heart"></Link>
+                            <button>Orders</button>
                             {user.imgUrl && <img src={user.imgUrl}
                                 onClick={() => setIsDropdown(!isDropdown)} />}
-                            {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown}/>}
-                        </div>
-                    </section>
-                }
-                {!user &&
-                    <section className="user-info">
-                        {isModal && <Modal onLogin={onLogin} onSignup={onSignup}
-                            onCloseModal={onCloseModal} />}
-                        <Link className="gig-header-link sign-in-btn"
-                            onClick={() => onOpenModal()}>Sign in</Link>
-                        <button className="join-btn"
-                            onClick={() => onOpenModal()}>Join</button>
-                    </section>
-                }
-            </div>
-        </nav>
-        <CategoryMenu onSetFilter={onSetFilter} />
-    </header >
+                            {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} />}
+                        </>
+                    }
+                    {!user &&
+                        <>
+                            {isModal && <Modal onLogin={onLogin} onSignup={onSignup}
+                                onCloseModal={onCloseModal} />}
+                            <Link onClick={() => onOpenModal()}>Sign in</Link>
+                            <button className="join-btn" onClick={() => onOpenModal()}>Join</button>
+                        </>
+                    }
+                </div>
+            </nav>
+        </section>
+        <div className="main-app-header full"></div>
+        <section className="app-header">
+            <CategoryMenu onSetFilter={onSetFilter} />
+        </section>
+        <div className="main-app-header full"></div>
+    </>
 }

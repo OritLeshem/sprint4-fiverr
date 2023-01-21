@@ -36,7 +36,7 @@ export function UserProfile() {
         <div className="user-profile-img" ><img src={user.imgUrl}></img></div>
         <h2>{user.username}</h2>
         <button className="profile-edit-btn fa-solid fa-pencil"></button>
-        <button className="profile-edit-preview-btn"> Preview Fiverr Profile</button>
+        <button className="profile-edit-preview-btn"> Preview Finderr Profile</button>
         <div><span>From</span> <span className="fa-solid fa-location-dot"></span><span>Canada</span></div>
         <div><span>Member since</span> <span className="fa-solid fa-user"></span><span>Apr 2020</span></div>
       </div>

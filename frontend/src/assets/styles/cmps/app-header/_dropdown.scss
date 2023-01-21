@@ -1,5 +1,7 @@
 .dropdown {
+    z-index: 1;
     min-width: 180px;
+    top: 64px;
     right: 32px;
     background-color: $clr3;
     position: absolute;

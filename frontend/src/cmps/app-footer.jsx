@@ -3,7 +3,7 @@ export function AppFooter() {
 
     return <footer className="app-footer">
         <div className="footer-rights">
-            <span>Fiverr</span>
+            <h3 className="logo">finderr.</h3>
             <p>© coffee rightts logo 2023</p>
         </div>
 
