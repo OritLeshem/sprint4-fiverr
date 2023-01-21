@@ -2,12 +2,20 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { showErrorMsg, showSuccessMsg } from "../../services/event-bus.service"
 import { gigService } from "../../services/gig.service"
+import { userService } from "../../services/user.service"
+import { addOrder } from "../../store/order/order.actions"
 
 export function GigPayment() {
+    const user = userService.getLoggedinUser()
     const [gig, setGig] = useState()
+
+
+
+
+
     const navigate = useNavigate()
     const { gigId } = useParams();
-    console.log(gigId)
+    // console.log(order)
 
     useEffect(() => {
         loadGig()
@@ -25,11 +33,34 @@ export function GigPayment() {
         }
     }
 
-    function onSubmitPayment(ev) {
+    async function onSubmitPayment(ev) {
         ev.preventDefault()
         showSuccessMsg('Your order is send!')
         console.log(`${gig.title}`, `, within ${gig.daysToMake}`, ' working days. \n Speak to you soon,\n  ', `${gig.owner.fullname}`)
         console.log('send!')
+        const order = {
+            buyer: {
+                _id: user._id,
+                fullname: user.fullname
+
+            },
+            seller: {
+                _id: gig.owner._id,
+                fullname: gig.owner.fullname,
+            },
+            gig: {
+                _id: gig._id,
+                title: gig.title,
+                price: gig.price
+            },
+            status: "pending"
+        }
+        console.log(order)
+        try {
+            await addOrder(order)
+            navigate('/gig')
+        }
+        catch (err) { console.log("cant add order", err) }
     }
 
     return <section className="gig-payment">
@@ -100,7 +131,8 @@ export function GigPayment() {
 
             <section className="summary">
 
-                <div className="basic-and-price"><span className='basic'>BASIC</span ><span className="price">$8.15</span></div>
+                {gig && <div className="basic-and-price"><span className='basic'>BASIC</span >
+                    <span className="price">${gig.price}</span></div>}
                 <ul>
                     <li ><span className="green-check fa-solid fa-check"></span> <span> 1 concept included </span></li>
                     <li> <span className="green-check fa-solid fa-check"></span> <span>Include source file</span></li>

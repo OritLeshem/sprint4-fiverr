@@ -12,6 +12,7 @@ import { Search } from '../../cmps/app-header/header-search.jsx'
 import { TopFilterBar } from '../../cmps/gig/top-filter-bar.jsx'
 import { UserProfile } from '../../cmps/user/user-profile.jsx'
 import { userService } from '../../services/user.service.js'
+import { UserSales } from '../../cmps/user/user-sales.jsx'
 
 export function UserIndex() {
 
@@ -82,6 +83,7 @@ export function UserIndex() {
 
             <div className="user-index-info">  <UserProfile /></div>
             <main className="user-index-main-container">
+                <UserSales />
                 <Link to="/gig/edit">Add +</Link>
                 <UserList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
             </main>
