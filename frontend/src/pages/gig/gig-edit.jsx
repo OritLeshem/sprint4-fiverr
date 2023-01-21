@@ -64,7 +64,7 @@ export function GigEdit() {
             gigToEdit.price = values.price
             gigToEdit.daysToMake = values.daysToMake
             await addGig(gigToEdit)
-            navigate('/gig')
+            navigate('/user')
         } catch (err) {
             console.log('Cannot save gig: ', err)
         }

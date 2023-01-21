@@ -178,7 +178,7 @@ function _createGigs() {
                 owner: {
                     _id: "u102",
                     fullname: "Dudu Sa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
                     level: "basic/premium",
                     rate: 5
                 },
@@ -204,7 +204,7 @@ function _createGigs() {
                 owner: {
                     _id: "u102",
                     fullname: "Dudu Sa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
                     level: "basic/premium",
                     rate: 5
                 },
@@ -230,7 +230,7 @@ function _createGigs() {
                 owner: {
                     _id: "u102",
                     fullname: "Dudu Sa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
                     level: "basic/premium",
                     rate: 5
                 },
@@ -256,7 +256,7 @@ function _createGigs() {
                 owner: {
                     _id: "u105",
                     fullname: "Jo Bara",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2017/08/06/15/13/woman-2593366_960_720.jpg',
                     level: "basic/premium",
                     rate: 5
                 },
@@ -282,7 +282,7 @@ function _createGigs() {
                 owner: {
                     _id: "u106",
                     fullname: "Bobo Basa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664_960_720.jpg',
                     level: "basic/premium",
                     rate: 1
                 },
@@ -309,7 +309,7 @@ function _createGigs() {
                 owner: {
                     _id: "u107",
                     fullname: "Zozo Ta",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/16/01/woman-1846127_960_720.jpg',
                     level: "basic/premium",
                     rate: 2
                 },
@@ -335,7 +335,7 @@ function _createGigs() {
                 owner: {
                     _id: "u108",
                     fullname: "Mumu Asa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2017/05/31/04/59/beautiful-2359121_960_720.jpg',
                     level: "basic/premium",
                     rate: 3
                 },
@@ -362,7 +362,7 @@ function _createGigs() {
                 owner: {
                     _id: "u109",
                     fullname: "Quti Vvfa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2018/03/12/20/57/woman-3220835_960_720.jpg',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -388,7 +388,7 @@ function _createGigs() {
                 owner: {
                     _id: "u130",
                     fullname: "Nura Kersa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/05/46/young-woman-1867618_960_720.jpg',
                     level: "basic/premium",
                     rate: 1
                 },
@@ -415,7 +415,7 @@ function _createGigs() {
                 owner: {
                     _id: "u111",
                     fullname: "Bobo Basa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/03/35/girl-1867092_960_720.jpg',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -442,7 +442,7 @@ function _createGigs() {
                 owner: {
                     _id: "u112",
                     fullname: "Dudu Sa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg',
                     level: "basic/premium",
                     rate: 5
                 },
@@ -468,7 +468,7 @@ function _createGigs() {
                 owner: {
                     _id: "u113",
                     fullname: "Ssudu Dda",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2017/06/26/02/47/man-2442565_960_720.jpg',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -495,7 +495,7 @@ function _createGigs() {
                 owner: {
                     _id: "u114",
                     fullname: "Puki Dfa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg',
                     level: "basic/premium",
                     rate: 2
                 },
@@ -522,7 +522,7 @@ function _createGigs() {
                 owner: {
                     _id: "u115",
                     fullname: "Jo Bara",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/09/38/adult-1868750_960_720.jpg',
                     level: "basic/premium",
                     rate: 5
                 },
@@ -549,7 +549,7 @@ function _createGigs() {
                 owner: {
                     _id: "u116",
                     fullname: "Bobo Basa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg',
                     level: "basic/premium",
                     rate: 1
                 },
@@ -577,7 +577,7 @@ function _createGigs() {
                 owner: {
                     _id: "u117",
                     fullname: "Zozo Ta",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg',
                     level: "basic/premium",
                     rate: 2
                 },
@@ -604,7 +604,7 @@ function _createGigs() {
                 owner: {
                     _id: "u118",
                     fullname: "Mumu Asa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2017/04/01/21/06/portrait-2194457_960_720.jpg',
                     level: "basic/premium",
                     rate: 3
                 },
@@ -632,7 +632,7 @@ function _createGigs() {
                 owner: {
                     _id: "u119",
                     fullname: "Quti Vvfa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2018/11/08/23/52/man-3803551_960_720.jpg',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -659,7 +659,7 @@ function _createGigs() {
                 owner: {
                     _id: "u120",
                     fullname: "Nura Kersa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2018/04/27/03/50/portrait-3353699_960_720.jpg',
                     level: "basic/premium",
                     rate: 1
                 },
@@ -686,7 +686,7 @@ function _createGigs() {
                 owner: {
                     _id: "u121",
                     fullname: "Bobo Basa",
-                    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+                    imgUrl: 'https://cdn.pixabay.com/photo/2015/01/12/10/45/man-597178_960_720.jpg',
                     level: "basic/premium",
                     rate: 4
                 },
@@ -708,9 +708,6 @@ function _createGigs() {
                 likedByUsers: ['mini-user'] // for user-wishlist : use $in
             }
         ]
-        // gigs.unshift(_createGig('I wiil design an outstanding logo', 53, ["design", "graphic-design"]))
-        // gigs.unshift(_createGig('I will do 3 modern minimalist logo design', 67, ["design"]))
-        // gigs.unshift(_createGig('I will do 3 modern minimalist logo design', 94, ["digital-marketing"]))
         utilService.saveToStorage(STORAGE_KEY, gigs)
     }
 }

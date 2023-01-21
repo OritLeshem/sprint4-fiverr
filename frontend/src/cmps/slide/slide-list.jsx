@@ -11,6 +11,8 @@ export function SlideList({ slides, onSetSlides }) {
                 </li>
             )}
         </ul>
+
+
         <button className="slide-btn fa-solid chevron-right" onClick={() => onSetSlides()}></button>
     </section>
 }

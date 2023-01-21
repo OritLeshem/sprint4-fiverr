@@ -1,27 +1,31 @@
+import { userService } from "../../services/user.service"
 import { ImgUploader } from "../img-uploader"
 
+
 export function UserProfile() {
-  const user = {
-    _id: "u102",
-    fullname: "User 2",
-    imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
-    username: "user2",
-    password: "secret",
-    level: "basic/premium",
-    reviews: [
-      {
-        id: "madeId",
-        gig: "{optional-mini-gig}",
-        txt: "Very kind and works fast",
-        rate: 4,
-        by: {
-          _id: "u103",
-          fullname: "user3",
-          imgUrl: "https://cdn.pixabay.com/photo/2021/07/01/02/01/avatar-6377965_960_720.png"
-        }
-      }
-    ],
-  }
+  const user = userService.getLoggedinUser()
+
+  // const user = {
+  //   _id: "u102",
+  //   fullname: "User 2",
+  //   imgUrl: 'https://cdn.pixabay.com/photo/2014/03/24/17/19/teacher-295387_960_720.png',
+  //   username: "user2",
+  //   password: "secret",
+  //   level: "basic/premium",
+  //   reviews: [
+  //     {
+  //       id: "madeId",
+  //       gig: "{optional-mini-gig}",
+  //       txt: "Very kind and works fast",
+  //       rate: 4,
+  //       by: {
+  //         _id: "u103",
+  //         fullname: "user3",
+  //         imgUrl: "https://cdn.pixabay.com/photo/2021/07/01/02/01/avatar-6377965_960_720.png"
+  //       }
+  //     }
+  //   ],
+  // }
 
   return (
 

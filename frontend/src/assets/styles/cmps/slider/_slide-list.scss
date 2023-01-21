@@ -1,5 +1,4 @@
 .slide-list-container {
-    position: relative;
     transform: translateZ(0);
     overflow: hidden;
 
@@ -15,13 +14,21 @@
         // top: 50%;
         // line-height: 100%;
     }
+
+
+
+
 }
 
 .slide-list {
+    position: relative;
+
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.125rem;
     margin-bottom: 3rem;
+
+
 
     img {
         border-radius: .25rem;
