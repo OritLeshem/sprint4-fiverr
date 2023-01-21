@@ -1,6 +1,5 @@
 .main-layout {
     display: grid;
-    grid-template-columns: $layoutPadding 1fr $layoutPadding;
     
     > * {
         grid-column: 2;
@@ -18,6 +17,10 @@
         grid-column: -1 / 2;
     }
 
+    
+   @include for-mobile-layout {
+    grid-template-columns: $layoutPadding 1fr $layoutPadding;
+   }
     
     @include for-narrow-layout {
         grid-template-columns:

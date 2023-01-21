@@ -1,0 +1,50 @@
+.app-header-nav {
+    @include flex;
+    padding: 1em 0;
+
+    div:first-of-type {
+        flex-basis: 50%;
+        @include flex;
+    }
+
+    div:last-of-type {
+        flex-basis: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: end;
+        font-family: macan-semibold;
+        color: #74767e;
+
+        &>* {
+            margin-inline-start: em(24px, 16px);
+        }
+
+        img {
+            border-radius: 50%;
+            width: em(32px, 16px);
+            height: em(32px, 16px);
+            cursor: pointer;
+        }
+
+        a, button {
+            background-color: transparent;
+            color: $clr5;
+        }
+    }
+}
+
+.join-btn {
+    font-size: rem(14px);
+    color: $clr1;
+    background-color: transparent;
+    padding: em(10px, 14px) em(16px, 14px);
+    border: 1px solid $clr1;
+    border-radius: em(4px, 14px);
+    transition: color .5s ease, border .5s ease;
+
+    &:hover {
+        background-color: $clr1;
+        color: $clr3
+    }
+}

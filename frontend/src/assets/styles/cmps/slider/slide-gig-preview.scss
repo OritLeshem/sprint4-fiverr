@@ -1,0 +1,39 @@
+.gig-preview-img {
+    position: relative;
+    &:hover{
+        .prev,.next {
+        display: block;
+    }
+}
+    img {
+        width: 100%;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        display: none;
+        // padding: 10px;
+        // align-self: center;
+        position: absolute;
+        // top: 40%;
+        // width: auto;
+        // background-color: #fff;
+        // color: #62646a;
+        // border-radius: 50%;
+        // width: 3em;
+        // height: 3em;
+        // box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+        // text-align: center;
+    }
+
+    .next {
+        right: 0;
+        transform: translate(0, 0);
+    }
+
+    .prev {
+        transform: translate(0, 0);
+    }
+}

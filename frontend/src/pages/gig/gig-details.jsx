@@ -4,6 +4,7 @@ import ImageSlider from "../../cmps/slide/image-slider"
 import { gigService } from "../../services/gig.service"
 import { showErrorMsg } from "../../services/event-bus.service"
 import { GigProgram } from "../../cmps/gig/gig-program"
+import { SlideDetails } from "../../cmps/slide/slide-details"
 
 
 export function GigDetails() {
@@ -50,7 +51,7 @@ export function GigDetails() {
                     <p>(10) 1 Order in Queue</p>
                 </div>
             </div>
-            <ImageSlider gig={gig} />
+            <SlideDetails gig={gig}/>
             <div className="gig-review-section">
                 <h4>What people loved about this seller</h4>
             </div>

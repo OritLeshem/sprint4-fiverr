@@ -27,6 +27,7 @@
 
 // Components
 @import "cmps/app-header/app-header";
+@import "cmps/app-header/app-header-nav";
 @import "cmps/app-header/modal";
 @import "cmps/app-header/dropdown";
 @import "cmps/user/login-signup";
@@ -41,6 +42,7 @@
 @import "cmps/gig/top-filter-bar";
 @import "cmps/gig/gig-program";
 @import "cmps/slider/details-carousel";
-
+@import "cmps/slider/slide-details";
 @import "cmps/user/user-list";
 @import "cmps/user/user-profile";
+@import "cmps/slider/slide-gig-preview";
