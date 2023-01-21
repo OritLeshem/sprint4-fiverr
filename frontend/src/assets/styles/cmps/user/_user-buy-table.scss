@@ -1,0 +1,31 @@
+.buy-order-list {
+  border: 1px solid $clr7;
+  height: 500px;
+  width: 500px;
+  background-color: #fff;
+  right: 50px;
+  top: 60px;
+  position: absolute;
+  display: flex;
+  border-bottom: 1px solid $clr7 ;
+  align-items: center;
+  z-index: 40;
+
+  .buy-order-img {
+    width: 40px;
+    margin: 20px;
+  }
+
+  .buy-order-seller-status {
+    display: flex;
+  }
+
+  .buy-order-sellername {
+    color: $clr6;
+    margin-right: 10px;
+  }
+
+  .buy-order-status {
+    color: $clr1;
+  }
+}

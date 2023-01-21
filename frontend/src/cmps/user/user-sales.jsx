@@ -18,7 +18,7 @@ export function UserSales() {
   return <div>
     <h2>Sales</h2>
     <UserSellerTable orders={orders.filter(order => order.seller._id === user._id)} />
-    <h2>Buy</h2>
-    <UserBuyTable orders={orders.filter(order => order.buyer._id === user._id)} />
+    {/* <h2>Buy</h2>
+    <UserBuyTable orders={orders.filter(order => order.buyer._id === user._id)} /> */}
   </div>
 }

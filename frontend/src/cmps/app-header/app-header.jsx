@@ -12,6 +12,7 @@ import { gigService } from '../../services/gig.service'
 import { useEffect, useRef, useState } from 'react'
 import { Modal } from './modal'
 import { Dropdown } from './dropdown'
+import UserBuyTable from '../user/user-buy-table'
 
 
 export function AppHeader() {
@@ -20,6 +21,7 @@ export function AppHeader() {
     const navigate = useNavigate()
     const [isModal, setIsModal] = useState(false)
     const [isDropdown, setIsDropdown] = useState(false)
+    const [isOrder, setIsOrder] = useState(false)
     const { pathname } = window.location
 
     function onSetFilter(filterBy) {
@@ -74,9 +76,12 @@ export function AppHeader() {
     function onCloseModal() {
         setIsModal(false)
     }
-
+    function handleOrder() {
+        setIsOrder(prev => !prev)
+    }
     return <>
         <section className={`app-header ${pathname === '/' && 'header-home-page main-layout'}`} >
+
             <nav className="app-header-nav">
                 <div className="app-header-aside">
                     <Link to="/"><h3 className={`logo ${pathname === '/' && 'home-page-link'}`}>finderr<span>.</span></h3></Link>
@@ -91,7 +96,7 @@ export function AppHeader() {
                             <button className="user-link fa-regular bell" title="Notifications"></button>
                             <button className="user-link fa-regular envelope" title="Messages"></button>
                             <Link className="user-link fa-regular heart" title="Lists"></Link>
-                            <button className="user-link">Orders</button>
+                            <button onClick={handleOrder} className="user-link">Orders</button>
                             {user.imgUrl && <img src={user.imgUrl}
                                 onClick={() => setIsDropdown(!isDropdown)} />}
                             {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} />}
@@ -107,6 +112,7 @@ export function AppHeader() {
                     }
                 </div>
             </nav>
+            {isOrder && <UserBuyTable />}
         </section>
         {pathname !== '/' && <>
             <div className="main-app-header full"></div>
