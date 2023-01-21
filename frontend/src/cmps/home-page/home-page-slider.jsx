@@ -1,8 +1,13 @@
 import { useEffect, useRef, useState } from "react"
+import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import { SET_FILTER } from "../../store/gig/gig.reducer"
 import { Search } from "../app-header/header-search"
 
 export function HomePageSlider() {
     const [currentIndex, setCurrentIndex] = useState(0)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     let intervalIdRef = useRef(null)
 
     const slides = [
@@ -12,6 +17,22 @@ export function HomePageSlider() {
         { url: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049967/bg-hero-4-900-x2.png' },
         { url: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049979/bg-hero-5-900-x2.png' },
     ]
+
+    function onSetFilter(filterBy) {
+        dispatch({ type: SET_FILTER, filterBy })
+
+        if (!filterBy.tags && !filterBy.title) {
+            navigate('/gig')
+            return
+        }
+
+        let queryStringParams
+        if (filterBy.tags) queryStringParams = `?category=${filterBy.tags[0]}`
+        if (filterBy.title) queryStringParams = `?title=${filterBy.title}`
+        // const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + queryStringParams
+        // window.history.pushState({ path: newUrl }, '', newUrl)
+        navigate(`/gig${queryStringParams}`)
+    }
 
     useEffect(() => {
         if (currentIndex === slides.length - 1) {
@@ -41,7 +62,7 @@ export function HomePageSlider() {
             <main className="main-header">
                 <span>Find the perfect<i>freelance</i></span>
                 <span>services for your business</span>
-                <Search />
+                <Search onSetFilter={onSetFilter}/>
                 <ul className="popular">
                     popular:
                     <li><a>Website Design</a></li>

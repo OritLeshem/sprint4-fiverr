@@ -26,7 +26,7 @@ export function Search({ onSetFilter }) {
       className="gig-search"
       id="title"
       name="title"
-      placeholder={pathname === '/' ? "Try \"building mobile app\"" : "What service are you looking for today?"}
+      placeholder={pathname === '/' ? "Try \"logo design\"" : "What service are you looking for today?"}
       value={filterByToEdit.title}
       onChange={handleChange}
       ref={elInputRef}
