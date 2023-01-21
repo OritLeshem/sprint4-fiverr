@@ -19,6 +19,7 @@
 }
 
 .price-filter-scroll {
+    z-index:99;
     width: 317px;
     height: 169px;
     border: 1px solid $clr5;
