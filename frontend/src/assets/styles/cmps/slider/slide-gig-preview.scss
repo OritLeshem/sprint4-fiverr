@@ -1,17 +1,18 @@
 .gig-preview-img {
     position: relative;
-    &:hover{
-        .prev,.next {
-        display: block;
-    }
-}
-    img {
-        width: 100%;
+
+    &:hover {
+
+        .prev,
+        .next {
+            display: block;
+        }
     }
 
     /* Next & previous buttons */
     .prev,
     .next {
+        background-position: -25px 0;
         cursor: pointer;
         display: none;
         // padding: 10px;
@@ -21,7 +22,6 @@
         // width: auto;
         // background-color: #fff;
         // color: #62646a;
-        // border-radius: 50%;
         // width: 3em;
         // height: 3em;
         // box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
@@ -35,5 +35,9 @@
 
     .prev {
         transform: translate(0, 0);
+    }
+
+    span:after {
+        background: transparent url(https://fiverr-res.cloudinary.com/npm-assets/@fiverr/search_perseus/apps/carousel-arrows.b9dde63.svg) no-repeat;
     }
 }

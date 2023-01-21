@@ -38,10 +38,17 @@ export function HomePageSlider() {
     return <section className="home-page-slider full main-layout">
         <div className="hero-img full" style={slideStyles}></div>
         <div className="hero-container full main-layout">
-            <main>
+            <main className="main-header">
                 <span>Find the perfect<i>freelance</i></span>
                 <span>services for your business</span>
                 <Search />
+                <ul className="popular">
+                    popular:
+                    <li><a>Website Design</a></li>
+                    <li><a>WordPress</a></li>
+                    <li><a>Logo Design</a></li>
+                    <li><a>Video Editing</a></li>
+                </ul>
             </main>
         </div>
     </section>
