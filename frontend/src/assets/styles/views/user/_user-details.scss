@@ -11,7 +11,8 @@
 
     .Pending {
         background-color:  #E2A114;
-        padding: 12px 24px;
+        width: 120px;
+        padding: 12px;
         text-align: center;
         font-family: macan-bold;
         border-radius: 4px;
@@ -19,7 +20,8 @@
 
     .Completed {
         background-color: $clr1;
-        padding: 12px 24px;
+        width: 120px;
+        padding: 12px;
         text-align: center;
         font-family: macan-bold;
         border-radius: 4px;
@@ -27,7 +29,8 @@
 
     .Declined {
         background-color:#F31F1F;
-        padding: 12px 24px;
+        width: 120px;
+        padding: 12px;
         text-align: center;
         font-family: macan-bold;
         border-radius: 4px;
