@@ -106,6 +106,6 @@
 
 .gig-details-side {
   height: fit-content;
-  position: fixed;
-  right: 32px;
+  position: sticky;
+  top: 32px;
 }
