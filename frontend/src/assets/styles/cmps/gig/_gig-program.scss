@@ -2,9 +2,7 @@
   height: fit-content;
   color: $clr5;
   border: 1px solid $clr7;
-
-  // width: 33.6%;
-
+  position: sticky;
 
   .gig-program-name {
     border-right: 1px solid $clr7;
@@ -12,9 +10,6 @@
     width: fit-content;
     margin: 0;
   }
-
-
-
 }
 
 .gig-program-info {
@@ -38,8 +33,6 @@
   .green-check {
     color: $clr1;
   }
-
-
 }
 
 .gig-details-side {
@@ -58,7 +51,7 @@
   line-height: 100%;
   padding: 12px 24px;
   text-align: center;
-  position:relative;
+  position: relative;
   display: inline-block;
 
   &:hover {

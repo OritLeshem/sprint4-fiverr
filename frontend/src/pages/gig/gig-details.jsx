@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import ImageSlider from "../../cmps/slide/image-slider"
-import { gigService } from "../../services/gig.service";
-import { showErrorMsg } from "../../services/event-bus.service.js"
-import { GigProgram } from "../../cmps/gig/gig-program";
+import { gigService } from "../../services/gig.service"
+import { showErrorMsg } from "../../services/event-bus.service"
+import { GigProgram } from "../../cmps/gig/gig-program"
 
 
 export function GigDetails() {
     const [gig, setGig] = useState()
     const navigate = useNavigate()
-    const { gigId } = useParams();
+    const { gigId } = useParams()
 
     useEffect(() => {
         loadGig()
@@ -26,18 +26,12 @@ export function GigDetails() {
             navigate('/gig')
         }
     }
-    const containerStyles = {
-        marginTop: '15px',
-        width: '100%',
-        height: '380px',
-        margin: '0 auto',
-    }
 
     if (!gig) return <div>Loading...</div>
     return <section className="gig-details">
         <div className="gig-details-info">
             <div className="gig-details-overview">
-                <span>Graphics & design &gt; Logo Design</span>
+                <span>Graphics & design &gt Logo Design</span>
                 <h1>{gig.title}</h1>
                 <div className="gig-details-user-details">
                     <img className="gig-details-user-img" src={gig.owner.imgUrl} alt="user-img" />
@@ -56,13 +50,7 @@ export function GigDetails() {
                     <p>(10) 1 Order in Queue</p>
                 </div>
             </div>
-            {/* <img className="gig-details-user-img" src={require('../assets/img/avatar.png')} alt="user-img" /> */}
-            {/* <img src={require('../assets/img/demo.jpg')} alt="" /> */}
-            {/* < div className="containerStyles" > */}
-            <ImageSlider
-                //  slides={slides}
-                gig={gig} />
-            {/* </div> */}
+            <ImageSlider gig={gig} />
             <div className="gig-review-section">
                 <h4>What people loved about this seller</h4>
             </div>

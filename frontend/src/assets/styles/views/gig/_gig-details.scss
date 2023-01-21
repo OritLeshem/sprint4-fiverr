@@ -1,11 +1,19 @@
 .gig-details {
   display: flex;
   justify-content: space-between;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 32px;
+  padding: em(32px, 16px) em(32px, 16px) 0 em(32px, 16px);
   margin: 0 auto;
   max-width: 1304px;
+
+  p {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: rem(20px);
+    padding-bottom: em(25px, 20px);
+  }
 
   .gig-details-info {
     width: 60%;
@@ -39,29 +47,19 @@
   margin-bottom: 64px;
 }
 
-.gig-review-section{
-  font-size: 20px;
-    line-height: 28px;
-    padding-bottom: 25px;
-}
-
-.gig-details h4{
+.gig-review-section {
   font-size: 20px;
   line-height: 28px;
   padding-bottom: 25px;
 }
 
-.gig-details p{
-  font-size:1rem;
-}
-
-.gig-details-user-details,.gig-about-seller-details {
+.gig-details .gig-details-user-details,
+.gig-about-seller-details {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
 
   .user-fullname {
-
     margin-right: 8px;
     font-size: 1rem;
     font-family: macan-bold;
@@ -72,19 +70,22 @@
   }
 }
 
-  .gig-about-seller-img{
-    width: 110px;
-    border-radius: 50%;
-  }
+.gig-about-seller-img {
+  width: 110px;
+  border-radius: 50%;
+}
 
-  .gig-about-seller-container{
-    border:1px solid $clr8;
-    border-radius: 3px;
-    margin-top: 0;
-    padding: 24px;
-  }
+.gig-about-seller-container {
+  border: 1px solid $clr8;
+  border-radius: 3px;
+  margin-top: 0;
+  padding: 24px;
+}
 
-  .seller-container-header{
-    background-color: aqua;
-    display: flex;
-  }
+.seller-container-header {
+  display: flex;
+}
+
+.gig-description p {
+  margin-bottom: 1em;
+}

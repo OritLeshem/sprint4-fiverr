@@ -5,7 +5,7 @@ export function GigProgram({ gig }) {
     <div className="gig-program">
       <h1 className="gig-program-name">Basic</h1>
       <div className="gig-program-info">
-        <h2 className="gig-program-price">$ {gig.price}</h2>
+        <h2 className="gig-program-price">${gig.price}</h2>
         <p>save up to 10% with <span className="gig-program-subscribe">Subscribe to Save</span></p>
         <p><span className="gig-program-basic">** Basic ** 1 </span>{gig.title}</p>
         <p>3 Days Delivery Unlimited Revisions</p>
