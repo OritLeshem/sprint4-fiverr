@@ -1,4 +1,5 @@
 .gig-details {
+  position: relative;
   display: flex;
   justify-content: space-between;
   padding: em(32px, 16px) em(32px, 16px) 0 em(32px, 16px);
@@ -18,10 +19,10 @@
   .gig-details-info {
     width: 60%;
 
-    span {
-      display: block;
-      color: #446ee7;
-    }
+    // span {
+    //   display: block;
+    //   color: #446ee7;
+    // }
 
     h1 {
       word-wrap: break-word;
@@ -30,22 +31,29 @@
       line-height: 1.4;
     }
 
-    .gig-details-user-img {
-      width: 30px;
-      border-radius: 50%;
-      margin-right: 30px;
+    .gig-details-user-details {
+      margin-top: 20px;
 
+
+
+      .gig-details-user-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 30px;
+
+      }
     }
   }
 }
 
-.containerStyles {
-  margin-top: 15px;
-  width: 100%;
-  height: 380px;
-  margin: 0 auto;
-  margin-bottom: 64px;
-}
+// .containerStyles {
+//   margin-top: 15px;
+//   width: 100%;
+//   height: 380px;
+//   margin: 0 auto;
+//   margin-bottom: 64px;
+// }
 
 .gig-review-section {
   font-size: 20px;
@@ -54,7 +62,7 @@
 }
 
 .gig-details .gig-details-user-details,
-.gig-about-seller-details {
+.gig-about-owner-details {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
@@ -70,22 +78,57 @@
   }
 }
 
-.gig-about-seller-img {
-  width: 110px;
-  border-radius: 50%;
+.gig-description p {
+  margin-bottom: 3em;
 }
 
-.gig-about-seller-container {
+.gig-about-owner-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.gig-about-owner-container {
   border: 1px solid $clr8;
   border-radius: 3px;
   margin-top: 0;
   padding: 24px;
+
 }
 
-.seller-container-header {
-  display: flex;
+.contact-me-btn {
+  background-color: $clr3;
+  color: $clr5;
+  border: 1px solid $clr5;
+  padding: 12px 24px;
+  border-radius: 4px;
+  margin-bottom: 2rem;
 }
 
-.gig-description p {
-  margin-bottom: 1em;
+.owner-container-header {
+  display: grid;
+  grid-template-columns: (1fr 1fr);
+
+
+  .owner-title {
+    margin-bottom: 0;
+  }
+
+  .owner-answer {
+    font-family: macan-bold;
+  }
+
+}
+
+.owner-container-desc {
+  border-top: 1px solid $clr7;
+
+  .desc-first {
+    padding-top: 2rem;
+  }
+
+  p {
+    margin-bottom: 1.8rem;
+  }
 }

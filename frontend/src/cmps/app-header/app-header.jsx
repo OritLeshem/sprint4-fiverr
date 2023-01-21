@@ -60,6 +60,7 @@ export function AppHeader() {
             await logout()
             setIsDropdown(false)
             showSuccessMsg(`Bye now`)
+            navigate('/gig')
         } catch (err) {
             showErrorMsg('Cannot logout')
         }
@@ -92,7 +93,7 @@ export function AppHeader() {
                         <div className="user-avatar">
                             {user.imgUrl && <img src={user.imgUrl}
                                 onClick={() => setIsDropdown(!isDropdown)} />}
-                            {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown}/>}
+                            {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} />}
                         </div>
                     </section>
                 }
