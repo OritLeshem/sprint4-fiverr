@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { userService } from "../../services/user.service"
 import { loadOrders } from "../../store/order/order.actions"
+import BasicTable from "./user-sales-table"
 
 export function UserSales() {
 
@@ -13,5 +14,6 @@ export function UserSales() {
   }, [])
 
   return <div>
+    <BasicTable orders={orders} />
   </div>
 }
