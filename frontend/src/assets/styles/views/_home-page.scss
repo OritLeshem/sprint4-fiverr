@@ -22,21 +22,63 @@
     right: 0;
     z-index: 1;
 
-    // border: 1px solid red;
 
-    main {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-        color: $clr3;
-        font-size: 2.5rem;
+}
 
-        span:last-of-type {
-            display: block;
+.main-header {
+    font-size: rem(40px);
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    color: $clr3;
+    max-width: 650px;
+
+    .gig-search {
+
+        // border: 1px solid red;
+        input {
+            padding: em(14px, 16px) em(2px, 16px) em(14px, 16px) 1em;
         }
 
-        i {
-            padding: .4em;
+        .btn-gig-search {
+            padding: em(12px, 16px) em(24px, 16px);
+            background-color: $clr1;
+        }
+    }
+
+    span:last-of-type {
+        margin-bottom: em(24px, 40px);
+    }
+
+    i {
+        font-weight: 500;
+        padding: 0 .4em;
+    }
+}
+
+.popular {
+    display: flex;
+    font-size: rem(14px);
+    margin-top: em(24px, 14px);
+
+    li {
+        margin-inline-start: em(12px, 14px);
+    }
+
+    a {
+        padding: 5px 12px 5px;
+        border: 1px solid $clr3;
+        border-radius: em(40px, 14px);
+        cursor: pointer;
+        -webkit-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            background-color: #fff;
+            color: #404145;
         }
     }
 }

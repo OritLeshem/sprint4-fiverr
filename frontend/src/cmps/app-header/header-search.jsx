@@ -26,11 +26,13 @@ export function Search({ onSetFilter }) {
       className="gig-search"
       id="title"
       name="title"
-      placeholder="What service are you looking for today?"
+      placeholder={pathname === '/' ? "Try \"building mobile app\"" : "What service are you looking for today?"}
       value={filterByToEdit.title}
       onChange={handleChange}
       ref={elInputRef}
     />
-    <button className=" btn-gig-search fa-solid magnifying-glass"></button>
+    <button className={`btn-gig-search ${pathname !== '/' && 'fa-solid magnifying-glass'}`}>
+      {pathname === '/' && 'Search'}
+    </button>
   </form>
 }

@@ -108,8 +108,11 @@ export function AppHeader() {
                 </div>
             </nav>
         </section>
-        <div className="main-app-header full"></div>
-        {pathname !== '/' && <CategoryMenu onSetFilter={onSetFilter} />}
-        <div className="main-app-header full"></div>
+        {pathname !== '/' && <>
+            <div className="main-app-header full"></div>
+            <CategoryMenu onSetFilter={onSetFilter} />
+            <div className="main-app-header full"></div>
+        </>
+        }
     </>
 }
