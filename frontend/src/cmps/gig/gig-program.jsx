@@ -10,9 +10,11 @@ export function GigProgram({ gig }) {
   }
   return <div className="gig-details-side">
     <div className="gig-program">
-      <button onClick={() => handleProgram(1)} className="gig-program-name">Basic</button>
-      <button onClick={() => handleProgram(2)} className="gig-program-name">Standard </button>
-      <button onClick={() => handleProgram(3)} className="gig-program-name">Premium </button>
+      <div className="gig-program-name">
+        <button onClick={() => handleProgram(1)}>Basic</button>
+        <button onClick={() => handleProgram(2)}>Standard </button>
+        <button onClick={() => handleProgram(3)}>Premium </button>
+      </div>
 
       {program === 1 && <div className="gig-program-info">
         <h2 className="gig-program-price">${gig.price}</h2>

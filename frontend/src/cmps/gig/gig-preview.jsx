@@ -5,7 +5,7 @@ export function GigPreview({ gig }) {
 
     return <>
         <Link to={`/gig/${gig._id}`} className="img-container">
-            <SlideGigPreview gig={gig}/>
+            <SlideGigPreview gig={gig} />
             {/* <img src={gig.imgUrl[0]} alt="" /> */}
         </Link>
 

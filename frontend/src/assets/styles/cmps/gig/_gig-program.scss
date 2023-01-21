@@ -1,29 +1,31 @@
 .gig-program {
-
   height: fit-content;
   color: $clr5;
   border: 1px solid $clr7;
-  position: sticky;
+}
 
-  .gig-program-name {
-    border-right: 1px solid $clr7;
+.gig-program-name {
+  display: flex;
+
+  button {
     height: 50px;
-    width: 120px;
-    margin: 0;
     background-color: transparent;
-    color: $clr5;
+    color: $clr5; 
+    flex-basis: 33.33%;
+    border-bottom: 2px solid transparent;
+    transition: all .6s;
+
+    &:not(:last-of-type) {
+      border-right: 1px solid $clr7;
+    }
 
     &:hover {
       color: $clr1;
       border-bottom: 2px solid $clr1;
     }
-
-    &:active {
-      color: $clr1;
-    }
-
   }
 }
+
 
 .gig-program-info {
   padding: 24px;
