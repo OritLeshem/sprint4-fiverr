@@ -5,3 +5,63 @@
         background-size: contain;
     }
 }
+
+.status-options-btn {
+    position: relative;
+
+    .Pending {
+        background-color:  #E2A114;
+        padding: 12px 24px;
+        text-align: center;
+        font-family: macan-bold;
+        border-radius: 4px;
+    }
+
+    .Completed {
+        background-color: $clr1;
+        padding: 12px 24px;
+        text-align: center;
+        font-family: macan-bold;
+        border-radius: 4px;
+    }
+
+    .Declined {
+        background-color:#F31F1F;
+        padding: 12px 24px;
+        text-align: center;
+        font-family: macan-bold;
+        border-radius: 4px;
+    }
+}
+
+.status-options {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    border: 1px solid $clr7;
+    background-color: $clr3;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 4px;
+    position: absolute;
+    justify-content: space-between;
+
+    button {
+        padding: 12px 24px;
+        margin: 10px;
+        text-align: center;
+        font-family: macan-bold;
+        border-radius: 4px;
+    }
+
+    .pending {
+        background-color: #E2A114;
+    }
+
+    .completed {
+        background-color: $clr1;
+    }
+
+    .declined {
+        background-color: #F31F1F;
+    }
+}

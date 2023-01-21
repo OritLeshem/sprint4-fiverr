@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -6,21 +7,28 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { updateOrder } from "../../store/order/order.actions";
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
-export default function BasicTable({ orders }) {
+export default function UserSellerTable({ orders }) {
+
+  const [isModal, setIsModal] = useState(false)
+
+  function toggleStatusModal(orderId) {
+    setIsModal(!isModal)
+  }
+
+  function updateStatus(status,order) {
+    order.status = status
+    updateOrder(order)
+    setIsModal(!isModal)
+  }
+
+
+
   return (
+    <div className="status-options-btn">
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -34,23 +42,30 @@ export default function BasicTable({ orders }) {
         </TableHead>
         <TableBody>
           {orders.map((order) => (
-            <TableRow
+            <TableRow 
               key={order._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
                 {order._id}
               </TableCell>
-
               <TableCell align="right">{order.buyer.fullname}</TableCell>
               <TableCell align="right">{order.gig.title}</TableCell>
               <TableCell align="right">{order.gig.price}</TableCell>
-              <TableCell align="right">{order.status}</TableCell>
+              <TableCell align="right">
+                {isModal && <div className="status-options">
+                <button className="pending" onClick={() => updateStatus("Pending",order)}>Pending</button>
+                <button className="completed" onClick={() => updateStatus("Completed",order)}>Completed</button>
+                <button className="declined" onClick={() => updateStatus("Declined",order)}>Declined</button>
+              </div>
+              }
+                <button className={order.status} onClick={() => toggleStatusModal(order._id)}>{order.status}</button></TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
-  );
+  </div>
+  )
 }
 

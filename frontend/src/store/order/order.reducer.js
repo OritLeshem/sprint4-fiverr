@@ -3,7 +3,7 @@ import { gigService } from "../../services/gig.service"
 export const SET_ORDERS = 'SET_ORDERS'
 // export const REMOVE_GIG = 'REMOVE_GIG'
 export const ADD_ORDER = 'ADD_ORDER'
-// export const UPDATE_GIG = 'UPDATE_GIG'
+export const UPDATE_ORDER = 'UPDATE_ORDER'
 // export const ADD_TO_CART = 'ADD_TO_CART'
 // export const CLEAR_CART = 'CLEAR_CART'
 // export const UNDO_REMOVE_GIG = 'UNDO_REMOVE_GIG'
@@ -37,10 +37,10 @@ export function orderReducer(state = initialState, action) {
         case ADD_ORDER:
             newState = { ...state, orders: [...state.orders, action.order] }
             break
-        // case UPDATE_GIG:
-        //     gigs = state.gigs.map(gig => (gig._id === action.gig._id) ? action.gig : gig)
-        //     newState = { ...state, gigs }
-        //     break
+        case UPDATE_ORDER:
+            orders = state.orders.map(order => (order._id === action.order._id) ? action.order : order)
+            newState = { ...state, orders }
+            break
         // case ADD_TO_CART:
         //     newState = { ...state, cart: [...state.cart, action.gig] }
         //     break

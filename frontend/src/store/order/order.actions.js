@@ -2,7 +2,7 @@ import { gigService } from "../../services/gig.service.js";
 import { userService } from "../../services/user.service.js";
 import { store } from '../store.js'
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
-import { ADD_ORDER, SET_ORDERS } from "./order.reducer.js";
+import { ADD_ORDER, SET_ORDERS,UPDATE_ORDER } from "./order.reducer.js";
 import { orderService } from "../../services/order.service.js";
 // import { ADD_GIG, ADD_TO_CART, CLEAR_CART, REMOVE_GIG, REMOVE_FROM_CART, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG } from "./gig.reducer.js";
 // import { SET_SCORE } from "../user/user.reducer.js";
@@ -20,12 +20,12 @@ export function getActionAddOrder(order) {
         order
     }
 }
-// export function getActionUpdateGig(gig) {
-//     return {
-//         type: UPDATE_GIG,
-//         gig
-//     }
-// }
+export function getActionUpdateOrder(order) {
+    return {
+        type: UPDATE_ORDER,
+        order
+    }
+}
 
 export async function loadOrders(userId) {
     try {
@@ -67,18 +67,18 @@ export async function addOrder(order) {
     }
 }
 
-// export function updateGig(gig) {
-//     return gigService.save(gig)
-//         .then(savedGig => {
-//             console.log('Updated Gig:', savedGig)
-//             store.dispatch(getActionUpdateGig(savedGig))
-//             return savedGig
-//         })
-//         .catch(err => {
-//             console.log('Cannot save gig', err)
-//             throw err
-//         })
-// }
+export function updateOrder(order) {
+    return orderService.save(order)
+        .then(savedOrder => {
+            console.log('Updated Gig:', savedOrder)
+            store.dispatch(getActionUpdateOrder(savedOrder))
+            return savedOrder
+        })
+        .catch(err => {
+            console.log('Cannot save gig', err)
+            throw err
+        })
+}
 
 // export function addToCart(gig) {
 //     store.dispatch({
