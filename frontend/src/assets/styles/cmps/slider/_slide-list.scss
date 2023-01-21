@@ -1,20 +1,24 @@
 .slide-list-container {
-    transform: translateZ(0);
-    overflow: hidden;
+    position: relative;
 
     .slide-btn {
+        z-index: 2;
         background-color: $clr3;
         color: $clr5;
         border-radius: 50%;
         width: 3em;
         height: 3em;
         box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
-        // position: absolute; 
-        text-align: center;
-        // top: 50%;
-        // line-height: 100%;
     }
+}
 
+.next {
+    right: 0;
+    transform: translate(40%, 0);
+}
+
+.prev {
+    transform: translate(-40%, 0);
 }
 
 .slide-list {

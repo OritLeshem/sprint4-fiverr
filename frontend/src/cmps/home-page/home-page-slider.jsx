@@ -49,7 +49,7 @@ export function HomePageSlider() {
     function setSlides() {
         intervalIdRef.current = setInterval(() => {
             setCurrentIndex((prevCount) => prevCount + 1)
-        }, 8000)
+        }, 6000)
     }
 
     const slideStyles = {

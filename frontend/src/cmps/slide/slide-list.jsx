@@ -3,7 +3,7 @@ import { SlidePreview } from "./slide-preview"
 export function SlideList({ slides, onSetSlides }) {
 
     return <section className="slide-list-container">
-        <button className="slide-btn fa-solid chevron-left" onClick={() => onSetSlides()}></button>
+        <button className="slide-btn fa-solid chevron-left prev" onClick={() => onSetSlides()}></button>
         <ul className="slide-list">
             {slides.map((slide, idx) =>
                 <li className="slide-preview" key={idx}>
@@ -11,8 +11,6 @@ export function SlideList({ slides, onSetSlides }) {
                 </li>
             )}
         </ul>
-
-
-        <button className="slide-btn fa-solid chevron-right" onClick={() => onSetSlides()}></button>
+        <button className="slide-btn fa-solid chevron-right next" onClick={() => onSetSlides()}></button>
     </section>
 }
