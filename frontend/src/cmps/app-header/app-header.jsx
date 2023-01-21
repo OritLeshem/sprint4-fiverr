@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
@@ -20,6 +20,7 @@ export function AppHeader() {
     const navigate = useNavigate()
     const [isModal, setIsModal] = useState(false)
     const [isDropdown, setIsDropdown] = useState(false)
+    const { pathname } = window.location
 
     function onSetFilter(filterBy) {
         dispatch({ type: SET_FILTER, filterBy })
@@ -75,42 +76,40 @@ export function AppHeader() {
     }
 
     return <>
-        <section className="app-header">
+        <section className={`app-header ${pathname === '/' && 'header-home-page main-layout'}`} >
             <nav className="app-header-nav">
-                <div>
-                    <Link to="/"><h3 className="logo">finderr<span>.</span></h3></Link>
-                    <Search onSetFilter={onSetFilter} />
+                <div className="app-header-aside">
+                    <Link to="/"><h3 className={`logo ${pathname === '/' && 'home-page-link'}`}>finderr<span>.</span></h3></Link>
+                    {pathname !== '/' && <Search onSetFilter={onSetFilter} />}
                 </div>
-                <div>
+                <div className="app-header-main">
                     <Link to="gig"
                         onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
                     <Link to="gig">Become a seller</Link>
-                    {user &&
+                    {(user && pathname !== '/') &&
                         <>
-                            <button className="fa-regular bell"></button>
-                            <button className="fa-regular envelope"></button>
-                            <Link className="fa-regular heart"></Link>
-                            <button>Orders</button>
+                            <button className="user-link fa-regular bell" title="Notifications"></button>
+                            <button className="user-link fa-regular envelope" title="Messages"></button>
+                            <Link className="user-link fa-regular heart" title="Lists"></Link>
+                            <button className="user-link">Orders</button>
                             {user.imgUrl && <img src={user.imgUrl}
                                 onClick={() => setIsDropdown(!isDropdown)} />}
                             {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} />}
                         </>
                     }
-                    {!user &&
+                    {(!user || pathname === '/') &&
                         <>
                             {isModal && <Modal onLogin={onLogin} onSignup={onSignup}
                                 onCloseModal={onCloseModal} />}
                             <Link onClick={() => onOpenModal()}>Sign in</Link>
-                            <button className="join-btn" onClick={() => onOpenModal()}>Join</button>
+                            <button className={`join-btn ${pathname === '/' && 'home-page-btn'}`} onClick={() => onOpenModal()}>Join</button>
                         </>
                     }
                 </div>
             </nav>
         </section>
         <div className="main-app-header full"></div>
-        <section className="app-header">
-            <CategoryMenu onSetFilter={onSetFilter} />
-        </section>
+        {pathname !== '/' && <CategoryMenu onSetFilter={onSetFilter} />}
         <div className="main-app-header full"></div>
     </>
 }

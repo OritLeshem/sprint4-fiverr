@@ -5,6 +5,7 @@ import { gigService } from "../../services/gig.service"
 export function Search({ onSetFilter }) {
   const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
   const elInputRef = useRef(null)
+  const { pathname } = window.location
 
   function handleChange({ target }) {
     let { value, name: field, type } = target

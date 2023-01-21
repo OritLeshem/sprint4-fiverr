@@ -6,10 +6,31 @@
     background-color: transparent;
 }
 
+.user-link {
+    color: $clr5;
+    background-color: transparent;
+    transition: color .5s ease, border .5s ease;
+
+    &:hover {
+        color: $clr1;
+    }
+}
+
+.header-home-page {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+
+    & * {
+        color: $clr3;
+    }
+}
+
 .logo {
     font-size: rem(27px);
     font-family: macan-bold;
     margin-right: em(32px, 27px);
+    color: $clr2;
 
     span {
         color: $clr1;
@@ -18,4 +39,16 @@
     &:hover {
         color: $clr2;
     }
+}
+
+.home-page-link {
+    color: $clr3;
+
+    &:hover {
+        color: $clr3;
+    }
+}
+
+.debug {
+    border: 1px solid red;
 }

@@ -1,42 +1,33 @@
-.slides-container {
-    height: 80vh;
-    position: relative;
-    top: 0;
-
-    h1 {
-        position: absolute;
-        z-index: 1;
-    }
-}
-
 .home-page-slider {
-    height: 100%;
     position: relative;
+    background-color: #023a15;
+    height: 90vh;
+    top: 0;
 }
 
 .hero-img {
     width: 100%;
     height: 100%;
-    background-color: #023a15;
     background-position: center;
     background-size: cover;
-    position: absolute;
-    animation: fade 2s linear;
-    transition: opacity .9s;
+    // animation: fade 2s linear;
+    // transition: opacity .9s;
 }
 
 .hero-container {
-    display: flex;
-    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 1;
-    padding: $layoutPadding;
 
-    h1 {
+    // border: 1px solid red;
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
         color: $clr3;
         font-size: 2.5rem;
 

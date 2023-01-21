@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import { Search } from "../app-header/header-search"
 
 export function HomePageSlider() {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -34,13 +35,14 @@ export function HomePageSlider() {
         backgroundImage: `url(${slides[currentIndex].url})`,
     }
 
-    return <section className="home-page-slider">
-        <div className="hero-img" style={slideStyles}></div>
-        <div className="hero-container main-header">
-            <h1>
-                <span>Find the perfect</span><i>freelance</i>
+    return <section className="home-page-slider full main-layout">
+        <div className="hero-img full" style={slideStyles}></div>
+        <div className="hero-container full main-layout">
+            <main>
+                <span>Find the perfect<i>freelance</i></span>
                 <span>services for your business</span>
-            </h1>
+                <Search />
+            </main>
         </div>
     </section>
 }

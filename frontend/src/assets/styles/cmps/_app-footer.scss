@@ -3,23 +3,42 @@
     border-top: 1px solid $clr7;
     padding: 1rem 0 1rem 0;
 
-    .social-link {
-        display: flex;
-
-        .fa-brands {
-            font-size: 1.3rem;
-            margin-inline-start: 1em;
-        }
-    }
-
     .footer-rights {
         display: flex;
         align-items: center;
         color: $clr6;
 
         p {
+            margin: 0;
             font-size: .875rem;
-            margin: 0 0 0 1.7em;
+        }
+    }
+
+    .logo {
+        color: #7A7D85;
+    }
+}
+
+.social-link {
+    display: flex;
+
+    a {
+        color: #7A7D85;
+        font-size: rem(20px)
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        width: em(40px, 16px);
+        height: em(40px, 16px);
+        margin-inline-start: 1em;
+        line-height: normal;
+
+        &:hover {
+            background-color: #efeff0;
         }
     }
 

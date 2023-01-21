@@ -18,10 +18,8 @@ export function HomePage() {
 
     return <section className="home-page full">
 
-        <main className="main-layout">
-            <div className="slides-container full">
-                <HomePageSlider />
-            </div>
+        <main className="full main-layout">
+            <HomePageSlider />
 
             <div className="trusted-by full">
                 {/* <span>Trusted by:</span> */}
