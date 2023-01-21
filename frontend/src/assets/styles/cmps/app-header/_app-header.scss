@@ -1,66 +1,21 @@
-.app-header {
-    z-index: 2;
-
-    .gig-header-link {
-        font-family: macan-semibold;
-        color: $clr5;
-        transition: color 70ms cubic-bezier(.75, 0, .25, 1);
-
-        &:hover {
-            color: $clr1;
-        }
-    }
-
-    .user {
-        @include flex;
-        
-        a,
-        button {
-            background-color: transparent;
-            margin-right: 1em;
-            color: $clr5;
-        }
-    }
-
-    .join-btn {
-        font-family: macan-semibold;
-        background-color: transparent;
-        border: 1px solid $clr1;
-        color: $clr1;
-        padding: 10px 16px;
-        border-radius: 4px;
-        margin-left: 1em;
-        transition: background-color 70ms cubic-bezier(.75, 0, .25, 1);
-
-        &:hover {
-            background-color: $clr1;
-            color: $clr3;
-        }
-    }
-
-    .user-avatar {
-        width: em(32px, 16px);
-        height: em(32px, 16px);
-        cursor: pointer;
-    }
+.main-app-header {
+    border-bottom: 1px solid #e4e5e7;
 }
 
-.app-header-nav {
-    @include flex;
-    border-bottom: 1px solid #e4e5e7;
-    padding: 1em 0;
+.app-header {
+    background-color: transparent;
+}
 
-    .left {
-        @include flex;
-        flex-basis: 64%;
+.logo {
+    font-size: rem(27px);
+    font-family: macan-bold;
+    margin-right: em(32px, 27px);
 
-        & > * {
-            padding-right: 1em;
-        }
+    span {
+        color: $clr1;
     }
 
-    .right {
-        @include flex;
-        flex-basis: 34%;
+    &:hover {
+        color: $clr2;
     }
 }

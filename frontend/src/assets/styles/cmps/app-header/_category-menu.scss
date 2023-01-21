@@ -1,23 +1,26 @@
 .categories-menu {
-    border-bottom: 1px solid #e4e5e7;
     // opacity: 1;
     overflow: hidden;
 
     ul {
-        color: $clr5;
-        display: flex;
-        justify-content: space-between;
-        margin: 0 auto;
+        @include flex;
+        margin: 0;
     }
 
     li {
         flex-shrink: 0;
+        padding-inline-end: em(20px, 16px);
         cursor: pointer;
-        padding: .5em .625em;
+    }
+
+    a {
+        line-height: 1.5;
+        display: block;
+        padding: em(8px, 16px) 0;
+        color: $clr5;
 
         &:hover {
-            text-decoration: underline $clr1 solid 3px;
-            text-underline-offset: 13px;
+            box-shadow: inset 0px -3px 0 $clr1;
         }
     }
 

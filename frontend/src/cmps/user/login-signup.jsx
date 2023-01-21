@@ -55,8 +55,10 @@ export function LoginSignup(props) {
 
     const { username, password } = credentials
     return <section className="login-signup">
-        {!isSignup && <h4>Join Filterr</h4> &&
-            <button className="close-modal-btn" onClick={() => props.onCloseModal()}>X</button>}
+        {!isSignup && <>
+            <button className="close-modal-btn" onClick={() => props.onCloseModal()}>X</button>
+            <h4>Join Finderr</h4>
+        </>}
         {!isSignup && <form className="login-form" onSubmit={onLogin}>
             <input
                 type="text"
@@ -78,8 +80,10 @@ export function LoginSignup(props) {
             <button>Continue</button>
         </form>}
         <div className="signup-section">
-            {isSignup && <h4>Sign In to Filterr</h4> &&
-                <button className="close-modal-btn" onClick={() => props.onCloseModal()}>X</button>}
+            {isSignup && <>
+                <button className="close-modal-btn" onClick={() => props.onCloseModal()}>X</button>
+                <h4>Sign In to Finderr</h4>
+            </>}
             {isSignup && <form className="signup-form" onSubmit={onSignup}>
                 <input
                     type="text"
