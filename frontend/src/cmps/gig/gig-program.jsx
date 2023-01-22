@@ -18,7 +18,7 @@ export function GigProgram({ gig }) {
 
       {program === 1 && <div className="gig-program-info">
         <h2 className="gig-program-price">${gig.price}</h2>
-        <p>save up to 10% with <span className="gig-program-subscribe">Subscribe to Save</span></p>
+        <p>Save up to 10% with <span className="gig-program-subscribe">Subscribe to Save</span></p>
         <p><span className="gig-program-basic">** Basic ** 1 </span>{gig.title}</p>
         <p>3 Days Delivery 3 Revisions</p>
         <ul>
@@ -32,7 +32,7 @@ export function GigProgram({ gig }) {
       </div>}
       {program === 2 && <div className="gig-program-info">
         <h2 className="gig-program-price">${gig.price + 5}</h2>
-        <p>save up to 15% with <span className="gig-program-subscribe">Subscribe to Save</span></p>
+        <p>Save up to 15% with <span className="gig-program-subscribe">Subscribe to Save</span></p>
         <p><span className="gig-program-basic">** Standard ** 2 </span>{gig.title}</p>
         <p>2 Days Delivery 5 Revisions</p>
         <ul>
@@ -46,7 +46,7 @@ export function GigProgram({ gig }) {
       </div>}
       {program === 3 && <div className="gig-program-info">
         <h2 className="gig-program-price">${gig.price + 15}</h2>
-        <p>save up to 20% with <span className="gig-program-subscribe">Subscribe to Save</span></p>
+        <p>Save up to 20% with <span className="gig-program-subscribe">Subscribe to Save</span></p>
         <p><span className="gig-program-basic">** Premium ** 3 </span>{gig.title}</p>
         <p>1 Days Delivery Unlimited Revisions</p>
         <ul>
