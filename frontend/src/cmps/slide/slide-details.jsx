@@ -34,7 +34,7 @@ export function SlideDetails({ gig }) {
             {/* <!-- Thumbnail images --> */}
             <div className="row">
                 {slides.map((slide, index) => {
-                    return <div className="column">
+                    return <div className="column" key={index}>
                         <img className="demo cursor" src={slide} onClick={() => currentSlide(index)} />
                     </div>
                 })}

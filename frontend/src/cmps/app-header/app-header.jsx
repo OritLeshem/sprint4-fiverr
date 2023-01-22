@@ -1,15 +1,13 @@
-import { Link, NavLink, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { showErrorMsg, showSuccessMsg } from '../../services/event-bus.service'
 import { login, logout, signup } from '../../store/user/user.actions'
-import { LoginSignup } from '../user/login-signup.jsx'
 import { Search } from './header-search'
 import { SET_FILTER } from '../../store/gig/gig.reducer'
-import { loadGigs, addGig, updateGig, removeGig, addToCart } from '../../store/gig/gig.actions.js'
 import { CategoryMenu } from './header-category-menu'
 import { gigService } from '../../services/gig.service'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { Modal } from './modal'
 import { Dropdown } from './dropdown'
 import UserBuyTable from '../user/user-buy-table'
@@ -107,7 +105,7 @@ export function AppHeader() {
                     {!user &&
                         <>
                             {isModal && <Modal onLogin={onLogin} onSignup={onSignup}
-                                onCloseModal={onCloseModal} setIsSignup={setIsSignup} isSignup={isSignup}/>}
+                                onCloseModal={onCloseModal} setIsSignup={setIsSignup} isSignup={isSignup} />}
                             <Link onClick={() => { onOpenModal(); setIsSignup(false) }}>Sign in</Link>
                             <button className={`join-btn ${pathname === '/' && 'home-page-btn'}`}
                                 onClick={() => { onOpenModal(); setIsSignup(true) }}>Join</button>

@@ -1,23 +1,96 @@
-.review-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    li {
-        background-color: $clr2;
-        color: $clr6;
-        padding: 5px;
-        margin: 5px;
-    }
-    a {
-        color: $clr1;
-        padding: 10px;
-    }    
+.review-app {
+
     h3 {
-        background-color: #ddd;
-        padding: 10px 5px;
-        margin: 5px;
-    }    
+        font-size: rem(20px);
+        font-family: macan-bold;
+        margin-bottom: em(16px, 20px);
+    }
+
+    h4 {
+        padding: 0;
+        font-size: 1rem;
+        font-family: macan-semibold;
+        margin-right: em(5px, 16px);
+
+        span {
+            margin-right: em(5px, 16px);
+        }
+    }
+
+    .review-header {
+        display: flex;
+        align-items: center;
+        line-height: 1;
+    }
 }
 
+.review-list {
 
+    li {
+        display: grid;
+        grid-template-columns: em(40px, 16px) 1fr;
+        grid-template-areas: "img content";
+        gap: 1.5em;
 
+        border-top: 1px solid $clr11;
+        padding: em(40px, 16px) 0;
+    }
+
+    li:last-child {
+        border-bottom: 1px solid $clr11;
+        margin-bottom: em(20px, 16px);
+    }
+
+    .review {
+        grid-area: content;
+    }
+
+    .user-info {
+        margin-bottom: em(20px, 16px);
+
+        h4 {
+            margin-bottom: .5em;
+        }
+
+        span {
+            font-size: rem(14px);
+            color: $clr5;
+        }
+    }
+
+    .rate-info {
+        font-size: rem(14px);
+        line-height: 1.3;
+        display: flex;
+        align-items: center;
+        color: $clr5;
+        margin-bottom: em(12px, 14px);
+
+        .rate-num {
+            font-family: macan-bold;
+            padding-left: em(4px, 14px);
+        }
+
+        .divider {
+            height: em(17px, 14px);
+            border-right: 1px solid #e4e5e7;
+            margin: em(2px, 14px) em(8px, 14px);
+        }
+
+        // border: 1px solid red;
+    }
+
+    // font: 400 16px/24px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
+    // line-height: 21px;
+
+    img {
+        grid-area: img;
+        width: em(48px, 16px);
+        height: em(48px, 16px);
+        border-radius: 50%;
+    }
+}
+
+.rate {
+    color: $clr4;
+}

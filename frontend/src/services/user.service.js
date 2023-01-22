@@ -16,7 +16,8 @@ export const userService = {
     getById,
     remove,
     update,
-    changeScore
+    changeScore,
+    getUserReviews
 }
 
 window.userService = userService
@@ -27,12 +28,16 @@ function getUsers() {
     // return httpService.get(`user`)
 }
 
-
-
 async function getById(userId) {
     const user = await storageService.get('user', userId)
     // const user = await httpService.get(`user/${userId}`)
     return user
+}
+
+async function getUserReviews(userId) {
+    const user = await storageService.get('user', userId)
+    // const user = await httpService.get(`user/${userId}`)
+    return user.reviews
 }
 
 function remove(userId) {
@@ -144,7 +149,7 @@ function _createUsers() {
                         rate: 4,
                         by: {
                             _id: "u104",
-                            fullname: "user4",
+                            fullname: "elensky",
                             imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
                         }
                     }
@@ -180,16 +185,31 @@ function _createUsers() {
                 level: "basic/premium",
                 reviews: [
                     {
-                        id: "madeId",
+                        id: utilService.makeId(),
                         gig: "{optional-mini-gig}",
-                        txt: "Very kind and works fast",
-                        rate: 4,
+                        txt: "I like that the seller was very responsive. However, I was expecting more of a creative/artistic experience, whereas, I feel that stock images were used and slightly modified to create a logo. However, due to the price point, I also understand there can only be so much time put into this.",
+                        rate: 3.3,
+                        createdAt: utilService.randomPastTime(),
                         by: {
-                            _id: "u104",
-                            fullname: "user4",
+                            _id: "u145",
+                            country: "United States",
+                            fullname: "lauraschirer",
                             imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
                         }
-                    }
+                    },
+                    {
+                        id: utilService.makeId(),
+                        gig: "{optional-mini-gig}",
+                        txt: 'For the most part, I\'m satisfied. The logo turned out well, but the social media kit was pretty useless. I think I chose a seller that was a little "too busy" for my taste. I\'ll pay more next time, so I can get a little more devotion to the job.',
+                        rate: 3.7,
+                        createdAt: utilService.randomPastTime(),
+                        by: {
+                            _id: "u146",
+                            country: "Denmark",
+                            fullname: "jespergenopfind",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2017/05/31/04/59/beautiful-2359121_960_720.jpg',
+                        }
+                    },
                 ],
             },
             {

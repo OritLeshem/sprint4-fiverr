@@ -1,6 +1,9 @@
 .app-footer {
-    @include flex;
     border-top: 1px solid $clr7;
+}
+
+.main-footer {
+    @include flex;
     padding: 1rem 0 1rem 0;
 
     .footer-rights {

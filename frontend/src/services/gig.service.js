@@ -311,7 +311,7 @@ function _createGigs() {
                     fullname: "Zozo Ta",
                     imgUrl: 'https://cdn.pixabay.com/photo/2016/11/21/16/01/woman-1846127_960_720.jpg',
                     level: "basic/premium",
-                    rate: 2
+                    rate: 3.5
                 },
                 daysToMake: 2,
                 description: "I will be your female singer songwriter in english and in french.",
