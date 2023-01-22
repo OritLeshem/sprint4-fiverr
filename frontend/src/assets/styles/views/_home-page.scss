@@ -1,7 +1,14 @@
+.home-page h2 {
+    font-family: macan-bold;
+    font-size: rem(32px);
+    margin-bottom: em(14px, 32px);
+    line-height: 120%;
+}
+
 .home-page-slider {
     position: relative;
     background-color: #023a15;
-    height: 90vh;
+    min-height: 675px;
     top: 0;
 }
 
@@ -22,9 +29,9 @@
 }
 
 .main-header {
-    font-size: rem(40px);
-    font-weight: 700;
-    line-height: 1.2;
+    font-size: rem(48px);
+    font-family: macan-bold;
+    line-height: calc(56 / 48);
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -45,7 +52,7 @@
     }
 
     span:last-of-type {
-        margin-bottom: em(24px, 40px);
+        margin-bottom: em(24px, 48px);
     }
 
     i {
@@ -57,7 +64,7 @@
 .popular {
     display: flex;
     font-size: rem(14px);
-    margin-top: em(24px, 14px);
+    margin-top: em(28px, 14px);
 
     li {
         margin-inline-start: em(12px, 14px);
@@ -101,8 +108,8 @@
 
 .selling-proposition {
     background-color: #f1fdf7;
-    padding: em(96px, 18px) 0;
-    margin-bottom: em(96px, 18px);
+    padding: em(96px, 16px) 0;
+    margin-bottom: em(96px, 16px);
 
     .img-container {
         flex-basis: 53%;
