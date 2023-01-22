@@ -27,17 +27,17 @@ export function UserProfile() {
   return (
 
     <div className="user-profile">
-      User Profile
+
       {user && <div className="user-profile-info" >
-        <button className="user-profile-btn-online">online</button>
+        {/* <button className="user-profile-btn-online">online</button> */}
         {user && <div className="user-profile-img" ><img src={user.imgUrl}></img></div>}
-        <ImgUploader onUploaded={onUploaded} />
+        {/* <ImgUploader onUploaded={onUploaded} /> */}
         {/* <button onClick={onSave}>save img</button> */}
         <h2>{user.username}</h2>
         <button className="profile-edit-btn fa-solid fa-pencil"></button>
         <button className="profile-edit-preview-btn"> Preview Finderr Profile</button>
-        <div><span>From</span> <span className="fa-solid fa-location-dot"></span><span>Canada</span></div>
-        <div><span>Member since</span> <span className="fa-solid fa-user"></span><span>Apr 2020</span></div>
+        <div className="user-profile-from"><div> <span className="fa-solid fa-location-dot"></span><span className="user-profile-from-name"> From</span></div><span className="user-profile-from-bold">Canada</span></div>
+        <div className="user-profile-from"><div> <span className="fa-solid fa-user"></span><span className="user-profile-from-name">Member since</span></div><span className="user-profile-from-bold">Apr 2020</span></div>
       </div>}
 
       {/* <div className="user-profile-Language">
