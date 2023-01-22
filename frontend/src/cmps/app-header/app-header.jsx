@@ -91,7 +91,7 @@ export function AppHeader() {
                     <Link to="gig"
                         onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
                     <Link to="gig">Become a seller</Link>
-                    {(user && pathname !== '/') &&
+                    {user &&
                         <>
                             <button className="user-link fa-regular bell" title="Notifications"></button>
                             <button className="user-link fa-regular envelope" title="Messages"></button>
@@ -102,7 +102,7 @@ export function AppHeader() {
                             {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} />}
                         </>
                     }
-                    {(!user || pathname === '/') &&
+                    {!user &&
                         <>
                             {isModal && <Modal onLogin={onLogin} onSignup={onSignup}
                                 onCloseModal={onCloseModal} />}

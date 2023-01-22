@@ -7,16 +7,13 @@
     position: relative;
 }
 
-/* Hide the images by default */
-.mySlides {
-    img{
-        aspect-ratio: 4/3;
-    }
-}
-
 /* Add a pointer when hovering over the thumbnail images */
 .cursor {
     cursor: pointer;
+}
+
+.mySlides {
+    max-width: 710px;
 }
 
 /* Next & previous buttons */
@@ -40,7 +37,7 @@
 /* Position the "next button" to the right */
 .next {
     right: 0;
-    transform: translate(50%, 0);
+    transform: translate(-15%, 0);
 }
 
 .prev {
@@ -82,9 +79,6 @@
     max-width: 100px;
     max-height: 60px;
     object-fit: cover;
-    img{
-        aspect-ratio: 4/3;
-    }
 }
 
 .active,

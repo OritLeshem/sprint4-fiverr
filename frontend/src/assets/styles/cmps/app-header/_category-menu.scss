@@ -9,10 +9,13 @@
 
     li {
         flex-shrink: 0;
-        padding-inline-end: em(20px, 16px);
         cursor: pointer;
     }
 
+    li:not(:last-child) {
+        padding-inline-end: em(20px, 16px);
+    }
+    
     a {
         line-height: 1.5;
         display: block;
