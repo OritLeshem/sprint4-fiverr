@@ -19,7 +19,7 @@ export function UserIndex() {
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
     const dispatch = useDispatch()
-    const [searchParams, setSearchParams] = useSearchParams()
+    // const [searchParams, setSearchParams] = useSearchParams()
     const user = userService.getLoggedinUser()
     console.log('user index', user)
 
@@ -29,7 +29,7 @@ export function UserIndex() {
         // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
         loadGigs(filterBy, user._id)
         console.log(gigs)
-    }, [filterBy, searchParams])
+    }, [filterBy])
 
 
 
