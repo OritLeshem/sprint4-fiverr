@@ -13,7 +13,6 @@ import { useEffect, useRef, useState } from 'react'
 import { Modal } from './modal'
 import { Dropdown } from './dropdown'
 import UserBuyTable from '../user/user-buy-table'
-import { loadOrders } from "../../store/order/order.actions"
 
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
@@ -24,10 +23,6 @@ export function AppHeader() {
     const [isOrder, setIsOrder] = useState(false)
     const [isSignup, setIsSignup] = useState(false)
     const { pathname } = window.location
-
-    useEffect(() => {
-        loadOrders(user._id)
-      }, [])
 
     function onSetFilter(filterBy) {
         dispatch({ type: SET_FILTER, filterBy })

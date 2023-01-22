@@ -10,16 +10,16 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { userService } from "../../services/user.service"
 import { gigService } from "../../services/gig.service"
-// import { loadOrders } from "../../store/order/order.actions"
+import { loadOrders } from "../../store/order/order.actions"
 
 
 export default function UserBuyTable() {
   let orders = useSelector((storeState) => storeState.orderModule.orders)
   const user = userService.getLoggedinUser()
 
-  // useEffect(() => {
-  //   loadOrders(user._id)
-  // }, [])
+  useEffect(() => {
+    loadOrders(user._id)
+  }, [])
   orders = orders.filter(order => order.buyer._id === user._id)
   console.log('orders in buyer table', orders)
   
