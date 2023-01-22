@@ -10,15 +10,15 @@
         height: 3em;
         box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
     }
-}
 
-.next {
-    right: 0;
-    transform: translate(40%, 0);
-}
-
-.prev {
-    transform: translate(-40%, 0);
+    .next {
+        right: 0;
+        transform: translate(50%, 0);
+    }
+    
+    .prev {
+        transform: translate(-40%, 0);
+    }
 }
 
 .slide-list {
@@ -33,6 +33,7 @@
 
     img {
         border-radius: .25rem;
+        height: 345px;
         cursor: pointer;
 
         &:hover {

@@ -22,6 +22,7 @@ export function AppHeader() {
     const [isModal, setIsModal] = useState(false)
     const [isDropdown, setIsDropdown] = useState(false)
     const [isOrder, setIsOrder] = useState(false)
+    const [isSignup, setIsSignup] = useState(false)
     const { pathname } = window.location
 
     function onSetFilter(filterBy) {
@@ -107,9 +108,10 @@ export function AppHeader() {
                     {!user &&
                         <>
                             {isModal && <Modal onLogin={onLogin} onSignup={onSignup}
-                                onCloseModal={onCloseModal} />}
-                            <Link onClick={() => onOpenModal()}>Sign in</Link>
-                            <button className={`join-btn ${pathname === '/' && 'home-page-btn'}`} onClick={() => onOpenModal()}>Join</button>
+                                onCloseModal={onCloseModal} setIsSignup={setIsSignup} isSignup={isSignup}/>}
+                            <Link onClick={() => { onOpenModal(); setIsSignup(false) }}>Sign in</Link>
+                            <button className={`join-btn ${pathname === '/' && 'home-page-btn'}`}
+                                onClick={() => { onOpenModal(); setIsSignup(true) }}>Join</button>
                         </>
                     }
                 </div>

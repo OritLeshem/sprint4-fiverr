@@ -4,7 +4,7 @@ import { ImgUploader } from '../img-uploader'
 
 export function LoginSignup(props) {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
-    const [isSignup, setIsSignup] = useState(false)
+    // const [isSignup, setIsSignup] = useState(false)
     const [users, setUsers] = useState([])
 
     useEffect(() => {
@@ -18,7 +18,7 @@ export function LoginSignup(props) {
 
     function clearState() {
         setCredentials({ username: '', password: '', fullname: '', imgUrl: '' })
-        setIsSignup(false)
+        props.setIsSignup(false)
     }
 
     function handleChange(ev) {
@@ -46,7 +46,7 @@ export function LoginSignup(props) {
     }
 
     function toggleSignup() {
-        setIsSignup(!isSignup)
+        props.setIsSignup(!props.isSignup)
     }
 
     function onUploaded(imgUrl) {
@@ -55,11 +55,11 @@ export function LoginSignup(props) {
 
     const { username, password } = credentials
     return <section className="login-signup">
-        {!isSignup && <>
+        {!props.isSignup && <>
             <button className="close-modal-btn" onClick={() => props.onCloseModal()}>X</button>
             <h4>Join Finderr</h4>
         </>}
-        {!isSignup && <form className="login-form" onSubmit={onLogin}>
+        {!props.isSignup && <form className="login-form" onSubmit={onLogin}>
             <input
                 type="text"
                 name="username"
@@ -80,11 +80,11 @@ export function LoginSignup(props) {
             <button>Continue</button>
         </form>}
         <div className="signup-section">
-            {isSignup && <>
+            {props.isSignup && <>
                 <button className="close-modal-btn" onClick={() => props.onCloseModal()}>X</button>
                 <h4>Sign In to Finderr</h4>
             </>}
-            {isSignup && <form className="signup-form" onSubmit={onSignup}>
+            {props.isSignup && <form className="signup-form" onSubmit={onSignup}>
                 <input
                     type="text"
                     name="fullname"
@@ -111,7 +111,7 @@ export function LoginSignup(props) {
                 />
                 <button>Continue</button>
             </form>}
-            <button className="btn-link" onClick={toggleSignup}>{isSignup ? 'Not a member yet? Join now' : 'Already a member? Sign In'}</button>
+            <button className="btn-link" onClick={toggleSignup}>{props.isSignup ? 'Not a member yet? Join now' : 'Already a member? Sign In'}</button>
         </div>
     </section>
 }

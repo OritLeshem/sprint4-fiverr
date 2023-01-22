@@ -86,14 +86,10 @@ export function GigIndex() {
         console.log(`TODO Adding msg to gig`)
     }
 
-    return (
-        <section className="gig-index">
-            {searchParams.get('category') &&<h3>{searchParams.get('category')}</h3> ||<h3>ALL</h3>}
-            {gigs.length>0 &&<p>{gigs.length} Services available</p> ||<p>No Services available</p>}
-            {/* <button onClick={onAddGig}>Add Gig ⛐</button> */}
-            <TopFilterBar onSetFilter={onSetFilter} />
-            <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
-
-        </section>
-    )
+    return <section className="gig-index">
+        {searchParams.get('category') && <h1>{searchParams.get('category')}</h1> || <h1>ALL</h1>}
+        <TopFilterBar onSetFilter={onSetFilter} />
+        {gigs.length > 0 && <p>{gigs.length} Services available</p> || <p>No Services available</p>}
+        <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
+    </section>
 }

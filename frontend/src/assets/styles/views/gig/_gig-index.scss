@@ -1,5 +1,16 @@
 .gig-index {
-    h3 {
+    h1 {
+        font-size: rem(32px);
+        font-family: macan-bold;
         margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: $clr5;
+        font-size: rem(14px);
+        line-height: calc(22 / 14);
+        font-family: macan-semibold;
+        margin-bottom: em(25px, 14px);
     }
 }
