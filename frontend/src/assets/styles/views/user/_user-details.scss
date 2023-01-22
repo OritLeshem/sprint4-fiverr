@@ -1,3 +1,36 @@
+.user-index-add-link {
+    background-color: $clr1;
+    padding: 12px 24px;
+    border-radius: 4px;
+    color: $clr3;
+    margin-bottom: 20px;
+
+
+
+    &:hover {
+        cursor: pointer;
+        background-color: green;
+        color: $clr3;
+    }
+}
+
+.user-index-gig-list {
+    margin-top: 40px;
+}
+
+.user-gig-list {
+    .user-preview-btns {
+        color: $clr5
+    }
+
+    .gig-edit-btn {
+        background-color: transparent;
+        color: $clr6;
+        font-size: 1rem;
+        margin: 5px 10px;
+    }
+}
+
 .user-details {
     .user-img {
         height: 200px;
@@ -8,8 +41,9 @@
 
 .status-options-btn {
     position: relative;
-    button{
-        background-color:  #E2A114;
+
+    button {
+        background-color: #E2A114;
         width: 120px;
         padding: 12px;
         text-align: center;
@@ -18,7 +52,7 @@
     }
 
     .Pending {
-        background-color:  #E2A114;
+        background-color: #E2A114;
         width: 120px;
         padding: 12px;
         text-align: center;
@@ -36,7 +70,7 @@
     }
 
     .Declined {
-        background-color:#F31F1F;
+        background-color: #F31F1F;
         width: 120px;
         padding: 12px;
         text-align: center;

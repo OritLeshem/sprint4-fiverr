@@ -84,8 +84,10 @@ export function UserIndex() {
             <div className="user-index-info">  <UserProfile /></div>
             <main className="user-index-main-container">
                 <UserSales />
-                <Link to="/gig/edit">Add +</Link>
-                <UserList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
+                <Link className="user-index-add-link" to="/gig/edit">Add Gig +</Link>
+                <div className="user-index-gig-list">
+                    <UserList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
+                </div>
             </main>
 
 
