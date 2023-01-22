@@ -6,12 +6,13 @@
 
 .gig-program-name {
   display: flex;
+  // padding: 12px 24px;
 
   button {
-    height: 50px;
+    height: 64px;
     background-color: transparent;
-    color: $clr5; 
-    flex-basis: 33.33%;
+    color: $clr5;
+    flex-basis: 33.9%;
     border-bottom: 2px solid transparent;
     transition: all .6s;
 
@@ -28,12 +29,16 @@
 
 
 .gig-program-info {
-  padding: 24px;
+  padding: 36px 26px;
   border-top: 1px solid $clr7;
   width: 100%;
 
   .gig-program-price {
     color: $clr2;
+    font-family: macan-bold;
+    padding-bottom: 3px;
+    font-size: 28px;
+
   }
 
   // background-color: red;
@@ -48,10 +53,19 @@
   .green-check {
     color: $clr1;
   }
+
+  ul {
+    padding-top: 37px;
+    padding-bottom: 82px;
+  }
 }
 
 .gig-details-side {
-  width: 33.6%;
+  width: 37.2%;
+  height: fit-content;
+  position: sticky;
+  top: 32px;
+
 }
 
 .gig-program-link-continue {
@@ -104,10 +118,4 @@
     color: $clr3;
   }
 
-}
-
-.gig-details-side {
-  height: fit-content;
-  position: sticky;
-  top: 32px;
 }
