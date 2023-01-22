@@ -16,13 +16,22 @@
 
     li {
         padding: em(5px, 16px) 0;
-
+        cursor: pointer;
+        color: $clr5;
+text-align: left;
         &:hover {
             color: $clr1;
         }
 
         &:last-of-type {
             border-top: 1px solid $clr7;
+        }
+
+        a {
+            color: $clr5;
+            &:hover {
+                color: $clr1;
+            }
         }
     }
 }

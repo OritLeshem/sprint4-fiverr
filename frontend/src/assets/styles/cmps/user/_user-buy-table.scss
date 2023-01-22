@@ -6,10 +6,20 @@
   right: 50px;
   top: 60px;
   position: absolute;
-
+  max-height: 500px;
+  overflow: auto;
   border-bottom: 1px solid $clr7 ;
   align-items: center;
   z-index: 40;
+
+  h3,p{
+    color:$clr5;
+    text-align: center;
+  }
+
+  div{
+    color:$clr5;
+  }
 
   .order-container {
     display: flex;
@@ -34,5 +44,26 @@
 
   .buy-order-status {
     color: $clr1;
+  }
+}
+
+.svg-wrap{
+  // color: #62646a;
+  // font: 400 16px/24px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
+  // list-style: none;
+  // list-style-image: none;
+  text-align: center;
+  // border: 0;
+  // margin: 0;
+  // outline: 0;
+  // background: #efeff0;
+  // border-radius: 50%;
+  // display: inline-block;
+  padding: 39px 31px;
+display: block;
+  svg{
+    width: 60px;
+    text-align: center;
+
   }
 }
