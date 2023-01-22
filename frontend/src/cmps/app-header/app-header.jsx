@@ -26,18 +26,20 @@ export function AppHeader() {
 
     function onSetFilter(filterBy) {
         dispatch({ type: SET_FILTER, filterBy })
-
-        if (!filterBy.tags && !filterBy.title) {
+        if (!filterBy.tags.length === 0 && !filterBy.title) {
             navigate('/gig')
             return
         }
 
         let queryStringParams
-        if (filterBy.tags) queryStringParams = `?category=${filterBy.tags[0]}`
-        if (filterBy.title) queryStringParams = `?title=${filterBy.title}`
-        // const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + queryStringParams
-        // window.history.pushState({ path: newUrl }, '', newUrl)
-        navigate(`/gig${queryStringParams}`)
+        if (filterBy.tags.length !== 0) {
+            queryStringParams = `?category=${filterBy.tags[0]}`
+            navigate(`/gig${queryStringParams}`)
+        }
+        if (filterBy.title) {
+            queryStringParams = `?title=${filterBy.title}`
+            navigate(`/gig${queryStringParams}`)
+        }
     }
 
     async function onLogin(credentials) {
@@ -88,7 +90,7 @@ export function AppHeader() {
                     {pathname !== '/' && <Search onSetFilter={onSetFilter} />}
                 </div>
                 <div className="app-header-main">
-                    <Link to="gig"
+                    <Link to="/gig"
                         onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
                     <Link to="gig">Become a seller</Link>
                     {user &&

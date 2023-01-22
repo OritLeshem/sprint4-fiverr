@@ -8,6 +8,14 @@
 
 .status-options-btn {
     position: relative;
+    button{
+        background-color:  #E2A114;
+        width: 120px;
+        padding: 12px;
+        text-align: center;
+        font-family: macan-bold;
+        border-radius: 4px;
+    }
 
     .Pending {
         background-color:  #E2A114;

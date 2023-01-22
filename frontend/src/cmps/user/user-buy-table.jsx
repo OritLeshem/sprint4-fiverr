@@ -16,28 +16,41 @@ import { loadOrders } from "../../store/order/order.actions"
 
 
 export default function UserBuyTable() {
-  const orders = useSelector((storeState) => storeState.orderModule.orders)
+  let orders = useSelector((storeState) => storeState.orderModule.orders)
   const user = userService.getLoggedinUser()
 
   useEffect(() => {
     loadOrders(user._id)
   }, [])
-
+  orders = orders.filter(order => order.buyer._id === user._id)
+  console.log('orders in buyer table', orders)
   return (
-    <div>
-      {orders.filter(order => order.buyer._id === user._id)
-        .map(order => <div className="buy-order-list" key={order._id}>
-          <img className='buy-order-img' src={order.gig.imgUrl[0]} />
-
-          <div className='buy-order-info' >
-            <div>{order.gig.title}</div>
-            <div className='buy-order-seller-status'>
-              <div className='buy-order-sellername'>{order.seller.fullname}</div>
-              <div className='buy-order-status'>{order.status}</div>
-            </div>
+    <div className="buy-order-list">
+      {orders && orders.map(order => <div className='order-container' key={order._id}>
+        <img className='buy-order-img' src={order.gig.imgUrl[0]} />
+        <div className='buy-order-info'>
+          <div>{order.gig.title}</div>
+          <div className='buy-order-seller-status'>
+            <div className='buy-order-sellername'>{order.seller.fullname}</div>
+            <div className='buy-order-status'>{order.status}</div>
           </div>
-        </div>)}
+        </div>
+      </div>)}
+
+
     </div>
   )
 }
 
+// return <div className="buy-order-list" key={order._id}>
+// //      />
+
+// //     <div className='buy-order-info' >
+// //       <div>{order.gig.title}</div>
+// //       <div className='buy-order-seller-status'>
+// //         <div className='buy-order-sellername'>{order.seller.fullname}</div>
+// //         <div className='buy-order-status'>{order.status}</div>
+// //       </div>
+// //     </div>
+// //   </div>
+// })}
