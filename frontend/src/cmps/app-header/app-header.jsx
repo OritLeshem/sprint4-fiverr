@@ -133,7 +133,7 @@ export function AppHeader() {
                             <button onClick={handleOrder} className="user-link">Orders</button>
                             {user.imgUrl && <img src={user.imgUrl}
                                 onClick={() => setIsDropdown(!isDropdown)} />}
-                            {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} />}
+                            {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} user={user} />}
                         </>
                     }
                     {!user &&
