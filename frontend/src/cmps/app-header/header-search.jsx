@@ -9,7 +9,7 @@ export function Search({ onSetFilter }) {
 
   function handleChange({ target }) {
     let { value, name: field, type } = target
-    console.log('value', value);
+    // console.log('value', value);
     value = (type === 'number') ? +value : value
     setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
   }
@@ -18,6 +18,7 @@ export function Search({ onSetFilter }) {
     // update father cmp that filters change on submit
     ev.preventDefault()
     onSetFilter(filterByToEdit)
+    setFilterByToEdit(gigService.getDefaultFilter())
   }
 
 
@@ -26,7 +27,7 @@ export function Search({ onSetFilter }) {
       className="gig-search"
       id="title"
       name="title"
-      placeholder={pathname === '/' ? "Try \"logo design\"" : "What service are you looking for today?"}
+      placeholder={pathname === '/' ? " Try \"logo design\"" : "What service are you looking for today?"}
       value={filterByToEdit.title}
       onChange={handleChange}
       ref={elInputRef}

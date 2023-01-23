@@ -16,6 +16,7 @@ import UserBuyTable from '../user/user-buy-table'
 
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
+    const filterByFromStore = useSelector(storeState => storeState.gigModule.filterBy)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [isModal, setIsModal] = useState(false)
@@ -23,22 +24,46 @@ export function AppHeader() {
     const [isOrder, setIsOrder] = useState(false)
     const [isSignup, setIsSignup] = useState(false)
     const { pathname } = window.location
+    // console.log(isModal)
+
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+            // If the menu is open and the clicked target is not within the menu,
+            // console.log(e.target.className)
+            if (isModal && e.target.className) {
+                setIsModal(false)
+            }
+            if (isDropdown && e.target.className) {
+                setIsDropdown(false)
+            }
+            if (isOrder && e.target.className) {
+                setIsOrder(false)
+            }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+
+        return () => {
+            document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+    }, [isModal, isDropdown, isOrder])
 
     function onSetFilter(filterBy) {
         dispatch({ type: SET_FILTER, filterBy })
-        if (!filterBy.tags.length === 0 && !filterBy.title) {
-            navigate('/gig')
-            return
+
+        let categoryParams
+        let queryStringParams
+
+        if (!filterBy.title=='') {
+            queryStringParams = `?title=${filterBy.title}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
+            navigate(`/gig${queryStringParams}`)
         }
 
-        let queryStringParams
-        if (filterBy.tags.length !== 0) {
-            queryStringParams = `?category=${filterBy.tags[0]}`
+        else {
+            if (filterBy.tags.length) { categoryParams = filterBy.tags[0] }
+            else { categoryParams = '' }
+            queryStringParams = `?category=${categoryParams}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
             navigate(`/gig${queryStringParams}`)
-        }
-        if (filterBy.title) {
-            queryStringParams = `?title=${filterBy.title}`
-            navigate(`/gig${queryStringParams}`)
+
         }
     }
 
@@ -107,7 +132,7 @@ export function AppHeader() {
                     {!user &&
                         <>
                             {isModal && <Modal onLogin={onLogin} onSignup={onSignup}
-                                onCloseModal={onCloseModal} setIsSignup={setIsSignup} isSignup={isSignup}/>}
+                                onCloseModal={onCloseModal} setIsSignup={setIsSignup} isSignup={isSignup} />}
                             <Link onClick={() => { onOpenModal(); setIsSignup(false) }}>Sign in</Link>
                             <button className={`join-btn ${pathname === '/' && 'home-page-btn'}`}
                                 onClick={() => { onOpenModal(); setIsSignup(true) }}>Join</button>

@@ -1,18 +1,38 @@
 import { useEffect, useState, useRef } from "react"
 import { gigService } from "../../services/gig.service"
 import { useDispatch, useSelector } from 'react-redux'
+import { ref } from "yup"
 
 export function TopFilterBar({ onSetFilter }) {
 
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
     const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
     const [isPriceFilterShown, setIsPriceFilterShown] = useState(false)
+    const ref = useRef()
+
+    useEffect(() => {
+        const checkIfClickedOutside = e => {
+            if (isPriceFilterShown && ref.current && !ref.current.contains(e.target)) {
+                setIsPriceFilterShown(false)
+            }
+            if (e.target.className === "filter-menu filter-price") {
+                e.preventDefault()
+                setIsPriceFilterShown(!isPriceFilterShown)
+            }
+        }
+        document.addEventListener("mousedown", checkIfClickedOutside)
+
+        return () => {
+            document.removeEventListener("mousedown", checkIfClickedOutside)
+        }
+
+    }, [isPriceFilterShown])
 
     function handleChange(e) {
         const { target } = e
         let { value, name: field, type } = target
         value = (type === 'number') ? +value : value
-        let newFilterBy = ({ ...filterBy, [field]: value })
+        let newFilterBy = ({ ...filterByToEdit, [field]: value })
         setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
         if (field === "daysToMake") onSetFilter(newFilterBy)
     }
@@ -28,12 +48,6 @@ export function TopFilterBar({ onSetFilter }) {
         onSetFilter(newFilterBy)
     }
 
-    function onTogglePriceFilter(ev) {
-        ev.preventDefault()
-        if (ev.target.className === "filter-menu filter-price") setIsPriceFilterShown(!isPriceFilterShown)
-        else return
-    }
-
     return <div className="top-filter-bar">
         <select className="filter-menu filter-days" name="daysToMake" id="delivery" onChange={handleChange}>
             <option value="">Delivery Time</option>
@@ -43,23 +57,24 @@ export function TopFilterBar({ onSetFilter }) {
             <option value="">Anytime</option>
         </select>
 
-        <div className="filter-menu filter-price" onClick={onTogglePriceFilter}>Budget <span className="fa-solid angle-down"></span>
+        <div className="filter-menu filter-price" ref={ref}>Budget  <span className="fa-solid angle-down"></span>
             {isPriceFilterShown && <form className="price-filter-scroll">
                 <div className="price-filter-inputs">
                     <div>
-                        <label htmlFor="minPrice">Min.</label>
-                        <input onChange={handleChange} value={filterByToEdit.minPrice} type="number" label="Min Price" className="min-price" id="outlined-basic" name="minPrice" />
+                        <label htmlFor="minPrice">MIN.</label>
+                        <input onChange={handleChange} value={filterByToEdit.minPrice} type="number" label="Min Price" className="min-price" id="outlined-basic" name="minPrice" placeholder="Any" />
                     </div>
                     <div>
-                        <label htmlFor="maxPrice">Max.</label>
-                        <input onChange={handleChange} value={filterByToEdit.maxPrice} type="number" label="Max Price" className="max-price" id="outlined-basic" name="maxPrice" />
+                        <label htmlFor="maxPrice">MAX.</label>
+                        <input onChange={handleChange} value={filterByToEdit.maxPrice} type="number" label="Max Price" className="max-price" id="outlined-basic" name="maxPrice" placeholder="Any" />
                     </div>
                 </div>
                 <div className="filter-price-btns">
-                    <button onClick={onClear}>Clear All</button>
+                    <div onClick={onClear}>Clear All</div>
                     <button onClick={onSubmit}>Apply</button>
                 </div>
             </form>
-            }</div>
+            }
+        </div>
     </div>
 }

@@ -21,8 +21,7 @@
 .price-filter-scroll {
     z-index: 99;
     width: 317px;
-    height: 169px;
-    border: 1px solid $clr5;
+    border: 1px solid #dadbdd;
     background-color: $clr3;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 4px;
@@ -40,6 +39,9 @@
 
     label {
         display: block;
+        color: #95979d;
+        font-size: 14px;
+        margin-bottom: 4px;
     }
 }
 
@@ -49,10 +51,16 @@
     justify-content: space-between;
     padding: 16px 24px;
     border-top: 1px solid #e4e5e7;
-
     button {
         padding: 4px 12px;
         border-radius: 4px;
+        font-family:  macan-semibold;
+        line-height: 22px
+    }
+    div{
+        color: #95979d;
+        font-size: 14px;
+        align-self: center;
     }
 }
 
@@ -62,6 +70,12 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+
+    ::placeholder{
+        font-size: 14px;
+        font-family: macan-semibold;
+        padding: 8px 12px
+    }
 }
 
 .angle-down {
