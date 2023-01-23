@@ -16,10 +16,11 @@ export function ReviewIndex({ gig }) {
   // const reviews = useSelector(storeState => storeState.reviewModule.reviews)
   const [userReviews, setUserReviews] = useState(null)
   const [reviewToEdit, setReviewToEdit] = useState({ txt: '', aboutUserId: '' })
-
+  const starsAvg = getStarsAvg()
   const dispatch = useDispatch()
 
   console.log('userReviews:', userReviews)
+  console.log('starsAvg:', starsAvg)
 
   useEffect(() => {
     loadUserReviews()
@@ -70,6 +71,27 @@ export function ReviewIndex({ gig }) {
     }
   }
 
+  function getStarsAvg() {
+    if (!userReviews) return
+    const accInit = { sum: [0, 0, 0, 0, 0, 0], count: [0, 0, 0, 0, 0, 0], avg: [0, 0, 0, 0, 0, 0] }
+    const starsAvg = userReviews.reduce((acc, review) => {
+      const { rate } = review
+
+      if (rate) {
+        const rateFloor = Math.floor(rate)
+        acc.sum[rateFloor] += rate
+        acc.count[rateFloor]++
+        const percentAvgRate = ((acc.sum[rateFloor] / acc.count[rateFloor]) * 100) / 5
+        acc.avg[rateFloor] = acc.count[rateFloor] ? percentAvgRate : 0
+      }
+
+      return acc
+    }, accInit)
+
+    return starsAvg.avg.slice(1)
+  }
+
+
   // function canRemove(review) {
   //   return review.byUser._id === loggedInUser?._id || loggedInUser?.isAdmin
   // }
@@ -85,8 +107,19 @@ export function ReviewIndex({ gig }) {
       < StarRating value={gig.owner.rate} />
     </div>
 
+    <div className="review-bars">
+      {starsAvg.map((starAvg, idx) =>
+        <div key={idx}>
+          <div>{`${idx + 1} Stars`}</div>
+          <div className="review-rate-bar">
+            <span className="percent" style={{ width: `${starAvg}%` }}></span>
+          </div>
+        </div>
+      )}
+    </div>
+
     {userReviews && <ul className="review-list">
-      {userReviews.map(review => (
+      {userReviews.map(review =>
         <li key={review.id}>
           <img src={review.by.imgUrl} alt="" />
 
@@ -105,45 +138,46 @@ export function ReviewIndex({ gig }) {
 
             <p>{review.txt}</p>
           </div>
-
-          {/* {canRemove(review) &&
-            <button onClick={() => onRemove(review._id)}>X</button>} */}
-          {/* <p>
-            About:
-            <Link to={`/user/${review.aboutUser._id}`}>
-              {review.aboutUser.fullname}
-            </Link>
-          </p>
-          <h3>{review.txt}</h3>
-          <p>
-            By:
-            <Link to={`/user/${review.byUser._id}`}>
-              {review.byUser.fullname}
-            </Link>
-          </p> */}
         </li>
-      ))}
+      )}
     </ul>}
-    {/* {users && loggedInUser &&
-      <form onSubmit={onAddReview}>
-        <select
-          onChange={handleChange}
-          value={reviewToEdit.aboutUserId}
-          name="aboutUserId"
-        >
-          <option value="">Select User</option>
-          {users.map(user => (
-            <option key={user._id} value={user._id}>
-              {user.fullname}
-            </option>
-          ))}
-        </select>
-        <textarea
-          name="txt"
-          onChange={handleChange}
-          value={reviewToEdit.txt}
-        ></textarea>
-        <button>Add</button>
-      </form>} */}
   </section>
 }
+
+// {canRemove(review) &&
+//   <button onClick={() => onRemove(review._id)}>X</button>}
+// <p>
+//   About:
+//   <Link to={`/user/${review.aboutUser._id}`}>
+//     {review.aboutUser.fullname}
+//   </Link>
+// </p>
+// <h3>{review.txt}</h3>
+// <p>
+//   By:
+//   <Link to={`/user/${review.byUser._id}`}>
+//     {review.byUser.fullname}
+//   </Link>
+// </p>
+
+// {users && loggedInUser &&
+//   <form onSubmit={onAddReview}>
+//     <select
+//       onChange={handleChange}
+//       value={reviewToEdit.aboutUserId}
+//       name="aboutUserId"
+//     >
+//       <option value="">Select User</option>
+//       {users.map(user => (
+//         <option key={user._id} value={user._id}>
+//           {user.fullname}
+//         </option>
+//       ))}
+//     </select>
+//     <textarea
+//       name="txt"
+//       onChange={handleChange}
+//       value={reviewToEdit.txt}
+//     ></textarea>
+//     <button>Add</button>
+//   </form>}

@@ -210,6 +210,19 @@ function _createUsers() {
                             imgUrl: 'https://cdn.pixabay.com/photo/2017/05/31/04/59/beautiful-2359121_960_720.jpg',
                         }
                     },
+                    {
+                        id: utilService.makeId(),
+                        gig: "{optional-mini-gig}",
+                        txt: 'Amazing work! The logoflow did everything I asked, and worked with me and my detail oriented-indecisive self through every step of the way. This is a high-touch service, and a high-touch seller. I feel like I\'ve been taken care of beyond what I could have thought, and I am so very happy with what I got. So many thanks, and honestly I look forward to working with logoflow again! Highly recommend!',
+                        rate: 5,
+                        createdAt: utilService.randomPastTime(),
+                        by: {
+                            _id: "u147",
+                            country: "Thailand",
+                            fullname: "zedisindeeddead",
+                            imgUrl: 'https://cdn.pixabay.com/photo/2016/11/29/03/35/girl-1867092_960_720.jpg',
+                        }
+                    },
                 ],
             },
             {
