@@ -102,7 +102,6 @@ export function AppHeader() {
         setIsModal(false)
     }
     function handleOrder() {
-        console.log('hi');
         setIsOrder(prev => !prev)
     }
     return <>
@@ -124,11 +123,8 @@ export function AppHeader() {
                             <Link className="user-link fa-regular heart" title="Lists"></Link>
                             <button onClick={handleOrder} className="user-link">Orders</button>
                             {user.imgUrl && <img src={user.imgUrl}
-                                onClick={() => {
-                                    setIsOrder(false)
-                                    setIsDropdown(!isDropdown)
-                                    }} />}
-                            {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} />}
+                                onClick={() => setIsDropdown(!isDropdown)} />}
+                            {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} user={user} />}
                         </>
                     }
                     {!user &&
