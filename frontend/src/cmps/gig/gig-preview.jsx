@@ -13,7 +13,7 @@ export function GigPreview({ gig }) {
             <div className="owner-info">
                 <img src={gig.owner && gig.owner.imgUrl} alt="" />
                 <div className="owner">
-                    <Link>{gig.owner && gig.owner.fullname}</Link>
+                    <Link to={`/user/${gig.owner._id}`}>{gig.owner && gig.owner.fullname}</Link>
                     <span>{gig.owner && gig.owner.level}</span>
                 </div>
             </div>

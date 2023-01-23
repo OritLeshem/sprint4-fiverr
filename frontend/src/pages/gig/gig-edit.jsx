@@ -10,6 +10,7 @@ import { addGig } from '../../store/gig/gig.actions'
 
 import { gigService } from '../../services/gig.service'
 import { ImgUploader } from '../../cmps/img-uploader'
+import { userService } from '../../services/user.service'
 
 export function GigEdit() {
     const navigate = useNavigate()
@@ -17,6 +18,8 @@ export function GigEdit() {
     const [gigToEdit, setGigToEdit] = useState(gigService.getEmptyGig())
     const [imgToGig, setImgToEdit] = useState()
     const gigForFormik = { ...gigToEdit, tags2: '' }
+    const loginUser = userService.getLoggedinUser()
+    console.log(loginUser)
 
     useEffect(() => {
         if (!gigId) return
@@ -50,7 +53,8 @@ export function GigEdit() {
     const onSave = async (values) => {
         try {
             await addGig(gigToEdit)
-            navigate('/user')
+
+            navigate(`/user/${loginUser._id}`)
         } catch (err) {
             console.log('Cannot save gig: ', err)
         }
