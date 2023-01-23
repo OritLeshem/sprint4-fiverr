@@ -35,7 +35,7 @@ export function GigDetails() {
         <div className="gig-details-info">
 
             <div className="gig-details-preview">
-                <span>{`Graphics & design > Logo Design`}</span>
+                <nav>{`Graphics & design > Logo Design`}</nav>
                 <h1>{gig.title}</h1>
                 <div className="owner-details">
                     <img src={imgUrl} alt="user-img" />

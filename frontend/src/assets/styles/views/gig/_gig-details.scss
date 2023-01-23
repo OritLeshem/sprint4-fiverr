@@ -4,6 +4,12 @@
   padding: em(32px, 16px) em(32px, 16px) 0 em(32px, 16px);
   margin: 0 auto;
 
+  nav {
+    font-size: rem(14px);
+    margin-bottom: em(10px, 14px);
+    color: $clr6;
+  }
+
   p {
     margin: 0;
   }
@@ -131,7 +137,7 @@
 
   span {
     display: block;
-    
+
     &:nth-child(2n +1) {
       color: $clr5;
     }
