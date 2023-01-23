@@ -14,7 +14,6 @@ import UserBuyTable from '../user/user-buy-table'
 
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
-    const filterByFromStore = useSelector(storeState => storeState.gigModule.filterBy)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [isModal, setIsModal] = useState(false)
@@ -22,12 +21,10 @@ export function AppHeader() {
     const [isOrder, setIsOrder] = useState(false)
     const [isSignup, setIsSignup] = useState(false)
     const { pathname } = window.location
-    // console.log(isModal)
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
             // If the menu is open and the clicked target is not within the menu,
-            // console.log(e.target.className)
             if (isModal && e.target.className) {
                 setIsModal(false)
             }
@@ -104,10 +101,17 @@ export function AppHeader() {
     function handleOrder() {
         setIsOrder(prev => !prev)
     }
+
     return <>
         <section className={`app-header ${pathname === '/' && 'header-home-page main-layout'}`} >
 
             <nav className="app-header-nav">
+                <div className="main-screen"
+                    onClick={() => document.body.classList.remove('menu-open')}>
+                    <button className="fa-solid fa-bars menu-toggle-btn"
+                        onClick={() => document.body.classList.add('menu-open')}></button>
+                </div>
+
                 <div className="app-header-aside">
                     <Link to="/"><h3 className={`logo ${pathname === '/' && 'home-page-link'}`}>finderr<span>.</span></h3></Link>
                     {pathname !== '/' && <Search onSetFilter={onSetFilter} />}
