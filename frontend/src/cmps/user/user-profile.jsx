@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { userService } from "../../services/user.service"
-import { loadUser } from "../../store/user/user.actions"
+import { loadUser, updateUser } from "../../store/user/user.actions"
 import { ImgUploader } from "../img-uploader"
 
 
 export function UserProfile() {
   const loginUser = userService.getLoggedinUser()
-  let user = useSelector(storeState => storeState.userModule.watchedUser)
+  const user = useSelector(storeState => storeState.userModule.user)
 
   // const [userToEdit, setUserToEdit] = useState(user)
 
@@ -15,10 +15,13 @@ export function UserProfile() {
     loadUser(loginUser._id)
   }, [])
   function onUploaded(data) {
+    console.log('user', user)
     const newUser = { ...user, imgUrl: data }
-    userService.update(user._id, data)
-    // setUserToEdit((prevUser) => ({ ...prevUser, imgUrl: data }))
-    console.log(user, data)
+    console.log('newUser', newUser)
+    updateUser(newUser)
+    // userService.update(user._id, data)
+    // // setUserToEdit((prevUser) => ({ ...prevUser, imgUrl: data }))
+    // console.log(user, data)
 
   }
   // function onSave() {
@@ -31,7 +34,7 @@ export function UserProfile() {
       {user && <div className="user-profile-info" >
         {/* <button className="user-profile-btn-online">online</button> */}
         {user && <div className="user-profile-img" ><img src={user.imgUrl}></img></div>}
-        {/* <ImgUploader onUploaded={onUploaded} /> */}
+        <ImgUploader onUploaded={onUploaded} />
         {/* <button onClick={onSave}>save img</button> */}
         <h2>{user.username}</h2>
         <button className="profile-edit-btn fa-solid fa-pencil"></button>

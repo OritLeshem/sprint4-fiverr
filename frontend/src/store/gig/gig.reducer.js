@@ -9,6 +9,7 @@ export const CLEAR_CART = 'CLEAR_CART'
 export const UNDO_REMOVE_GIG = 'UNDO_REMOVE_GIG'
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 export const SET_FILTER = 'SET_FILTER'
+export const SET_SORT = 'SET_SORT'
 
 
 const initialState = {
@@ -16,6 +17,7 @@ const initialState = {
     cart: [],
     lastRemovedGig: null,
     filterBy: gigService.getDefaultFilter(),
+    sortBy: gigService.getDefaultSort()
 
 }
 
@@ -56,6 +58,8 @@ export function gigReducer(state = initialState, action) {
             break
         case SET_FILTER:
             return { ...state, filterBy: action.filterBy }
+        case SET_SORT:
+            return { ...state, sortBy: action.sortBy }
         default:
     }
     return newState

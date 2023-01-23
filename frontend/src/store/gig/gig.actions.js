@@ -25,9 +25,9 @@ export function getActionUpdateGig(gig) {
     }
 }
 
-export async function loadGigs(filterBy, userId) {
+export async function loadGigs(filterBy, sortBy, userId) {
     try {
-        const gigs = await gigService.query(filterBy, userId)
+        const gigs = await gigService.query(filterBy, sortBy, userId)
         // console.log('Gigs from DB:', gigs)
         // console.log('filterby action gig:', filterBy)
 
