@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { HomePageSlider } from '../cmps/home-page/home-page-slider'
 import { SlideList } from '../cmps/slide/slide-list'
 import { gigService } from '../services/gig.service'
@@ -9,12 +9,44 @@ export function HomePage() {
     const sellingTxts = gigService.getGigSelling()
     const [currSlides, setCurrSlides] = useState(firstSlides)
     let diff = useRef(true)
+    const [windowSize, setWindowSize] = useState(undefined)
 
     function onSetSlides() {
         if (diff.current) setCurrSlides(lastSlides)
         else setCurrSlides(firstSlides)
         diff.current = !diff.current
     }
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowSize(window.innerWidth)
+        }
+        window.addEventListener("resize", handleResize);
+        handleResize()
+        return () => window.removeEventListener("resize", handleResize);
+    }, [])
+
+    useEffect(()=>{
+
+        const slidesToList =  diff.current ? lastSlides: firstSlides
+        if(windowSize>1163){
+            setCurrSlides(slidesToList)
+        }
+        if(windowSize<=1163&&windowSize>1060){
+            setCurrSlides(slidesToList.slice(0,slidesToList.length-1))
+        }
+
+        if(windowSize<=1060&&windowSize>900){
+            setCurrSlides(slidesToList.slice(0,slidesToList.length-2))
+        }
+        if(windowSize<=900&&windowSize>600){
+            setCurrSlides(slidesToList.slice(0,slidesToList.length-3))
+        }
+
+        if(windowSize<=600){
+            setCurrSlides(slidesToList.slice(0,slidesToList.length-4))
+        }
+    },[windowSize,diff.current])
 
     return <section className="home-page full">
 

@@ -3,7 +3,7 @@ import { store } from '../store'
 
 import { showErrorMsg } from '../../services/event-bus.service'
 import { LOADING_DONE, LOADING_START } from "../system.reducer"
-import { REMOVE_USER, SET_USER, SET_USERS, SET_WATCHED_USER } from "./user.reducer"
+import { REMOVE_USER, SET_USER, SET_USERS, SET_WATCHED_USER, UPDATE_USER } from "./user.reducer"
 
 export async function loadUsers() {
     try {
@@ -23,6 +23,17 @@ export async function removeUser(userId) {
         store.dispatch({ type: REMOVE_USER, userId })
     } catch (err) {
         console.log('UserActions: err in removeUser', err)
+    }
+}
+
+export async function updateUser(user) {
+    try {
+        await userService.update(user)
+        store.dispatch({ type: UPDATE_USER, user })
+
+    }
+    catch (err) {
+        console.log("UserActions: cannot update the user ", err)
     }
 }
 

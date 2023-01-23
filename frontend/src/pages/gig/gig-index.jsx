@@ -8,17 +8,21 @@ import { loadGigs, addGig, updateGig, removeGig, addToCart } from '../../store/g
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
 import { gigService } from '../../services/gig.service.js'
 import { GigList } from '../../cmps/gig/gig-list.jsx'
-import { SET_FILTER } from '../../store/gig/gig.reducer'
+import { SET_FILTER, SET_SORT } from '../../store/gig/gig.reducer'
 import { Search } from '../../cmps/app-header/header-search.jsx'
 import { TopFilterBar } from '../../cmps/gig/top-filter-bar.jsx'
+import { SortyBy } from '../../cmps/gig/sortBy.jsx'
 
 export function GigIndex() {
     const filterByFromStore = useSelector(storeState => storeState.gigModule.filterBy)
+    const sortBy = useSelector((storeState) => storeState.gigModule.sortBy)
+
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
     const dispatch = useDispatch()
     const [searchParams, setSearchParams] = useSearchParams()
     const navigate = useNavigate()
+
 
     useEffect(() => {
         // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
@@ -26,8 +30,9 @@ export function GigIndex() {
     }, [])
 
     useEffect(() => {
-        loadGigs(filterBy)
-    }, [filterBy, searchParams])
+        // console.log('useeffect insex gig', sortBy)
+        loadGigs(filterBy, sortBy)
+    }, [filterBy, sortBy, searchParams])
 
     function renderUiByQueryStringParams() {
         if (searchParams.get('title')) {
@@ -123,38 +128,50 @@ export function GigIndex() {
         switch (category) {
             case "graphic-design":
                 return <h1>Graphic & Design</h1>
-                break
+
             case "digital-marketing":
                 return <h1>Digital & Marketing</h1>
-                break
+
             case "writing-translation":
                 return <h1>Writing & Translation</h1>
-                break
+
             case "video-animation":
                 return <h1>Video & Animation</h1>
-                break
+
             case "music-audio":
                 return <h1>Music & Audio</h1>
-                break
+
             case "programming-tech":
                 return <h1>Programming & Tech</h1>
-                break
+
             case "business":
                 return <h1>Business</h1>
-                break
+
             case "lifestyle":
                 return <h1>Lifestyle</h1>
-                break
+
             case "trending":
                 return <h1>Trending</h1>
-                break
+
+            default: return
         }
+    }
+    function onSort(sortBy) {
+        console.log('hello from sort', sortBy)
+        dispatch({ type: SET_SORT, sortBy })
+
     }
 
     return <section className="gig-index">
-        {(searchParams.get('title')&&searchParams.get('title')!=='')&&<h1>Results for "{searchParams.get('title')}"</h1>
-        ||searchParams.get('category') && getCategoryName(searchParams.get('category')) || <h1>All</h1>}
-        <TopFilterBar onSetFilter={onSetFilter} />
+        {(searchParams.get('title') && searchParams.get('title') !== '') && <h1>Results for "{searchParams.get('title')}"</h1>
+            || searchParams.get('category') && getCategoryName(searchParams.get('category')) || <h1>All</h1>}
+        <div className='filter-sort'>
+
+            <TopFilterBar onSetFilter={onSetFilter} />
+
+
+            <SortyBy onSort={onSort} />
+        </div>
         {gigs.length > 0 && <p>{gigs.length} services available</p>}
         <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
     </section>

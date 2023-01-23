@@ -1,0 +1,15 @@
+.gig-sort {
+  span {
+    color: $clr5;
+  }
+
+  select.gig-sort-option {
+    border: none;
+    font-size: 18px;
+    padding: 12px 12px;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
