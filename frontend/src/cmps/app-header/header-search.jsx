@@ -7,8 +7,9 @@ export function Search({ onSetFilter }) {
   const elInputRef = useRef(null)
   const { pathname } = window.location
 
-  function handleChange({ target }) {
-    let { value, name: field, type } = target
+  function handleChange(ev) {
+    // ev.preventFocus = true;
+    let { value, name: field, type } = ev.target
     console.log('value', value);
     value = (type === 'number') ? +value : value
     setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
