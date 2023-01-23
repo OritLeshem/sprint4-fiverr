@@ -8,6 +8,7 @@ export function Search({ onSetFilter }) {
   const { pathname } = window.location
 
   function handleChange({ target }) {
+    // elInputRef.current.blur()
     let { value, name: field, type } = target
     // console.log('value', value);
     value = (type === 'number') ? +value : value
