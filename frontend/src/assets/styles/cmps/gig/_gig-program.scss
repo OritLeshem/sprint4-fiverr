@@ -1,3 +1,14 @@
+.gig-details-side {
+  width: 100%;
+  height: fit-content;
+  position: sticky;
+  top: 32px;
+  
+  @media (min-width: 900px) {
+    width: 33.6%;
+  }
+}
+
 .gig-program {
   height: fit-content;
   color: $clr5;
@@ -26,7 +37,6 @@
     }
   }
 }
-
 
 .gig-program-info {
   padding: 36px 26px;
@@ -58,14 +68,6 @@
     padding-top: 37px;
     padding-bottom: 82px;
   }
-}
-
-.gig-details-side {
-  width: 33.6%;
-  height: fit-content;
-  position: sticky;
-  top: 32px;
-
 }
 
 .gig-program-link-continue {
