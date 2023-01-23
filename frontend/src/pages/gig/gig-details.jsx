@@ -29,8 +29,9 @@ export function GigDetails() {
         }
     }
 
+    if (!gig) return <div>Loading...</div>  
+    if(!gig.owner) return
     const { imgUrl, fullname, rate, level } = gig.owner
-    if (!gig) return <div>Loading...</div>
     return <section className="gig-details">
         <div className="gig-details-info">
 
