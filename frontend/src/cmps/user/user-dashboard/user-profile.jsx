@@ -27,12 +27,17 @@ export function UserProfile() {
   // function onSave() {
   //   if (user) userService.update(user._id, userToEdit.imgUrl)
   // }
+  function handleProfileImg() {
+
+
+  }
   return (
 
     <div className="user-profile">
 
       {user && <div className="user-profile-info" >
         {/* <button className="user-profile-btn-online">online</button> */}
+        {/* <button onClick={handleProfileImg} className="user-camera-avatar fa-solid fa-camera"></button> */}
         {user && <div className="user-profile-img" ><img src={user.imgUrl}></img></div>}
         <ImgUploader onUploaded={onUploaded} />
         {/* <button onClick={onSave}>save img</button> */}
