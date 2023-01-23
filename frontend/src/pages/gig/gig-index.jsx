@@ -165,9 +165,14 @@ export function GigIndex() {
     return <section className="gig-index">
         {(searchParams.get('title') && searchParams.get('title') !== '') && <h1>Results for "{searchParams.get('title')}"</h1>
             || searchParams.get('category') && getCategoryName(searchParams.get('category')) || <h1>All</h1>}
-        <TopFilterBar onSetFilter={onSetFilter} />
+        <div className='filter-sort'>
+
+            <TopFilterBar onSetFilter={onSetFilter} />
+
+
+            <SortyBy onSort={onSort} />
+        </div>
         {gigs.length > 0 && <p>{gigs.length} services available</p>}
-        <SortyBy onSort={onSort} />
         <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
     </section>
 }

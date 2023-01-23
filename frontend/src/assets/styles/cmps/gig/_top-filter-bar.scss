@@ -1,6 +1,6 @@
 .top-filter-bar {
     display: flex;
-    margin-bottom: em(24px, 16px);
+    // margin-bottom: em(24px, 16px);
 }
 
 .filter-menu {
@@ -51,13 +51,15 @@
     justify-content: space-between;
     padding: 16px 24px;
     border-top: 1px solid #e4e5e7;
+
     button {
         padding: 4px 12px;
         border-radius: 4px;
-        font-family:  macan-semibold;
+        font-family: macan-semibold;
         line-height: 22px
     }
-    div{
+
+    div {
         color: #95979d;
         font-size: 14px;
         align-self: center;
@@ -71,7 +73,7 @@
     justify-content: space-between;
     margin-bottom: 20px;
 
-    ::placeholder{
+    ::placeholder {
         font-size: 14px;
         font-family: macan-semibold;
         padding: 8px 12px

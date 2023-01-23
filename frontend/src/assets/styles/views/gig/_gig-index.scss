@@ -14,3 +14,10 @@
         margin-bottom: em(25px, 14px);
     }
 }
+
+.filter-sort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: em(24px, 16px);
+}
