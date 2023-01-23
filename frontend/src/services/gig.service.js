@@ -14,7 +14,8 @@ export const gigService = {
     getDefaultFilter,
     getGigFirstSlides,
     getGigLastSlides,
-    getGigSelling
+    getGigSelling,
+    getDefaultSort
     // addGigMsg
 }
 
@@ -22,13 +23,19 @@ window.cs = gigService
 function getDefaultFilter() {
     return { title: '', tags: [], daysToMake: '', minPrice: '', maxPrice: '' }
 }
+function getDefaultSort() {
+    return { categorySort: 'recommended' }
+}
 
-async function query(filterBy = { title: '', tags: [], daysToMake: '' }, userId) {
+async function query(filterBy = { title: '', tags: [], daysToMake: '' }, sortBy, userId) {
     var gigs = await storageService.query(STORAGE_KEY)
     if (userId) gigs = gigs.filter(gig => gig.owner._id === userId)
     if (filterBy.title) {
         const regex = new RegExp(filterBy.title, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
+    }
+    if (sortBy.categorySort === 'recommended') {
+        gigs.sort((a, b) => b.owner.rate - a.owner.rate)
     }
     if (filterBy.tags?.length) {
         gigs = gigs.filter(gig => gig.tags.some(tag => filterBy.tags.includes(tag)))
