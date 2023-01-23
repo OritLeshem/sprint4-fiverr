@@ -1,11 +1,13 @@
 .gig-details-side {
   width: 100%;
   height: fit-content;
-  position: sticky;
-  top: 32px;
-  
-  @media (min-width: 900px) {
-    width: 33.6%;
+  order: 2;
+  margin-bottom: em(32px, 16px);
+
+  @media (min-width: $narrow-breakpoint) {
+    grid-area: aside;
+    position: sticky;
+    top: 32px;
   }
 }
 
@@ -17,7 +19,6 @@
 
 .gig-program-name {
   display: flex;
-  // padding: 12px 24px;
 
   button {
     height: 64px;
