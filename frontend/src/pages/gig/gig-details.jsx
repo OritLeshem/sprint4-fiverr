@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import ImageSlider from "../../cmps/slide/image-slider"
 import { gigService } from "../../services/gig.service"
 import { showErrorMsg } from "../../services/event-bus.service"
 import { GigProgram } from "../../cmps/gig/gig-program"
 import { SlideDetails } from "../../cmps/slide/slide-details"
+import { ReviewIndex } from "../../cmps/review-index"
 
 
 export function GigDetails() {
@@ -113,6 +113,7 @@ export function GigDetails() {
                     </div>
                 </div>
             </div>
+        <ReviewIndex gig={gig}/>
         </div>
         <GigProgram gig={gig} />
     </section >

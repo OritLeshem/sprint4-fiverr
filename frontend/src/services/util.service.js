@@ -5,7 +5,8 @@ export const utilService = {
     debounce,
     randomPastTime,
     saveToStorage,
-    loadFromStorage
+    loadFromStorage,
+    formatTime
 }
 
 function makeId(length = 6) {
@@ -35,14 +36,31 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive 
 }
 
+const SECOND = 1000
+const MINUTE = SECOND * 60
+const HOUR = MINUTE * 60
+const DAY = HOUR * 24
+const WEEK = DAY * 7
 
 function randomPastTime() {
-    const HOUR = 1000 * 60 * 60
-    const DAY = 1000 * 60 * 60 * 24
-    const WEEK = 1000 * 60 * 60 * 24 * 7
-
     const pastTime = getRandomIntInclusive(HOUR, WEEK)
     return Date.now() - pastTime
+}
+
+function formatTime(time) {
+    const now = Date.now()
+    const diff = now - time
+
+    if (diff < MINUTE) return 'Just now'
+    if (diff < MINUTE * 5) return 'A few minutes ago'
+    if (diff < DAY) return 'Today'
+    if (diff < DAY * 2) return 'Yesterday'
+
+    for( let i = 3; i < 7; i++) {
+        if(diff < DAY * i) return `${i} days ago`
+    }
+
+    if(diff === WEEK) return '1 week ago'
 }
 
 function debounce(func, timeout = 300) {
