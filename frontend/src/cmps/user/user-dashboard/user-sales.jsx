@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { userService } from "../../services/user.service"
-import { loadOrders } from "../../store/order/order.actions"
-import UserBuyTable from "./user-buy-table"
+import { userService } from "../../../services/user.service"
+import { loadOrders } from "../../../store/order/order.actions"
 import UserSellerTable from "./user-seller-table"
-import BasicTable from "./user-seller-table"
 
 export function UserSales() {
 
@@ -16,9 +14,6 @@ export function UserSales() {
   }, [])
 
   return <div className="user-sales">
-
     <UserSellerTable orders={orders.filter(order => order.seller._id === user._id)} />
-    {/* <h2>Buy</h2>
-    <UserBuyTable orders={orders.filter(order => order.buyer._id === user._id)} /> */}
   </div>
 }

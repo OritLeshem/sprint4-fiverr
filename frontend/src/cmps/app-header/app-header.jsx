@@ -8,7 +8,7 @@ import { SET_FILTER } from '../../store/gig/gig.reducer'
 import { CategoryMenu } from './header-category-menu'
 import { gigService } from '../../services/gig.service'
 import { useEffect, useState } from 'react'
-import { Modal } from './modal'
+import { ModalLogin } from './modal-login'
 import { Dropdown } from './dropdown'
 import UserBuyTable from '../user/user-buy-table'
 
@@ -51,7 +51,7 @@ export function AppHeader() {
         let categoryParams
         let queryStringParams
 
-        if (!filterBy.title=='') {
+        if (!filterBy.title == '') {
             queryStringParams = `?title=${filterBy.title}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
             navigate(`/gig${queryStringParams}`)
         }
@@ -129,7 +129,7 @@ export function AppHeader() {
                     }
                     {!user &&
                         <>
-                            {isModal && <Modal onLogin={onLogin} onSignup={onSignup}
+                            {isModal && <ModalLogin onLogin={onLogin} onSignup={onSignup}
                                 onCloseModal={onCloseModal} setIsSignup={setIsSignup} isSignup={isSignup} />}
                             <Link onClick={() => { onOpenModal(); setIsSignup(false) }}>Sign in</Link>
                             <button className={`join-btn ${pathname === '/' && 'home-page-btn'}`}

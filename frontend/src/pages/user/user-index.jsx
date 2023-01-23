@@ -10,9 +10,9 @@ import { UserList } from '../../cmps/user/user-list.jsx'
 import { SET_FILTER } from '../../store/gig/gig.reducer'
 import { Search } from '../../cmps/app-header/header-search.jsx'
 import { TopFilterBar } from '../../cmps/gig/top-filter-bar.jsx'
-import { UserProfile } from '../../cmps/user/user-profile.jsx'
+import { UserProfile } from '../../cmps/user/user-dashboard/user-profile'
 import { userService } from '../../services/user.service.js'
-import { UserSales } from '../../cmps/user/user-sales.jsx'
+import { UserSales } from '../../cmps/user/user-dashboard/user-sales.jsx'
 
 export function UserIndex() {
 
