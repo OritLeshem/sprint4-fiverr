@@ -9,11 +9,13 @@ export function UserProfile() {
   const loginUser = userService.getLoggedinUser()
   const user = useSelector(storeState => storeState.userModule.user)
 
+
   // const [userToEdit, setUserToEdit] = useState(user)
 
   useEffect(() => {
     loadUser(loginUser._id)
   }, [])
+
   function onUploaded(data) {
     console.log('user', user)
     const newUser = { ...user, imgUrl: data }

@@ -24,7 +24,7 @@ export function RootCmp() {
                 <AppHeader />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/user" element={<UserIndex />} />
+                    <Route path="/user/:userId" element={<UserIndex />} />
                     <Route path="/about" element={<AboutUs />} />
                     <Route path="/gig" element={<GigIndex />} />
                     <Route path="/gig/:gigId" element={<GigDetails />} />
