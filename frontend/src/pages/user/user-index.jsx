@@ -18,6 +18,8 @@ export function UserIndex() {
 
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
+    const sortBy = useSelector((storeState) => storeState.gigModule.sortBy)
+
     const dispatch = useDispatch()
     // const [searchParams, setSearchParams] = useSearchParams()
     const user = userService.getLoggedinUser()
@@ -27,7 +29,7 @@ export function UserIndex() {
 
     useEffect(() => {
         // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
-        loadGigs(filterBy, user._id)
+        loadGigs(filterBy, sortBy, user._id)
         console.log(gigs)
     }, [filterBy])
 

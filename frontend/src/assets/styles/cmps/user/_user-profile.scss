@@ -19,6 +19,14 @@
     background-color: transparent;
   }
 
+  .user-camera-avatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: $clr6;
+    font-size: 32px;
+  }
+
   .user-profile-img {
     margin: 30px;
 
