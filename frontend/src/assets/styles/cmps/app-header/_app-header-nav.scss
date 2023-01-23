@@ -3,6 +3,14 @@
     padding: 1em 0;
 }
 
+.menu-toggle-btn {
+    font-size: rem(24px);
+    background-color: transparent;
+    color: $clr2;
+    line-height: 1;
+    margin-right: em(15px, 24px);
+}
+
 .join-btn {
     font-size: rem(14px);
     color: $clr1;
@@ -21,7 +29,7 @@
 .home-page-btn {
     color: $clr3;
     border: 1px solid $clr3;
-    
+
     &:hover {
         border: 1px solid $clr1;
     }
