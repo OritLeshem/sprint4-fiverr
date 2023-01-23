@@ -21,6 +21,7 @@
         display: flex;
         align-items: center;
         line-height: 1;
+        margin-bottom: em(20px, 16px);
     }
 }
 
@@ -65,23 +66,7 @@
         align-items: center;
         color: $clr5;
         margin-bottom: em(12px, 14px);
-
-        .rate-num {
-            font-family: macan-bold;
-            padding-left: em(4px, 14px);
-        }
-
-        .divider {
-            height: em(17px, 14px);
-            border-right: 1px solid #e4e5e7;
-            margin: em(2px, 14px) em(8px, 14px);
-        }
-
-        // border: 1px solid red;
     }
-
-    // font: 400 16px/24px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
-    // line-height: 21px;
 
     img {
         grid-area: img;
@@ -91,13 +76,42 @@
     }
 }
 
+.divider {
+    height: em(17px, 14px);
+    border-right: 1px solid $clr12;
+    margin: em(2px, 14px) em(8px, 14px);
+}
+
 .rate {
     color: $clr4;
+    font-family: macan-bold;
+}
+
+.padding {
+    padding-left: em(4px, 14px);
 }
 
 .review-bars {
     display: flex;
     flex-direction: column-reverse;
+    margin-bottom: em(24px, 16px);
+    
+    // border: 1px solid red;
+}
+
+.review-count {
+    display: flex;
+}
+
+.review-bars-container {
+    color: $clr5;
+    display: flex;
+    align-items: center;
+    display: grid;
+    grid-template-columns:
+        em(65px, 16px) 
+        em(200px, 16px) 
+        em(20px, 16px);
 }
 
 .review-rate-bar {
@@ -105,10 +119,9 @@
     color: #111;
     position: relative;
     height: em(8px, 16px);
-    width: em(130px, 16px);
+    width: em(180px, 16px);
     border-radius: 100px;
     background-color: $clr7;
-
 
     .percent {
         border-radius: 100px;

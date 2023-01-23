@@ -64,7 +64,7 @@ export function HomePageSlider() {
                 <span>services for your business</span>
                 <Search onSetFilter={onSetFilter}/>
                 <ul className="popular">
-                    popular:
+                    Popular:
                     <li><a>Website Design</a></li>
                     <li><a>WordPress</a></li>
                     <li><a>Logo Design</a></li>

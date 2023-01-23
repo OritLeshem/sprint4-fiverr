@@ -1,28 +1,27 @@
 import { useState } from "react"
 
 export function SlideDetails({ gig }) {
-
     let slides = gig.imgUrl
     const [slideIndex, setSlideIndex] = useState(0)
 
-    // // Next/previous controls
+    // Next/previous controls
     function plusSlides(n) {
         if (slideIndex === slides.length - 1 && n === 1) setSlideIndex(0)
         else if (slideIndex === 0 && n === -1) setSlideIndex(slides.length - 1)
         else setSlideIndex((prevSlide) => (prevSlide + n))
     }
 
-    // // Thumbnail image controls
+    // Thumbnail image controls
     function currentSlide(n) {
         setSlideIndex(n)
     }
 
-    return <div>
+    return <div className="slide-details">
         {/* <!-- Container for the image gallery --> */}
         <div className="container">
 
             {/* <!-- Full-width image with number text --> */}
-            <div className="mySlides">
+            <div className="my-slides">
                 <img src={slides[slideIndex]} />
             </div>
 

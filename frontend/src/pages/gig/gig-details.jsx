@@ -5,12 +5,13 @@ import { showErrorMsg } from "../../services/event-bus.service"
 import { GigProgram } from "../../cmps/gig/gig-program"
 import { SlideDetails } from "../../cmps/slide/slide-details"
 import { ReviewIndex } from "../../cmps/review-index"
+import { StarRating } from "../../cmps/star-rating"
 
 
 export function GigDetails() {
-    const [gig, setGig] = useState()
-    const navigate = useNavigate()
     const { gigId } = useParams()
+    const navigate = useNavigate()
+    const [gig, setGig] = useState()
 
     useEffect(() => {
         loadGig()
@@ -28,92 +29,69 @@ export function GigDetails() {
         }
     }
 
+    const { imgUrl, fullname, rate, level } = gig.owner
     if (!gig) return <div>Loading...</div>
     return <section className="gig-details">
         <div className="gig-details-info">
-            <div className="gig-details-overview">
-                <span>Graphics & design &gt Logo Design</span>
+
+            <div className="gig-details-preview">
+                <span>{`Graphics & design > Logo Design`}</span>
                 <h1>{gig.title}</h1>
-                <div className="gig-details-user-details">
-                    <img className="gig-details-user-img" src={gig.owner.imgUrl} alt="user-img" />
-                    <p className="user-fullname">{gig.owner.fullname}</p>
-                    <p>|</p>
-                    <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
-                        <path fill="#ffb33e"
-                            d="M 1728 647 q 0 22 -26 48 l -363 354 l 86 500 q 1 7 1 20 q 0 21 -10.5 35.5 t -30.5 14.5 q -19 0 -40 -12 l -449 -236 l -449 236 q -22 12 -40 12 q -21 0 -31.5 -14.5 t -10.5 -35.5 q 0 -6 2 -20 l 86 -500 l -364 -354 q -25 -27 -25 -48 q 0 -37 56 -46 l 502 -73 l 225 -455 q 19 -41 49 -41 t 49 41 l 225 455 l 502 73 q 56 9 56 46 Z">
-                        </path>
-                    </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
-                            <path fill="#ffb33e"
-                                d="M 1728 647 q 0 22 -26 48 l -363 354 l 86 500 q 1 7 1 20 q 0 21 -10.5 35.5 t -30.5 14.5 q -19 0 -40 -12 l -449 -236 l -449 236 q -22 12 -40 12 q -21 0 -31.5 -14.5 t -10.5 -35.5 q 0 -6 2 -20 l 86 -500 l -364 -354 q -25 -27 -25 -48 q 0 -37 56 -46 l 502 -73 l 225 -455 q 19 -41 49 -41 t 49 41 l 225 455 l 502 73 q 56 9 56 46 Z">
-                            </path>
-                        </svg></p>
+                <div className="owner-details">
+                    <img src={imgUrl} alt="user-img" />
+                    <p>{fullname}</p>
+                    <p>{level}</p>
+                    <span className="divider"></span>
+
+                    <div className="star-preview">
+                        <StarRating value={rate} />
+                        <span className="rate padding">{rate}</span>
+                    </div>
+
                     <p>(10) 1 Order in Queue</p>
                 </div>
             </div>
-            <SlideDetails gig={gig}/>
-            <div className="gig-review-section">
-                <h4>What people loved about this seller</h4>
-            </div>
+
+            <SlideDetails gig={gig} />
+
             <div className="gig-description">
-                <h4>About This Gig</h4>
-                <p>{gig.description}</p>
-                <div className="gig-about-owner">
-                    <h4>About The Seller</h4>
-                    <div className="gig-about-owner-details">
-                        <img className="gig-about-owner-img" src={gig.owner.imgUrl} alt="user-img" />
-                        <div>
-                            <div className="gig-details-user-details">
-                                <p className="owner-fullname">{gig.owner.fullname}</p>
-                                <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
-                                    <path fill="#ffb33e"
-                                        d="M 1728 647 q 0 22 -26 48 l -363 354 l 86 500 q 1 7 1 20 q 0 21 -10.5 35.5 t -30.5 14.5 q -19 0 -40 -12 l -449 -236 l -449 236 q -22 12 -40 12 q -21 0 -31.5 -14.5 t -10.5 -35.5 q 0 -6 2 -20 l 86 -500 l -364 -354 q -25 -27 -25 -48 q 0 -37 56 -46 l 502 -73 l 225 -455 q 19 -41 49 -41 t 49 41 l 225 455 l 502 73 q 56 9 56 46 Z">
-                                    </path>
-                                </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
-                                        <path fill="#ffb33e"
-                                            d="M 1728 647 q 0 22 -26 48 l -363 354 l 86 500 q 1 7 1 20 q 0 21 -10.5 35.5 t -30.5 14.5 q -19 0 -40 -12 l -449 -236 l -449 236 q -22 12 -40 12 q -21 0 -31.5 -14.5 t -10.5 -35.5 q 0 -6 2 -20 l 86 -500 l -364 -354 q -25 -27 -25 -48 q 0 -37 56 -46 l 502 -73 l 225 -455 q 19 -41 49 -41 t 49 41 l 225 455 l 502 73 q 56 9 56 46 Z">
-                                        </path>
-                                    </svg>  </p>
-                                <p>(10) </p>
+                <div className="gig-about">
+                    <h3>About This Gig</h3>
+                    <p>{gig.description}</p>
+                </div>
 
+                <div className="gig-about-owner">
+                    <h3>About The Seller</h3>
+                    <div className="owner-details">
+                        <img src={imgUrl} alt="user-img" />
+                        <div className="owner-content">
+                            <p className="owner-fullname">{fullname}</p>
+                            <div className="star-preview">
+                                <StarRating value={rate} />
+                                <span className="rate padding">{rate}</span>
+                                <p>(10)</p>
                             </div>
-                            <button className="contact-me-btn">Contact Me</button>
+                            <button>Contact Me</button>
                         </div>
                     </div>
 
                 </div>
-                <div className="gig-about-owner-container">
-                    <div className="owner-container-header">
-                        <div className="header-from-avg">
-                            <div>
-                                <p className="owner-title">From</p>
-                                <p className="owner-answer">Pakistan</p>
-                            </div>
-                            <div>
-                                <p className="owner-title">Avg. response time</p>
-                                <p className="owner-answer">2 hours</p>
-                            </div>
-                        </div>
-                        <div className="header-member-delivery">
-                            <div>
-                                <p className="owner-title">Member since</p>
-                                <p className="owner-answer">Jun 2022</p>
-                            </div>
-                            <div>
-                                <p className="owner-title">Last delivery</p>
-                                <p className="owner-answer">3 days</p>
-                            </div>
-                        </div>
-                        <hr />
-                    </div>
-                    <div className="owner-container-desc">
-                        <p className="desc-first">I am a professional graphic designer with an experience of 10+ years. I am also expert in Website design/development as well as in UI/UX designs. </p>
-                        <p>Let my field of expertise collaborate with your level of imagination, so together we can create an exceptional brand image. Something which creates an impact. Impact which screams for its acknowledgment without you needing to do so. Let us make wonders together in this field of designing. Keep exploring.</p>
-                    </div>
+
+                <div className="owner-description">
+                    <ul>
+                        <li><span>From</span><span>Indonesia</span></li>
+                        <li><span>Member since</span><span>Oct 2012</span></li>
+                        <li><span>Avg. response time</span><span>5 hours</span></li>
+                        <li><span>Last delivery</span><span>about 1 hour</span></li>
+                        <li><span>Languages</span><span>Indonesian, English</span></li>
+                    </ul>
+
+                    <article>
+                        Experienced, passionate graphic design team specializing in logos, icons, stationery, prints, and branding. Completing thousands of projects on Fiverr for a wide variety of clients, we ensure nothing but the utmost professionalism and quality graphics you can find. Satisfaction is guaranteed! We look forward to working with you 🙂
+                    </article>
                 </div>
             </div>
-        <ReviewIndex gig={gig}/>
+            <ReviewIndex gig={gig} />
         </div>
         <GigProgram gig={gig} />
     </section >
