@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { userService } from "../../services/user.service"
-import { loadUser, updateUser } from "../../store/user/user.actions"
-import { ImgUploader } from "../img-uploader"
+import { userService } from "../../../services/user.service"
+import { loadUser, updateUser } from "../../../store/user/user.actions"
+import { ImgUploader } from "../../img-uploader"
 
 
 export function UserProfile() {

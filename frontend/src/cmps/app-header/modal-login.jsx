@@ -1,6 +1,6 @@
-import { LoginSignup } from "../user/login-signup"
+import { LoginSignup } from "./login-signup"
 
-export function Modal({ onLogin, onSignup, onCloseModal, setIsSignup, isSignup }) {
+export function ModalLogin({ onLogin, onSignup, onCloseModal, setIsSignup, isSignup }) {
 
     return <section className="modal">
         <div className="content">
