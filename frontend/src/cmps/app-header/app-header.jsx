@@ -67,8 +67,10 @@ export function AppHeader() {
         }
 
         else {
-            if (filterBy.tags[0] !== '') categoryParams = filterBy.tags[0]
+            console.log(filterBy.tags[0]);
+            if (filterBy.tags[0]!==undefined) categoryParams = filterBy.tags[0]
             else { categoryParams = '' }
+            console.log(categoryParams)
             queryStringParams = `?category=${categoryParams}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
             navigate(`/gig${queryStringParams}`)
         }
