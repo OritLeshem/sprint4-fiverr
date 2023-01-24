@@ -7,14 +7,14 @@ import { HomePage } from './pages/home-page'
 import { GigIndex } from './pages/gig/gig-index'
 import { ChatApp } from './pages/chat-app'
 // import { ReviewIndex } from './pages/review-index'
-import { AdminApp } from './pages/admin-app'
+import { AdminApp } from './pages/admin-app'    
 import { GigDetails } from './pages/gig/gig-details'
 import { GigPayment } from './pages/gig/gig-payment'
 import { GigEdit } from './pages/gig/gig-edit'
 import { UserMsg } from './cmps/user-msg'
 import { UserIndex } from './pages/user/user-index'
 
-//hello
+
 export function RootCmp() {
     // let app = useRef()
 
