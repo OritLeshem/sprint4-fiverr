@@ -1,18 +1,11 @@
 .categories-menu {
-    // opacity: 1;
-    // overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    // position: relative;
     width: 100%;
     overflow-x: scroll;
-    // scrollbar-width: 0;
-    // scroll-behavior: smooth;
-    // animation: scroll linear;
-    // height: 100%;
-    
+   
     ul {
         @include flex;
         width: 100%;
@@ -52,9 +45,18 @@ ul::-webkit-scrollbar {
     display: none;
 }
 
+.categories-menu::-webkit-scrollbar {
+    display: none;
+}
+
 // btn
+
 .category-btn {
-    opacity: 1;
+    display: none;
+}
+@media (max-width: 1345px) {    
+.category-btn {
+    display: block;
     z-index: 2;
     color: $clr5;
     background-color: transparent;
@@ -63,15 +65,11 @@ ul::-webkit-scrollbar {
     height: 3em;
 }
 
-.next {
+.right {
     right: 0;
 }
 
-.prev {
+.left {
     left: 0;
 }
-// .categories-menu:not([overflow]) {
-//     .category-btn{
-//         opacity: 0;
-//     }
-// }
+}

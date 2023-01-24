@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import { gigService } from "../../services/gig.service.js"
 
 export function CategoryMenu({ onSetFilter }) {
 
     const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
+    const CategorysliderRef = useRef()
 
     useEffect(() => {
         onSetFilter(filterByToEdit)
@@ -17,38 +18,30 @@ export function CategoryMenu({ onSetFilter }) {
     const [lastDirection, setLastDirection] = useState('')
 
     const slideLeft = () => {
-        console.log('left');
         if (lastDirection !== 'left') {
-            var categories = document.getElementById("categories")
-            categories.scrollLeft = categories.scrollLeft - 2000
+            CategorysliderRef.current.scrollLeft = CategorysliderRef.current.scrollLeft - 2000
             setLastDirection('left')
         }
         else {
-            var categories = document.getElementById("categories")
-            categories.scrollLeft = categories.scrollLeft + 2000
+            CategorysliderRef.current.scrollLeft = CategorysliderRef.current.scrollLeft + 2000
             setLastDirection('right')
-
         }
     }
 
     const slideRight = () => {
-        console.log(lastDirection)
-        console.log('right');
         if (lastDirection !== 'right') {
-        var categories = document.getElementById("categories")
-        categories.scrollLeft = categories.scrollLeft - 2000
-        setLastDirection('right')
+            CategorysliderRef.current.scrollLeft = CategorysliderRef.current.scrollLeft - 2000
+            setLastDirection('right')
         }
-        else{
-            var categories = document.getElementById("categories")
-            categories.scrollLeft = categories.scrollLeft + 2000
+        else {
+            CategorysliderRef.current.scrollLeft = CategorysliderRef.current.scrollLeft + 2000
             setLastDirection('left')
         }
     }
 
     return <nav className="categories-menu">
-          <button className="category-btn fa-solid chevron-left left" onClick={slideLeft}></button>
-        <ul className="categories" id="categories">
+        <button className="category-btn fa-solid chevron-left left" onClick={slideLeft}></button>
+        <ul className="categories" id="categories" ref={CategorysliderRef}>
             <li onClick={() => filterByCategory(["graphic-design", "design", "logo-design"])}><a>Graphic & Design</a></li>
             <li onClick={() => filterByCategory(["digital-marketing", "digital"])}><a>Digital Marketing</a></li>
             <li onClick={() => filterByCategory(["writing-translation", "translation"])}><a>Writing & Translation</a></li>
