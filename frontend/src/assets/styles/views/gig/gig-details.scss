@@ -1,0 +1,90 @@
+.gig-details {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 32px;
+  margin: 0 auto;
+  max-width: 1304px;
+
+  .gig-details-info {
+    width: 60%;
+
+    span {
+      display: block;
+      color: #446ee7;
+    }
+
+    h1 {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      font-size: 28px;
+      line-height: 1.4;
+    }
+
+    .gig-details-user-img {
+      width: 30px;
+      border-radius: 50%;
+      margin-right: 30px;
+
+    }
+  }
+}
+
+.containerStyles {
+  margin-top: 15px;
+  width: 100%;
+  height: 380px;
+  margin: 0 auto;
+  margin-bottom: 64px;
+}
+
+.gig-review-section{
+  font-size: 20px;
+    line-height: 28px;
+    padding-bottom: 25px;
+}
+
+.gig-details h4{
+  font-size: 20px;
+  line-height: 28px;
+  padding-bottom: 25px;
+}
+
+.gig-details p{
+  font-size:1rem;
+}
+
+.gig-details-user-details,.gig-about-seller-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+
+  .user-fullname {
+
+    margin-right: 8px;
+    font-size: 1rem;
+    font-family: macan-bold;
+  }
+
+  p {
+    margin-right: 10px;
+  }
+}
+
+  .gig-about-seller-img{
+    width: 110px;
+    border-radius: 50%;
+  }
+
+  .gig-about-seller-container{
+    border:1px solid $clr8;
+    border-radius: 3px;
+    margin-top: 0;
+    padding: 24px;
+  }
+
+  .seller-container-header{
+    background-color: aqua;
+    display: flex;
+  }

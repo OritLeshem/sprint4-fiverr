@@ -1,0 +1,33 @@
+.app-header {
+    background-color: $clr3;
+    z-index: 2;
+
+    .app-header-nav {
+        @include flex;
+        border-bottom: 1px solid #e4e5e7;
+    }
+
+    .gig-header-link {
+        color: $clr5;
+        transition: color 70ms cubic-bezier(.75, 0, .25, 1);
+
+        &:hover {
+            color: $clr1;
+        }
+    }
+
+    .join-btn {
+        margin: 0;
+        background-color: transparent;
+        border: 1px solid $clr1;
+        color: $clr1;
+        padding: 10px 16px;
+        border-radius: 4px;
+        transition: background-color 70ms cubic-bezier(.75, 0, .25, 1);
+
+        &:hover {
+            background-color: $clr1;
+            color: $clr3;
+        }
+    }
+}
