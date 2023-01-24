@@ -31,7 +31,7 @@ export function AppHeader() {
             if (isDropdown && e.target.className) {
                 setIsDropdown(false)
             }
-            if (isOrder && e.target.className) {
+            if (isOrder && e.target.className!=="user-link") {
                 setIsOrder(false)
             }
         }
@@ -43,6 +43,7 @@ export function AppHeader() {
     }, [isModal, isDropdown, isOrder])
 
     function onSetFilter(filterBy) {
+
         dispatch({ type: SET_FILTER, filterBy })
 
         let categoryParams
@@ -54,7 +55,7 @@ export function AppHeader() {
         }
 
         else {
-            if (filterBy.tags.length) { categoryParams = filterBy.tags[0] }
+            if (filterBy.tags.length)  categoryParams = filterBy.tags[0] 
             else { categoryParams = '' }
             queryStringParams = `?category=${categoryParams}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
             navigate(`/gig${queryStringParams}`)
@@ -132,7 +133,9 @@ export function AppHeader() {
                             <Link className="user-link fa-regular heart" title="Lists"></Link>
                             <button onClick={handleOrder} className="user-link">Orders</button>
                             {user.imgUrl && <img src={user.imgUrl}
-                                onClick={() => setIsDropdown(!isDropdown)} />}
+                                onClick={() => {
+                                    setIsOrder(false)
+                                    setIsDropdown(!isDropdown)}} />}
                             {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} user={user} />}
                         </>
                     }

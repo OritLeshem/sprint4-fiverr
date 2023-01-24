@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { HomePageSlider } from '../cmps/home-page/home-page-slider'
 import { SlideList } from '../cmps/slide/slide-list'
+import { SlideListCopy } from '../cmps/slide/slide-list copy'
 import { gigService } from '../services/gig.service'
 
 export function HomePage() {
@@ -26,27 +27,27 @@ export function HomePage() {
         return () => window.removeEventListener("resize", handleResize);
     }, [])
 
-    useEffect(()=>{
+    useEffect(() => {
 
-        const slidesToList =  diff.current ? lastSlides: firstSlides
-        if(windowSize>1163){
+        const slidesToList = diff.current ? lastSlides : firstSlides
+        if (windowSize > 1163) {
             setCurrSlides(slidesToList)
         }
-        if(windowSize<=1163&&windowSize>1060){
-            setCurrSlides(slidesToList.slice(0,slidesToList.length-1))
+        if (windowSize <= 1163 && windowSize > 1060) {
+            setCurrSlides(slidesToList.slice(0, slidesToList.length - 1))
         }
 
-        if(windowSize<=1060&&windowSize>900){
-            setCurrSlides(slidesToList.slice(0,slidesToList.length-2))
+        if (windowSize <= 1060 && windowSize > 900) {
+            setCurrSlides(slidesToList.slice(0, slidesToList.length - 2))
         }
-        if(windowSize<=900&&windowSize>600){
-            setCurrSlides(slidesToList.slice(0,slidesToList.length-3))
+        if (windowSize <= 900 && windowSize > 600) {
+            setCurrSlides(slidesToList.slice(0, slidesToList.length - 3))
         }
 
-        if(windowSize<=600){
-            setCurrSlides(slidesToList.slice(0,slidesToList.length-4))
+        if (windowSize <= 600) {
+            setCurrSlides(slidesToList.slice(0, slidesToList.length - 4))
         }
-    },[windowSize,diff.current])
+    }, [windowSize, diff.current])
 
     return <section className="home-page full">
 
@@ -56,9 +57,9 @@ export function HomePage() {
             <div className="trusted-by full">
                 {/* <span>Trusted by:</span> */}
             </div>
-
-            <h2>Popular professional services</h2>
-            <SlideList slides={currSlides} onSetSlides={onSetSlides} />
+            <SlideListCopy />
+            {/* <h2>Popular professional services</h2> */}
+            {/* <SlideList slides={currSlides} onSetSlides={onSetSlides} /> */}
 
             <div className="selling-proposition full main-layout">
                 <div className="flex">

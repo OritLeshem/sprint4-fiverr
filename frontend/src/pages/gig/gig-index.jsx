@@ -25,12 +25,10 @@ export function GigIndex() {
 
 
     useEffect(() => {
-        // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
         renderUiByQueryStringParams()
     }, [])
 
     useEffect(() => {
-        // console.log('useeffect insex gig', sortBy)
         loadGigs(filterBy, sortBy)
     }, [filterBy, sortBy, searchParams])
 
@@ -95,19 +93,21 @@ export function GigIndex() {
     }
 
     function onSetFilter(filterBy) {
-        console.log(filterBy)
         if (filterByFromStore.tags[0]) filterBy.tags = filterByFromStore.tags
         if (filterByFromStore.title) filterBy.title = filterByFromStore.title
+
         dispatch({ type: SET_FILTER, filterBy })
+
         let categoryParams
         let queryStringParams
+
         if (filterByFromStore.title) {
             queryStringParams = `?title=${filterBy.title}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
             navigate(`/gig${queryStringParams}`)
         }
 
         else {
-            if (filterByFromStore.tags[0]) { categoryParams = filterByFromStore.tags[0] }
+            if (filterByFromStore.tags[0]!=='') { categoryParams = filterByFromStore.tags[0] }
             else { categoryParams = '' }
             queryStringParams = `?category=${categoryParams}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
             navigate(`/gig${queryStringParams}`)

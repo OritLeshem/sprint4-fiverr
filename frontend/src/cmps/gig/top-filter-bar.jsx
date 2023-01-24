@@ -43,9 +43,9 @@ export function TopFilterBar({ onSetFilter }) {
     }
 
     function onClear() {
-        let newFilterBy = ({ ...filterBy, maxPrice: '', minPrice: '' })
-        setFilterByToEdit(newFilterBy)
-        onSetFilter(newFilterBy)
+        // let newFilterBy = ({ ...filterBy, maxPrice: '', minPrice: '',daysToMake:'' })
+        setFilterByToEdit(gigService.getDefaultFilter())
+        // onSetFilter(gigService.getDefaultFilter())
     }
 
     return <div className="top-filter-bar">
