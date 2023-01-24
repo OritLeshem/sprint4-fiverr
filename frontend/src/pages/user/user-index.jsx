@@ -31,7 +31,7 @@ export function UserIndex() {
 
     useEffect(() => {
         // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
-        loadUser(userId)
+        userId && loadUser(userId)
         loadGigs(filterBy, sortBy, userId)
         console.log(gigs)
     }, [filterBy, userId])
@@ -91,8 +91,8 @@ export function UserIndex() {
 
             <div
                 className="user-index-info">  <UserProfile user={user} />
-                {user && <ReviewBar userReviews={user.reviews} />}
-                {user && <ReviewList userReviews={user.reviews} />}
+                {user && loginUser && <ReviewBar userReviews={user.reviews} />}
+                {user && loginUser && <ReviewList userReviews={user.reviews} />}
             </div>
             <main className="user-index-main-container">
                 {user && loginUser && (loginUser._id === user._id) && <UserSales />}
