@@ -1,16 +1,51 @@
-import { SlidePreview } from "./slide-preview"
+import { useRef, useState } from "react"
+import { gigService } from "../../services/gig.service"
 
-export function SlideList({ slides, onSetSlides }) {
+export function SlideList() {
+    const firstSlides = gigService.getGigFirstSlides()
+    const lastSlides = gigService.getGigLastSlides()
+    const slides = [...firstSlides, ...lastSlides]
+    const sliderRef = useRef()
 
-    return <section className="slide-list-container">
-        <button className="slide-btn fa-solid chevron-left prev" onClick={() => onSetSlides()}></button>
-        <ul className="slide-list">
+    const [lastDirection, setLastDirection] = useState('')
+
+    const slideLeft = () => {
+        if (lastDirection !== 'left') {
+            sliderRef.current.scrollLeft = sliderRef.current.scrollLeft + 2000
+            setLastDirection('left')
+        }
+        else {
+            sliderRef.current.scrollLeft = sliderRef.current.scrollLeft - 2000
+            setLastDirection('right')
+        }
+    }
+
+    const slideRight = () => {
+        if (lastDirection !== 'right') {
+            sliderRef.current.scrollLeft = sliderRef.current.scrollLeft - 2000
+            setLastDirection('right')
+        }
+        else {
+            sliderRef.current.scrollLeft = sliderRef.current.scrollLeft + 2000
+            setLastDirection('left')
+        }
+    }
+
+    return <section className="main-slider-container">
+        <button className="slide-btn fa-solid chevron-left prev" onClick={slideLeft}></button>
+        <ul className="slider" ref={sliderRef}>
             {slides.map((slide, idx) =>
-                <li className="slide-preview" key={idx}>
-                    <SlidePreview slide={slide} />
-                </li>
+                <div className="slider-card" key={idx}>
+                    <h4>
+                        <small>{slide.desc}</small>
+                        {slide.category}
+                    </h4>
+                    <div className="img-slide">
+                        <img src={slide.url} alt="" />
+                    </div>
+                </div>
             )}
         </ul>
-        <button className="slide-btn fa-solid chevron-right next" onClick={() => onSetSlides()}></button>
+        <button className="slide-btn fa-solid chevron-right next" onClick={slideRight}></button>
     </section>
 }
