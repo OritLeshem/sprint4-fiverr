@@ -17,9 +17,9 @@ export function SlideGigPreview({ gig }) {
     }
 
     return <div className="gig-preview-img">
-        <span className="prev fa-solid chevron-left" onClick={(ev) => plusSlides(ev, -1)}></span>
+        <div className="prev fa-solid chevron-left" onClick={(ev) => plusSlides(ev, -1)}></div>
         <img src={slides[slideIndex]} />
-        <span className="next fa-solid chevron-right" onClick={(ev) => plusSlides(ev, 1)}></span>
+        <div className="next fa-solid chevron-right" onClick={(ev) => plusSlides(ev, 1)}></div>
 
         <ul className="dot-container">
             {slides.map((slide, slideIndex) => (
