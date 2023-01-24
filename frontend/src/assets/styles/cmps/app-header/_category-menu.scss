@@ -5,12 +5,12 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    position: relative;
+    // position: relative;
     width: 100%;
     overflow-x: scroll;
-    scrollbar-width: 0;
-    scroll-behavior: smooth;
-    animation: scroll linear;
+    // scrollbar-width: 0;
+    // scroll-behavior: smooth;
+    // animation: scroll linear;
     // height: 100%;
     
     ul {
@@ -19,10 +19,10 @@
         height: 100%;
         position: relative;
         white-space: nowrap;
-        // overflow-x: scroll;
-        // scrollbar-width: none;
-        // scroll-behavior: smooth;
-        // animation: scroll linear;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        animation: scroll linear;
     }
 
     li {
@@ -48,6 +48,30 @@
 
 }
 
-.categories-menu::-webkit-scrollbar {
+ul::-webkit-scrollbar {
     display: none;
 }
+
+// btn
+.category-btn {
+    opacity: 1;
+    z-index: 2;
+    color: $clr5;
+    background-color: transparent;
+    position: absolute;
+    width: 3em;
+    height: 3em;
+}
+
+.next {
+    right: 0;
+}
+
+.prev {
+    left: 0;
+}
+// .categories-menu:not([overflow]) {
+//     .category-btn{
+//         opacity: 0;
+//     }
+// }
