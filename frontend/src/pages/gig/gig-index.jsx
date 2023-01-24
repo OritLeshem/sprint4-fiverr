@@ -117,7 +117,6 @@ export function GigIndex() {
     }
 
     function onSort(sortBy) {
-        console.log('hello from sort', sortBy)
         dispatch({ type: SET_SORT, sortBy })
 
     }

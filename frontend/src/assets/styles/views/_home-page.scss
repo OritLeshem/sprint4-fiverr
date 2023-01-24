@@ -49,7 +49,6 @@
 
     .gig-search {
 
-        // border: 1px solid red;
         input {
             padding: em(14px, 16px) em(2px, 16px) em(14px, 16px) 1em;
 
@@ -101,7 +100,8 @@
     @media (max-width:900px) {
         display: none;
     }
-    ul{
+
+    ul {
         align-items: center;
     }
 
