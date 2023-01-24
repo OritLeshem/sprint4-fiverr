@@ -43,7 +43,7 @@ export function AppHeader() {
             if (isDropdown && e.target.className) {
                 setIsDropdown(false)
             }
-            if (isOrder && e.target.className!=="user-link") {
+            if (isOrder && e.target.className !== "user-link") {
                 setIsOrder(false)
             }
         }
@@ -55,7 +55,7 @@ export function AppHeader() {
     }, [isModal, isDropdown, isOrder])
 
     function onSetFilter(filterBy) {
-
+        console.log(filterBy);
         dispatch({ type: SET_FILTER, filterBy })
 
         let categoryParams
@@ -67,7 +67,7 @@ export function AppHeader() {
         }
 
         else {
-            if (filterBy.tags.length)  categoryParams = filterBy.tags[0] 
+            if (filterBy.tags[0] !== '') categoryParams = filterBy.tags[0]
             else { categoryParams = '' }
             queryStringParams = `?category=${categoryParams}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
             navigate(`/gig${queryStringParams}`)
@@ -144,7 +144,8 @@ export function AppHeader() {
                             {(windowSize > 900) && <img src={user.imgUrl}
                                 onClick={() => {
                                     setIsOrder(false)
-                                    setIsDropdown(!isDropdown)}} />}
+                                    setIsDropdown(!isDropdown)
+                                }} />}
                             {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} user={user} />}
                         </>
                     }
