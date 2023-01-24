@@ -55,7 +55,6 @@ export function AppHeader() {
     }, [isModal, isDropdown, isOrder])
 
     function onSetFilter(filterBy) {
-        console.log(filterBy);
         dispatch({ type: SET_FILTER, filterBy })
 
         let categoryParams
@@ -67,10 +66,8 @@ export function AppHeader() {
         }
 
         else {
-            console.log(filterBy.tags[0]);
             if (filterBy.tags[0]!==undefined) categoryParams = filterBy.tags[0]
             else { categoryParams = '' }
-            console.log(categoryParams)
             queryStringParams = `?category=${categoryParams}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
             navigate(`/gig${queryStringParams}`)
         }

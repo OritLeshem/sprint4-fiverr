@@ -60,9 +60,7 @@ export function GigIndex() {
     }
 
     function onSetFilter(filterBy) {
-        console.log(filterBy);
         if (filterByFromStore.tags[0]) {
-            console.log(filterByFromStore.tags[0]);
             filterBy.tags = filterByFromStore.tags
         }
         if (filterByFromStore.title) filterBy.title = filterByFromStore.title
