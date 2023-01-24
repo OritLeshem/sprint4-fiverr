@@ -3,6 +3,9 @@
     padding: 12px 24px;
     border-radius: 4px;
     color: $clr3;
+    display: block;
+    width: 150px;
+    margin-top: 20px;
     margin-bottom: 20px;
 
 
@@ -51,7 +54,7 @@
         border-radius: 4px;
     }
 
-    .Pending {
+    .pending {
         background-color: #E2A114;
         width: 120px;
         padding: 12px;
@@ -60,7 +63,7 @@
         border-radius: 4px;
     }
 
-    .Completed {
+    .completed {
         background-color: $clr1;
         width: 120px;
         padding: 12px;
@@ -69,7 +72,7 @@
         border-radius: 4px;
     }
 
-    .Declined {
+    .declined {
         background-color: #F31F1F;
         width: 120px;
         padding: 12px;

@@ -12,9 +12,9 @@ export function UserProfile({ user }) {
 
   // const [userToEdit, setUserToEdit] = useState(user)
 
-  useEffect(() => {
-    loadUser(user._id)
-  }, [])
+  // useEffect(() => {
+  //   loadUser(user._id)
+  // }, [])
 
   function onUploaded(data) {
     console.log('user', user)

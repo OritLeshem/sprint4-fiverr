@@ -19,6 +19,8 @@ import { ReviewList } from '../../cmps/review/review-list.jsx'
 import { ReviewBar } from '../../cmps/review/review-bar.jsx'
 
 export function UserIndex() {
+    const orders = useSelector(storeState => storeState.orderModule.orders)
+
     const user = useSelector(storeState => storeState.userModule.watchedUser)
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
@@ -33,7 +35,6 @@ export function UserIndex() {
         // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
         userId && loadUser(userId)
         loadGigs(filterBy, sortBy, userId)
-        console.log(gigs)
     }, [filterBy, userId])
 
 
@@ -95,7 +96,7 @@ export function UserIndex() {
                 {user && loginUser && <ReviewList userReviews={user.reviews} />}
             </div>
             <main className="user-index-main-container">
-                {user && loginUser && (loginUser._id === user._id) && <UserSales />}
+                {orders.length !== 0 && user && loginUser && (loginUser._id === user._id) && <UserSales />}
 
                 {user && loginUser && (loginUser._id === user._id) && <Link className="user-index-add-link" to="/gig/edit">Add Gig +</Link>}
                 {/* <Link className="user-index-add-link" to="/gig/edit">Add Gig +</Link> */}
