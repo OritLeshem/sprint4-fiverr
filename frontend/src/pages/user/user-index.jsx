@@ -91,8 +91,8 @@ export function UserIndex() {
 
             <div
                 className="user-index-info">  <UserProfile user={user} />
-                <ReviewBar userReviews={user.reviews} />
-                <ReviewList userReviews={user.reviews} />
+                {user && <ReviewBar userReviews={user.reviews} />}
+                {user && <ReviewList userReviews={user.reviews} />}
             </div>
             <main className="user-index-main-container">
                 {user && loginUser && (loginUser._id === user._id) && <UserSales />}
