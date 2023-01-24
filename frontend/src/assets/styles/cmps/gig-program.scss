@@ -3,18 +3,12 @@
   color: $clr5;
   border: 1px solid $clr7;
 
-  // width: 33.6%;
-
-
   .gig-program-name {
     border-right: 1px solid $clr7;
     padding: 16px;
     width: fit-content;
     margin: 0;
   }
-
-
-
 }
 
 .gig-program-info {
@@ -26,7 +20,6 @@
     color: $clr2;
   }
 
-  // background-color: red;
   .gig-program-subscribe {
     color: #026a5d;
   }
@@ -38,7 +31,6 @@
   .green-check {
     color: $clr1;
   }
-
 
 }
 
@@ -58,7 +50,7 @@
   line-height: 100%;
   padding: 12px 24px;
   text-align: center;
-  position:relative;
+  position: relative;
   display: inline-block;
 
   &:hover {
@@ -67,7 +59,6 @@
   }
 
   span {
-    // margin-right: 100px;
     float: right;
   }
 }
@@ -95,5 +86,4 @@
     background-color: $clr5;
     color: $clr3;
   }
-
 }

@@ -6,23 +6,18 @@
     justify-content: space-between;
 
     header {
-        // color: #404145;
         font-family: macan-bold;
         padding: 1.35em;
-
         font-size: 16px;
         vertical-align: baseline;
         line-height: 140%;
     }
 
     .main-content {
-
         background-color: $clr9;
         flex-basis: 61%;
         height: fit-content;
     }
-
-
 }
 
 
@@ -47,15 +42,9 @@
             height: 50px;
             width: 300px;
             border: 1px solid $clr7;
-
-            // background-color: rgb(185, 74, 92);
             border-radius: 3px;
             margin-right: 3rem;
-
-
         }
-
-
     }
 
     .buyer-details {
@@ -69,20 +58,13 @@
             height: 50px;
             width: 300px;
             border: 1px solid $clr7;
-
-            //background-color: pink;
             border-radius: 3px;
             margin-right: 3rem;
-
-
-
         }
 
     }
 
     .security-and-expire input {
-
-        //background-color: blue;
         border: 1px solid $clr7;
         width: 140px;
         margin-right: 20px;
@@ -96,23 +78,6 @@
         width: 100%;
         border: 1px solid $clr7;
     }
-
-    // .payment-input {}
-
-    // .payment-input input {
-
-
-    //     border-radius: 3px;
-    //     border: 1px solid $clr7;
-    //     margin-right: 1rem;
-    // }
-
-    // .security-and-expire input {
-    //     width: 125px;
-
-    // }
-
-
 }
 
 .side-content {
@@ -147,7 +112,6 @@
         text-align: left;
         letter-spacing: 7px;
         font-size: 1.2rem;
-
     }
 
     .basic-and-price {
@@ -156,16 +120,10 @@
         margin-left: 20px;
         display: flex;
         justify-content: space-between;
-
     }
 
-    .price {}
-
     .green-check {
-        // padding: 15px 15px 10px 15px;
-
         color: $clr1;
-
     }
 
     li {
@@ -199,6 +157,5 @@
         padding: 20px;
         border-radius: 4px;
         margin: 40px auto;
-
     }
 }
