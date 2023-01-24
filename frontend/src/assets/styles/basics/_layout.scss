@@ -25,14 +25,14 @@
     @include for-narrow-layout {
         grid-template-columns:
         minmax($layoutPadding, 1fr)  
-        minmax($narrow-breakpoint, auto) 
+        minmax(auto, $narrow-breakpoint) 
         minmax($layoutPadding, 1fr) ;
     }
     
     @include for-normal-layout {
         grid-template-columns:
         minmax($layoutPadding, 1fr)  
-        minmax($normal-breakpoint, auto) 
+        minmax(auto, $normal-breakpoint) 
         minmax($layoutPadding, 1fr) ;
     }
     

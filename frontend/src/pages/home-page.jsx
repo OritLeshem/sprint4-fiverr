@@ -57,8 +57,8 @@ export function HomePage() {
             <div className="trusted-by full">
                 {/* <span>Trusted by:</span> */}
             </div>
+            <h2>Popular professional services</h2>
             <SlideListCopy />
-            {/* <h2>Popular professional services</h2> */}
             {/* <SlideList slides={currSlides} onSetSlides={onSetSlides} /> */}
 
             <div className="selling-proposition full main-layout">

@@ -1,16 +1,18 @@
 import { Link } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
-import Typography from '@mui/material/Typography'
 
 import { SlideGigPreview } from '../slide/slide-gig-preview'
 
 export function GigPreview({ gig }) {
 
+    function getTxtToShow(txt, length) {
+        return (txt.length < length) ? txt : txt.substring(0, length + 1) + '...'
+    }
+
     return <>
         <Link to={`/gig/${gig._id}`} className="img-container">
             <SlideGigPreview gig={gig} />
-            {/* <img src={gig.imgUrl[0]} alt="" /> */}
         </Link>
 
         <div className="content">
@@ -21,7 +23,11 @@ export function GigPreview({ gig }) {
                     <span>{gig.owner && gig.owner.level}</span>
                 </div>
             </div>
-            <Link className="title" to={`/gig/${gig._id}`}>{gig.title}</Link>
+            <Link className="title" to={`/gig/${gig._id}`}>
+                <div className="long-txt">
+                    <span>{getTxtToShow(gig.title, 60)}</span>
+                </div>
+            </Link>
             <div className="rate">
                 <Box sx={{ '& > legend': { mt: 2 } }}>
                     <Rating value={gig.owner.rate} name="half-rating-read" size="small"
@@ -33,7 +39,6 @@ export function GigPreview({ gig }) {
 
         <footer>
             <div className="btn-container">
-                {/* <button className="fa-solid bars"></button> */}
                 <button className="fa-solid heart" title="save to list"></button>
             </div>
             <Link className="price" to={`/gig/${gig._id}`}>

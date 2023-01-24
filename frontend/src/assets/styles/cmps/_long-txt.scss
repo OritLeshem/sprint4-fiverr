@@ -1,0 +1,12 @@
+.long-txt button {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    text-decoration: underline;
+    color: inherit;
+
+    &:hover {
+        background-color: transparent;
+        color: inherit;
+    }
+}

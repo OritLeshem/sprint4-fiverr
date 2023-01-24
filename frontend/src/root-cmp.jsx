@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Routes, Route } from 'react-router'
 import { AppHeader } from './cmps/app-header/app-header'
 import { AppFooter } from './cmps/app-footer'
@@ -17,6 +17,25 @@ import { UserIndex } from './pages/user/user-index'
 
 
 export function RootCmp() {
+    // let app = useRef()
+
+    // console.log('app.current:', app.current)
+
+    // // const app = document.querySelector('.app');
+
+    // const appObserver = new IntersectionObserver(updateApp, {});
+
+    // appObserver.observe(app.current);
+
+    // function updateApp(entries) {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //             console.log('intersecting')
+    //         } else {
+    //             console.log('not intersecting')
+    //         }
+    //     });
+    // }
 
     return (
         <>

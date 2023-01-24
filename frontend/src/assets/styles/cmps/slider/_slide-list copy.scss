@@ -5,6 +5,7 @@
     position: relative;
     width: 100%;
     display: flex;
+    margin-bottom: 6rem;
 }
 
 .slider {
@@ -36,6 +37,11 @@
     img {
         height: 345px;
         width: 100%;
+        border-radius: rem(4px);
+
+        &:hover {
+            opacity: .85;
+        }
     }
 
     // Breakpoints- card//

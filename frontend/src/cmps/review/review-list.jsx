@@ -1,6 +1,7 @@
 import { StarRating } from "./star-rating"
 
 import { utilService } from "../../services/util.service"
+import { LongTxt } from "../long-txt"
 
 export function ReviewList({ userReviews }) {
 
@@ -22,7 +23,7 @@ export function ReviewList({ userReviews }) {
                         <span>{utilService.formatTime(review.createdAt)}</span>
                     </div>
 
-                    <p>{review.txt}</p>
+                    <LongTxt txt={review.txt} length={240} />
                 </div>
             </li>
         )}

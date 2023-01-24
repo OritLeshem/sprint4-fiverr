@@ -1,40 +1,77 @@
 .gig-preview-img {
     position: relative;
+    max-height: 200px;
+
+    @media (max-width:1460px ) {
+        max-height: 158px;
+    }
+
+    @media (max-width:1160px ) {
+        max-height: 200px;
+    }
+    
 
     &:hover {
 
         .prev,
         .next {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dot {
+            color: $clr3;
         }
     }
 
     /* Next & previous buttons */
     .prev,
     .next {
-        background-position: -25px 0;
-        cursor: pointer;
         display: none;
-        // padding: 10px;
-        // align-self: center;
-        position: absolute;
-        // top: 40%;
-        // width: auto;
-        // background-color: #fff;
-        // color: #62646a;
-        // width: 3em;
-        // height: 3em;
-        // box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
-        // text-align: center;
+        width: 25px;
+        height: 30px;
+        cursor: pointer;
+        font-family: macan-light;
+        transform: translate(-50%);
+    }
+
+    .dot-container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        bottom: 40px;
+        height: 40px;
+        align-items: center;
+        padding: 4px;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, .3), hsla(0, 0%, 100%, 0));
+        transform: translateY(-20%);
+    }
+
+    .dot {
+        cursor: pointer;
+        height: 8px;
+        width: 8px;
+        margin: 0 2px;
+        background-color: $clr3;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
     }
 
     .next {
         right: 0;
         transform: translate(0, 0);
+        border-top-left-radius: 110px;
+        border-bottom-left-radius: 110px;
+        border-right: 0;
     }
 
     .prev {
         transform: translate(0, 0);
+        border-top-right-radius: 110px;
+        border-bottom-right-radius: 110px;
+        border-left: 0;
     }
 
     span:after {
