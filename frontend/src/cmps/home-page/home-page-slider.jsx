@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
+
 import { SET_FILTER } from "../../store/gig/gig.reducer"
 import { Search } from "../app-header/header-search"
 
@@ -29,8 +30,6 @@ export function HomePageSlider() {
         let queryStringParams
         if (filterBy.tags) queryStringParams = `?category=${filterBy.tags[0]}`
         if (filterBy.title) queryStringParams = `?title=${filterBy.title}`
-        // const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + queryStringParams
-        // window.history.pushState({ path: newUrl }, '', newUrl)
         navigate(`/gig${queryStringParams}`)
     }
 
@@ -62,7 +61,7 @@ export function HomePageSlider() {
             <main className="main-header">
                 <span>Find the perfect<i>freelance</i></span>
                 <span>services for your business</span>
-                <Search onSetFilter={onSetFilter}/>
+                <Search onSetFilter={onSetFilter} />
                 <ul className="popular">
                     Popular:
                     <li><a>Website Design</a></li>

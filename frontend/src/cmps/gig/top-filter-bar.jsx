@@ -1,11 +1,8 @@
 import { useEffect, useState, useRef } from "react"
 import { gigService } from "../../services/gig.service"
-import { useDispatch, useSelector } from 'react-redux'
-import { ref } from "yup"
+import { useSelector } from 'react-redux'
 
 export function TopFilterBar({ onSetFilter }) {
-
-    const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
     const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
     const [isPriceFilterShown, setIsPriceFilterShown] = useState(false)
     const ref = useRef()
@@ -21,11 +18,9 @@ export function TopFilterBar({ onSetFilter }) {
             }
         }
         document.addEventListener("mousedown", checkIfClickedOutside)
-
         return () => {
             document.removeEventListener("mousedown", checkIfClickedOutside)
         }
-
     }, [isPriceFilterShown])
 
     function handleChange(e) {
@@ -43,9 +38,7 @@ export function TopFilterBar({ onSetFilter }) {
     }
 
     function onClear() {
-        // let newFilterBy = ({ ...filterBy, maxPrice: '', minPrice: '',daysToMake:'' })
         setFilterByToEdit(gigService.getDefaultFilter())
-        // onSetFilter(gigService.getDefaultFilter())
     }
 
     return <div className="top-filter-bar">

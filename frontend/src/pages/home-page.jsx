@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { HomePageSlider } from '../cmps/home-page/home-page-slider'
-import { SlideList } from '../cmps/slide/slide-list'
 import { SlideListCopy } from '../cmps/slide/slide-list copy'
 import { gigService } from '../services/gig.service'
 
@@ -12,12 +11,6 @@ export function HomePage() {
     let diff = useRef(true)
     const [windowSize, setWindowSize] = useState(undefined)
 
-    function onSetSlides() {
-        if (diff.current) setCurrSlides(lastSlides)
-        else setCurrSlides(firstSlides)
-        diff.current = !diff.current
-    }
-
     useEffect(() => {
         function handleResize() {
             setWindowSize(window.innerWidth)
@@ -28,7 +21,6 @@ export function HomePage() {
     }, [])
 
     useEffect(() => {
-
         const slidesToList = diff.current ? lastSlides : firstSlides
         if (windowSize > 1163) {
             setCurrSlides(slidesToList)
@@ -50,16 +42,13 @@ export function HomePage() {
     }, [windowSize, diff.current])
 
     return <section className="home-page full">
-
         <main className="full main-layout">
             <HomePageSlider />
 
             <div className="trusted-by full">
-                {/* <span>Trusted by:</span> */}
             </div>
             <h2>Popular professional services</h2>
             <SlideListCopy />
-            {/* <SlideList slides={currSlides} onSetSlides={onSetSlides} /> */}
 
             <div className="selling-proposition full main-layout">
                 <div className="flex">
@@ -83,6 +72,5 @@ export function HomePage() {
                 </div>
             </div>
         </main>
-
     </section >
 }

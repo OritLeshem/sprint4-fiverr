@@ -8,18 +8,14 @@ export function Search({ onSetFilter }) {
   const { pathname } = window.location
 
   function handleChange({ target }) {
-    // elInputRef.current.blur()
     let { value, name: field, type } = target
-    // console.log('value', value);
     value = (type === 'number') ? +value : value
     setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
   }
 
   function onSubmitFilter(ev) {
-    // update father cmp that filters change on submit
     ev.preventDefault()
     onSetFilter(filterByToEdit)
-    // setFilterByToEdit(gigService.getDefaultFilter())
   }
 
 

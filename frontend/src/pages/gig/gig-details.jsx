@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+
 import { gigService } from "../../services/gig.service"
 import { showErrorMsg } from "../../services/event-bus.service"
 import { GigProgram } from "../../cmps/gig/gig-program"
 import { SlideDetails } from "../../cmps/slide/slide-details"
 import { ReviewIndex } from "../../cmps/review/review-index"
 import { StarRating } from "../../cmps/review/star-rating"
-
 
 export function GigDetails() {
     const { gigId } = useParams()
@@ -31,6 +31,7 @@ export function GigDetails() {
 
     if (!gig) return <div>Loading...</div>
     const { imgUrl, fullname, rate, level } = gig.owner
+
     return <section className="gig-details">
         <div className="gig-details-preview gig-details-info">
             <nav>{`Graphics & design > Logo Design`}</nav>

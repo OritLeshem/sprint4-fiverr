@@ -1,9 +1,9 @@
-import { UserPreview } from "./user-preview"
 import { Link } from 'react-router-dom'
+
+import { UserPreview } from "./user-preview"
 import { userService } from "../../services/user.service"
 
-
-export function UserList({ gigs, onRemoveGig, onUpdateGig, user }) {
+export function UserList({ gigs, onRemoveGig, user }) {
   const loginUser = userService.getLoggedinUser()
 
   return <ul className=" gig-list user-gig-list">

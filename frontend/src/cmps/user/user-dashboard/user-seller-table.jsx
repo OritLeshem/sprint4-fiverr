@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import * as React from 'react';
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,14 +8,12 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+
 import { updateOrder } from "../../../store/order/order.actions";
 
-
-
 export default function UserSellerTable({ orders }) {
-
   const [isModal, setIsModal] = useState({ id: '', status: false })
-  //const [statistic, setStatistic] = useState()
+
   function toggleStatusModal(orderId) {
     setIsModal(prevModal => ({ ...prevModal, id: orderId, status: !prevModal.status }))
   }
@@ -22,15 +21,12 @@ export default function UserSellerTable({ orders }) {
   orders && calcAnalysis()
 
   function calcAnalysis() {
-    console.log("hello from calc")
-
     statistic = orders.reduce((acc, val) => {
       acc[val.status] = acc[val.status] ? ++acc[val.status] : 1
       return acc
     }, {})
-    console.log(statistic)
-
   }
+
   function updateStatus(status, order) {
     order.status = status
     updateOrder(order)
@@ -39,7 +35,6 @@ export default function UserSellerTable({ orders }) {
 
   return (
     <div className="status-options-btn">
-
       <div className="statstic-show">
         <div className=" statstic-total ">
           <h3>Total sales </h3>
@@ -58,6 +53,7 @@ export default function UserSellerTable({ orders }) {
           {statistic && <h3>{statistic.declined}</h3>}
         </div>
       </div>
+
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -94,8 +90,6 @@ export default function UserSellerTable({ orders }) {
           </TableBody>
         </Table>
       </TableContainer>
-
-
     </div>
   )
 }
