@@ -15,6 +15,8 @@ import { UserProfile } from '../../cmps/user/user-dashboard/user-profile'
 import { userService } from '../../services/user.service.js'
 import { UserSales } from '../../cmps/user/user-dashboard/user-sales.jsx'
 import { loadUser } from '../../store/user/user.actions.js'
+import { ReviewList } from '../../cmps/review/review-list.jsx'
+import { ReviewBar } from '../../cmps/review/review-bar.jsx'
 
 export function UserIndex() {
     const user = useSelector(storeState => storeState.userModule.watchedUser)
@@ -25,7 +27,7 @@ export function UserIndex() {
     const dispatch = useDispatch()
     // const [searchParams, setSearchParams] = useSearchParams()
     const loginUser = userService.getLoggedinUser()
-    console.log('user index', user)
+    // console.log('user index', user)
 
     useEffect(() => {
         // if (searchParams.get('category') || searchParams.get('title')) renderUiByQueryStringParams()
@@ -35,7 +37,7 @@ export function UserIndex() {
     }, [filterBy, userId])
 
 
-
+    // if (loginUser._id===user._id)
 
 
 
@@ -87,13 +89,22 @@ export function UserIndex() {
     return (
         <section className="user-index">
 
-            <div className="user-index-info">  <UserProfile /></div>
+            <div
+                className="user-index-info">  <UserProfile user={user} />
+                <ReviewBar userReviews={user.reviews} />
+                <ReviewList userReviews={user.reviews} />
+            </div>
             <main className="user-index-main-container">
-                <UserSales />
-                <Link className="user-index-add-link" to="/gig/edit">Add Gig +</Link>
+                {user && loginUser && (loginUser._id === user._id) && <UserSales />}
+
+                {user && loginUser && (loginUser._id === user._id) && <Link className="user-index-add-link" to="/gig/edit">Add Gig +</Link>}
+                {/* <Link className="user-index-add-link" to="/gig/edit">Add Gig +</Link> */}
+
                 <div className="user-index-gig-list">
-                    <UserList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
+                    <UserList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} user={user} />
                 </div>
+
+
             </main>
 
 
