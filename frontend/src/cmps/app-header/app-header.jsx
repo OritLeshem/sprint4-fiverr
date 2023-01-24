@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 import { ModalLogin } from './modal-login'
 import { Dropdown } from './dropdown'
 import UserBuyTable from '../user/user-buy-table'
+import { AppHeaderMobile } from './app-header-mobile'
 
 export function AppHeader() {
     const user = useSelector(storeState => storeState.userModule.user)
@@ -20,7 +21,18 @@ export function AppHeader() {
     const [isDropdown, setIsDropdown] = useState(false)
     const [isOrder, setIsOrder] = useState(false)
     const [isSignup, setIsSignup] = useState(false)
+    const [isOpenMenu, setIsOpenMenu] = useState(false)
     const { pathname } = window.location
+    const [windowSize, setWindowSize] = useState(null)
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowSize(window.innerWidth)
+        }
+        window.addEventListener("resize", handleResize);
+        handleResize()
+        return () => window.removeEventListener("resize", handleResize);
+    }, [])
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -58,7 +70,6 @@ export function AppHeader() {
             else { categoryParams = '' }
             queryStringParams = `?category=${categoryParams}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
             navigate(`/gig${queryStringParams}`)
-
         }
     }
 
@@ -100,7 +111,7 @@ export function AppHeader() {
     }
 
     function onToggleMenu() {
-        
+        setIsOpenMenu(!isOpenMenu)
     }
 
     function handleOrder() {
@@ -111,27 +122,25 @@ export function AppHeader() {
         <section className={`app-header ${pathname === '/' && 'header-home-page main-layout'}`} >
 
             <nav className="app-header-nav">
-                <div className="main-screen"
-                    onClick={() => document.body.classList.remove('menu-open')}>
-                    <button className="fa-solid fa-bars menu-toggle-btn"
-                        onClick={() => document.body.classList.add('menu-open')}></button>
-                </div>
+                <button className="fa-solid fa-bars menu-toggle-btn"
+                    onClick={() => onToggleMenu()}></button>
+                {(windowSize < 900) && isOpenMenu && <AppHeaderMobile onToggleMenu={onToggleMenu} user={user} onLogout={onLogout} />}
 
                 <div className="app-header-aside">
                     <Link to="/"><h3 className={`logo ${pathname === '/' && 'home-page-link'}`}>finderr<span>.</span></h3></Link>
                     {pathname !== '/' && <Search onSetFilter={onSetFilter} />}
                 </div>
                 <div className="app-header-main">
-                    <Link to="/gig"
-                        onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>
-                    <Link to="gig">Become a seller</Link>
+                    {(windowSize > 900) && <Link to="/gig"
+                        onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>}
+                    {/* <Link to="gig">Become a seller</Link> */}
                     {user &&
                         <>
-                            <button className="user-link fa-regular bell" title="Notifications"></button>
-                            <button className="user-link fa-regular envelope" title="Messages"></button>
-                            <Link className="user-link fa-regular heart" title="Lists"></Link>
-                            <button onClick={handleOrder} className="user-link">Orders</button>
-                            {user.imgUrl && <img src={user.imgUrl}
+                            {/* <button className="user-link fa-regular bell" title="Notifications"></button> */}
+                            {/* <button className="user-link fa-regular envelope" title="Messages"></button> */}
+                            {/* <Link className="user-link fa-regular heart" title="Lists"></Link> */}
+                            {(windowSize > 900) && <button onClick={handleOrder} className="user-link">Orders</button>}
+                            {(windowSize > 900) && <img src={user.imgUrl}
                                 onClick={() => setIsDropdown(!isDropdown)} />}
                             {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} user={user} />}
                         </>

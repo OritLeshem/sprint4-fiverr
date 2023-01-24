@@ -173,6 +173,6 @@ export function GigIndex() {
             <SortyBy onSort={onSort} />
         </div>
         {gigs.length > 0 && <p>{gigs.length} services available</p>}
-        <GigList gigs={gigs} onRemoveGig={onRemoveGig} onUpdateGig={onUpdateGig} />
+        <GigList gigs={gigs} />
     </section>
 }

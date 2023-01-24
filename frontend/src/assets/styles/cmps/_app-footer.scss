@@ -44,5 +44,18 @@
             background-color: #efeff0;
         }
     }
+}
 
+@media (max-width: 700px) {    
+    .footer-rights, .main-footer {
+        flex-direction: column;
+
+        & > * {
+            margin-bottom: .5em;
+        }
+
+        .logo {
+            margin-right: 0;
+        }
+    }
 }

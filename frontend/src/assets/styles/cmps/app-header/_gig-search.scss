@@ -1,7 +1,8 @@
 .gig-search {
   display: flex;
   width: 100%;
-  input{
+
+  input {
     font-size: 1rem;
     border: 1px solid $clr8;
     border-right: 0;
@@ -9,6 +10,7 @@
     border-radius: .25em 0 0 .25em;
 
   }
+
   &:focus-visible {
     outline: none;
   }
