@@ -5,15 +5,15 @@ import { loadUser, updateUser } from "../../../store/user/user.actions"
 import { ImgUploader } from "../../img-uploader"
 
 
-export function UserProfile() {
+export function UserProfile({ user }) {
   const loginUser = userService.getLoggedinUser()
-  const user = useSelector(storeState => storeState.userModule.user)
+  // const user = useSelector(storeState => storeState.userModule.user)
 
 
   // const [userToEdit, setUserToEdit] = useState(user)
 
   useEffect(() => {
-    loadUser(loginUser._id)
+    loadUser(user)
   }, [])
 
   function onUploaded(data) {
@@ -41,10 +41,10 @@ export function UserProfile() {
         {/* <button className="user-profile-btn-online">online</button> */}
         {/* <button onClick={handleProfileImg} className="user-camera-avatar fa-solid fa-camera"></button> */}
         {user && <div className="user-profile-img" ><img src={user.imgUrl}></img></div>}
-        <ImgUploader onUploaded={onUploaded} />
+        {loginUser && (loginUser._id === user._id) && <ImgUploader onUploaded={onUploaded} />}
         {/* <button onClick={onSave}>save img</button> */}
         <h2>{user.username}</h2>
-        <button className="profile-edit-btn fa-solid fa-pencil"></button>
+        {/* {user && loginUser && (loginUser._id === user._id) &&<button className="profile-edit-btn fa-solid fa-pencil"></button>} */}
         <button className="profile-edit-preview-btn"> Preview Finderr Profile</button>
         <div className="user-profile-from"><div> <span className="fa-solid fa-location-dot"></span><span className="user-profile-from-name"> From</span></div><span className="user-profile-from-bold">Canada</span></div>
         <div className="user-profile-from"><div> <span className="fa-solid fa-user"></span><span className="user-profile-from-name">Member since</span></div><span className="user-profile-from-bold">Apr 2020</span></div>

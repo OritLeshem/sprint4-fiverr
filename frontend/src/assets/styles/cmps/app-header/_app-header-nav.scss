@@ -38,6 +38,10 @@
 .app-header-aside {
     flex-basis: 50%;
     @include flex;
+
+    @media (max-width: $narrow-breakpoint) {
+        flex-basis: 100%;
+    }
 }
 
 .app-header-main {
@@ -58,5 +62,9 @@
         width: em(32px, 16px);
         height: em(32px, 16px);
         cursor: pointer;
+    }
+
+    @media (max-width: $narrow-breakpoint) {
+        flex-basis: 0%;
     }
 }

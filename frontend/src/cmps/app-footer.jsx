@@ -8,16 +8,13 @@ export function AppFooter() {
                 <p>© Finderr International 2023</p>
             </div>
 
-            <div>
-                <ul className="social-link">
-                    <li><a href="https://twitter.com/" target="_blank" className="fa-brands twitter"></a></li>
-                    <li><a href="https://www.facebook.com/" target="_blank" className="fa-brands facebook"></a></li>
-                    <li><a href="https://www.linkedin.com/" target="_blank" className="fa-brands linkedin"></a></li>
-                    <li><a href="https://www.pinterest.com/" target="_blank" className="fa-brands pinterest"></a></li>
-                    <li><a href="https://www.instagram.com/" target="_blank" className="fa-brands instagram"></a></li>
-                </ul>
-
-            </div>
+            <ul className="social-link">
+                <li><a href="https://twitter.com/" target="_blank" className="fa-brands twitter"></a></li>
+                <li><a href="https://www.facebook.com/" target="_blank" className="fa-brands facebook"></a></li>
+                <li><a href="https://www.linkedin.com/" target="_blank" className="fa-brands linkedin"></a></li>
+                <li><a href="https://www.pinterest.com/" target="_blank" className="fa-brands pinterest"></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" className="fa-brands instagram"></a></li>
+            </ul>
         </div>
     </footer>
 }
