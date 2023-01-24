@@ -66,7 +66,7 @@ export function AppHeader() {
         }
 
         else {
-            if (filterBy.tags[0]!==undefined) categoryParams = filterBy.tags[0]
+            if (filterBy.tags[0] !== undefined) categoryParams = filterBy.tags[0]
             else { categoryParams = '' }
             queryStringParams = `?category=${categoryParams}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
             navigate(`/gig${queryStringParams}`)
@@ -124,7 +124,8 @@ export function AppHeader() {
             <nav className="app-header-nav">
                 <button className="fa-solid fa-bars menu-toggle-btn"
                     onClick={() => onToggleMenu()}></button>
-                {(windowSize < 900) && isOpenMenu && <AppHeaderMobile onToggleMenu={onToggleMenu} user={user} onLogout={onLogout} />}
+                {(windowSize < 900) && isOpenMenu &&
+                    <AppHeaderMobile onToggleMenu={onToggleMenu} user={user} onLogout={onLogout} onOpenModal={onOpenModal} setIsSignup={setIsSignup} />}
 
                 <div className="app-header-aside">
                     <Link to="/"><h3 className={`logo ${pathname === '/' && 'home-page-link'}`}>finderr<span>.</span></h3></Link>
