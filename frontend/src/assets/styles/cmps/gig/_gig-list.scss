@@ -1,25 +1,21 @@
 .gig-list {
     display: grid;
     margin-bottom: 3rem;
-
-    @media (max-width: $mobile-breakpoint) {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
+    grid-template-columns: 1fr;
+    gap: 1rem;
 
     @media (min-width: $mobile-breakpoint) {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
 
-    @media (min-width: $narrow-breakpoint) {
+    @media (min-width: $padded-break-narrow) {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
     }
 
-    @media (min-width: $normal-breakpoint) {
+    @media (min-width: $padded-break-normal) {
         grid-template-columns: repeat(4, 1fr);
+        max-width: $width-breakpoint;
         gap: 2rem;
     }
-
 }
