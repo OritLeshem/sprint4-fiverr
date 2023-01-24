@@ -1,9 +1,7 @@
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
-import { userService } from './user.service.js'
 
 const STORAGE_KEY = 'order'
-// _createOrders()
 
 export const orderService = {
     query,
@@ -14,14 +12,9 @@ export const orderService = {
     getOrderFirstSlides,
     getOrderLastSlides,
     getOrderSelling
-    // addOrderMsg
 }
 
-// window.cs = orderService
-
-
 async function query(userId) {
-    // console.log('order service', userId)
     var orders = await storageService.query(STORAGE_KEY)
     if (userId) orders = orders.filter(order => order.seller._id === userId || order.buyer._id === userId)
     return orders
@@ -48,21 +41,6 @@ async function save(order) {
     return savedOrder
 }
 
-// async function addOrderMsg(orderId, txt) {
-//     // Later, this is all done by the backend
-//     const order = await getById(orderId)
-//     if (!order.msgs) order.msgs = []
-
-//     const msg = {
-//         id: utilService.makeId(),
-//         by: userService.getLoggedinUser(),
-//         txt
-//     }
-//     order.msgs.push(msg)
-//     await storageService.put(STORAGE_KEY, order)
-
-//     return msg
-// }
 
 function getOrderFirstSlides() {
     return [
@@ -710,11 +688,3 @@ function getEmptyOrder(title = '', description = '', price = 0, tags = [], daysT
         imgUrl,
     }
 }
-
-
-// TEST DATA
-// storageService.post(STORAGE_KEY, {vendor: 'Subali Rahok 2', price: 980}).then(x => console.log(x))
-
-
-
-

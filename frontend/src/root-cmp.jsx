@@ -6,8 +6,7 @@ import { UserDetails } from './pages/user/user-details'
 import { HomePage } from './pages/home-page'
 import { GigIndex } from './pages/gig/gig-index'
 import { ChatApp } from './pages/chat-app'
-// import { ReviewIndex } from './pages/review-index'
-import { AdminApp } from './pages/admin-app'    
+import { AdminApp } from './pages/admin-app'
 import { GigDetails } from './pages/gig/gig-details'
 import { GigPayment } from './pages/gig/gig-payment'
 import { GigEdit } from './pages/gig/gig-edit'
@@ -49,7 +48,6 @@ export function RootCmp() {
                     <Route path="/gig/edit" element={<GigEdit />} />
                     <Route path="/payment/:gigId" element={<GigPayment />} />
 
-                    {/* <Route path="/review" element={<ReviewIndex />} /> */}
                     {/* <Route path="/chat" element={<ChatApp />} /> */}
                     {/* <Route path="/admin" element={<AdminApp />} /> */}
                 </Routes>

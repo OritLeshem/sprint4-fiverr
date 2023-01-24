@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
 import { userService } from '../../services/user.service'
-import { ImgUploader } from '../img-uploader'
 
 export function LoginSignup(props) {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
-    // const [isSignup, setIsSignup] = useState(false)
     const [users, setUsers] = useState([])
 
     useEffect(() => {
@@ -28,7 +26,6 @@ export function LoginSignup(props) {
     }
 
     function onLogin(ev = null) {
-        console.log('credentials:', credentials)
         if (ev) ev.preventDefault()
         if (!credentials.username) return
         props.onLogin(credentials)
@@ -37,7 +34,6 @@ export function LoginSignup(props) {
     }
 
     function onSignup(ev = null) {
-        console.log('credentials:', credentials)
         if (ev) ev.preventDefault()
         if (!credentials.username || !credentials.password || !credentials.fullname) return
         props.onSignup(credentials)
@@ -47,10 +43,6 @@ export function LoginSignup(props) {
 
     function toggleSignup() {
         props.setIsSignup(!props.isSignup)
-    }
-
-    function onUploaded(imgUrl) {
-        setCredentials({ ...credentials, imgUrl })
     }
 
     const { username, password } = credentials

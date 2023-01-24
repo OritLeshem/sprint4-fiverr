@@ -5,7 +5,6 @@ import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.j
 import { ADD_GIG, ADD_TO_CART, CLEAR_CART, REMOVE_GIG, REMOVE_FROM_CART, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG } from "./gig.reducer.js";
 import { SET_SCORE } from "../user/user.reducer.js";
 
-// Action Creators:
 export function getActionRemoveGig(gigId) {
     return {
         type: REMOVE_GIG,
@@ -28,8 +27,6 @@ export function getActionUpdateGig(gig) {
 export async function loadGigs(filterBy, sortBy, userId) {
     try {
         const gigs = await gigService.query(filterBy, sortBy, userId)
-        // console.log('Gigs from DB:', gigs)
-        // console.log('filterby action gig:', filterBy)
 
         store.dispatch({
             type: SET_GIGS,
@@ -40,7 +37,6 @@ export async function loadGigs(filterBy, sortBy, userId) {
         console.log('Cannot load gigs', err)
         throw err
     }
-
 }
 
 export async function removeGig(gigId) {

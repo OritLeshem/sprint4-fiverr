@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+
 import { showErrorMsg, showSuccessMsg } from "../../services/event-bus.service"
 import { gigService } from "../../services/gig.service"
 import { userService } from "../../services/user.service"
@@ -8,14 +9,8 @@ import { addOrder } from "../../store/order/order.actions"
 export function GigPayment() {
     const user = userService.getLoggedinUser()
     const [gig, setGig] = useState()
-
-
-
-
-
     const navigate = useNavigate()
     const { gigId } = useParams();
-    // console.log(order)
 
     useEffect(() => {
         loadGig()
@@ -42,7 +37,6 @@ export function GigPayment() {
             buyer: {
                 _id: user._id,
                 fullname: user.fullname
-
             },
             seller: {
                 _id: gig.owner._id,
@@ -56,7 +50,6 @@ export function GigPayment() {
             },
             status: "pending"
         }
-        console.log(order)
         try {
             await addOrder(order)
             navigate('/gig')
@@ -87,7 +80,6 @@ export function GigPayment() {
                             name="date"
                             autoComplete="cc-exp"
                             placeholder="03/28"
-                        // value={}
                         />
                     </div>
 
@@ -126,12 +118,10 @@ export function GigPayment() {
         {gig && <aside className="side-content">
             <header>
                 <img src={gig?.imgUrl[0]} alt="gig-img" />
-                {/* <div>{gig.title}</div> */}
                 <div>{gig.title}</div>
             </header>
 
             <section className="summary">
-
                 {gig && <div className="basic-and-price"><span className='basic'>BASIC</span >
                     <span className="price">${gig.price}</span></div>}
                 <ul>
@@ -144,7 +134,6 @@ export function GigPayment() {
                 <div className="promo-code">Enter promo code</div>
                 <div className="payment-taxes"><span>Service</span><span>$8.39</span></div>
                 <div className="payment-taxes"><span>VAT</span><span>$4.39</span></div>
-
                 <div>
                     <div className="payment-taxes total"><span>Total</span><span>$30.40</span></div>
                     <div className="payment-taxes"><span>Total delivery time</span><span>1 day</span></div>

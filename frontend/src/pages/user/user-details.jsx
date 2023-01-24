@@ -21,7 +21,6 @@ export function UserDetails() {
     return () => {
       socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
     }
-
   }, [])
 
   function onUserUpdate(user) {
@@ -33,10 +32,7 @@ export function UserDetails() {
     <section className="user-details">
       <h1>User Details</h1>
       {user && <div>
-        <h3>
-          {user.fullname}
-        </h3>
-        {/* Demo for dynamic images: */}
+        <h3> {user.fullname} </h3>
         <div className="user-img" style={{ backgroundImage: `url('/img/u${0}.png')` }}>
         </div>
         <pre>

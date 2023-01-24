@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 
 export function GigProgram({ gig }) {
   const [program, setProgram] = useState(1)
+
   function handleProgram(num) {
     if (num === 1) setProgram(1)
     if (num === 2) setProgram(2)
     if (num === 3) setProgram(3)
   }
+
   return <div className="gig-details-side">
     <div className="gig-program">
       <div className="gig-program-name">

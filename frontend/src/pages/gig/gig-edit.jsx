@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+
 import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 import Button from '@mui/material/Button'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
-import TextField from '@mui/material/TextField'
 import { addGig } from '../../store/gig/gig.actions'
 
 import { gigService } from '../../services/gig.service'
@@ -42,7 +42,6 @@ export function GigEdit() {
         price: Yup.number().min(1, 'minimum 1$').required('Required'),
         daysToMake: Yup.string()
             .required('Required'),
-
     })
 
     function onUploaded(data) {
@@ -53,7 +52,6 @@ export function GigEdit() {
     const onSave = async (values) => {
         try {
             await addGig(gigToEdit)
-
             navigate(`/user/${loginUser._id}`)
         } catch (err) {
             console.log('Cannot save gig: ', err)
