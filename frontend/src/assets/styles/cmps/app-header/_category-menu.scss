@@ -1,21 +1,40 @@
 .categories-menu {
     // opacity: 1;
-    overflow: hidden;
-
+    // overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-width: 0;
+    scroll-behavior: smooth;
+    animation: scroll linear;
+    // height: 100%;
+    
     ul {
         @include flex;
-        margin: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        white-space: nowrap;
+        // overflow-x: scroll;
+        // scrollbar-width: none;
+        // scroll-behavior: smooth;
+        // animation: scroll linear;
     }
 
     li {
         flex-shrink: 0;
         cursor: pointer;
+        display: inline-block;
     }
 
     li:not(:last-child) {
         padding-inline-end: em(20px, 16px);
     }
-    
+
     a {
         line-height: 1.5;
         display: block;
@@ -27,4 +46,8 @@
         }
     }
 
+}
+
+.categories-menu::-webkit-scrollbar {
+    display: none;
 }
