@@ -21,9 +21,9 @@ export const orderService = {
 
 
 async function query(userId) {
-    console.log('order service', userId)
+    // console.log('order service', userId)
     var orders = await storageService.query(STORAGE_KEY)
-    if (userId) orders = orders.filter(order => order.seller._id === userId||order.buyer._id === userId)
+    if (userId) orders = orders.filter(order => order.seller._id === userId || order.buyer._id === userId)
     return orders
 }
 
