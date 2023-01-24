@@ -12,13 +12,13 @@ export function AppHeaderMobile({ onToggleMenu, user, onLogout, onOpenModal, set
                 {!user && <>
                     <li><button className="join-btn"
                         onClick={() => { onOpenModal(); setIsSignup(true) }}>Join</button></li>
-                    <li><Link onClick={() => { onOpenModal(); setIsSignup(false) }}>Sign in</Link></li>
+                    <li><Link className="grey-btn" onClick={() => { onOpenModal(); setIsSignup(false) }}>Sign in</Link></li>
                 </>}
-                <li><Link to="/gig">Explore</Link></li>
+                <li><Link className="grey-btn" to="/gig">Explore</Link></li>
                 {user && <>
-                    <li><Link to={`/user/${user._id}`}>Profile</Link></li>
-                    <li><button className="user-link">Orders</button></li>
-                    <li onClick={() => onLogout()}>Logout</li>
+                    <li><Link className="grey-btn" to={`/user/${user._id}`}>Profile</Link></li>
+                    <li><button className="user-link grey-btn">Orders</button></li>
+                    <li className="grey-btn" onClick={() => onLogout()}>Logout</li>
                 </>}
             </ul>
         </div>
