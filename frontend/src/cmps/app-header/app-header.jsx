@@ -122,7 +122,7 @@ export function AppHeader() {
         <section className={`app-header ${pathname === '/' && 'header-home-page main-layout'}`} >
 
             <nav className="app-header-nav">
-                <button className="fa-solid fa-bars menu-toggle-btn"
+                <button className={`fa-solid fa-bars menu-toggle-btn ${pathname === '/' && 'home-page-link'}`} 
                     onClick={() => onToggleMenu()}></button>
                 {(windowSize < 900) && isOpenMenu &&
                     <AppHeaderMobile onToggleMenu={onToggleMenu} user={user} onLogout={onLogout} onOpenModal={onOpenModal} setIsSignup={setIsSignup} />}

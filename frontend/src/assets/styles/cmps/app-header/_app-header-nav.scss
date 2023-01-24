@@ -1,6 +1,16 @@
 .app-header-nav {
     @include flex;
     padding: 1em 0;
+
+    @media (max-width: $narrow-breakpoint) {
+        .home-page-link {
+            color: $clr3;
+        }
+
+        .grey-btn {
+            color: $clr6;
+        }
+    }
 }
 
 .menu-toggle-btn {
