@@ -13,7 +13,10 @@ export function ReviewList({ userReviews }) {
                 <div className="review">
                     <div className="user-info">
                         <h4>{review.by.fullname}</h4>
-                        <span>{review.by.country}</span>
+                        <div className="country">
+                            {review.by.flag && <img className="flag" src={review.by.flag} alt="" />}
+                            <span>{review.by.country}</span>
+                        </div>
                     </div>
 
                     <div className="rate-info">

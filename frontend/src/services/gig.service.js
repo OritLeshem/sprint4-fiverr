@@ -152,32 +152,6 @@ function _createGigs() {
     let gigs = utilService.loadFromStorage(STORAGE_KEY)
     if (!gigs || !gigs.length) {
         gigs = [
-            // {
-            //     _id: "i100",
-            //     title: "I will draw a hyperrealistic portrait of face or entire body and animals",
-            //     about: "Hello! I'm a brazilian artist specialized in hyperrealistic drawings and paintings of human figures and animals, i use a diversity of techniques like Oil painting, dry pastel drawing and pencil. I have over 30 years of experience, check out my portfolio.",
-            //     price: 198,
-            //     owner: {
-            //         "fullname": "andreacarvalho_",
-            //         "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5344c10fd4820db3626c4fc24968783d-1588608774469/1e4a3bd9-b71d-48ce-8ac0-0ff6d667caf4.jpeg",
-            //         "level": "basic/premium",
-            //         "rate": 4.9
-            //     },
-            //     country: "Brazil",
-            //     daysToMake: 4,
-            //     description: "Desenho de lápis hiperrealista da sua foto, posso adicionar detalhes de fundo e personalizar o desenho do jeito que você quiser.",
-            //     imgUrl: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
-            //     tags: [
-            //         "pencil",
-            //         "drawing",
-            //         "portrait",
-            //         "realistic",
-            //         "painting"
-            //     ],
-            //     likedByUsers: [
-            //         "mini-user"
-            //     ],
-            // },
             {
                 _id: 'i102',
                 title: "I will provide a great logo for you",
@@ -713,7 +687,33 @@ function _createGigs() {
                     "accessible"
                 ],
                 likedByUsers: ['mini-user'] // for user-wishlist : use $in
-            }
+            },
+            {
+                _id: "g101",
+                title: "I will do modern minimalist logo design",
+                about: "Hey, I'm Alpa. I am a graphics designer as well as business woman. My hobby is drawing. Because it's brings a lot of benefits besides simply boosting my creativity. It\'s make me feel relaxed. Another hobby is cycling. It's makes me healthy and fit.",
+                price: 61,
+                owner: {
+                    _id: "o101",
+                    fullname: "loftydesignshop",
+                    country: "India",
+                    imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d93001bdcba7f9235745299f61850b71-1657200241990/24f7d64e-5d25-41b3-8175-c79ea47e35d1.jpg",
+                    level: "basic/premium",
+                    rate: 4.8,
+                },
+                daysToMake: 2,
+                description: "I'm Alpa. I am running loftydesignshop studio on the Fiverr platform with more than 4 years of experience. We are a creative team. We help buyers to provide their business identity through their logo.",
+                imgUrl: [
+                    "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/115533372/original/67ec94a37b1b51862162ffd326912ebd1616e725/do-modern-minimalist-logo-design-for-your-business.jpg",
+                    "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/d563f1245ae0132d4c1ca21f533b62e5-1673262633/27428_Vadken%20medical_JK_M-01/do-modern-minimalist-logo-design-for-your-business.jpg",
+                    "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/ae80a50afc70ce3f177a22c9362ee394-1673346768/27447_Chaussures_RD_KC_M-01/do-modern-minimalist-logo-design-for-your-business.jpg"
+                ],
+                tags: [
+                    "graphic-design",
+                    "design",
+                    "logo-design"
+                ]
+            },
         ]
         utilService.saveToStorage(STORAGE_KEY, gigs)
     }

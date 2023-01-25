@@ -11,28 +11,11 @@
 @import "basics/links";
 @import "basics/forms";
 
-.fixedTop {
-    position: fixed;
-    background-color: $clr3;
-    width: 100%;
-    transition: background-color .5s ease;
-
-    &>* {
-        padding-inline: 32px;
-    }
-
-    .logo {
-        color: $clr2;
-    }
-}
-
-
 // Views
 // @import "views/home-page1";
 @import "views/gig/gig-index";
 @import "views/gig/gig-details";
 @import "views/gig/gig-payment";
-@import "views/review-app";
 @import "views/user/user-details";
 @import "views/gig/gig-edit";
 
@@ -49,6 +32,9 @@
 @import "cmps/slider/slide-list";
 @import "cmps/app-footer";
 @import "cmps/user-msg";
+@import "cmps/user/review-app";
+@import "cmps/user/review-list";
+@import "cmps/user/review-bar";
 @import "cmps/gig/gig-list";
 @import "cmps/gig/gig-preview";
 @import "cmps/app-header/category-menu";

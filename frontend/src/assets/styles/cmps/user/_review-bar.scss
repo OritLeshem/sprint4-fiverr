@@ -1,0 +1,38 @@
+.review-bars {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: em(24px, 16px);
+
+    // border: 1px solid red;
+}
+
+.review-count {
+    display: flex;
+}
+
+.review-bars-container {
+    color: $clr5;
+    display: flex;
+    align-items: center;
+    display: grid;
+    grid-template-columns:
+        em(65px, 16px) em(200px, 16px) em(20px, 16px);
+}
+
+.review-rate-bar {
+    background-color: #fff;
+    color: #111;
+    position: relative;
+    height: em(8px, 16px);
+    width: em(180px, 16px);
+    border-radius: 100px;
+    background-color: $clr7;
+
+    .percent {
+        border-radius: 100px;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: $clr4;
+    }
+}
