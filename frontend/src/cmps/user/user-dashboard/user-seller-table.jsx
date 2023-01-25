@@ -38,19 +38,23 @@ export default function UserSellerTable({ orders }) {
       <div className="statstic-show">
         <div className=" statstic-total ">
           <h3>Total sales </h3>
-          {statistic && <h3>{orders.length}</h3>}
+          {statistic && <h3>{orders.length ? orders.length : 0}</h3>}
         </div>
         <div className=" statstic-total statstic-completed">
           <h3>Completed</h3>
-          {statistic && <h3>{statistic.completed}</h3>}
+          {statistic && <h3>{statistic.completed ? statistic.completed : 0}</h3>}
         </div>
         <div className=" statstic-total statstic-pending">
           <h3>Pending</h3>
-          {statistic && <h3>{statistic.pending}</h3>}
+          {statistic && <h3>{statistic.pending ? statistic.pending : 0}</h3>}
+        </div>
+        <div className=" statstic-total statstic-approved">
+          <h3>Approved</h3>
+          {statistic && <h3>{statistic.approved ? statistic.approved : 0}</h3>}
         </div>
         <div className=" statstic-total statstic-declined">
           <h3>Declined</h3>
-          {statistic && <h3>{statistic.declined}</h3>}
+          {statistic && <h3>{statistic.declined ? statistic.declined : 0}</h3>}
         </div>
       </div>
 
@@ -59,10 +63,10 @@ export default function UserSellerTable({ orders }) {
           <TableHead>
             <TableRow>
               <TableCell>Order id</TableCell>
-              <TableCell align="right">Buyer</TableCell>
-              <TableCell align="right">Gig title</TableCell>
-              <TableCell align="right">Price</TableCell>
-              <TableCell align="right">Status</TableCell>
+              <TableCell align="left">Buyer</TableCell>
+              <TableCell align="left">Gig title</TableCell>
+              <TableCell align="center">Price</TableCell>
+              <TableCell align="center">Status</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -74,12 +78,13 @@ export default function UserSellerTable({ orders }) {
                 <TableCell component="th" scope="row">
                   {order._id}
                 </TableCell>
-                <TableCell align="right">{order.buyer.fullname}</TableCell>
-                <TableCell align="right">{order.gig.title}</TableCell>
-                <TableCell align="right">{order.gig.price}</TableCell>
-                <TableCell align="right">
+                <TableCell align="left">{order.buyer.fullname}</TableCell>
+                <TableCell align="left">{order.gig.title}</TableCell>
+                <TableCell align="center">{order.gig.price}</TableCell>
+                <TableCell align="left">
                   {(isModal.status && isModal.id === order._id) && <div className="status-options">
                     <button className="pending" onClick={() => updateStatus("pending", order)}>Pending</button>
+                    <button className="approved" onClick={() => updateStatus("approved", order)}>Aproved</button>
                     <button className="completed" onClick={() => updateStatus("completed", order)}>Completed</button>
                     <button className="declined" onClick={() => updateStatus("declined", order)}>Declined</button>
                   </div>
