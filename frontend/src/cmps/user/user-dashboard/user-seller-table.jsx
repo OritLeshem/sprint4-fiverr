@@ -84,7 +84,7 @@ export default function UserSellerTable({ orders }) {
                 <TableCell align="left">
                   {(isModal.status && isModal.id === order._id) && <div className="status-options">
                     <button className="pending" onClick={() => updateStatus("pending", order)}>Pending</button>
-                    <button className="approved" onClick={() => updateStatus("approved", order)}>Aproved</button>
+                    <button className="approved" onClick={() => updateStatus("approved", order)}>Approved</button>
                     <button className="completed" onClick={() => updateStatus("completed", order)}>Completed</button>
                     <button className="declined" onClick={() => updateStatus("declined", order)}>Declined</button>
                   </div>
