@@ -1,0 +1,41 @@
+.review-app {
+
+    h3 {
+        font-size: rem(20px);
+        font-family: macan-bold;
+        margin-bottom: em(16px, 20px);
+    }
+
+    h4 {
+        padding: 0;
+        font-size: 1rem;
+        font-family: macan-semibold;
+        margin-right: em(5px, 16px);
+
+        span {
+            margin-right: em(5px, 16px);
+        }
+    }
+
+    .review-header {
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        margin-bottom: em(20px, 16px);
+    }
+}
+
+.divider {
+    height: em(17px, 14px);
+    border-right: 1px solid $clr12;
+    margin: em(2px, 14px) em(8px, 14px);
+}
+
+.rate {
+    color: $clr4;
+    font-family: macan-bold;
+}
+
+.padding {
+    padding-left: em(4px, 14px);
+}
