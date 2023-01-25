@@ -36,6 +36,7 @@ export function AppHeader() {
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
+            console.log(e.target.className);
             // If the menu is open and the clicked target is not within the menu,
             if (isModal && e.target.className) {
                 setIsModal(false)
@@ -43,9 +44,9 @@ export function AppHeader() {
             if (isDropdown && e.target.className) {
                 setIsDropdown(false)
             }
-            if (isOrder && e.target.className !== "user-link") {
-                setIsOrder(false)
-            }
+            // if (isOrder && (e.target.className !== "user-link"||e.target.className !== "buy-order-seller-status")) {
+            //     setIsOrder(false)
+            // }
         }
         document.addEventListener("mousedown", checkIfClickedOutside)
 
