@@ -118,6 +118,10 @@
     content: "\f111";
 }
 
+.fa-solid.roket:after {
+    content: "\f135";
+}
+
 /* regular */
 
 .fa-regular:after {
@@ -146,6 +150,14 @@
 
 .fa-regular.circle-check:after {
     content: "\f058";
+}
+
+.fa-regular.file:after {
+    content: "\f15b";
+}
+
+.fa-regular.clock:after {
+    content: "\f017";
 }
 
 /* brands */
