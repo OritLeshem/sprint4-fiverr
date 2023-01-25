@@ -5,8 +5,8 @@ import { userService } from "../../../services/user.service"
 import { loadOrders } from "../../../store/order/order.actions"
 import UserSellerTable from "./user-seller-table"
 
-export function UserSales() {
-  const orders = useSelector((storeState) => storeState.orderModule.orders)
+export function UserSales({ orders }) {
+  // const orders = useSelector((storeState) => storeState.orderModule.orders)
   const user = userService.getLoggedinUser()
 
   useEffect(() => {

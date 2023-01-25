@@ -1,5 +1,4 @@
 import { HomePageSlider } from '../cmps/home-page/home-page-slider'
-import { HomePageSliderCopy } from '../cmps/home-page/home-page-slider copy'
 import { SlideList } from '../cmps/slide/slide-list'
 import { gigService } from '../services/gig.service'
 
@@ -10,7 +9,7 @@ export function HomePage() {
     return <section className="home-page full">
         <main className="full main-layout">
             {/* <HomePageSlider /> */}
-            <HomePageSliderCopy />
+            <HomePageSlider />
             <div className="trusted-by full">
             </div>
             <h2>Popular professional services</h2>

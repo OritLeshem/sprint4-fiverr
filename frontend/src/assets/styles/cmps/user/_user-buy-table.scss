@@ -27,11 +27,10 @@
     padding: 15px;
     align-items: center;
     border-bottom: 1px solid $clr7;
-    justify-content: space-between;
   }
 
   .buy-order-img {
-    width: 80px;
+    width: 40px;
     margin: 20px;
   }
 
@@ -48,12 +47,12 @@
     color: $clr1;
   }
 
-  .buy-order-link-details {
-    padding: 4px 8px;
-    background-color: $clr1;
-    color: $clr3;
-    border-radius: 3px;
-  }
+  // .buy-order-link-details {
+  //   padding: 4px 8px;
+  //   background-color: $clr1;
+  //   color: $clr3;
+  //   border-radius: 3px;
+  // }
 }
 
 .svg-wrap {
