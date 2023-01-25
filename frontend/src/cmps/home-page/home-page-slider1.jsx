@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { SET_FILTER } from "../../store/gig/gig.reducer"
 import { Search } from "../app-header/header-search"
 
-export function HomePageSliderCopy() {
+export function HomePageSlider1() {
     const [currentIndex, setCurrentIndex] = useState(0)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -34,7 +34,7 @@ export function HomePageSliderCopy() {
     }
 
     useEffect(() => {
-        if (currentIndex === 4) {
+        if (currentIndex === slides.length - 1) {
             clearInterval(intervalIdRef.current)
             setCurrentIndex(0)
         }
@@ -51,12 +51,12 @@ export function HomePageSliderCopy() {
         }, 6000)
     }
 
+    const slideStyles = {
+        backgroundImage: `url(${slides[currentIndex].url})`,
+    }
+
     return <section className="home-page-slider full main-layout">
-        <div className={`hero-img full ${currentIndex === 0 ? "active-hero" : "hidden-hero"}`} style={{ backgroundImage: `url(${slides[0].url})` }}></div>
-        <div className={`hero-img full ${currentIndex === 1 ? "active-hero" : "hidden-hero"}`} style={{ backgroundImage: `url(${slides[1].url})` }}></div>
-        <div className={`hero-img full ${currentIndex === 2 ? "active-hero" : "hidden-hero"}`} style={{ backgroundImage: `url(${slides[2].url})` }}></div>
-        <div className={`hero-img full ${currentIndex === 3 ? "active-hero" : "hidden-hero"}`} style={{ backgroundImage: `url(${slides[3].url})` }}></div>
-        <div className={`hero-img full ${currentIndex === 4 ? "active-hero" : "hidden-hero"}`} style={{ backgroundImage: `url(${slides[4].url})` }}></div>
+        <div className="hero-img full" style={slideStyles}></div>
         <div className="hero-container full main-layout">
             <main className="main-header">
                 <span>Find the perfect<i>freelance</i></span>

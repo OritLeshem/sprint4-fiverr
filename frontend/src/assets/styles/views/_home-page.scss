@@ -153,10 +153,6 @@
 
     .img-container {
         flex-basis: 53%;
-
-        img {
-            border-radius: em(4px, 16px);
-        }
     }
 
     .flex {
@@ -190,4 +186,20 @@
         margin-right: 0.56em;
         color: $clr5;
     }
+}
+
+.hidden-hero{
+    animation: fade 2s linear;
+    opacity : 0;
+    transition: opacity .9s ease;
+    position : absolute;
+    -webkit-transition: opacity .9s;
+}
+
+.active-hero{
+    animation: fade 2s linear;
+    opacity : 1;
+    transition: opacity .9s ease;
+    position : relative;
+    -webkit-transition: opacity .9s;
 }
