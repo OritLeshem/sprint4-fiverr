@@ -2,11 +2,8 @@ import { useRef, useState } from "react"
 import { gigService } from "../../services/gig.service"
 
 export function SlideList() {
-    const firstSlides = gigService.getGigFirstSlides()
-    const lastSlides = gigService.getGigLastSlides()
-    const slides = [...firstSlides, ...lastSlides]
+    const slides = gigService.getGigSlides()
     const sliderRef = useRef()
-
     const [lastDirection, setLastDirection] = useState('')
 
     const slideLeft = () => {

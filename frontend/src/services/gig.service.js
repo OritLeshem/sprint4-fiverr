@@ -12,8 +12,7 @@ export const gigService = {
     remove,
     getEmptyGig,
     getDefaultFilter,
-    getGigFirstSlides,
-    getGigLastSlides,
+    getGigSlides,
     getGigSelling,
     getDefaultSort
 }
@@ -73,7 +72,7 @@ async function save(gig) {
     return savedGig
 }
 
-function getGigFirstSlides() {
+function getGigSlides() {
     return [
         {
             url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_305,dpr_2.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png',
@@ -99,12 +98,7 @@ function getGigFirstSlides() {
             url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png',
             desc: 'Reach more customers',
             category: 'Social Media'
-        }
-    ]
-}
-
-function getGigLastSlides() {
-    return [
+        },
         {
             url: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741668/seo-2x.png',
             desc: 'Unlock growth online',
@@ -131,7 +125,6 @@ function getGigLastSlides() {
             category: 'Book Covers'
         }
     ]
-
 }
 
 function getGigSelling() {
