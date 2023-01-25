@@ -3,9 +3,11 @@ const gigService = require('./gig.service.js')
 const logger = require('../../services/logger.service')
 
 async function getGigs(req, res) {
+  const filterBy = { title: '', tags: [], daysToMake: '', minPrice: 1, maxPrice: 200 }
   try {
+    // const { filterBy } = req.query.params
     logger.debug('Getting Gigs')
-    const gigs = await gigService.query()
+    const gigs = await gigService.query(filterBy)
     res.json(gigs)
   } catch (err) {
     logger.error('Failed to get gigs', err)

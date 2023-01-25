@@ -12,7 +12,7 @@ import { GigPayment } from './pages/gig/gig-payment'
 import { GigEdit } from './pages/gig/gig-edit'
 import { UserMsg } from './cmps/user-msg'
 import { UserIndex } from './pages/user/user-index'
-import { OrderDetails } from './pages/oreder/order-detail'
+import { OrderDetails } from './pages/order/order-details'
 
 
 export function RootCmp() {

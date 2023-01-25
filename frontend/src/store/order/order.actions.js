@@ -43,12 +43,12 @@ export async function addOrder(order) {
 export function updateOrder(order) {
     return orderService.save(order)
         .then(savedOrder => {
-            console.log('Updated Gig:', savedOrder)
+            console.log('Updated order:', savedOrder)
             store.dispatch(getActionUpdateOrder(savedOrder))
             return savedOrder
         })
         .catch(err => {
-            console.log('Cannot save gig', err)
+            console.log('Cannot save order', err)
             throw err
         })
 }
