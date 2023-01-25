@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  max-width: 450px;
+  // max-width: 450px;
 }
 
 @media (min-width:$narrow-breakpoint) {
@@ -20,7 +20,7 @@
     }
 
     .user-index-main-container {
-      flex-basis: 50%;
+      flex-basis: 75%;
       margin: 0;
     }
   }
@@ -36,8 +36,9 @@
   }
 
   .user-index-main-container {
-    flex-basis: 60%;
+    flex-basis: 65%;
     margin: 0;
+
   }
 }
 

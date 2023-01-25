@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 
 import { loadGigs, removeGig } from '../../store/gig/gig.actions.js'
+import { loadOrders } from '../../store/order/order.actions.js'
+
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
 import { UserList } from '../../cmps/user/user-list.jsx'
 import { UserProfile } from '../../cmps/user/user-dashboard/user-profile'
@@ -23,6 +25,7 @@ export function UserIndex() {
 
     useEffect(() => {
         userId && loadUser(userId)
+        loadOrders()
         loadGigs(filterBy, sortBy, userId)
     }, [filterBy, userId])
 
@@ -43,7 +46,7 @@ export function UserIndex() {
                 {user && loginUser && <ReviewList userReviews={user.reviews} />}
             </div>
             <main className="user-index-main-container">
-                {orders.length !== 0 && user && loginUser && (loginUser._id === user._id) && <UserSales />}
+                {orders.length !== 0 && user && loginUser && (loginUser._id === user._id) && <UserSales orders={orders} />}
                 {user && loginUser && (loginUser._id === user._id) && <Link className="user-index-add-link" to="/gig/edit">Add Gig +</Link>}
                 <div className="user-index-gig-list">
                     <UserList gigs={gigs} onRemoveGig={onRemoveGig} user={user} />
