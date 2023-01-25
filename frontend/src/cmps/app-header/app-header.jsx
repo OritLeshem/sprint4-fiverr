@@ -55,8 +55,6 @@ export function AppHeader() {
         }
     }, [isModal, isDropdown, isOrder])
 
-<<<<<<< HEAD
-=======
     // useEffect(() => {
     //     const fixedHeader = () => {
     //         if (pathname !== '/' && window.pageYOffset < 2) {
@@ -69,7 +67,6 @@ export function AppHeader() {
     //     window.addEventListener('scroll', fixedHeader)
     // }, [])
 
->>>>>>> refs/remotes/origin/main
 
     function onSetFilter(filterBy) {
         dispatch({ type: SET_FILTER, filterBy })
