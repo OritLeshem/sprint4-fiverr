@@ -12,24 +12,26 @@
   align-items: center;
   z-index: 40;
 
-  h3,p{
-    color:$clr5;
+  h3,
+  p {
+    color: $clr5;
     text-align: center;
   }
 
-  div{
-    color:$clr5;
+  div {
+    color: $clr5;
   }
 
   .order-container {
     display: flex;
     padding: 15px;
     align-items: center;
-    border-bottom: 1px solid $clr10;
+    border-bottom: 1px solid $clr7;
+    justify-content: space-between;
   }
 
   .buy-order-img {
-    width: 40px;
+    width: 80px;
     margin: 20px;
   }
 
@@ -45,9 +47,16 @@
   .buy-order-status {
     color: $clr1;
   }
+
+  .buy-order-link-details {
+    padding: 4px 8px;
+    background-color: $clr1;
+    color: $clr3;
+    border-radius: 3px;
+  }
 }
 
-.svg-wrap{
+.svg-wrap {
   // color: #62646a;
   // font: 400 16px/24px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
   // list-style: none;
@@ -60,8 +69,9 @@
   // border-radius: 50%;
   // display: inline-block;
   padding: 39px 31px;
-display: block;
-  svg{
+  display: block;
+
+  svg {
     width: 60px;
     text-align: center;
 

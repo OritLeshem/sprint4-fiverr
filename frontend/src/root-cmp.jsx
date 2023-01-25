@@ -12,6 +12,7 @@ import { GigPayment } from './pages/gig/gig-payment'
 import { GigEdit } from './pages/gig/gig-edit'
 import { UserMsg } from './cmps/user-msg'
 import { UserIndex } from './pages/user/user-index'
+import { OrderDetails } from './pages/oreder/order-detail'
 
 
 export function RootCmp() {
@@ -42,11 +43,13 @@ export function RootCmp() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/user/:userId" element={<UserIndex />} />
+                    <Route path="/order/:orderId" element={<OrderDetails />} />
                     <Route path="/gig" element={<GigIndex />} />
                     <Route path="/gig/:gigId" element={<GigDetails />} />
                     <Route path="/gig/edit/:gigId" element={<GigEdit />} />
                     <Route path="/gig/edit" element={<GigEdit />} />
                     <Route path="/payment/:gigId" element={<GigPayment />} />
+
 
                     {/* <Route path="/chat" element={<ChatApp />} /> */}
                     {/* <Route path="/admin" element={<AdminApp />} /> */}
