@@ -27,11 +27,11 @@ export function CategoryMenu({ onSetFilter }) {
 
     const slideRight = () => {
         if (lastDirection !== 'right') {
-            CategorysliderRef.current.scrollLeft = CategorysliderRef.current.scrollLeft - 2000
+            CategorysliderRef.current.scrollLeft = CategorysliderRef.current.scrollLeft + 2000
             setLastDirection('right')
         }
         else {
-            CategorysliderRef.current.scrollLeft = CategorysliderRef.current.scrollLeft + 2000
+            CategorysliderRef.current.scrollLeft = CategorysliderRef.current.scrollLeft - 2000
             setLastDirection('left')
         }
     }

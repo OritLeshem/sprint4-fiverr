@@ -10,23 +10,39 @@ export function SlideList() {
     const [lastDirection, setLastDirection] = useState('')
 
     const slideLeft = () => {
-        if (lastDirection !== 'left') {
+        if (lastDirection === '') {
+            sliderRef.current.scrollLeft = sliderRef.current.scrollLeft - 2000
+            setLastDirection('left')
+        }
+        else if (lastDirection === 'left') {
             sliderRef.current.scrollLeft = sliderRef.current.scrollLeft + 2000
+            setLastDirection('right')
+        }
+        else if (lastDirection !== 'left') {
+            sliderRef.current.scrollLeft = sliderRef.current.scrollLeft - 2000
             setLastDirection('left')
         }
         else {
-            sliderRef.current.scrollLeft = sliderRef.current.scrollLeft - 2000
+            sliderRef.current.scrollLeft = sliderRef.current.scrollLeft + 2000
             setLastDirection('right')
         }
     }
 
     const slideRight = () => {
-        if (lastDirection !== 'right') {
+        if (lastDirection === '') {
+            sliderRef.current.scrollLeft = sliderRef.current.scrollLeft + 2000
+            setLastDirection('right')
+        }
+        else if (lastDirection === 'right') {
             sliderRef.current.scrollLeft = sliderRef.current.scrollLeft - 2000
+            setLastDirection('left')
+        }
+        else if (lastDirection !== 'right') {
+            sliderRef.current.scrollLeft = sliderRef.current.scrollLeft + 2000
             setLastDirection('right')
         }
         else {
-            sliderRef.current.scrollLeft = sliderRef.current.scrollLeft + 2000
+            sliderRef.current.scrollLeft = sliderRef.current.scrollLeft - 2000
             setLastDirection('left')
         }
     }

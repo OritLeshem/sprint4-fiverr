@@ -37,6 +37,7 @@ export function AppHeader() {
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
+            console.log(e.target.className);
             // If the menu is open and the clicked target is not within the menu,
             if (isModal && e.target.className) {
                 setIsModal(false)
