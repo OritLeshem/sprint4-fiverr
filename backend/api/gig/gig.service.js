@@ -2,18 +2,55 @@ const dbService = require('../../services/db.service')
 const logger = require('../../services/logger.service')
 const utilService = require('../../services/util.service')
 const ObjectId = require('mongodb').ObjectId
+// let filterBy="draw"
+async function query(filterBy) {
 
-async function query() {
+    console.log("query filter by", filterBy.title)
     try {
-
+        const criteria = _buildCriteria(filterBy)
         const collection = await dbService.getCollection('gig')
-        var gigs = await collection.find().toArray()
+        // var gigs = await collection.find(criteria).toArray()
+        // const sort = { "price": -1 }
+        const sort = { "owner.rate": -1 }
+
+        // const sort = { "rate": -1 }
+        const sort1 = { "owner": { "rate": -1 } }
+        // const sort1 = {  "rate": -1 } }
+
+        // var gigs = await collection.find(criteria).sort(sort).toArray()
+        var gigs = await collection.find(criteria).sort(sort).toArray()
+
         return gigs
     } catch (err) {
         logger.error('cannot find gigs', err)
         throw err
     }
 }
+function _buildCriteria(filterBy) {
+    console.log("criteria filter by", filterBy.title)
+    let criteria = {}
+    // console.log(filterBy)
+    if (filterBy.title) {
+        criteria.title = { $regex: filterBy.title, $options: 'i' }
+    }
+    if (filterBy.minPrice || filterBy.maxPrice) {
+        console.log("minprice", filterBy.minPrice)
+        // criteria.price = { $lte: +filterBy.price || Infinity }
+        criteria = { ...criteria, "$and": [{ "price": { "$gt": +filterBy.minPrice } }, { "price": { "$lte": +filterBy.maxPrice } }] }
+    }
+    if (filterBy.daysToMake) {
+        criteria.daysToMake = { $lte: +filterBy.daysToMake || Infinity }
+    }
+    // if (filterBy.inStock === 'true') {
+    //   criteria.inStock = true
+    // }
+    // if (filterBy?.labels?.length) {
+    //   criteria.lables = { $all: filterBy.labels }
+    // }
+
+    return criteria
+}
+
 
 async function getById(gigId) {
     try {
