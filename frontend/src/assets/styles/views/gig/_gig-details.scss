@@ -38,6 +38,7 @@
 
 .gig-details-preview {
   order: 1;
+  max-height: 670px;
 
   .owner-details {
     font-size: rem(14px);
@@ -173,4 +174,8 @@
   display: flex;
   align-items: center;
   line-height: 1;
+
+  p {
+    padding-left: .5em;
+  }
 }

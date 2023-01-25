@@ -110,6 +110,7 @@
 .fa-solid.fa-bars:after {
     content: "\f0c9";
 }
+
 .fa-solid.fa-bars:after {
     content: "\f0c9";
 }
@@ -121,6 +122,15 @@
 .fa-solid.roket:after {
     content: "\f135";
 }
+
+.fa-solid::before {
+    font-family: fa-solid;
+}
+
+.fa-solid.arrows-rotate::before {
+    content: "\f021";
+}
+
 
 /* regular */
 
@@ -156,7 +166,11 @@
     content: "\f15b";
 }
 
-.fa-regular.clock:after {
+.fa-regular::before {
+    font-family: fa-regular;
+}
+
+.fa-regular.clock::before {
     content: "\f017";
 }
 

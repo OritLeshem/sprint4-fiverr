@@ -20,6 +20,12 @@
 .gig-program-name {
   display: flex;
 
+  .active-basic {
+    background-color: #fff;
+    border-bottom: 3px solid #1dbf73;
+    color: #1dbf73;
+  }
+
   button {
     height: 64px;
     background-color: transparent;
@@ -27,15 +33,17 @@
     flex-basis: 33.9%;
     border-bottom: 2px solid transparent;
     transition: all .6s;
+    background-color: #fafafa;
+    color: #74767e;
 
     &:not(:last-of-type) {
       border-right: 1px solid $clr7;
     }
 
-    &:hover {
-      color: $clr1;
-      border-bottom: 2px solid $clr1;
-    }
+    // &:hover {
+    //   color: $clr1;
+    //   border-bottom: 2px solid $clr1;
+    // }
   }
 }
 
@@ -51,21 +59,29 @@
     font-size: 28px;
   }
 
+  .delivery span {
+    padding-inline-end: .5em;
+
+    &::before {
+      padding-right: .5em;
+    }
+  }
+
+  p, ul {
+    margin-bottom: em(24px, 16px);
+  }
+
   .gig-program-subscribe {
     color: #026a5d;
   }
 
   .gig-program-basic {
     font-family: macan-bold;
+
   }
 
   .green-check {
     color: $clr1;
-  }
-
-  ul {
-    padding-top: 37px;
-    padding-bottom: 82px;
   }
 }
 
