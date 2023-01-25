@@ -45,9 +45,9 @@ export function AppHeader() {
             if (isDropdown && e.target.className) {
                 setIsDropdown(false)
             }
-            // if (isOrder && e.target.className !== "user-link") {
-            //     setIsOrder(false)
-            // }
+            if (isOrder && e.target.className !== "user-link") {
+                setIsOrder(false)
+            }
         }
         document.addEventListener("mousedown", checkIfClickedOutside)
 
