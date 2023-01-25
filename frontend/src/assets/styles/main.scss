@@ -11,6 +11,21 @@
 @import "basics/links";
 @import "basics/forms";
 
+.fixedTop {
+    position: fixed;
+    background-color: $clr3;
+    width: 100%;
+    transition: background-color .5s ease;
+
+    &>* {
+        padding-inline: 32px;
+    }
+
+    .logo {
+        color: $clr2;
+    }
+}
+
 
 // Views
 @import "views/home-page";

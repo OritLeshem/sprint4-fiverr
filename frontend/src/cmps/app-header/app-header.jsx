@@ -7,7 +7,7 @@ import { Search } from './header-search'
 import { SET_FILTER } from '../../store/gig/gig.reducer'
 import { CategoryMenu } from './header-category-menu'
 import { gigService } from '../../services/gig.service'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ModalLogin } from './modal-login'
 import { Dropdown } from './dropdown'
 import UserBuyTable from '../user/user-buy-table'
@@ -24,6 +24,7 @@ export function AppHeader() {
     const [isOpenMenu, setIsOpenMenu] = useState(false)
     const { pathname } = window.location
     const [windowSize, setWindowSize] = useState(null)
+    const headerRef = useRef(null)
 
     useEffect(() => {
         function handleResize() {
@@ -44,7 +45,7 @@ export function AppHeader() {
             if (isDropdown && e.target.className) {
                 setIsDropdown(false)
             }
-            // if (isOrder && (e.target.className !== "user-link"||e.target.className !== "buy-order-seller-status")) {
+            // if (isOrder && e.target.className !== "user-link") {
             //     setIsOrder(false)
             // }
         }
@@ -54,6 +55,22 @@ export function AppHeader() {
             document.removeEventListener("mousedown", checkIfClickedOutside)
         }
     }, [isModal, isDropdown, isOrder])
+
+<<<<<<< HEAD
+=======
+    // useEffect(() => {
+    //     const fixedHeader = () => {
+    //         if (pathname !== '/' && window.pageYOffset < 2) {
+    //             headerRef.current.classList.remove('fixedTop')
+    //         } else {
+    //             headerRef.current.classList.add('fixedTop')
+    //         }
+    //     }
+
+    //     window.addEventListener('scroll', fixedHeader)
+    // }, [])
+
+>>>>>>> refs/remotes/origin/main
 
     function onSetFilter(filterBy) {
         dispatch({ type: SET_FILTER, filterBy })
@@ -122,8 +139,8 @@ export function AppHeader() {
     return <>
         <section className={`app-header ${pathname === '/' && 'header-home-page main-layout'}`} >
 
-            <nav className="app-header-nav">
-                <button className={`fa-solid fa-bars menu-toggle-btn ${pathname === '/' && 'home-page-link'}`} 
+            <nav className="app-header-nav" ref={headerRef}>
+                <button className={`fa-solid fa-bars menu-toggle-btn ${pathname === '/' && 'home-page-link'}`}
                     onClick={() => onToggleMenu()}></button>
                 {(windowSize < 900) && isOpenMenu &&
                     <AppHeaderMobile onToggleMenu={onToggleMenu} user={user} onLogout={onLogout} onOpenModal={onOpenModal} setIsSignup={setIsSignup} />}

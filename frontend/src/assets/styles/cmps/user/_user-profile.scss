@@ -1,5 +1,6 @@
 .user-profile {
-  margin-right: 50px;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
 .user-profile-info {
@@ -8,8 +9,6 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-  margin: 50px auto;
-  margin-right: 50px;
   border: 1px solid $clr7;
 
   .user-profile-btn-online {
@@ -34,7 +33,6 @@
       border-radius: 50%;
       width: 150px;
       height: 150px;
-
     }
   }
 
@@ -42,7 +40,6 @@
     margin: 20px;
     background-color: transparent;
     color: $clr7;
-
   }
 
   .profile-edit-preview-btn {
@@ -60,7 +57,6 @@
       background-color: $clr5;
       color: $clr3 ;
     }
-
   }
 
   .user-profile-from {

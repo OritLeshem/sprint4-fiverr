@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Routes, Route } from 'react-router'
 import { AppHeader } from './cmps/app-header/app-header'
 import { AppFooter } from './cmps/app-footer'
@@ -12,28 +12,10 @@ import { GigPayment } from './pages/gig/gig-payment'
 import { GigEdit } from './pages/gig/gig-edit'
 import { UserMsg } from './cmps/user-msg'
 import { UserIndex } from './pages/user/user-index'
+import { OrderDetails } from './pages/oreder/order-detail'
 
 
 export function RootCmp() {
-    // let app = useRef()
-
-    // console.log('app.current:', app.current)
-
-    // // const app = document.querySelector('.app');
-
-    // const appObserver = new IntersectionObserver(updateApp, {});
-
-    // appObserver.observe(app.current);
-
-    // function updateApp(entries) {
-    //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //             console.log('intersecting')
-    //         } else {
-    //             console.log('not intersecting')
-    //         }
-    //     });
-    // }
 
     return (
         <>
@@ -42,11 +24,13 @@ export function RootCmp() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/user/:userId" element={<UserIndex />} />
+                    <Route path="/order/:orderId" element={<OrderDetails />} />
                     <Route path="/gig" element={<GigIndex />} />
                     <Route path="/gig/:gigId" element={<GigDetails />} />
                     <Route path="/gig/edit/:gigId" element={<GigEdit />} />
                     <Route path="/gig/edit" element={<GigEdit />} />
                     <Route path="/payment/:gigId" element={<GigPayment />} />
+
 
                     {/* <Route path="/chat" element={<ChatApp />} /> */}
                     {/* <Route path="/admin" element={<AdminApp />} /> */}

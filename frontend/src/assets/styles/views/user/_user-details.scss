@@ -1,11 +1,13 @@
 .user-index-add-link {
+
     background-color: $clr1;
     padding: 12px 24px;
     border-radius: 4px;
     color: $clr3;
     display: block;
+    text-align: center;
     width: 150px;
-    margin-top: 20px;
+
     margin-bottom: 20px;
 
 
@@ -17,9 +19,7 @@
     }
 }
 
-.user-index-gig-list {
-    margin-top: 40px;
-}
+.user-index-gig-list {}
 
 .user-gig-list {
     .user-preview-btns {

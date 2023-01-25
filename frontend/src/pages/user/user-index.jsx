@@ -37,9 +37,9 @@ export function UserIndex() {
 
     return (
         <section className="user-index">
-            <div
-                className="user-index-info">  <UserProfile user={user} />
-                {user && loginUser && <ReviewBar userReviews={user.reviews} />}
+            <div className="user-index-info">
+                <UserProfile user={user} />
+                <div className="user-index-info-review-bar">{user && loginUser && <ReviewBar userReviews={user.reviews} />}</div>
                 {user && loginUser && <ReviewList userReviews={user.reviews} />}
             </div>
             <main className="user-index-main-container">
