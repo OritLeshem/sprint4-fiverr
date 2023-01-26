@@ -42,8 +42,8 @@ export function UserIndex() {
         <section className="user-index">
             <div className="user-index-info">
                 <UserProfile user={user} />
-                {/* <div className="user-index-info-review-bar">{user && loginUser && <ReviewBar userReviews={user.reviews} />}</div> */}
-                {/* {user && loginUser && <ReviewList userReviews={user.reviews} />} */}
+                <div className="user-index-info-review-bar">{user && loginUser && user.reviews && <ReviewBar userReviews={user.reviews} />}</div>
+                {user && loginUser && user.reviews && <ReviewList userReviews={user.reviews} />}
             </div>
             <main className="user-index-main-container">
                 {orders.length !== 0 && user && loginUser && (loginUser._id === user._id) && <UserSales orders={orders} />}
