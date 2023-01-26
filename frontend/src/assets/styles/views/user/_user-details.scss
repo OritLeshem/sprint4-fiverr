@@ -16,30 +16,6 @@
     }
 }
 
-.user-gig-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-}
-
-.user-gig-list {
-    li {
-        position: relative;
-    }
-
-    .user-preview-btns {
-        color: $clr5;
-        position: absolute;
-    }
-
-    .gig-edit-btn {
-        background-color: transparent;
-        color: $clr6;
-        font-size: 1rem;
-        margin: 5px 10px;
-    }
-}
-
 .user-details {
     .user-img {
         height: 200px;

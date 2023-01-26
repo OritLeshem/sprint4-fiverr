@@ -1,76 +1,73 @@
 .user-profile {
-  width: 100%;
-  margin-bottom: 50px;
+  font-size: rem(14px);
+  border: 1px solid $clr11;
+  padding: em(30px, 16px);
+  margin-bottom: 2em;
+  
+  .img-profile-container {
+    position: relative;
+    
+    &:hover {
+      .upload-camera {
+        opacity: .8;
+      }
+      
+      img {
+        opacity: 0;
+      }
+      
+    }
+  }
+  
+  .upload-camera {
+    font-size: rem(32px);
+    position: absolute;
+    width: em(150px, 32px);
+    height: em(150px, 32px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $clr12;
+    opacity: 0;
+    transition: opacity .6s;
+  }
+  
+  img {
+    width: em(150px, 14px);
+    height: em(150px, 14px);
+    border-radius: 50%;
+    margin-bottom: 1em;
+    opacity: 1;
+    transition: opacity .6s;
+  }
+  
+  .user-profile-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: em(24px, 14px);
+    margin-bottom: em(24px, 14px);
+    border-bottom: 1px solid $clr11;
+  }
+
+  .user-stats-desc li {
+    @include flex;
+    margin-bottom: em(16px, 14px);
+
+    div span:first-of-type {
+      margin-right: .5em;
+    }
+  }
 }
 
-.user-profile-info {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid $clr7;
-
-  .user-profile-btn-online {
-    border-radius: 12px;
-    border: 1px solid $clr1 ;
-    color: $clr1;
-    background-color: transparent;
-  }
-
-  .user-camera-avatar {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    background-color: $clr6;
-    font-size: 32px;
-  }
-
-  .user-profile-img {
-    margin: 30px;
-
-    img {
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-    }
-  }
-
-  .profile-edit-btn {
-    margin: 20px;
-    background-color: transparent;
-    color: $clr7;
-  }
-
-  .profile-edit-preview-btn {
-    margin: 20px;
-    display: block;
-    background-color: transparent;
-    font-size: 14px;
-    padding: 10px 16px;
-    border: 1px solid $clr5;
-    color: $clr5;
-    border-radius: 4px;
-
-    &:hover {
-      transition: background-color 70ms cubic-bezier(.75, 0, .25, 1);
-      background-color: $clr5;
-      color: $clr3 ;
-    }
-  }
-
-  .user-profile-from {
-    padding: 20px;
-    @include flex;
-    width: 100%;
-    color: $clr5
-  }
-
-  .user-profile-from-name {
-    padding-left: 20px;
-  }
-
-  .user-profile-from-bold {
-    font-family: macan-bold;
-  }
+#imgUpload {
+  width: em(150px, 16px);
+  height: em(150px, 16px);
+  border-radius: 50%;
+  opacity: 0;
+  right: 0;
+  position: absolute;
+  cursor: pointer;
 }
