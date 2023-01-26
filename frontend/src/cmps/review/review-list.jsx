@@ -6,8 +6,8 @@ import { LongTxt } from "../long-txt"
 export function ReviewList({ userReviews }) {
 
     return <ul className="review-list">
-        {userReviews.map(review =>
-            <li key={review.id}>
+        {userReviews.map((review, idx) =>
+            <li key={review.by.fullname + idx}>
                 <img src={review.by.imgUrl} alt="" />
 
                 <div className="review">

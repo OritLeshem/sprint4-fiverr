@@ -121,6 +121,9 @@ export function GigIndex() {
 
     }
 
+    if (!gigs) return <div className="loader-contauner">
+        <div className="loader"></div>
+    </div>
     return <section className="gig-index">
         {(searchParams.get('title') && searchParams.get('title') !== '') && <h1>Results for "{searchParams.get('title')}"</h1>
             || searchParams.get('category') && getCategoryName(searchParams.get('category')) || <h1>All</h1>}
