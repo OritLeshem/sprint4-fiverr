@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function LongTxt({ txt, length }) {
+export function LongTxt({ txt, length}) {
     const [isShowMore, setShowMore] = useState(false)
 
     function getTxtToShow(txt, length) {
