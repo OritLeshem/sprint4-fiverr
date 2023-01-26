@@ -344,6 +344,30 @@ const gigs = [
             "lifestyle"
         ]
     },
+    {
+        "title": "I will design a custom landing page for your business website",
+        "about": "I have so many hobbies :) I love creativity and enjoy helping others.",
+        "price": 45,
+        "owner": {
+            "_id": {"$oid":"63d24094783371eb434731d7"},
+            "fullname": "ras567",
+            "country": "United Kingdom",
+            "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/2799071/original/1444726053447_Profile.png",
+            "level": "Level 2 seller",
+            "rate": 4.9
+        },
+        "daysToMake": 6,
+        "description": "Welcome to the gig with the Most Amazing and High Converting Landing Page designs. I will be designing a custom eye-catching Homepage for your website. The reviews and the gig images are enough to tell you the story. Please see my portfolio here https://www.fiverr.com/users/massivework/portfolio ",
+        "imgUrl": [
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/264406915/original/08be4b3b74a435af1f23ef7e76ba0a4ec1e93bee/design-professional-landing-page-design-for-your-website.png",
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/264406915/original/e1818624c7228c30ea7c2df18ca4c102dcda3179/design-professional-landing-page-design-for-your-website.png",
+            "https://fiverr-res.cloudinary.com/image/upload/t_gig_pdf_gallery_view_ver4,f_jpg/20220918/harghar_full_twicse.jpg"
+        ],
+        "tags": [
+            "programming-tech", 
+            "tech"
+        ]
+    },
 ]
 
 const users = [
