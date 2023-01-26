@@ -3,7 +3,7 @@ const logger = require('../../services/logger.service')
 const utilService = require('../../services/util.service')
 const ObjectId = require('mongodb').ObjectId
 // let filterBy="draw"
-async function query(filterBy) {
+async function query(filterBy,sortBy) {
 
     console.log("query filter by", filterBy.title)
     try {
@@ -11,7 +11,7 @@ async function query(filterBy) {
         const collection = await dbService.getCollection('gig')
         // var gigs = await collection.find(criteria).toArray()
         // const sort = { "price": -1 }
-        const sort = { "owner.rate": -1 }
+        const sort = (sortBy.category ==='recommended') ? { "owner.rate": -1 }:{ "price": -1 }
 
         // const sort = { "rate": -1 }
         const sort1 = { "owner": { "rate": -1 } }
@@ -44,9 +44,9 @@ function _buildCriteria(filterBy) {
     // if (filterBy.inStock === 'true') {
     //   criteria.inStock = true
     // }
-    // if (filterBy?.labels?.length) {
-    //   criteria.lables = { $all: filterBy.labels }
-    // }
+    if (filterBy?.tags?.length) {
+      criteria.tags = { $all: filterBy.tags}
+    }
 
     return criteria
 }

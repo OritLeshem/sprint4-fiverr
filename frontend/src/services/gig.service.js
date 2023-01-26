@@ -25,7 +25,7 @@ function getDefaultFilter() {
     return { title: '', tags: [], daysToMake: '', minPrice: '', maxPrice: '' }
 }
 function getDefaultSort() {
-    return { categorySort: 'recommended' }
+    return { category: 'recommended' }
 }
 
 async function query(filterBy = getDefaultFilter(), sortBy = getDefaultSort()) {

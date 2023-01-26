@@ -19,7 +19,7 @@ export function SortyBy({ onSort }) {
   return <div className="gig-sort">
     <select name="sort-by" onChange={handleChangeSort} className="gig-sort-option">
       <option value="recommended">Recommended</option>
-      <option value="newest">Newest Arrivals</option>
+      <option value="price">Price</option>
     </select>
   </div>
 }
