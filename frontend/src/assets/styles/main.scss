@@ -11,6 +11,8 @@
 @import "basics/links";
 @import "basics/forms";
 
+@import "cmps/gig/gig-list";
+
 // Views
 @import "views/gig/gig-index";
 @import "views/gig/gig-details";
@@ -34,7 +36,6 @@
 @import "cmps/user/review-app";
 @import "cmps/user/review-list";
 @import "cmps/user/review-bar";
-@import "cmps/gig/gig-list";
 @import "cmps/gig/gig-preview";
 @import "cmps/app-header/category-menu";
 @import "cmps/app-header/gig-search";

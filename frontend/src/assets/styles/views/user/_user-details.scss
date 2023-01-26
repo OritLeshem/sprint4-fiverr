@@ -10,8 +10,6 @@
 
     margin-bottom: 20px;
 
-
-
     &:hover {
         cursor: pointer;
         background-color: green;
@@ -19,10 +17,20 @@
     }
 }
 
+.user-gig-list {
+    // border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 
 .user-gig-list {
+    li {
+        position: relative;
+    }
+
     .user-preview-btns {
-        color: $clr5
+        color: $clr5;
+        position: absolute;
     }
 
     .gig-edit-btn {
