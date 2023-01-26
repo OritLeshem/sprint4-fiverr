@@ -43,6 +43,7 @@ async function remove(gigId) {
     return httpService.delete(`gig/${gigId}`)
 }
 async function save(gig) {
+    console.log(gig);
     var savedGig
     if (gig._id) {
         // savedGig = await storageService.put(STORAGE_KEY, gig)
@@ -143,7 +144,7 @@ function getGigSelling() {
 }
 function getEmptyGig(title = '', description = '', price = 0, tags = [], daysToMake = '', imgUrl = []) {
     return {
-        _id: '',
+        // _id: '',
         title,
         description,
         price,

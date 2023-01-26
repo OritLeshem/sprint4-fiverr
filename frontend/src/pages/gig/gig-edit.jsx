@@ -51,6 +51,7 @@ export function GigEdit() {
 
     const onSave = async (values) => {
         try {
+            console.log(gigToEdit);
             await addGig(gigToEdit)
             navigate(`/user/${loginUser._id}`)
         } catch (err) {
@@ -140,7 +141,7 @@ export function GigEdit() {
                                 <div className="gig-form-price">
                                     <label htmlFor="price">Price</label>
                                     <Field name="price" id="price" label="price" onChange={(e) => {
-                                        gigToEdit.price = e.target.value
+                                        gigToEdit.price = +e.target.value
                                         setFieldValue("price", e.target.value)
                                     }} ></Field>
                                     {errors.price && touched.price ? <div>{errors.price}</div> : null}
@@ -149,7 +150,7 @@ export function GigEdit() {
                                 <div className="gig-form-days">
                                     <label htmlFor="daysToMake">Days to make</label>
                                     <Field as={Select} name='daysToMake' onChange={(e) => {
-                                        gigToEdit.daysToMake = e.target.value
+                                        gigToEdit.daysToMake = +e.target.value
                                         setFieldValue("daysToMake", e.target.value)
                                     }}>
                                         <MenuItem value='1'>Express</MenuItem>
