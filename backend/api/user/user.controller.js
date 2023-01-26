@@ -37,9 +37,12 @@ async function deleteUser(req, res) {
 }
 
 async function updateUser(req, res) {
+    const { loggedinUser } = req
+    console.log(loggedinUser);
     try {
         const user = req.body
         const savedUser = await userService.update(user)
+        loggedinUser.imgUrl = savedUser.imgUrl
         res.send(savedUser)
     } catch (err) {
         logger.error('Failed to update user', err)
