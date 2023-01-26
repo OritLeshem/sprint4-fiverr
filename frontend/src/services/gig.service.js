@@ -144,7 +144,7 @@ function getGigSelling() {
 }
 function getEmptyGig(title = '', description = '', price = 0, tags = [], daysToMake = '', imgUrl = []) {
     return {
-        // _id: '',
+
         title,
         description,
         price,

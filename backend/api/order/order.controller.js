@@ -12,6 +12,7 @@ async function getOrders(req, res) {
         res.status(500).send({ err: 'Failed to get orders' })
     }
 }
+
 async function addOrder(req, res) {
     var { loggedinUser } = req
     try {
@@ -23,6 +24,7 @@ async function addOrder(req, res) {
         res.status(500).send({ err: 'Failed to add order' })
     }
 }
+
 async function updateOrder(req, res) {
     try {
         const order = req.body
@@ -31,8 +33,11 @@ async function updateOrder(req, res) {
     } catch (err) {
         logger.error('Failed to update order', err)
         res.status(500).send({ err: 'Failed to update order' })
+
     }
 }
+
+
 module.exports = {
     getOrders,
     updateOrder,

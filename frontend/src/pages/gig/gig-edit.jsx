@@ -49,7 +49,7 @@ export function GigEdit() {
         setImgToEdit((prevImg) => ({ ...prevImg, data }))
     }
 
-    const onSave = async (values) => {
+    const onSave = async () => {
         try {
             console.log(gigToEdit);
             await addGig(gigToEdit)
@@ -142,7 +142,7 @@ export function GigEdit() {
                                     <label htmlFor="price">Price</label>
                                     <Field name="price" id="price" label="price" onChange={(e) => {
                                         gigToEdit.price = +e.target.value
-                                        setFieldValue("price", e.target.value)
+                                        setFieldValue("price", +e.target.value)
                                     }} ></Field>
                                     {errors.price && touched.price ? <div>{errors.price}</div> : null}
                                 </div>
@@ -151,7 +151,7 @@ export function GigEdit() {
                                     <label htmlFor="daysToMake">Days to make</label>
                                     <Field as={Select} name='daysToMake' onChange={(e) => {
                                         gigToEdit.daysToMake = +e.target.value
-                                        setFieldValue("daysToMake", e.target.value)
+                                        setFieldValue("daysToMake", +e.target.value)
                                     }}>
                                         <MenuItem value='1'>Express</MenuItem>
                                         <MenuItem value='3'>Up to 3 days</MenuItem>
