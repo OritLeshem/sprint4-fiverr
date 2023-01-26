@@ -7,7 +7,8 @@ import { GigPreview } from '../gig/gig-preview'
 export function UserList({ gigs, onRemoveGig, user }) {
   const loginUser = userService.getLoggedinUser()
 
-  return <ul className=" gig-list user-gig-list">
+  return <ul className="gig-list user-gig-list">
+    <li>{loginUser && (loginUser._id === user._id) && <Link className="user-add-link" to="/gig/edit">Add Gig +</Link>}</li>
     {gigs.map(gig =>
       <li className="gig-preview" key={gig._id}>
         <GigPreview gig={gig} />
@@ -15,8 +16,6 @@ export function UserList({ gigs, onRemoveGig, user }) {
           <button className="gig-edit-btn" onClick={() => { onRemoveGig(gig._id) }}>x</button>
           <Link className="gig-edit-btn fa-solid fa-pencil" to={`/gig/edit/${gig._id}`}></Link>
         </div>}
-        {/* <button onClick={() => { onAddGigMsg(gig) }}>Add gig msg</button> */}
-        {/* <button className="buy" onClick={() => { onAddToCart(gig) }}>Add to cart</button> */}
       </li>)
     }
   </ul>

@@ -63,7 +63,7 @@ export function GigPayment() {
     return <section className="gig-payment">
         <div className="main-content">
 
-            <header>Pament Options</header>
+            <header>Payment Options</header>
 
             <form id="payment-form" onSubmit={onSubmitPayment}>
                 <div className="payment-option">
@@ -78,7 +78,7 @@ export function GigPayment() {
 
                     <div className="card-details">
                         <label htmlFor="card" className="card">
-                            <span>Card Numbuer</span>
+                            <span>Card Number</span>
                             <input type="text"
                                 name="card"
                                 value='5326-1011-8754-8979'

@@ -155,6 +155,10 @@
         flex-basis: 53%;
     }
 
+    img {
+        border-radius: em(4px, 16px);
+    }
+
     .flex {
         flex-direction: column;
         align-items: center;

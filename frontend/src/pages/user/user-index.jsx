@@ -38,18 +38,21 @@ export function UserIndex() {
         }
     }
 
+    if (!user) return <div className="loader-contauner">
+        <div className="loader"></div>
+    </div>
     return (
         <section className="user-index">
-            <aside className="user-index-info">
+            <aside className="user-info">
                 <UserProfile user={user} />
-                <div className="user-index-info-review-bar">{user && loginUser && user.reviews && <ReviewBar userReviews={user.reviews} />}</div>
-                {user && loginUser && user.reviews && <ReviewList userReviews={user.reviews} />}
+                <div className="user-review-bar">{user && loginUser && user.reviews && <ReviewBar userReviews={user.reviews} />}</div>
+                {loginUser && user.reviews && <ReviewList userReviews={user.reviews} />}
             </aside>
-            <main className="user-index-main-container">
-                {orders.length !== 0 && user && loginUser && (loginUser._id === user._id) && <UserSales orders={orders} />}
-                {user && loginUser && (loginUser._id === user._id) && <Link className="user-index-add-link" to="/gig/edit">Add Gig +</Link>}
-                <div className="user-index-gig-list">
-                    {/* <div>{`${user.fullname}'s Gigs`}</div> */}
+            <main className="user-main">
+                {orders.length !== 0 && loginUser && (loginUser._id === user._id) && <UserSales orders={orders} />}
+                <div className="user-gig-list">
+                    <h1>{`${user.fullname}'s Gigs`}</h1>
+                    {/* {loginUser && (loginUser._id === user._id) && <Link className="user-add-link" to="/gig/edit">Add Gig +</Link>} */}
                     <UserList gigs={gigs} onRemoveGig={onRemoveGig} user={user} />
                 </div>
             </main>
