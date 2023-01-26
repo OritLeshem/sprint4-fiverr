@@ -123,6 +123,10 @@
     content: "\f135";
 }
 
+.fa-solid.plus:after {
+    content: "\2b";
+}
+
 .fa-solid::before {
     font-family: fa-solid;
 }

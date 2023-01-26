@@ -50,11 +50,8 @@ export function UserIndex() {
             </aside>
             <main className="user-main">
                 {orders.length !== 0 && loginUser && (loginUser._id === user._id) && <UserSales orders={orders} />}
-                <div className="user-gig-list">
-                    <h1>{`${user.fullname}'s Gigs`}</h1>
-                    {/* {loginUser && (loginUser._id === user._id) && <Link className="user-add-link" to="/gig/edit">Add Gig +</Link>} */}
-                    <UserList gigs={gigs} onRemoveGig={onRemoveGig} user={user} />
-                </div>
+                <h1>{`${user.fullname}'s Gigs`}</h1>
+                <UserList gigs={gigs} onRemoveGig={onRemoveGig} user={user} />
             </main>
         </section>
     )

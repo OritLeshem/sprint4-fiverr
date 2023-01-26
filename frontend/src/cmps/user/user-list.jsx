@@ -8,7 +8,12 @@ export function UserList({ gigs, onRemoveGig, user }) {
   const loginUser = userService.getLoggedinUser()
 
   return <ul className="gig-list user-gig-list">
-    <li>{loginUser && (loginUser._id === user._id) && <Link className="user-add-link" to="/gig/edit">Add Gig +</Link>}</li>
+    {loginUser && (loginUser._id === user._id) && <li className="gig-add-btn">
+      <Link to="/gig/edit">
+        <span className="fa-solid plus"></span>
+        <span>Add Gig</span>
+      </Link>
+    </li>}
     {gigs.map(gig =>
       <li className="gig-preview" key={gig._id}>
         <GigPreview gig={gig} />

@@ -1,5 +1,29 @@
+// .user-gig-list {
+
+// }
+
+.gig-add-btn {
+  background-color: $clr12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  a {
+    font-size: rem(24px);
+    color: $clr3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  span:first-of-type {
+    font-size: rem(32px);
+    // border: 1px solid red;
+  }
+}
+
 .user-preview-btns {
-  background-color: pink;
   width: 100%;
   display: flex;
   justify-content: space-between;

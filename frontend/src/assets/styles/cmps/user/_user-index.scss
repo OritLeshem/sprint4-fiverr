@@ -8,13 +8,29 @@
     padding-left: 2em;
 
     h1 {
-      padding-bottom: 8px;
+      padding-bottom: em(24px, 16px);
+    }
+  }
+  // border: 1px solid red;
+
+  @media (min-width: 900px) {
+    .user-main {
+      flex-basis: 58.33333%;
+    }
+
+    .user-info {
+      flex-basis: 41.66667%;
     }
   }
 
-  .user-info {
-    flex-basis: 33.33333%;
-    padding-right: 1em;
+  @media (min-width: 1160px) {
+    .user-main {
+      flex-basis: 66.66667%;
+    }
+
+    .user-info {
+      flex-basis: 33.33333%;
+    }
   }
 }
 
