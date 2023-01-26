@@ -5,7 +5,7 @@ const ObjectId = require('mongodb').ObjectId
 // let filterBy="draw"
 async function query(filterBy) {
 
-    console.log("query filter by", filterBy.title)
+    console.log("query filter byyyyyyyyyyyy", filterBy.title)
     try {
         const criteria = _buildCriteria(filterBy)
         const collection = await dbService.getCollection('gig')
@@ -76,6 +76,8 @@ async function remove(gigId) {
 
 async function add(gig) {
     try {
+        console.log('gig.owner', gig.owner)
+        gig.owner._id = ObjectId(gig.owner._id)
         const collection = await dbService.getCollection('gig')
         await collection.insertOne(gig)
         return gig
