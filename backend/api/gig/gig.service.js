@@ -76,6 +76,8 @@ async function remove(gigId) {
 
 async function add(gig) {
     try {
+        console.log('gig.owner', gig.owner)
+        gig.owner._id = ObjectId(gig.owner._id)
         const collection = await dbService.getCollection('gig')
         await collection.insertOne(gig)
         return gig

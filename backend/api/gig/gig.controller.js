@@ -4,6 +4,7 @@ const logger = require('../../services/logger.service')
 
 async function getGigs(req, res) {
   const filterBy = { title: '', tags: [], daysToMake: '', minPrice: 1, maxPrice: 200 }
+
   try {
     // const { filterBy } = req.query.params
     logger.debug('Getting Gigs')
