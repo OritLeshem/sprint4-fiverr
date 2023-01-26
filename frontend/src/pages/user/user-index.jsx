@@ -28,7 +28,7 @@ export function UserIndex() {
         loadOrders()
         loadGigs(filterBy, sortBy, userId)
     }, [filterBy, userId])
-
+    // if (userId) gigs = gigs.filter(gig => gig.owner._id === userId)
     async function onRemoveGig(gigId) {
         try {
             await removeGig(gigId)

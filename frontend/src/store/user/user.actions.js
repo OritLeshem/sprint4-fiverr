@@ -29,7 +29,7 @@ export async function removeUser(userId) {
 export async function updateUser(user) {
     try {
         await userService.update(user)
-        store.dispatch({ type: UPDATE_USER, user })
+        store.dispatch({ type: SET_WATCHED_USER, user })
 
     }
     catch (err) {
