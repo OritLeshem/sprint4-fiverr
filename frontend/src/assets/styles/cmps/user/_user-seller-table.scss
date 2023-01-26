@@ -1,3 +1,32 @@
+.user-seller-table {
+
+  .statstic {
+    @include flex;
+    // border: 1px solid red;
+    border: 1px solid $clr11;
+    margin-bottom: 1em;
+
+    li {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 1em 0;
+    }
+  }
+}
+
+.statstic-preview {
+  border: .5em solid $clr7;
+  border-radius: 50%;
+  // border-top: .5em solid $clr1;
+  width: 50px;
+  height: 50px;
+}
+
+
+
+
 .user-sales {
   width: 100%;
   margin-bottom: 30px;
