@@ -1,5 +1,4 @@
 .user-index-add-link {
-
     background-color: $clr1;
     padding: 12px 24px;
     border-radius: 4px;
@@ -18,9 +17,9 @@
 }
 
 .user-gig-list {
-    // border: 1px solid red;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
 }
 
 .user-gig-list {
@@ -46,5 +45,14 @@
         height: 200px;
         width: 200px;
         background-size: contain;
+    }
+}
+
+.user-index-info {
+
+    .review-list {
+        button {
+            background-color: transparent;
+        }
     }
 }
