@@ -1,6 +1,47 @@
-// .user-gig-list {
+.user-gig-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-// }
+  li {
+    position: relative;
+}
+
+.user-preview-btns {
+    color: $clr5;
+    position: absolute;
+}
+
+.gig-edit-btn {
+    background-color: transparent;
+    color: $clr6;
+    font-size: 1rem;
+    margin: 5px 10px;
+}
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+
+    .user-main {
+      flex-basis: 58.33333%;
+      padding-left: 2em;
+    }
+
+    .user-info {
+      flex-basis: 41.66667%;
+      padding-right: 2em;
+    }
+  }
+
+  @media (min-width: 1160px) {
+    .user-main {
+      flex-basis: 66.66667%;
+    }
+
+    .user-info {
+      flex-basis: 33.33333%;
+    }
+  }
+}
 
 .gig-add-btn {
   background-color: $clr12;
