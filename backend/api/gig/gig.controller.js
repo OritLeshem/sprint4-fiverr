@@ -3,7 +3,7 @@ const gigService = require('./gig.service.js')
 const logger = require('../../services/logger.service')
 
 async function getGigs(req, res) {
-  const filterBy = { title: '', tags: [], daysToMake: '', minPrice: 1, maxPrice: 200 }
+  const filterBy = { title: '', tags: [], daysToMake: '', minPrice: 1, maxPrice: 2000 }
 
   try {
     // const { filterBy } = req.query.params

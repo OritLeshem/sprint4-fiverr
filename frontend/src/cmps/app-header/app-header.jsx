@@ -37,8 +37,6 @@ export function AppHeader() {
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
-            console.log(e.target.className);
-            // If the menu is open and the clicked target is not within the menu,
             if (isModal && e.target.className) {
                 setIsModal(false)
             }
@@ -55,18 +53,6 @@ export function AppHeader() {
             document.removeEventListener("mousedown", checkIfClickedOutside)
         }
     }, [isModal, isDropdown, isOrder])
-
-    // useEffect(() => {
-    //     const fixedHeader = () => {
-    //         if (pathname !== '/' && window.pageYOffset < 2) {
-    //             headerRef.current.classList.remove('fixedTop')
-    //         } else {
-    //             headerRef.current.classList.add('fixedTop')
-    //         }
-    //     }
-
-    //     window.addEventListener('scroll', fixedHeader)
-    // }, [])
 
 
     function onSetFilter(filterBy) {

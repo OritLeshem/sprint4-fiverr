@@ -142,7 +142,15 @@ function getGigSelling() {
         }
     ]
 }
-function getEmptyGig(title = '', description = '', price = 0, tags = [], daysToMake = '', imgUrl = []) {
+function getEmptyGig(
+    title = '',
+    description = '',
+    price = 5,
+    tags = [],
+    daysToMake = 1,
+    imgUrl = [],
+    about = "I have many hobbies :) I love creativity and enjoy helping others.",
+) {
     return {
 
         title,
@@ -151,9 +159,32 @@ function getEmptyGig(title = '', description = '', price = 0, tags = [], daysToM
         tags,
         daysToMake,
         imgUrl,
+        about,
     }
 }
 
 
-
+// {
+//     "title": "I will design and create a full tech pack for bags, handbags, purses, and backpacks",
+//     "about": "I have many hobbies :) I love creativity and enjoy helping others.",
+//     "price": 30,
+//     "owner": {
+//         "_id": {"$oid":"63d24094783371eb434731d7"},
+//         "fullname": "ras567",
+//         "country": "United Kingdom",
+//         "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/2799071/original/1444726053447_Profile.png",
+//         "level": "Level 2 seller",
+//         "rate": 4.9
+//     },
+//     "daysToMake": 2,
+//     "description": "If you have a design, you'll need to send your supplier a full technical spec to get the sample made. Every supplier requires a Tech Pack before they'll work with you. We can take your sketch or concept and turn it into a full spec with different CAD angles of your design, all the dimensions your supplier will need.",
+//     "imgUrl": [
+//         "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/287605807/original/9817211fc24da51ad82c0347e675ada6843c6770/design-and-create-a-full-tech-pack-for-bags-purses-and-backpacks.jpg",
+//         "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/287605807/original/c3f0e44ed31d35b13357e4a8ca889aa3a21b3751/design-and-create-a-full-tech-pack-for-bags-purses-and-backpacks.jpg",
+//         "https://fiverr-res.cloudinary.com/images/t_smartwm/t_gig_pdf_gallery_view_ver4,q_auto,f_auto/attachments/delivery/asset/b00c965e83c6033f312dd156e9ca0b33-1673892676/CE_01/design-and-create-a-full-tech-pack-for-bags-purses-and-backpacks.pdf"
+//     ],
+//     "tags": [
+//         "lifestyle"
+//     ]
+// }Ï
 
