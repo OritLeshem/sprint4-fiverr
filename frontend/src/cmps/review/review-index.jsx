@@ -22,7 +22,9 @@ export function ReviewIndex({ gig }) {
     }
   }
 
-  if (!userReviews) return 'loading...'
+  if (!userReviews) return <div className="loader-contauner">
+    <div className="loader"></div>
+  </div>
   return <section className="review-app">
     <h3>Reviews</h3>
     <div className="review-header">
