@@ -8,8 +8,8 @@ const router = express.Router()
 // router.use(requireAuth)
 
 router.get('/', log, getGigs)
-router.get('/:id',getGigById)
-router.post('/', requireAuth,addGig)
+router.get('/:id', getGigById)
+router.post('/', requireAuth, addGig)
 router.put('/:id', updateGig)
 router.delete('/:id', removeGig)
 

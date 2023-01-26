@@ -9,13 +9,13 @@ async function getGigs(req, res) {
   // const filterBy = {
   //   txt: req.query.txt || ''
   // }
-  const {filterBy} = JSON.parse(req.query.params)
-  const {sortBy} = JSON.parse(req.query.params)
+  const { filterBy } = JSON.parse(req.query.params)
+  const { sortBy } = JSON.parse(req.query.params)
   console.log('req.query.params controller gig', filterBy)
   try {
     // const { filterBy } = req.query.params
     logger.debug('Getting Gigs')
-    const gigs = await gigService.query(filterBy,sortBy)
+    const gigs = await gigService.query(filterBy, sortBy)
     res.json(gigs)
   } catch (err) {
     logger.error('Failed to get gigs', err)
@@ -49,7 +49,9 @@ async function getGigById(req, res) {
 // }
 async function addGig(req, res) {
   const { loggedinUser } = req
+  // console.log('loggedinUser:', loggedinUser);
   console.log('loggedinUser:', loggedinUser);
+
 
   try {
     const gig = req.body
