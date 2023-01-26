@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
 import { gigService } from "../../services/gig.service"
 import { showErrorMsg } from "../../services/event-bus.service"
@@ -28,13 +28,19 @@ export function GigDetails() {
             navigate('/gig')
         }
     }
+    function handleContactSeller() {
+        console.log(gig)
+        if (gig) navigate(`/user/${gig.owner._id}`)
+
+    }
 
     if (!gig) return <div className="loader-contauner">
         <div className="loader"></div>
     </div>
 
     const { imgUrl, fullname, rate, level, country } = gig.owner
-    
+
+
     return <section className="gig-details">
         <div className="gig-details-preview gig-details-info">
             <nav>{`Graphics & design > Logo Design`}</nav>
@@ -72,7 +78,7 @@ export function GigDetails() {
                             <span className="rate padding">{rate}</span>
                             {/* <p>(10)</p> */}
                         </div>
-                        <button>Contact Me</button>
+                        {gig && <Link to={`/user/${gig.owner._id}`}>Contact Me</Link>}
                     </div>
                 </div>
 

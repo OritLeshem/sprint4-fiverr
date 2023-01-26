@@ -29,10 +29,13 @@ export function TopFilterBar({ onSetFilter }) {
         value = (type === 'number') ? +value : value
         let newFilterBy = ({ ...filterByToEdit, [field]: value })
         setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
+        console.log("filter by from filter comp", newFilterBy)
+
         if (field === "daysToMake") onSetFilter(newFilterBy)
     }
 
     function onSubmit() {
+        console.log("filter by from filter comp", filterByToEdit)
         onSetFilter(filterByToEdit)
         setIsPriceFilterShown(!isPriceFilterShown)
     }

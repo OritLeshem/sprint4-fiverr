@@ -4,7 +4,10 @@ const logger = require('../../services/logger.service')
 
 async function getGigs(req, res) {
   const filterBy = { title: '', tags: [], daysToMake: '', minPrice: 1, maxPrice: 2000 }
+  let filterBy1 = {}
+  filterBy1 = req.query.params.filterBy
 
+  console.log('req.query.params controller gig', filterBy1)
   try {
     // const { filterBy } = req.query.params
     logger.debug('Getting Gigs')
