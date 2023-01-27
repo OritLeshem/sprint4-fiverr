@@ -28,10 +28,10 @@ function getDefaultSort() {
     return { category: 'recommended' }
 }
 
-async function query(filterBy = getDefaultFilter(), sortBy = getDefaultSort(),userId) {
+async function query(filterBy = getDefaultFilter(), sortBy = getDefaultSort(), userId = '') {
     console.log("filterby service front", filterBy)
     // return httpService.get(STORAGE_KEY, filterBy)
-    return httpService.get('gig', { params: { filterBy, sortBy,userId } })
+    return httpService.get('gig', { params: { filterBy, sortBy, userId } })
 }
 
 function getById(gigId) {

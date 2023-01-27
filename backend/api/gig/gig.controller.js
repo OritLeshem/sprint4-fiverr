@@ -16,7 +16,7 @@ async function getGigs(req, res) {
   try {
     // const { filterBy } = req.query.params
     logger.debug('Getting Gigs')
-    const gigs = await gigService.query(filterBy, sortBy,userId)
+    const gigs = await gigService.query(filterBy, sortBy, userId)
     res.json(gigs)
   } catch (err) {
     logger.error('Failed to get gigs', err)
