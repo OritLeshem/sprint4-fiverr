@@ -60,14 +60,14 @@
       margin-right: .5em;
     }
   }
-}
 
-#imgUpload {
-  width: em(150px, 16px);
-  height: em(150px, 16px);
-  border-radius: 50%;
-  opacity: 0;
-  right: 0;
-  position: absolute;
-  cursor: pointer;
+  #imgUpload {
+    width: em(150px, 16px);
+    height: em(150px, 16px);
+    border-radius: 50%;
+    opacity: 0;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+  }
 }
