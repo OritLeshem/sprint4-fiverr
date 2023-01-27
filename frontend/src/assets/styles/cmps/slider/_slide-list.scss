@@ -38,9 +38,9 @@
         }
     }
 
-    @media (min-width: $mobile-breakpoint) {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    // @media (min-width: $mobile-breakpoint) {
+    //     grid-template-columns: repeat(2, 1fr);
+    // }
 
     @media (min-width: $narrow-breakpoint) {
         grid-template-columns: repeat(3, 1fr);

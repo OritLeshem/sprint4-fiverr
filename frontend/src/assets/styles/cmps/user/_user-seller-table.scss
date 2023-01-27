@@ -1,6 +1,10 @@
+.user-seller-table {
+  margin-bottom: 1em;
+  // border: 1px solid red;
+}
+
 .statstic-dashboard {
   @include flex;
-  // border: 1px solid red;
   border: 1px solid $clr11;
   margin-bottom: 1em;
 
@@ -43,90 +47,82 @@
       padding: 1em;
       padding-right: 0;
     }
-  }
-}
 
-.status-options-btn {
-  position: relative;
-
-  button {
-    background-color: #E2A114;
-    width: 120px;
-    padding: 12px;
-    text-align: center;
-    font-family: macan-bold;
-    border-radius: 4px;
+    span {
+      // border: 1px solid red;
+      cursor: pointer;
+    }
   }
 
   .pending {
-    background-color: #E2A114;
-    width: 120px;
-    padding: 12px;
-    text-align: center;
-    font-family: macan-bold;
-    border-radius: 4px;
+    color: #feb849;
   }
 
   .approved {
-    background-color: #f2710f;
-    width: 120px;
-    padding: 12px;
-    text-align: center;
-    font-family: macan-bold;
-    border-radius: 4px;
+    color: #21ca79;
   }
 
   .completed {
-    background-color: $clr1;
-    width: 120px;
-    padding: 12px;
-    text-align: center;
-    font-family: macan-bold;
-    border-radius: 4px;
+    color: #5b85fd;
   }
 
   .declined {
-    background-color: #F31F1F;
-    width: 120px;
-    padding: 12px;
-    text-align: center;
-    font-family: macan-bold;
-    border-radius: 4px;
+    color: #f46875;
+  }
+
+  .status-container {
+    position: relative;
+    padding: 0;
+  }
+
+  .status-options {
+    border: 1px solid #e4e5e7;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+    position: absolute;
+    left: 0;
+    background-color: $clr3;
+    padding: .5em 1em;
+
+    &>* {
+      margin: .5em 0;
+    }
   }
 }
 
-.status-options {
-  display: flex;
-  flex-direction: column;
-  width: 150px;
-  border: 1px solid $clr7;
-  background-color: $clr3;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 4px;
-  position: absolute;
-  justify-content: space-between;
 
-  button {
-    padding: 12px 24px;
-    margin: 10px;
-    text-align: center;
-    font-family: macan-bold;
-    border-radius: 4px;
-  }
 
-  .pending {
-    background-color: #E2A114;
-  }
+// .status-options {
+//   display: flex;
+//   flex-direction: column;
+//   width: 150px;
+//   border: 1px solid $clr7;
+//   background-color: $clr3;
+//   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+//   border-radius: 4px;
+//   position: absolute;
+//   justify-content: space-between;
 
-  .approved {
-    background-color: #f2710f;
-  }
+//   button {
+//     padding: 12px 24px;
+//     margin: 10px;
+//     text-align: center;
+//     font-family: macan-bold;
+//     border-radius: 4px;
+//   }
 
-  .completed {
-    background-color: $clr1;
-  }
+//   .pending {
+//     background-color: #E2A114;
+//   }
 
-  .declined {
-    background-color: #F31F1F;
-  }
-}
+//   .approved {
+//     background-color: #f2710f;
+//   }
+
+//   .completed {
+//     background-color: $clr1;
+//   }
+
+//   .declined {
+//     background-color: #F31F1F;
+//   }
+// }

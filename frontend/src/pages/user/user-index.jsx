@@ -51,7 +51,6 @@ export function UserIndex() {
             <main className="user-main">
                 {orders.filter(order => order.seller._id === user._id).length !== 0 && loginUser && (loginUser._id === user._id) && <UserSellerTable
                     orders={orders.filter(order => order.seller._id === user._id)} length={120} />}
-                <h1>{`${user.fullname}'s Gigs`}</h1>
                 {user && gigs && <UserList gigs={gigs.filter(gig => gig.owner._id === userId)} onRemoveGig={onRemoveGig} user={user} />}
             </main>
         </section>

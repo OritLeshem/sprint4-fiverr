@@ -5,7 +5,7 @@ import { socketService, SOCKET_EVENT_ORDER_FROM_YOU, SOCKET_EVENT_REVIEW_ABOUT_Y
 export function UserMsg() {
   const [msg, setMsg] = useState(null)
   const timeoutIdRef = useRef()
-  
+
 
   useEffect(() => {
     const unsubscribe = eventBus.on('show-msg', (msg) => {
@@ -15,8 +15,17 @@ export function UserMsg() {
         timeoutIdRef.current = null
         clearTimeout(timeoutIdRef.current)
       }
-      timeoutIdRef.current = setTimeout(closeMsg, 3000)
+      timeoutIdRef.current = setTimeout(closeMsg, 1500)
     })
+
+    socketService.on(SOCKET_EVENT_ORDER_FROM_YOU, (order) => {
+      showSuccessMsg(`New order from ${order.buyer.fullname}`)
+    })
+
+    return () => {
+      socketService.off(SOCKET_EVENT_ORDER_FROM_YOU)
+    }
+
   }, [])
 
   function closeMsg() {

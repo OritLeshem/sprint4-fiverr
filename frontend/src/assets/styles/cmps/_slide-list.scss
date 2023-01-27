@@ -29,9 +29,9 @@
         }
     }
 
-    @media (min-width: $mobile-breakpoint) {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    // @media (min-width: $mobile-breakpoint) {
+    //     grid-template-columns: repeat(2, 1fr);
+    // }
 
     @media (min-width: $narrow-breakpoint) {
         grid-template-columns: repeat(3, 1fr);
@@ -45,6 +45,7 @@
     @media (min-width: $normal-breakpoint) {
         grid-template-columns: repeat(5, 1fr);
     }
+
 }
 
 .slide-preview {
