@@ -3,30 +3,35 @@ const logger = require('../../services/logger.service')
 const utilService = require('../../services/util.service')
 const ObjectId = require('mongodb').ObjectId
 // let filterBy="draw"
-async function query(filterBy,sortBy) {
+async function query(filterBy, sortBy, userId) {
 
     console.log("query filter by", filterBy.title)
     try {
-        const criteria = _buildCriteria(filterBy)
+        const criteria = _buildCriteria(filterBy, userId)
         const collection = await dbService.getCollection('gig')
         // var gigs = await collection.find(criteria).toArray()
         // const sort = { "price": -1 }
-        const sort = (sortBy.category ==='recommended') ? { "owner.rate": -1 }:{ "price": -1 }
+        const sort = (sortBy.category === 'recommended') ? { "owner.rate": -1 } : { "price": -1 }
 
         // const sort = { "rate": -1 }
         const sort1 = { "owner": { "rate": -1 } }
         // const sort1 = {  "rate": -1 } }
 
         // var gigs = await collection.find(criteria).sort(sort).toArray()
-        var gigs = await collection.find(criteria).sort(sort).toArray()
+        if (filterBy) {
+            var gigs = await collection.find(criteria).sort(sort).toArray()
+        }
 
+        if (userId) {
+            var gigs = await collection.find({ "owner._id": ObjectId(userId)}).toArray()
+        }
         return gigs
     } catch (err) {
         logger.error('cannot find gigs', err)
         throw err
     }
 }
-function _buildCriteria(filterBy) {
+function _buildCriteria(filterBy, userId) {
     console.log("criteria filter by", filterBy.title)
     let criteria = {}
     // console.log(filterBy)
@@ -45,7 +50,7 @@ function _buildCriteria(filterBy) {
     //   criteria.inStock = true
     // }
     if (filterBy?.tags?.length) {
-      criteria.tags = { $all: filterBy.tags}
+        criteria.tags = { $all: filterBy.tags }
     }
 
     return criteria
