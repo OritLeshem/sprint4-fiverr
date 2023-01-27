@@ -12,6 +12,8 @@ import { GigPayment } from './pages/gig/gig-payment'
 import { GigEdit } from './pages/gig/gig-edit'
 import { UserMsg } from './cmps/user-msg'
 import { UserIndex } from './pages/user/user-index'
+import { socketService, SOCKET_EVENT_ORDER_FROM_YOU } from './services/socket.service'
+import { showSuccessMsg } from './services/event-bus.service'
 // import { OrderDetails } from './pages/order/order-details'
 
 

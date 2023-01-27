@@ -9,24 +9,29 @@ import { SortyBy } from '../../cmps/gig/sortBy.jsx'
 
 import { loadGigs } from '../../store/gig/gig.actions.js'
 import { SET_FILTER, SET_SORT } from '../../store/gig/gig.reducer'
+import { socketService, SOCKET_EVENT_ORDER_FROM_YOU } from '../../services/socket.service.js'
+import { showSuccessMsg } from '../../services/event-bus.service.js'
 
 
 export function GigIndex() {
 
     const filterByFromStore = useSelector(storeState => storeState.gigModule.filterBy)
     const sortBy = useSelector((storeState) => storeState.gigModule.sortBy)
-    const gigs = useSelector(storeState => storeState.gigModule.gigs)
+
+    let gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
 
     const dispatch = useDispatch()
     const [searchParams, setSearchParams] = useSearchParams()
     const navigate = useNavigate()
 
-    useEffect(() => {
-        renderUiByQueryStringParams()
-    }, [])
+    // useEffect(() => {
+    //     renderUiByQueryStringParams()
+    // }, [])
 
     useEffect(() => {
+
+        renderUiByQueryStringParams()
         loadGigs(filterBy, sortBy)
     }, [filterBy, sortBy, searchParams])
 
@@ -60,7 +65,7 @@ export function GigIndex() {
     }
 
     function onSetFilter(filterBy) {
-        console.log("filterby index", filterBy)
+        // console.log("filterby index", filterBy)
         if (filterByFromStore.tags[0]) {
             filterBy.tags = filterByFromStore.tags
         }
@@ -133,6 +138,6 @@ export function GigIndex() {
             <SortyBy onSort={onSort} />
         </div>
         {gigs.length > 0 && <p>{gigs.length} services available</p>}
-        <GigList gigs={gigs} />
+        {gigs && <GigList gigs={gigs} />}
     </section>
 }

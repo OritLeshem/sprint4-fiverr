@@ -9,10 +9,10 @@ import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.j
 import { UserList } from '../../cmps/user/user-list.jsx'
 import { UserProfile } from '../../cmps/user/user-dashboard/user-profile'
 import { userService } from '../../services/user.service.js'
-import { UserSales } from '../../cmps/user/user-dashboard/user-sales.jsx'
 import { loadUser } from '../../store/user/user.actions.js'
 import { ReviewList } from '../../cmps/review/review-list.jsx'
 import { ReviewBar } from '../../cmps/review/review-bar.jsx'
+import UserSellerTable from '../../cmps/user/user-dashboard/user-seller-table.jsx'
 
 export function UserIndex() {
     const orders = useSelector(storeState => storeState.orderModule.orders)
@@ -22,11 +22,11 @@ export function UserIndex() {
     const sortBy = useSelector((storeState) => storeState.gigModule.sortBy)
     const { userId } = useParams()
     const loginUser = userService.getLoggedinUser()
-console.log(gigs);
+    console.log(gigs);
     useEffect(() => {
         userId && loadUser(userId)
-        loadGigs(filterBy, sortBy, userId)
         loadOrders()
+        loadGigs(filterBy, sortBy, userId)
     }, [filterBy, userId])
 
     async function onRemoveGig(gigId) {
@@ -49,9 +49,10 @@ console.log(gigs);
                 {loginUser && user.reviews && <ReviewList userReviews={user.reviews} />}
             </aside>
             <main className="user-main">
-                {orders.length !== 0 && loginUser && (loginUser._id === user._id) && <UserSales orders={orders} length={120} />}
+                {orders.filter(order => order.seller._id === user._id).length !== 0 && loginUser && (loginUser._id === user._id) && <UserSellerTable
+                    orders={orders.filter(order => order.seller._id === user._id)} length={120} />}
                 <h1>{`${user.fullname}'s Gigs`}</h1>
-                {user&&gigs&&<UserList gigs={gigs.filter(gig=>gig.owner._id===userId)} onRemoveGig={onRemoveGig} user={user} />}
+                {user && gigs && <UserList gigs={gigs.filter(gig => gig.owner._id === userId)} onRemoveGig={onRemoveGig} user={user} />}
             </main>
         </section>
     )
