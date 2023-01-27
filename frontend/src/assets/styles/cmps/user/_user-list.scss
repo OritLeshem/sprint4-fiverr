@@ -1,6 +1,6 @@
 .user-gig-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
   li {
     position: relative;
@@ -18,7 +18,11 @@
     margin: 5px 10px;
   }
 
-  @media (min-width: 900px) {
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: $padded-break-narrow) {
     flex-direction: row;
 
     .user-main {
@@ -32,7 +36,7 @@
     }
   }
 
-  @media (min-width: 1160px) {
+  @media (min-width: $padded-break-normal) {
     .user-main {
       flex-basis: 66.66667%;
     }
@@ -40,6 +44,10 @@
     .user-info {
       flex-basis: 33.33333%;
     }
+  }
+
+  @media (min-width: $padded-break-wide) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

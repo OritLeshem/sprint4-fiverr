@@ -12,8 +12,11 @@ import { ModalLogin } from './modal-login'
 import { Dropdown } from './dropdown'
 import UserBuyTable from '../user/user-buy-table'
 import { AppHeaderMobile } from './app-header-mobile'
+import { userService } from '../../services/user.service'
 
 export function AppHeader() {
+    const loginUser = userService.getLoggedinUser()
+
     const user = useSelector(storeState => storeState.userModule.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -134,7 +137,10 @@ export function AppHeader() {
                 </div>
                 <div className="app-header-main">
                     {(windowSize > 900) && <Link to="/gig"
-                        onClick={() => onSetFilter(gigService.getDefaultFilter())}>Explore</Link>}
+                        onClick={() => {
+                            console.log('ITS ME');
+                            onSetFilter(gigService.getDefaultFilter())
+                        }}>Explore</Link>}
                     {/* <Link to="gig">Become a seller</Link> */}
                     {user &&
                         <>
@@ -147,7 +153,7 @@ export function AppHeader() {
                                     setIsOrder(false)
                                     setIsDropdown(!isDropdown)
                                 }} />}
-                            {isDropdown && <Dropdown onLogout={onLogout} setIsDropdown={setIsDropdown} user={user} />}
+                            {isDropdown && <Dropdown loginUser={loginUser} onLogout={onLogout} setIsDropdown={setIsDropdown} user={user} />}
                         </>
                     }
                     {!user &&

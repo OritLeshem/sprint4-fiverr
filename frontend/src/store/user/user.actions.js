@@ -4,6 +4,7 @@ import { REMOVE_USER, SET_USER, SET_USERS, SET_WATCHED_USER, UPDATE_USER } from 
 
 import { userService } from "../../services/user.service"
 import { showErrorMsg } from '../../services/event-bus.service'
+import { socketService } from '../../services/socket.service'
 
 export async function loadUsers() {
     try {
@@ -44,6 +45,7 @@ export async function login(credentials) {
             type: SET_USER,
             user
         })
+        socketService.login(user._id)
         return user
     } catch (err) {
         console.log('Cannot login', err)
@@ -58,6 +60,7 @@ export async function signup(credentials) {
             type: SET_USER,
             user
         })
+        socketService.login(user._id)
         return user
     } catch (err) {
         console.log('Cannot signup', err)
@@ -72,6 +75,7 @@ export async function logout() {
             type: SET_USER,
             user: null
         })
+        socketService.logout()
     } catch (err) {
         console.log('Cannot logout', err)
         throw err

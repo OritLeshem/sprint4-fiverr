@@ -60,17 +60,6 @@ async function save(order) {
     return savedOrder
 }
 
-(() => {
-    // socketService.on(SOCKET_EVENT_ORDER_ADDED, (order) => {
-    //     console.log('GOT from socket', order)
-    //     store.dispatch(getActionAddOrder(order))
-    // })
-    socketService.on(SOCKET_EVENT_ORDER_FROM_YOU, (order) => {
-        showSuccessMsg(`New order from ${order.buyer.fullname}`)
-    })
-})()
-
-
 
 // function getEmptyOrder(title = '', description = '', price = 0, tags = [], daysToMake = '', imgUrl = []) {
 //     return {

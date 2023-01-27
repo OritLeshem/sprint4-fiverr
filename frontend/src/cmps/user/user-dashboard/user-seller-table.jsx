@@ -48,13 +48,6 @@ export default function UserSellerTable({ orders }) {
   const approved = statistic.approved ? statistic.approved : 0
   const declined = statistic.declined ? statistic.declined : 0
 
-  const _5b85fd = "#5b85fd"
-  const _f46875 = "#f46875"
-  const _feb849 = "#feb849"
-  const _21ca79 = "#21ca79"
-
-  console.log('orders:', orders)
-
   return <section className="user-seller-table">
     {statistic && <ul className="statstic-dashboard">
       <li>
@@ -64,78 +57,38 @@ export default function UserSellerTable({ orders }) {
       </li>
       <li>
         <h4>Pending</h4>
-        <ProgressChart percent={pending / orders.length} bgc={_feb849} />
+        <ProgressChart percent={pending / orders.length} bgc={"#feb849"} />
       </li>
       <li>
         <h4>Approved</h4>
-        <ProgressChart percent={approved / orders.length} bgc={_f46875} />
+        <ProgressChart percent={approved / orders.length} bgc={"#21ca79"} />
       </li>
       <li>
         <h4>Declined</h4>
-        <ProgressChart percent={declined / orders.length} bgc={_5b85fd} />
+        <ProgressChart percent={declined / orders.length} bgc={"#f46875"} />
       </li>
-    </ul>}
+    </ul>
+    }
 
     <ul className="orders-dashboard">
       {orders.map(order =>
         <li key={order._id}>
-          <div>
-            <small>Gig</small>
-            {order.gig.title}
-          </div>
-          <div>
-            <small>Buyer</small>
-            {order.buyer.fullname}
-          </div>
-          <div>
-            <small>Price</small>
-            ${order.gig.price}
-          </div>
+          <div><small>Gig</small>{order.gig.title}</div>
+          <div><small>Buyer</small>{order.buyer.fullname}</div>
+          <div><small>Price</small>${order.gig.price}</div>
           <div>
             <small>Status</small>
-            {order.status}
+            <span className={order.status} onClick={() => toggleStatusModal(order._id)}>{order.status.charAt(0).toUpperCase() + order.status.slice(1)}</span>
+            <div className="status-container">
+              {(isModal.status && isModal.id === order._id) && <div className="status-options">
+                <span className="approved" onClick={() => updateStatus("approved", order)}>Approved</span>
+                <span className="completed" onClick={() => updateStatus("completed", order)}>Completed</span>
+                <span className="declined" onClick={() => updateStatus("declined", order)}>Declined</span>
+              </div>}
+            </div>
           </div>
         </li>)}
     </ul>
-
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Order id</TableCell>
-            <TableCell align="left">Buyer</TableCell>
-            <TableCell align="left">Gig title</TableCell>
-            <TableCell align="center">Price</TableCell>
-            <TableCell align="center">Status</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {orders.map((order) => (
-            <TableRow
-              key={order._id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {order._id}
-              </TableCell>
-              <TableCell align="left">{order.buyer.fullname}</TableCell>
-              <TableCell align="left">{order.gig.title}</TableCell>
-              <TableCell align="center">
-                {order.gig.price}
-              </TableCell>
-              <TableCell align="left">
-                {(isModal.status && isModal.id === order._id) && <div className="status-options">
-                  <button className="pending" onClick={() => updateStatus("pending", order)}>Pending</button>
-                  <button className="approved" onClick={() => updateStatus("approved", order)}>Approved</button>
-                  <button className="completed" onClick={() => updateStatus("completed", order)}>Completed</button>
-                  <button className="declined" onClick={() => updateStatus("declined", order)}>Declined</button>
-                </div>}
-                <button className={order.status} onClick={() => toggleStatusModal(order._id)}>{order.status.charAt(0).toUpperCase() + order.status.slice(1)}</button></TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
   </section>
 }
 
