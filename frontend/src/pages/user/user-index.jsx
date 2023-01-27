@@ -51,7 +51,7 @@ console.log(gigs);
             <main className="user-main">
                 {orders.length !== 0 && loginUser && (loginUser._id === user._id) && <UserSales orders={orders} length={120} />}
                 <h1>{`${user.fullname}'s Gigs`}</h1>
-                {user&&gigs&&<UserList gigs={gigs} onRemoveGig={onRemoveGig} user={user} />}
+                {user&&gigs&&<UserList gigs={gigs.filter(gig=>gig.owner._id===userId)} onRemoveGig={onRemoveGig} user={user} />}
             </main>
         </section>
     )
