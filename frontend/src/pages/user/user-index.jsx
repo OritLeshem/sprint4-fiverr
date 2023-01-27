@@ -2,17 +2,17 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 
-import { loadGigs, removeGig } from '../../store/gig/gig.actions'
-import { loadOrders } from '../../store/order/order.actions'
+import { loadGigs, removeGig } from '../../store/gig/gig.actions.js'
+import { loadOrders } from '../../store/order/order.actions.js'
 
-import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service'
-import { UserList } from '../../cmps/user/user-list'
+import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
+import { UserList } from '../../cmps/user/user-list.jsx'
 import { UserProfile } from '../../cmps/user/user-dashboard/user-profile'
-import { userService } from '../../services/user.service'
-import { UserSales } from '../../cmps/user/user-dashboard/user-sales'
-import { loadUser } from '../../store/user/user.actions'
-import { ReviewList } from '../../cmps/review/review-list'
-import { ReviewBar } from '../../cmps/review/review-bar'
+import { userService } from '../../services/user.service.js'
+import { UserSales } from '../../cmps/user/user-dashboard/user-sales.jsx'
+import { loadUser } from '../../store/user/user.actions.js'
+import { ReviewList } from '../../cmps/review/review-list.jsx'
+import { ReviewBar } from '../../cmps/review/review-bar.jsx'
 
 export function UserIndex() {
     const orders = useSelector(storeState => storeState.orderModule.orders)
@@ -28,7 +28,7 @@ export function UserIndex() {
         loadOrders()
         loadGigs(filterBy, sortBy, userId)
     }, [filterBy, userId])
-    // if (userId) gigs = gigs.filter(gig => gig.owner._id === userId)
+
     async function onRemoveGig(gigId) {
         try {
             await removeGig(gigId)
@@ -41,16 +41,18 @@ export function UserIndex() {
     if (!user) return <div className="loader-contauner">
         <div className="loader"></div>
     </div>
-    return <section className="user-index">
-        <aside className="user-info">
-            <UserProfile user={user} />
-            <div className="user-review-bar">{user && loginUser && user.reviews && <ReviewBar userReviews={user.reviews} />}</div>
-            {loginUser && user.reviews && <ReviewList userReviews={user.reviews} length={120} />}
-        </aside>
-        <main className="user-main">
-            {orders.length !== 0 && loginUser && (loginUser._id === user._id) && <UserSales orders={orders} />}
-            <h1>{`${user.fullname}'s Gigs`}</h1>
-            <UserList gigs={gigs} onRemoveGig={onRemoveGig} user={user} />
-        </main>
-    </section>
+    return (
+        <section className="user-index">
+            <aside className="user-info">
+                <UserProfile user={user} />
+                <div className="user-review-bar">{user && loginUser && user.reviews && <ReviewBar userReviews={user.reviews} />}</div>
+                {loginUser && user.reviews && <ReviewList userReviews={user.reviews} />}
+            </aside>
+            <main className="user-main">
+                {orders.length !== 0 && loginUser && (loginUser._id === user._id) && <UserSales orders={orders} />}
+                <h1>{`${user.fullname}'s Gigs`}</h1>
+                <UserList gigs={gigs} onRemoveGig={onRemoveGig} user={user} />
+            </main>
+        </section>
+    )
 }
