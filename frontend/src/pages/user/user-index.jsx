@@ -49,7 +49,7 @@ export function UserIndex() {
                 {loginUser && user.reviews && <ReviewList userReviews={user.reviews} />}
             </aside>
             <main className="user-main">
-                {orders.length !== 0 && loginUser && (loginUser._id === user._id) && <UserSales orders={orders} />}
+                {orders.length !== 0 && loginUser && (loginUser._id === user._id) && <UserSales orders={orders} length={120} />}
                 <h1>{`${user.fullname}'s Gigs`}</h1>
                 <UserList gigs={gigs} onRemoveGig={onRemoveGig} user={user} />
             </main>
