@@ -12,6 +12,7 @@
     top: 0;
 }
 
+
 .hero-img {
     background-position: center;
     background-size: cover;
@@ -192,18 +193,45 @@
     }
 }
 
-.hidden-hero{
-    animation: fade 2s linear;
-    opacity : 0;
-    transition: opacity .9s ease;
-    position : absolute;
-    -webkit-transition: opacity .9s;
+.hidden-hero {
+    @media (min-width: 900px) {
+        animation: fade 2s linear;
+        opacity: 0;
+        transition: opacity .9s ease;
+        position: absolute;
+        -webkit-transition: opacity .9s;
+    }
+
+    @media (max-width: 900px) {
+        display: none;
+    }
 }
 
-.active-hero{
+.active-hero {
+    @media (max-width: 900px) {
+        display: none;
+    }
     animation: fade 2s linear;
-    opacity : 1;
+    opacity: 1;
     transition: opacity .9s ease;
-    position : relative;
+    // position : relative;
     -webkit-transition: opacity .9s;
+    direction: rtl;
+
+    h4 {
+        font-family: macan-bold;
+        font-size: 1rem;
+        position: absolute;
+        color: $clr3;
+        z-index: 4;
+        bottom: 0;
+        padding-bottom: 32px;
+    }
+
+    small {
+        font-family: macan-light;
+        font-size: .875rem;
+        // display: block;
+        // line-height: 1.4;
+    }
 }
