@@ -8,7 +8,7 @@ import { TopFilterBar } from '../../cmps/gig/top-filter-bar.jsx'
 import { SortyBy } from '../../cmps/gig/sortBy.jsx'
 
 import { loadGigs } from '../../store/gig/gig.actions.js'
-import { SET_FILTER, SET_SORT } from '../../store/gig/gig.reducer'
+import { SET_FILTER, SET_SORT, SET_GIGS } from '../../store/gig/gig.reducer'
 import { socketService, SOCKET_EVENT_ORDER_FROM_YOU } from '../../services/socket.service.js'
 import { showSuccessMsg } from '../../services/event-bus.service.js'
 
@@ -24,9 +24,12 @@ export function GigIndex() {
     const dispatch = useDispatch()
     const [searchParams, setSearchParams] = useSearchParams()
     const navigate = useNavigate()
-
+    console.log('gigs from index outsie', gigs);
     useEffect(() => {
         renderUiByQueryStringParams()
+        return (() => {
+            dispatch({ type: SET_GIGS, gigs: [] })
+        })
     }, [])
 
     useEffect(() => {
@@ -36,27 +39,27 @@ export function GigIndex() {
     function renderUiByQueryStringParams() {
         if (searchParams.get('title')) {
             filterBy.title = searchParams.get('title')
-            setSearchParams(`title=${searchParams.get('title')}`)
+            // setSearchParams(`title=${searchParams.get('title')}`)
         }
 
         if (searchParams.get('category')) {
             filterBy.tags = [searchParams.get('category')]
-            setSearchParams(`category=${searchParams.get('category')}`)
+            // setSearchParams(`category=${searchParams.get('category')}`)
         }
 
         if (searchParams.get('minPrice')) {
             filterBy.minPrice = [searchParams.get('minPrice')]
-            setSearchParams(`minPrice=${searchParams.get('minPrice')}`)
+            // setSearchParams(`minPrice=${searchParams.get('minPrice')}`)
         }
 
         if (searchParams.get('maxPrice')) {
             filterBy.maxPrice = [searchParams.get('maxPrice')]
-            setSearchParams(`maxPrice=${searchParams.get('maxPrice')}`)
+            // setSearchParams(`maxPrice=${searchParams.get('maxPrice')}`)
         }
 
         if (searchParams.get('daysToMake')) {
-            filterBy.maxPrice = [searchParams.get('daysToMake')]
-            setSearchParams(`daysToMake=${searchParams.get('daysToMake')}`)
+            filterBy.daysToMake = [searchParams.get('daysToMake')]
+            // setSearchParams(`daysToMake=${searchParams.get('daysToMake')}`)
         }
 
         onSetFilter(filterBy)
