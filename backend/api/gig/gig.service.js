@@ -37,7 +37,7 @@ function _buildCriteria(filterBy, userId) {
         }
 
         if (filterBy?.tags?.length) {
-            criteria.tags = { $all: filterBy.tags }
+            criteria.tags = { $in: filterBy.tags }
         }
     }
 
@@ -83,7 +83,7 @@ async function update(gig) {
             price: gig.price,
             title:gig.title,
             description:gig.description,
-            tabs:gig.tabs,
+            tags:gig.tags,
             daysToMake:gig.daysToMake,
             imgUrl:gig.imgUrl
         }

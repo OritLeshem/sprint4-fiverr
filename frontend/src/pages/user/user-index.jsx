@@ -47,7 +47,9 @@ export function UserIndex() {
         }
     }
     console.log("User from index", user, loginUser)
-    if (!user) return <div>  hi</div>
+    if (!user) return <div className="loader-contauner">
+    <div className="loader"></div>
+</div>
     return (
         <section className="user-index">
             <aside className="user-info">

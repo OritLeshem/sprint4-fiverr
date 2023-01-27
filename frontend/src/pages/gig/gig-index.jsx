@@ -22,9 +22,11 @@ export function GigIndex() {
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
 
     const dispatch = useDispatch()
-    const [searchParams, setSearchParams] = useSearchParams()
+    const [searchParams] = useSearchParams()
     const navigate = useNavigate()
+
     console.log('gigs from index outsie', gigs);
+
     useEffect(() => {
         renderUiByQueryStringParams()
         return (() => {
