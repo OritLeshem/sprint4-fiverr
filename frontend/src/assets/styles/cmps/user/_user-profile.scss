@@ -55,6 +55,7 @@
   .user-stats-desc li {
     @include flex;
     margin-bottom: em(16px, 14px);
+    color: $clr5;
 
     div span:first-of-type {
       margin-right: .5em;

@@ -127,6 +127,10 @@
     content: "\2b";
 }
 
+.fa-solid.ellipsis-vertical:after {
+    content: "\f142";
+}
+
 .fa-solid::before {
     font-family: fa-solid;
 }

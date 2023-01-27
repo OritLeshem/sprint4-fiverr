@@ -147,13 +147,18 @@ export function AppHeader() {
                             {/* <button className="user-link fa-regular bell" title="Notifications"></button> */}
                             {/* <button className="user-link fa-regular envelope" title="Messages"></button> */}
                             {/* <Link className="user-link fa-regular heart" title="Lists"></Link> */}
-                            {(windowSize > 900) && <button onClick={handleOrder} className="user-link">Orders</button>}
-                            {(windowSize > 900) && <img src={user.imgUrl}
-                                onClick={() => {
-                                    setIsOrder(false)
-                                    setIsDropdown(!isDropdown)
-                                }} />}
-                            {isDropdown && <Dropdown loginUser={loginUser} onLogout={onLogout} setIsDropdown={setIsDropdown} user={user} />}
+                            {(windowSize > 900) && <div className="user-orders">
+                                <button onClick={handleOrder} className="user-link">Orders</button>
+                                {isOrder && <UserBuyTable />}
+                            </div>}
+                            {(windowSize > 900) && <div className="user-header-img">
+                                <img src={user.imgUrl}
+                                    onClick={() => {
+                                        setIsOrder(false)
+                                        setIsDropdown(!isDropdown)
+                                    }} />
+                                {isDropdown && <Dropdown loginUser={loginUser} onLogout={onLogout} setIsDropdown={setIsDropdown} user={user} />}
+                            </div>}
                         </>
                     }
                     {!user &&
@@ -167,7 +172,6 @@ export function AppHeader() {
                     }
                 </div>
             </nav>
-            {isOrder && <UserBuyTable />}
         </section>
         {pathname !== '/' && <>
             <div className="main-app-header full"></div>

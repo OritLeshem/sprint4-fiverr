@@ -23,7 +23,7 @@ export default function UserBuyTable() {
           <div>{order.gig.title}</div>
           <div className='buy-order-seller-status'>
             <div className='buy-order-sellername'>{order.seller.fullname}</div>
-            <div className='buy-order-status'>{order.status}</div>
+            <div className={order.status}>{order.status}</div>
           </div>
         </div>
         {/* <Link className='buy-order-link-details' to={`/order/${order._id}`}>Details</Link> */}

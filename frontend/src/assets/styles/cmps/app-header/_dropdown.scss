@@ -1,10 +1,9 @@
 .dropdown {
+    position: absolute;
+    right: 0;
     z-index: 10;
     min-width: 180px;
-    top: 64px;
-    right: 32px;
     background-color: $clr3;
-    position: absolute;
     border: 1px solid $clr7;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
 
