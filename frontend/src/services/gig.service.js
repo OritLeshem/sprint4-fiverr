@@ -29,7 +29,7 @@ function getDefaultSort() {
 }
 
 async function query(filterBy = getDefaultFilter(), sortBy = getDefaultSort()) {
-    console.log("filterby service front", filterBy)
+    // console.log("filterby service front", filterBy)
     // return httpService.get(STORAGE_KEY, filterBy)
     return httpService.get('gig', { params: { filterBy, sortBy } })
 }

@@ -1,6 +1,7 @@
-import { storageService } from './async-storage.service.js'
-import { httpService } from './http.service.js'
-import { utilService } from './util.service.js'
+
+import { showErrorMsg, showSuccessMsg } from './event-bus.service'
+import { httpService } from './http.service'
+import { socketService, SOCKET_EVENT_ORDER_ADDED, SOCKET_EVENT_ORDER_FROM_YOU } from './socket.service'
 
 const STORAGE_KEY = 'order'
 
@@ -59,6 +60,15 @@ async function save(order) {
     return savedOrder
 }
 
+(() => {
+    // socketService.on(SOCKET_EVENT_ORDER_ADDED, (order) => {
+    //     console.log('GOT from socket', order)
+    //     store.dispatch(getActionAddOrder(order))
+    // })
+    socketService.on(SOCKET_EVENT_ORDER_FROM_YOU, (order) => {
+        showSuccessMsg(`New order from ${order.buyer.fullname}`)
+    })
+})()
 
 
 

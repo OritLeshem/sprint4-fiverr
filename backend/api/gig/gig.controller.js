@@ -11,7 +11,6 @@ async function getGigs(req, res) {
   // }
   const { filterBy } = JSON.parse(req.query.params)
   const { sortBy } = JSON.parse(req.query.params)
-  console.log('req.query.params controller gig', filterBy)
   try {
     // const { filterBy } = req.query.params
     logger.debug('Getting Gigs')
