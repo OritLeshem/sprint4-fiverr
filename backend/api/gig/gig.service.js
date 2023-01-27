@@ -11,6 +11,7 @@ async function query(filterBy, sortBy, userId) {
         const sort = (sortBy.category === 'recommended') ? { "owner.rate": -1 } : { "price": -1 }
         var gigs = await collection.find(criteria).sort(sort).toArray()
         // var gigs = await collection.find({ "$and": [{ "owner._id": ObjectId(userId) }, criteria] }).sort(sort).toArray()
+
         return gigs
     } catch (err) {
         logger.error('cannot find gigs', err)
@@ -34,13 +35,16 @@ function _buildCriteria(filterBy, userId) {
         if (filterBy.daysToMake) {
             criteria.daysToMake = { $lte: +filterBy.daysToMake || Infinity }
         }
+
         if (filterBy?.tags?.length) {
             criteria.tags = { $all: filterBy.tags }
         }
     }
+
     console.log("criteria", criteria)
     return criteria
 }
+
 async function getById(gigId) {
     try {
         const collection = await dbService.getCollection('gig')
