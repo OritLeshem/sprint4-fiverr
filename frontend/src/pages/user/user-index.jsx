@@ -37,10 +37,8 @@ export function UserIndex() {
             showErrorMsg('Cannot remove gig')
         }
     }
-
-    if (!user) return <div className="loader-contauner">
-        <div className="loader"></div>
-    </div>
+    console.log("User from index", user, loginUser)
+    if (!user) return <div>  hi</div>
     return (
         <section className="user-index">
             <aside className="user-info">

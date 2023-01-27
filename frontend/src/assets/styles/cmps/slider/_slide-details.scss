@@ -52,7 +52,12 @@
 
 /* Add a transparency effect for thumnbail images */
 .demo {
-    opacity: 0.6;
+    opacity: 0.25;
+    max-width: 100px;
+}
+
+.demo-active {
+    opacity: 0.9;
     max-width: 100px;
 }
 

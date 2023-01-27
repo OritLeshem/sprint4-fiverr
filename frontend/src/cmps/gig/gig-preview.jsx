@@ -34,7 +34,10 @@ export function GigPreview({ gig }) {
                         precision={0.5} max={1} readOnly />
                 </Box>
                 <div>{gig.owner && gig.owner.rate}</div>
+                <div className='ratings-count'>({gig.owner && gig.owner.ratingsCount})</div>
+
             </div>
+
         </div>
 
         <footer>

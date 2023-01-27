@@ -25,13 +25,11 @@ export function GigIndex() {
     const [searchParams, setSearchParams] = useSearchParams()
     const navigate = useNavigate()
 
-    // useEffect(() => {
-    //     renderUiByQueryStringParams()
-    // }, [])
+    useEffect(() => {
+        renderUiByQueryStringParams()
+    }, [])
 
     useEffect(() => {
-
-        renderUiByQueryStringParams()
         loadGigs(filterBy, sortBy)
     }, [filterBy, sortBy, searchParams])
 
