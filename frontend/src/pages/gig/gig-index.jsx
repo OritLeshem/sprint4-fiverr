@@ -39,29 +39,23 @@ export function GigIndex() {
     function renderUiByQueryStringParams() {
         if (searchParams.get('title')) {
             filterBy.title = searchParams.get('title')
-            // setSearchParams(`title=${searchParams.get('title')}`)
         }
 
         if (searchParams.get('category')) {
             filterBy.tags = [searchParams.get('category')]
-            // setSearchParams(`category=${searchParams.get('category')}`)
         }
 
         if (searchParams.get('minPrice')) {
             filterBy.minPrice = [searchParams.get('minPrice')]
-            // setSearchParams(`minPrice=${searchParams.get('minPrice')}`)
         }
 
         if (searchParams.get('maxPrice')) {
             filterBy.maxPrice = [searchParams.get('maxPrice')]
-            // setSearchParams(`maxPrice=${searchParams.get('maxPrice')}`)
         }
 
         if (searchParams.get('daysToMake')) {
-            filterBy.daysToMake = [searchParams.get('daysToMake')]
-            // setSearchParams(`daysToMake=${searchParams.get('daysToMake')}`)
+            filterBy.maxPrice = [searchParams.get('daysToMake')]
         }
-
         onSetFilter(filterBy)
     }
 
