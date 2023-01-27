@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 
-import { UserPreview } from "./user-preview"
 import { userService } from "../../services/user.service"
 import { GigPreview } from '../gig/gig-preview'
 
