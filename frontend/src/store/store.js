@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
 export const store = createStore(rootReducer)
 
 store.subscribe(() => {
-    // console.log('storeState:\n', store.getState())
+    console.log('storeState:\n', store.getState())
 })
 
 

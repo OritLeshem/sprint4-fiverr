@@ -1,13 +1,14 @@
 const dbService = require('../../services/db.service')
 const logger = require('../../services/logger.service')
 const utilService = require('../../services/util.service')
+const { getLoginToken } = require('../auth/auth.service')
 const ObjectId = require('mongodb').ObjectId
 // let filterBy="draw"
 async function query(filterBy, sortBy, userId) {
 
     console.log("query filter by", filterBy.title)
     try {
-        const criteria = _buildCriteria(filterBy,userId)
+        const criteria = _buildCriteria(filterBy, userId)
         const collection = await dbService.getCollection('gig')
         // var gigs = await collection.find(criteria).toArray()
         // const sort = { "price": -1 }
@@ -21,11 +22,11 @@ async function query(filterBy, sortBy, userId) {
         // var gigs = await collection.find({$or:[criteria,{ "owner._id": ObjectId(userId)}]}).sort(sort).toArray()
 
         if (filterBy) {
-        var gigs = await collection.find(criteria).sort(sort).toArray()
-    }
+            var gigs = await collection.find(criteria).sort(sort).toArray()
+        }
 
         if (userId) {
-            var gigs = await collection.find({ "owner._id": ObjectId(userId)}).toArray()
+            var gigs = await collection.find({ "owner._id": ObjectId(userId) }).toArray()
         }
         return gigs
     } catch (err) {
@@ -52,7 +53,7 @@ function _buildCriteria(filterBy, userId) {
     //   criteria.inStock = true
     // }
     if (filterBy?.tags?.length) {
-        criteria.tags = { $all: filterBy.tags }
+        criteria.tags = { $in: filterBy.tags }
     }
     // if (userId) {
     //     console.log('userId creitirais', userId);
@@ -101,8 +102,12 @@ async function add(gig) {
 async function update(gig) {
     try {
         const gigToSave = {
-            // vendor: gig.vendor,
-            price: gig.price
+            price: gig.price,
+            title:gig.title,
+            tags:gig.tags,
+            description:gig.description,
+            daysToMake:gig.daysToMake,
+            imgUrl:gig.imgUrl
         }
         const collection = await dbService.getCollection('gig')
         await collection.updateOne({ _id: ObjectId(gig._id) }, { $set: gigToSave })

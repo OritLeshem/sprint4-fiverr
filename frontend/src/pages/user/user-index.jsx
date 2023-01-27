@@ -25,8 +25,8 @@ export function UserIndex() {
 console.log(gigs);
     useEffect(() => {
         userId && loadUser(userId)
-        loadGigs(filterBy, sortBy, userId)
         loadOrders()
+        loadGigs(filterBy, sortBy, userId)
     }, [filterBy, userId])
 
     async function onRemoveGig(gigId) {
