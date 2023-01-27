@@ -80,8 +80,12 @@ async function add(gig) {
 async function update(gig) {
     try {
         const gigToSave = {
-            // vendor: gig.vendor,
-            price: gig.price
+            price: gig.price,
+            title:gig.title,
+            description:gig.description,
+            tabs:gig.tabs,
+            daysToMake:gig.daysToMake,
+            imgUrl:gig.imgUrl
         }
         const collection = await dbService.getCollection('gig')
         await collection.updateOne({ _id: ObjectId(gig._id) }, { $set: gigToSave })
