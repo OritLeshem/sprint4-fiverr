@@ -18,6 +18,11 @@ async function addOrder(req, res) {
     try {
         var order = req.body
         order = await orderService.add(order)
+
+        // socketService.broadcast({ type: 'order-added', data: order, userId: loggedinUser._id })
+        // socketService.emitToUser({ type: 'order-from-you', data: order, userId: review.aboutUser._id })
+        // socketService.emitTo({ type: 'user-updated', data: user, label: user._id })
+
         res.send(order)
     } catch (err) {
         logger.error('Failed to add order', err)

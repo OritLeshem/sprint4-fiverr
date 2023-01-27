@@ -4,7 +4,6 @@ const utilService = require('../../services/util.service')
 const ObjectId = require('mongodb').ObjectId
 // let filterBy="draw"
 async function query(filterBy, sortBy, userId) {
-
     console.log("query filter by", filterBy.title)
     try {
         const criteria = _buildCriteria(filterBy, userId)
@@ -56,7 +55,6 @@ async function getById(gigId) {
         throw err
     }
 }
-
 async function remove(gigId) {
     try {
         const collection = await dbService.getCollection('gig')
@@ -67,7 +65,6 @@ async function remove(gigId) {
         throw err
     }
 }
-
 async function add(gig) {
     try {
         console.log('gig.owner', gig.owner)
@@ -80,7 +77,6 @@ async function add(gig) {
         throw err
     }
 }
-
 async function update(gig) {
     try {
         const gigToSave = {
@@ -95,7 +91,6 @@ async function update(gig) {
         throw err
     }
 }
-
 // async function addGigMsg(gigId, msg) {
 //     try {
 //         msg.id = utilService.makeId()
@@ -107,7 +102,6 @@ async function update(gig) {
 //         throw err
 //     }
 // }
-
 // async function removeGigMsg(gigId, msgId) {
 //     try {
 //         const collection = await dbService.getCollection('gig')
@@ -118,7 +112,6 @@ async function update(gig) {
 //         throw err
 //     }
 // }
-
 module.exports = {
     remove,
     query,

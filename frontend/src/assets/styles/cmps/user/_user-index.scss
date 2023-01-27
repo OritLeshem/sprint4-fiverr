@@ -5,11 +5,11 @@
   margin-top: 2em;
 
   .user-info {
-    flex-basis: 100%;
+    width: 100%;
   }
 
   .user-main {
-    flex-basis: 100%;
+    width: 100%;
 
     h1 {
       padding-bottom: em(24px, 16px);
@@ -20,23 +20,24 @@
     flex-direction: row;
 
     .user-main {
-      flex-basis: 58.33333%;
+      max-width: 58.33333%;
       padding-left: 2em;
     }
 
     .user-info {
-      flex-basis: 41.66667%;
+      max-width: 41.66667%;
       padding-right: 2em;
     }
   }
 
-  @media (min-width: 1160px) {
+  @media (min-width: 12000px) {
+
     .user-main {
-      flex-basis: 66.66667%;
+      max-width: 66.66667%;
     }
 
     .user-info {
-      flex-basis: 33.33333%;
+      max-width: 33.33333%;
     }
   }
 
@@ -47,4 +48,3 @@
     }
   }
 }
-

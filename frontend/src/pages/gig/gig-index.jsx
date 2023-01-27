@@ -9,6 +9,8 @@ import { SortyBy } from '../../cmps/gig/sortBy.jsx'
 
 import { loadGigs } from '../../store/gig/gig.actions.js'
 import { SET_FILTER, SET_SORT } from '../../store/gig/gig.reducer'
+import { socketService, SOCKET_EVENT_ORDER_FROM_YOU } from '../../services/socket.service.js'
+import { showSuccessMsg } from '../../services/event-bus.service.js'
 
 
 export function GigIndex() {
@@ -63,7 +65,7 @@ export function GigIndex() {
     }
 
     function onSetFilter(filterBy) {
-        console.log("filterby index", filterBy)
+        // console.log("filterby index", filterBy)
         if (filterByFromStore.tags[0]) {
             filterBy.tags = filterByFromStore.tags
         }
