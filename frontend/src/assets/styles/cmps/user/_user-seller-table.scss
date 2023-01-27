@@ -1,71 +1,48 @@
-.user-seller-table {
+.statstic-dashboard {
+  @include flex;
+  // border: 1px solid red;
+  border: 1px solid $clr11;
+  margin-bottom: 1em;
 
-  .statstic {
+  h4 {
+    margin-bottom: .5em;
+  }
+
+  .orders-num {
+    font-size: rem(22px);
+  }
+
+  li {
     @include flex;
-    // border: 1px solid red;
-    border: 1px solid $clr11;
-    margin-bottom: 1em;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1em 0;
 
-    li {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      flex-grow: 1;
-      padding: 1em 0;
+    &:first-of-type {
+      min-height: 136px;
     }
   }
 }
 
-.statstic-preview {
-  border: .5em solid $clr7;
-  border-radius: 50%;
-  // border-top: .5em solid $clr1;
-  width: 50px;
-  height: 50px;
-}
+.orders-dashboard {
 
+  li {
+    display: grid;
+    grid-template-columns: 4fr 2fr 1fr 2fr;
+    border: 1px solid $clr11;
+    margin-bottom: 1em;
 
+    small {
+      color: $clr6;
+    }
 
-
-.user-sales {
-  width: 100%;
-  margin-bottom: 30px;
-}
-
-.statstic-show {
-  display: flex;
-  align-items: center;
-  border: 1px solid $clr7;
-  padding: 12px 5px;
-  justify-content: center;
-  margin-bottom: 30px;
-
-
-  h3 {
-    height: 40px;
-    padding: 20px;
-  }
-
-  .statstic-total {
-
-    text-align: center;
-
-  }
-
-  .statstic-pending {
-    color: #E2A114
-  }
-
-  .statstic-approved {
-    color: #f2710f
-  }
-
-  .statstic-declined {
-    color: #F31F1F
-  }
-
-  .statstic-completed {
-    color: $clr1;
+    div {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 1em;
+      padding-right: 0;
+    }
   }
 }
 
