@@ -7,7 +7,7 @@ async function query(filterBy, sortBy, userId) {
 
     console.log("query filter by", filterBy.title)
     try {
-        const criteria = _buildCriteria(filterBy, userId)
+        const criteria = _buildCriteria(filterBy,userId)
         const collection = await dbService.getCollection('gig')
         // var gigs = await collection.find(criteria).toArray()
         // const sort = { "price": -1 }
@@ -18,9 +18,11 @@ async function query(filterBy, sortBy, userId) {
         // const sort1 = {  "rate": -1 } }
 
         // var gigs = await collection.find(criteria).sort(sort).toArray()
+        // var gigs = await collection.find({$or:[criteria,{ "owner._id": ObjectId(userId)}]}).sort(sort).toArray()
+
         if (filterBy) {
-            var gigs = await collection.find(criteria).sort(sort).toArray()
-        }
+        var gigs = await collection.find(criteria).sort(sort).toArray()
+    }
 
         if (userId) {
             var gigs = await collection.find({ "owner._id": ObjectId(userId)}).toArray()
@@ -52,7 +54,11 @@ function _buildCriteria(filterBy, userId) {
     if (filterBy?.tags?.length) {
         criteria.tags = { $all: filterBy.tags }
     }
-
+    // if (userId) {
+    //     console.log('userId creitirais', userId);
+    //     criteria.userId = { $eq: ObjectId(owner._id) }
+    // }
+    console.log("criteria", criteria)
     return criteria
 }
 

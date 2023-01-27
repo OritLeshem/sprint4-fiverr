@@ -22,11 +22,11 @@ export function UserIndex() {
     const sortBy = useSelector((storeState) => storeState.gigModule.sortBy)
     const { userId } = useParams()
     const loginUser = userService.getLoggedinUser()
-
+console.log(gigs);
     useEffect(() => {
         userId && loadUser(userId)
-        loadOrders()
         loadGigs(filterBy, sortBy, userId)
+        loadOrders()
     }, [filterBy, userId])
 
     async function onRemoveGig(gigId) {
@@ -51,7 +51,7 @@ export function UserIndex() {
             <main className="user-main">
                 {orders.length !== 0 && loginUser && (loginUser._id === user._id) && <UserSales orders={orders} length={120} />}
                 <h1>{`${user.fullname}'s Gigs`}</h1>
-                <UserList gigs={gigs} onRemoveGig={onRemoveGig} user={user} />
+                {user&&gigs&&<UserList gigs={gigs} onRemoveGig={onRemoveGig} user={user} />}
             </main>
         </section>
     )
