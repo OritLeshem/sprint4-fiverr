@@ -1,19 +1,17 @@
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 
 import { gigService } from "../../services/gig.service.js"
 
 export function CategoryMenu({ onSetFilter }) {
-    const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
+    const filterByToEdit = useRef(gigService.getDefaultFilter())
     const CategorysliderRef = useRef()
     const [lastDirection, setLastDirection] = useState('')
 
-    useEffect(() => {
-        onSetFilter(filterByToEdit)
-    }, [filterByToEdit])
-
     function filterByCategory(categories) {
-        setFilterByToEdit((prevFilter) => ({ ...prevFilter, tags: categories }))
+        filterByToEdit.current.tags = categories
+        onSetFilter(filterByToEdit.current)
     }
+    
     const slideLeft = () => {
         if (lastDirection !== 'left') {
             CategorysliderRef.current.scrollLeft = CategorysliderRef.current.scrollLeft - 2000
