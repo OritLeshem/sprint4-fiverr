@@ -11,27 +11,27 @@
     ul {
         margin: 0;
         font-family: macan-light;
-        padding: em(5px, 16px) em(15px, 16px);
     }
 
     li {
-        padding: em(5px, 16px) 0;
         cursor: pointer;
+        display: flex;
+    }
+
+    a,
+    span {
+        text-align: left;
+        padding: em(10px, 16px) 0;
+        margin: 0 em(15px, 16px);
         color: $clr5;
-text-align: left;
+        width: 100%;
+
         &:hover {
             color: $clr1;
         }
+    }
 
-        &:last-of-type {
-            border-top: 1px solid $clr7;
-        }
-
-        a {
-            color: $clr5;
-            &:hover {
-                color: $clr1;
-            }
-        }
+    span {
+        border-top: 1px solid $clr7;
     }
 }
