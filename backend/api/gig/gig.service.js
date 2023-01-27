@@ -1,33 +1,16 @@
 const dbService = require('../../services/db.service')
 const logger = require('../../services/logger.service')
 const utilService = require('../../services/util.service')
-const { getLoginToken } = require('../auth/auth.service')
 const ObjectId = require('mongodb').ObjectId
 // let filterBy="draw"
 async function query(filterBy, sortBy, userId) {
-
     console.log("query filter by", filterBy.title)
     try {
         const criteria = _buildCriteria(filterBy, userId)
         const collection = await dbService.getCollection('gig')
-        // var gigs = await collection.find(criteria).toArray()
-        // const sort = { "price": -1 }
         const sort = (sortBy.category === 'recommended') ? { "owner.rate": -1 } : { "price": -1 }
-
-        // const sort = { "rate": -1 }
-        const sort1 = { "owner": { "rate": -1 } }
-        // const sort1 = {  "rate": -1 } }
-
-        // var gigs = await collection.find(criteria).sort(sort).toArray()
-        // var gigs = await collection.find({$or:[criteria,{ "owner._id": ObjectId(userId)}]}).sort(sort).toArray()
-
-        if (filterBy) {
-            var gigs = await collection.find(criteria).sort(sort).toArray()
-        }
-
-        if (userId) {
-            var gigs = await collection.find({ "owner._id": ObjectId(userId) }).toArray()
-        }
+        var gigs = await collection.find(criteria).sort(sort).toArray()
+        // var gigs = await collection.find({ "$and": [{ "owner._id": ObjectId(userId) }, criteria] }).sort(sort).toArray()
         return gigs
     } catch (err) {
         logger.error('cannot find gigs', err)
@@ -37,33 +20,27 @@ async function query(filterBy, sortBy, userId) {
 function _buildCriteria(filterBy, userId) {
     console.log("criteria filter by", filterBy.title)
     let criteria = {}
-    // console.log(filterBy)
-    if (filterBy.title) {
-        criteria.title = { $regex: filterBy.title, $options: 'i' }
+    console.log(filterBy)
+    if (userId) {
+        criteria = { "owner._id": ObjectId(userId) }
+    } else {
+        if (filterBy.title) {
+            criteria.title = { $regex: filterBy.title, $options: 'i' }
+        }
+        if (filterBy.minPrice || filterBy.maxPrice) {
+            console.log("minprice", filterBy.minPrice)
+            criteria = { ...criteria, "$and": [{ "price": { "$gt": +filterBy.minPrice } }, { "price": { "$lte": +filterBy.maxPrice } }] }
+        }
+        if (filterBy.daysToMake) {
+            criteria.daysToMake = { $lte: +filterBy.daysToMake || Infinity }
+        }
+        if (filterBy?.tags?.length) {
+            criteria.tags = { $all: filterBy.tags }
+        }
     }
-    if (filterBy.minPrice || filterBy.maxPrice) {
-        console.log("minprice", filterBy.minPrice)
-        // criteria.price = { $lte: +filterBy.price || Infinity }
-        criteria = { ...criteria, "$and": [{ "price": { "$gt": +filterBy.minPrice } }, { "price": { "$lte": +filterBy.maxPrice } }] }
-    }
-    if (filterBy.daysToMake) {
-        criteria.daysToMake = { $lte: +filterBy.daysToMake || Infinity }
-    }
-    // if (filterBy.inStock === 'true') {
-    //   criteria.inStock = true
-    // }
-    if (filterBy?.tags?.length) {
-        criteria.tags = { $in: filterBy.tags }
-    }
-    // if (userId) {
-    //     console.log('userId creitirais', userId);
-    //     criteria.userId = { $eq: ObjectId(owner._id) }
-    // }
     console.log("criteria", criteria)
     return criteria
 }
-
-
 async function getById(gigId) {
     try {
         const collection = await dbService.getCollection('gig')
@@ -74,7 +51,6 @@ async function getById(gigId) {
         throw err
     }
 }
-
 async function remove(gigId) {
     try {
         const collection = await dbService.getCollection('gig')
@@ -85,7 +61,6 @@ async function remove(gigId) {
         throw err
     }
 }
-
 async function add(gig) {
     try {
         console.log('gig.owner', gig.owner)
@@ -98,16 +73,11 @@ async function add(gig) {
         throw err
     }
 }
-
 async function update(gig) {
     try {
         const gigToSave = {
-            price: gig.price,
-            title:gig.title,
-            tags:gig.tags,
-            description:gig.description,
-            daysToMake:gig.daysToMake,
-            imgUrl:gig.imgUrl
+            // vendor: gig.vendor,
+            price: gig.price
         }
         const collection = await dbService.getCollection('gig')
         await collection.updateOne({ _id: ObjectId(gig._id) }, { $set: gigToSave })
@@ -117,7 +87,6 @@ async function update(gig) {
         throw err
     }
 }
-
 // async function addGigMsg(gigId, msg) {
 //     try {
 //         msg.id = utilService.makeId()
@@ -129,7 +98,6 @@ async function update(gig) {
 //         throw err
 //     }
 // }
-
 // async function removeGigMsg(gigId, msgId) {
 //     try {
 //         const collection = await dbService.getCollection('gig')
@@ -140,7 +108,6 @@ async function update(gig) {
 //         throw err
 //     }
 // }
-
 module.exports = {
     remove,
     query,
