@@ -5,10 +5,17 @@ import { ImgUploader } from "../../img-uploader"
 export function UserProfile({ user }) {
   const loginUser = userService.getLoggedinUser()
 
+  // function onUploaded(data) {
+  //   console.log('user', user)
+  //   const newUser = { ...user, imgUrl: data }
+  //   console.log('newUser', newUser)
+  //   updateUser(newUser)
+  // }
   function onUploaded(data) {
     console.log('user', user)
-    const newUser = { ...user, imgUrl: data }
+    const newUser = { ...loginUser, imgUrl: data }
     console.log('newUser', newUser)
+
     updateUser(newUser)
   }
 

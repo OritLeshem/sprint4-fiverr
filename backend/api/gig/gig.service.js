@@ -37,7 +37,7 @@ function _buildCriteria(filterBy, userId) {
         }
 
         if (filterBy?.tags?.length) {
-            criteria.tags = { $all: filterBy.tags }
+            criteria.tags = { $in: filterBy.tags }
         }
     }
 
@@ -80,8 +80,12 @@ async function add(gig) {
 async function update(gig) {
     try {
         const gigToSave = {
-            // vendor: gig.vendor,
-            price: gig.price
+            price: gig.price,
+            title:gig.title,
+            description:gig.description,
+            tags:gig.tags,
+            daysToMake:gig.daysToMake,
+            imgUrl:gig.imgUrl
         }
         const collection = await dbService.getCollection('gig')
         await collection.updateOne({ _id: ObjectId(gig._id) }, { $set: gigToSave })

@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 
 import { loadGigs, removeGig } from '../../store/gig/gig.actions.js'
 import { loadOrders } from '../../store/order/order.actions.js'
+import { SET_GIGS } from '../../store/gig/gig.reducer'
 
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
 import { UserList } from '../../cmps/user/user-list.jsx'
@@ -23,6 +24,14 @@ export function UserIndex() {
     const { userId } = useParams()
     const loginUser = userService.getLoggedinUser()
     console.log(gigs);
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        return (() => {
+            dispatch({ type: SET_GIGS, gigs: [] })
+        })
+    }, [])
+
     useEffect(() => {
         userId && loadUser(userId)
         loadOrders()
@@ -38,7 +47,9 @@ export function UserIndex() {
         }
     }
     console.log("User from index", user, loginUser)
-    if (!user) return <div>  hi</div>
+    if (!user) return <div className="loader-contauner">
+        <div className="loader"></div>
+    </div>
     return (
         <section className="user-index">
             <aside className="user-info">
