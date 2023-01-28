@@ -67,6 +67,9 @@ export function GigProgram({ gig }) {
         <Link className="gig-program-link-continue" to={`/payment/${gig._id}`}>Continue<span className="fa-solid arrow-rigth"></span></Link>
       </div>}
     </div>
-    <div className="contact-seller"><button className="contact-seller-btn" >Contact Seller</button></div>
+    <Link to={`/user/${gig.owner._id}`} className="contact-seller"><button className="contact-seller-btn" >Contact Seller</button></Link>
+
+    {/* <Link to={`/user/${loginUser._id}`} onClick={() => setIsDropdown(false)}>Profile</Link> */}
+
   </div>
 } 
