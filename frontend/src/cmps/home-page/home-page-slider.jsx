@@ -19,7 +19,6 @@ export function HomePageSlider() {
         { name: "Zach", title: "Bar Owner", url: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png' },
         { name: "Gabriella", title: "Video Editor", url: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png' },
     ]
-    console.log(slides);
     function onSetFilter(filterBy) {
         dispatch({ type: SET_FILTER, filterBy })
 

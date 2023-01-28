@@ -4,6 +4,7 @@ import { store } from '../store.js'
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
 import { ADD_GIG, ADD_TO_CART, CLEAR_CART, REMOVE_GIG, REMOVE_FROM_CART, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG } from "./gig.reducer.js";
 import { SET_SCORE } from "../user/user.reducer.js";
+import { LOADING_DONE, LOADING_START } from "../system.reducer"
 
 export function getActionRemoveGig(gigId) {
     return {
@@ -26,6 +27,7 @@ export function getActionUpdateGig(gig) {
 
 export async function loadGigs(filterBy, sortBy, userId) {
     try {
+        store.dispatch({ type: LOADING_START })
         const gigs = await gigService.query(filterBy, sortBy, userId)
 
         store.dispatch({
@@ -36,6 +38,8 @@ export async function loadGigs(filterBy, sortBy, userId) {
     } catch (err) {
         console.log('Cannot load gigs', err)
         throw err
+    }  finally {
+        store.dispatch({ type: LOADING_DONE })
     }
 }
 

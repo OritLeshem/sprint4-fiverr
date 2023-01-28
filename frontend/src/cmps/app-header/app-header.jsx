@@ -138,7 +138,6 @@ export function AppHeader() {
                 <div className="app-header-main">
                     {(windowSize > 900) && <Link to="/gig"
                         onClick={() => {
-                            console.log('ITS ME');
                             onSetFilter(gigService.getDefaultFilter())
                         }}>Explore</Link>}
                     {/* <Link to="gig">Become a seller</Link> */}
