@@ -12,17 +12,26 @@ export function TopFilterBar({ onSetFilter }) {
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
+            console.log(e.target.className);
             if (isPriceFilterShown && ref.current && !ref.current.contains(e.target)) {
                 setIsPriceFilterShown(false)
             }
             if (isDeliveryshown && deliveryRef.current && !deliveryRef.current.contains(e.target)) {
                 setisDeliveryshown(false)
             }
-            if (e.target.className === "filter-menu filter-price") {
+            if (e.target.className === "filter-menu filter-price ") {
                 e.preventDefault()
                 setIsPriceFilterShown(!isPriceFilterShown)
             }
-            if (e.target.className === "filter-menu filter-delivery") {
+            if (e.target.className === "filter-menu filter-price active-filter") {
+                e.preventDefault()
+                setIsPriceFilterShown(!isPriceFilterShown)
+            }
+            if (e.target.className === "filter-menu filter-delivery ") {
+                e.preventDefault()
+                setisDeliveryshown(!isDeliveryshown)
+            }
+            if (e.target.className === "filter-menu filter-delivery active-filter") {
                 e.preventDefault()
                 setisDeliveryshown(!isDeliveryshown)
             }
@@ -56,7 +65,7 @@ export function TopFilterBar({ onSetFilter }) {
     }
 
     return <div className="top-filter-bar">
-        <div className="filter-menu filter-delivery" ref={deliveryRef}>Delivery Time <span className="fa-solid angle-down"></span>
+        <div className={`filter-menu filter-delivery ${checkedDelivery!=='' ? "active-filter" : "" ? "active-filter" : ""}`} ref={deliveryRef}>Delivery Time<span className="fa-solid angle-down"></span>
             {isDeliveryshown && <div className="delivery-filter-options">
                 <div className="delivery-option">
                     <input type="radio" id="daysToMake1" name="daysToMake" value="1" onChange={handleChange} checked={checkedDelivery === '1'} />
@@ -77,8 +86,8 @@ export function TopFilterBar({ onSetFilter }) {
             </div>
             }
         </div>
-
-        <div className="filter-menu filter-price" ref={ref}>Budget  <span className="fa-solid angle-down"></span>
+        
+        <div className={`filter-menu filter-price ${(filterByToEdit.minPrice!==''||filterByToEdit.maxPrice!=='' ) ? "active-filter" : ""}`} ref={ref}>Budget  <span className="fa-solid angle-down"></span>
             {isPriceFilterShown && <form className="price-filter-scroll">
                 <div className="price-filter-inputs">
                     <div>

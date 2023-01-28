@@ -1,5 +1,10 @@
 .top-filter-bar {
     display: flex;
+    .active-filter{
+        background-color: #e8faf4;
+        // color:#1dbf73;
+        border-color: #a6eaca;
+    }
 }
 
 .filter-menu {
