@@ -50,7 +50,7 @@ export function TopFilterBar({ onSetFilter }) {
 
     return <div className="top-filter-bar">
 
-        <select className="filter-menu filter-days" name="daysToMake1" id="delivery" onChange={handleChange}>
+        <select className="filter-menu filter-days" name="daysToMake" id="delivery" onChange={handleChange}>
             <option value="">Delivery Time</option>
             <option value="1">Express</option>
             <option value="3">Up to 3 days</option>
