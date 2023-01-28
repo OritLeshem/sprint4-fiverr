@@ -1,19 +1,33 @@
 import { HomePageSlider } from '../cmps/home-page/home-page-slider'
 import { SlideList } from '../cmps/slide/slide-list'
 import { gigService } from '../services/gig.service'
-
+import { SET_FILTER } from '../store/gig/gig.reducer'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router'
 export function HomePage() {
 
     const sellingTxts = gigService.getGigSelling()
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    function onSetFilter(filterBy) {
+        dispatch({ type: SET_FILTER, filterBy })
+
+        let categoryParams
+        let queryStringParams
+            if (filterBy.tags[0] !== undefined) categoryParams = filterBy.tags[0]
+            else { categoryParams = '' }
+            queryStringParams = `?category=${categoryParams}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
+            navigate(`/gig${queryStringParams}`)
+    }
 
     return <section className="home-page full">
         <main className="full main-layout">
-            {/* <HomePageSlider /> */}
             <HomePageSlider />
             <div className="trusted-by full">
             </div>
             <h2>Popular professional services</h2>
-            <SlideList />
+            <SlideList onSetFilter={onSetFilter}/>
             <div className="selling-proposition full main-layout">
                 <div className="flex">
                     <div className="selling-text">

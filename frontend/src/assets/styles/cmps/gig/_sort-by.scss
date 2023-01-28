@@ -5,9 +5,15 @@
   span {
     color: $clr5;
   }
+
+  .angle-down {
+    margin-left: 6px;
+}
+
 .sort-option{
   display: flex;
   label{
+    width: 100%;
     font-size: 14px;
     margin: 4px 0 10px;
     padding: 6px 2px;

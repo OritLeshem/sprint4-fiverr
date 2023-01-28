@@ -1,10 +1,17 @@
 import { useRef, useState } from "react"
 import { gigService } from "../../services/gig.service"
 
-export function SlideList() {
+export function SlideList({onSetFilter}) {
     const slides = gigService.getGigSlides()
     const sliderRef = useRef()
     const [lastDirection, setLastDirection] = useState('')
+    const filterByToEdit = useRef(gigService.getDefaultFilter())
+    const CategorysliderRef = useRef()
+
+    function filterByCategory(categories) {
+        filterByToEdit.current.tags = categories
+        onSetFilter(filterByToEdit.current)
+    }
 
     const slideLeft = () => {
         if (lastDirection === '') {
@@ -48,7 +55,7 @@ export function SlideList() {
         <button className="slide-btn fa-solid chevron-left prev" onClick={slideLeft}></button>
         <ul className="slider" ref={sliderRef}>
             {slides.map((slide, idx) =>
-                <div className="slider-card" key={idx}>
+                <div className="slider-card" key={idx} onClick={() => filterByCategory(["graphic-design", "design", "logo-design"])}>
                     <h4>
                         <small>{slide.desc}</small>
                         {slide.category}
