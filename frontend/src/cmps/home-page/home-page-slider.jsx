@@ -60,19 +60,19 @@ export function HomePageSlider() {
         <div className={`main-layout hero-img full ${currentIndex === 1 ? "active-hero" : "hidden-hero"}`} style={{ backgroundImage: `url(${slides[1].url})` }}>
             <h4>
             <StarRating value={5}/>
-                <small>{slides[0].name}, </small>{slides[1].title}</h4></div>
+                <small>{slides[1].name}, </small>{slides[1].title}</h4></div>
         <div className={`main-layout hero-img full ${currentIndex === 2 ? "active-hero" : "hidden-hero"}`} style={{ backgroundImage: `url(${slides[2].url})` }}>
             <h4>
             <StarRating value={5}/>
-                <small>{slides[0].name}, </small>{slides[2].title}</h4></div>
+                <small>{slides[2].name}, </small>{slides[2].title}</h4></div>
         <div className={`main-layout hero-img full ${currentIndex === 3 ? "active-hero" : "hidden-hero"}`} style={{ backgroundImage: `url(${slides[3].url})` }}>
             <h4>
             <StarRating value={5}/>
-                <small>{slides[0].name}, </small>{slides[3].title}</h4></div>
+                <small>{slides[3].name}, </small>{slides[3].title}</h4></div>
         <div className={`main-layout hero-img full ${currentIndex === 4 ? "active-hero" : "hidden-hero"}`} style={{ backgroundImage: `url(${slides[4].url})` }}>
             <h4>
             <StarRating value={5}/>
-                <small>{slides[0].name}, </small>{slides[4].title}</h4></div>
+                <small>{slides[4].name}, </small>{slides[4].title}</h4></div>
         <div className="hero-container full main-layout">
             <main className="main-header">
                 <span>Find the perfect<i>freelance</i></span>
