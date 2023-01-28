@@ -5,11 +5,14 @@
   background-color: #fff;
   position: absolute;
   right: 0;
+  transform: translateY(1%);
   max-height: 500px;
   overflow: auto;
   border-bottom: 1px solid $clr7 ;
   align-items: center;
-  z-index: 40;
+  z-index: 10;
+
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
 
   h3,
   p {
