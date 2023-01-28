@@ -1,13 +1,19 @@
 import { useEffect, useState, useRef } from "react"
 import { gigService } from "../../services/gig.service"
 import { useSelector } from 'react-redux'
-
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 
 
 export function TopFilterBar({ onSetFilter }) {
     const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
     const [isPriceFilterShown, setIsPriceFilterShown] = useState(false)
+    const [age, setAge] = useState('');
+    // const classes = useStyles();
     const ref = useRef()
 
     useEffect(() => {
@@ -29,7 +35,6 @@ export function TopFilterBar({ onSetFilter }) {
     function handleChange(e) {
         const { target } = e
         let { value, name: field, type } = target
-        console.log(field);
         value = (type === 'number') ? +value : value
         let newFilterBy = ({ ...filterByToEdit, [field]: value })
         setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))
@@ -79,6 +84,23 @@ export function TopFilterBar({ onSetFilter }) {
         </div>
         <div>
 
+            {/* <FormControl sx={{ m: 1, minWidth: 120, border: "pink" }}>
+                <Select className={"mui-delivery-select"}
+                    // style={{ border: "none" }}
+                    name={"daysToMake"}
+                    value={filterByToEdit.daysToMake}
+                    onChange={handleChange}
+                    displayEmpty
+                    inputProps={{ 'aria-label': 'Without label' }}
+                >
+                    <MenuItem value=""><em>Delivery time</em></MenuItem>
+                    <MenuItem value={1}>Express</MenuItem>
+                    <MenuItem value={3}>Up to 3 days</MenuItem>
+                    <MenuItem value={7}>Up to 7 days</MenuItem>
+                    <MenuItem value={0}>Anytime</MenuItem>
+                </Select>
+
+            </FormControl> */}
         </div>
     </div>
 }

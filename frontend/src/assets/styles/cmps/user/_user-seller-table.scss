@@ -1,6 +1,10 @@
 .user-seller-table {
   margin-bottom: 1em;
   // border: 1px solid red;
+
+  // h3 {
+  //   margin-bottom: .5em;
+  // }
 }
 
 .statstic-dashboard {
@@ -29,29 +33,62 @@
 }
 
 .orders-dashboard {
+    display: flex;
+    flex-direction: column-reverse;
 
   li {
     display: grid;
-    grid-template-columns: 4fr 2fr 1fr 2fr;
+    grid-template-columns: 2fr 2fr 1fr 2fr;
     border: 1px solid $clr11;
-    margin-bottom: 1em;
     color: $clr5;
+
+    &:not(:first-child) {
+      border-bottom: 0;
+    }
 
     small {
       color: $clr6;
+    }
+
+    .img-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      width: 6.25em;
+      border-radius: 0.25em;
+      cursor: pointer;
+    }
+
+    .gig-title {
+      display: none;
     }
 
     div {
       display: flex;
       flex-direction: column;
       flex-grow: 1;
-      padding: 1em;
-      padding-right: 0;
+      padding: .5em;
     }
 
     span {
       // border: 1px solid red;
       cursor: pointer;
+    }
+
+    @media (min-width: $mobile-breakpoint) {
+      grid-template-columns: 2fr 3fr 2fr 1fr 2fr;
+      margin-bottom: 1em;
+
+      &:not(:first-child) {
+        border: 1px solid $clr11;
+      }
+
+      .gig-title {
+        display: flex;
+      }
     }
   }
 
@@ -80,50 +117,17 @@
     border: 1px solid #e4e5e7;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
     position: absolute;
-    left: 0;
     background-color: $clr3;
     padding: .5em 1em;
+    right: 0;
+    z-index: 3;
 
     &>* {
       margin: .5em 0;
     }
+
+    @media (min-width: $mobile-breakpoint) {
+      left: 0;
+    }
   }
 }
-
-
-
-// .status-options {
-//   display: flex;
-//   flex-direction: column;
-//   width: 150px;
-//   border: 1px solid $clr7;
-//   background-color: $clr3;
-//   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-//   border-radius: 4px;
-//   position: absolute;
-//   justify-content: space-between;
-
-//   button {
-//     padding: 12px 24px;
-//     margin: 10px;
-//     text-align: center;
-//     font-family: macan-bold;
-//     border-radius: 4px;
-//   }
-
-//   .pending {
-//     background-color: #E2A114;
-//   }
-
-//   .approved {
-//     background-color: #f2710f;
-//   }
-
-//   .completed {
-//     background-color: $clr1;
-//   }
-
-//   .declined {
-//     background-color: #F31F1F;
-//   }
-// }

@@ -5,7 +5,7 @@ const gigs = [
         "price": 61,
         "owner": {
             "_id": { "$oid": "63d232af3c0a9d375fbdf91c" },
-            "fullname": "loftydesignshop",
+            "fullname": "lofty",
             "country": "India",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d93001bdcba7f9235745299f61850b71-1657200241990/24f7d64e-5d25-41b3-8175-c79ea47e35d1.jpg",
             "level": "basic/premium",
@@ -65,8 +65,8 @@ const gigs = [
         "daysToMake": 1,
         "description": "Hi Fiverr Community, Are you looking for a top-notch ATS and HR-compatible resume, resume writing, and cover letter writing services with an optimized LinkedIn profile for your next dream job? No worries; you got a resume writer Pro to help you. As a former HR professional, I know how recruiters think - what gets their attention, what makes a resume and cover letter stand out, and how to tell the story of why you're the best candidate. I have written, and rewritten over 100 ATS-friendly resumes for various industries using simple but professional ATS-compliant formats, making the content easily scannable with industry-related keywords and phrases.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/286615743/original/b4b08561f9e3e0b56202b756066cd1f8101c019e/ats-resume-cv-cover-letter-and-optimize-linkedin.jpg",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/286615743/original/5037a904eba32c42a8e6b7ec3c822b991583f094/ats-resume-cv-cover-letter-and-optimize-linkedin.jpg",
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/286615743/original/b4b08561f9e3e0b56202b756066cd1f8101c019e/ats-resume-cv-cover-letter-and-optimize-linkedin.jpg",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/286615743/original/a368444ff7f66f464a75523cd3e8fd3a43217666/ats-resume-cv-cover-letter-and-optimize-linkedin.jpg"
         ],
         "tags": [
@@ -104,7 +104,7 @@ const gigs = [
         "about": "I have over 15 years of consulting and business experience. I am a Master of Business Administration and a BA in Business Operations Management. I have developed and incorporated business plans for, large corporations, small businesses, and new startups",
         "price": 20,
         "owner": {
-            "_id": {"$oid":"63d23e26783371eb434731d5"},
+            "_id": { "$oid": "63d23e26783371eb434731d5" },
             "fullname": "asaftech",
             "country": "Nigeria",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/7090875b4a5ab765c79118a5eda39fa6-1612066106133/759d9e55-ec05-4150-a171-a8b9e56a13a9.png",
@@ -127,7 +127,7 @@ const gigs = [
         "about": "A beauty advisor and a business consultant who has so many hobbies :) I love creativity and enjoy helping others.",
         "price": 30,
         "owner": {
-            "_id": {"$oid":"63d24094783371eb434731d7"},
+            "_id": { "$oid": "63d24094783371eb434731d7" },
             "fullname": "ras567",
             "country": "United Kingdom",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/2799071/original/1444726053447_Profile.png",
@@ -227,7 +227,7 @@ const gigs = [
         "about": "I have years of experience in creating 2d animated explainer videos. I would like to boost your business with my knowledge so that the orders with my 2D-Animation videos increase and your sales increase. You will see that you will only profit. Order now!",
         "price": 60,
         "owner": {
-            "_id": {"$oid":"63d23e26783371eb434731d5"},
+            "_id": { "$oid": "63d23e26783371eb434731d5" },
             "fullname": "asaftech",
             "country": "Nigeria",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/7090875b4a5ab765c79118a5eda39fa6-1612066106133/759d9e55-ec05-4150-a171-a8b9e56a13a9.png",
@@ -242,7 +242,7 @@ const gigs = [
             "https://fiverr-res.cloudinary.com/videos/t_smartwm/t_main1,q_auto,f_auto/h9uzskfowplyin92xji3/make-a-professional-2d-animation-explainer.png"
         ],
         "tags": [
-            "video-animation", 
+            "video-animation",
             "animation"
         ]
     },
@@ -251,7 +251,7 @@ const gigs = [
         "about": "I'm a professional music composer and sound designer. My experience and clients range from small independent studios to AAA game developers. I compose original music and create the right sounds for any kind of media from video, to games, podcasts and anything that needs sound! I'll be happy to be a part of your project.",
         "price": 100,
         "owner": {
-            "_id": {"$oid":"63d24094783371eb434731d7"},
+            "_id": { "$oid": "63d24094783371eb434731d7" },
             "fullname": "ras567",
             "country": "United Kingdom",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/2799071/original/1444726053447_Profile.png",
@@ -267,7 +267,7 @@ const gigs = [
             "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/177060719/original/78e6e31851506281169ac7d6732df3b972d5035f.jpg"
         ],
         "tags": [
-            "video-animation", 
+            "video-animation",
             "animation"
         ]
     },
@@ -326,7 +326,7 @@ const gigs = [
         "about": "A beauty advisor and a business consultant who has so many hobbies :) I love creativity and enjoy helping others.",
         "price": 30,
         "owner": {
-            "_id": {"$oid":"63d24094783371eb434731d7"},
+            "_id": { "$oid": "63d24094783371eb434731d7" },
             "fullname": "ras567",
             "country": "United Kingdom",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/2799071/original/1444726053447_Profile.png",
@@ -349,7 +349,7 @@ const gigs = [
         "about": "I have so many hobbies :) I love creativity and enjoy helping others.",
         "price": 45,
         "owner": {
-            "_id": {"$oid":"63d24094783371eb434731d7"},
+            "_id": { "$oid": "63d24094783371eb434731d7" },
             "fullname": "ras567",
             "country": "United Kingdom",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/2799071/original/1444726053447_Profile.png",
@@ -364,16 +364,165 @@ const gigs = [
             "https://fiverr-res.cloudinary.com/image/upload/t_gig_pdf_gallery_view_ver4,f_jpg/20220918/harghar_full_twicse.jpg"
         ],
         "tags": [
-            "programming-tech", 
+            "programming-tech",
             "tech"
+        ]
+    },
+    {
+        "title": "I will do monogram, lettering, and text logo design",
+        "about": "Hey, I'm Alpa. I am a graphics designer as well as business woman. My hobby is drawing. Because it's brings a lot of benefits besides simply boosting my creativity. It's make me feel relaxed. Another hobby is cycling. It's makes me healthy and fit.",
+        "price": 110,
+        "owner": {
+            "_id": { "$oid": "63d232af3c0a9d375fbdf91c" },
+            "fullname": "lofty",
+            "country": "India",
+            "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d93001bdcba7f9235745299f61850b71-1657200241990/24f7d64e-5d25-41b3-8175-c79ea47e35d1.jpg",
+            "level": "basic/premium",
+            "rate": 4.8,
+            "ratingsCount": 4
+        },
+        "daysToMake": 2,
+        "description": "I'm Alpa. I am running loftydesignshop studio on the Fiverr platform with more than 4 years of experience. We are a creative team. We help buyers to provide their business identity through their logo.",
+        "imgUrl": [
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/232468080/original/6ed19bbd16730fc81df9ff0c91fd4448a6300be7/do-a-creative-monogram-logo-design.jpg",
+            "https://www.fiverr.com/loftydesignshop/do-classic-vintage-retro-logo-design-for-your-business?context_referrer=user_page&ref_ctx_id=01b1030e9765f192f564f129f9c63057&pckg_id=1&pos=7&seller_online=true&imp_id=07bcb9d4-c4b0-403a-b997-69a4a655f3e3",
+            "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/bad7166ce21cd365da06a69a058be439-1612850449/18961_LondonVR_C_M-01/do-minimalist-negative-space-logo-design.jpg"
+        ],
+        "tags": [
+            "graphic-design",
+            "design",
+            "logo-design"
+        ]
+    },
+    {
+        "title": "I will design creative and minimalist negative space logo",
+        "about": "Hey, I'm Alpa. I am a graphics designer as well as business woman. My hobby is drawing. Because it's brings a lot of benefits besides simply boosting my creativity. It's make me feel relaxed. Another hobby is cycling. It's makes me healthy and fit.",
+        "price": 90,
+        "owner": {
+            "_id": { "$oid": "63d232af3c0a9d375fbdf91c" },
+            "fullname": "lofty",
+            "country": "India",
+            "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d93001bdcba7f9235745299f61850b71-1657200241990/24f7d64e-5d25-41b3-8175-c79ea47e35d1.jpg",
+            "level": "basic/premium",
+            "rate": 4.8,
+            "ratingsCount": 4
+        },
+        "daysToMake": 2,
+        "description": "I'm Alpa. I am running loftydesignshop studio on the Fiverr platform with more than 4 years of experience. We are a creative team. We help buyers to provide their business identity through their logo.",
+        "imgUrl": [
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/118973381/original/bb3b37b31a25ce413cb5aa3674002ecebef06897/do-minimalist-negative-space-logo-design.jpg",
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/118973381/original/48aa12cc75f49850691ec0db6108f68cf017b0a8/do-minimalist-negative-space-logo-design.jpg",
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/118973381/original/e9aa019c83a50446a03d3ee1a77baf65965f7c6d/do-minimalist-negative-space-logo-design.jpg"
+        ],
+        "tags": [
+            "graphic-design",
+            "design",
+            "logo-design"
+        ]
+    },
+    {
+        "title": "I will write or update your ats resume, cv, cover letter and optimize linkedin profile",
+        "about": "Hi Fiverr Community, Welcome to Resumely. We are a team of 10 resume writers and designers with extensive experience writing, reviewing, and rewriting job-winning resumes in standard or ATS-optimized formats. Whether you are a rising professional or a fresh graduate in IT, Engineering, Medical, Graphic Design, Business, or Marketing, we can help you with professional cover letters and LinkedIn profile optimizations. Want to learn more about how will we get things done? Just shoot us a message, and let's get together and discuss more.",
+        "price": 45,
+        "owner": {
+            "_id": { "$oid": "63d235a02634de3397159ca6" },
+            "fullname": "resumely_",
+            "country": "Bangladesh",
+            "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/39eaa29cabd3b730bbc2cda8d126bc89-1668942455731/dfc45ab3-18e2-4e0d-8582-e7dd732bf62f.png",
+            "level": "Level 1 Seller",
+            "rate": 5
+        },
+        "daysToMake": 1,
+        "description": "Hi Fiverr Community, Are you looking for a top-notch ATS and HR-compatible resume, resume writing, and cover letter writing services with an optimized LinkedIn profile for your next dream job? No worries; you got a resume writer Pro to help you. As a former HR professional, I know how recruiters think - what gets their attention, what makes a resume and cover letter stand out, and how to tell the story of why you're the best candidate. I have written, and rewritten over 100 ATS-friendly resumes for various industries using simple but professional ATS-compliant formats, making the content easily scannable with industry-related keywords and phrases.",
+        "imgUrl": [
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/286615743/original/5037a904eba32c42a8e6b7ec3c822b991583f094/ats-resume-cv-cover-letter-and-optimize-linkedin.jpg",
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/286615743/original/b4b08561f9e3e0b56202b756066cd1f8101c019e/ats-resume-cv-cover-letter-and-optimize-linkedin.jpg",
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/286615743/original/a368444ff7f66f464a75523cd3e8fd3a43217666/ats-resume-cv-cover-letter-and-optimize-linkedin.jpg"
+        ],
+        "tags": [
+            "writing-translation",
+            "translation"
+        ]
+    },
+    {
+        "title": "I will build deep learning models like CNN, rnn, lstm etc",
+        "about": "I have over 15 years of consulting and business experience. I am a Master of Business Administration and a BA in Business Operations Management. I have developed and incorporated business plans for, large corporations, small businesses, and new startups",
+        "price": 30,
+        "owner": {
+            "_id": { "$oid": "63d23e26783371eb434731d5" },
+            "fullname": "asaftech",
+            "country": "Nigeria",
+            "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/7090875b4a5ab765c79118a5eda39fa6-1612066106133/759d9e55-ec05-4150-a171-a8b9e56a13a9.png",
+            "level": "level 2 seller",
+            "rate": 4.8
+        },
+        "daysToMake": 6,
+        "description": "Hello friends, You're warmly welcome to my 'Prepare a Complete Business Plan, page I come with years of experience in Business consultancy and Plan writing, with 1000+ successfully completed online and offline projects. I am vast and versed with several industries, which implies that I'll not present templates to you but a plan perfectly worked out from scratch.",
+        "imgUrl": [
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/283246277/original/899deab4e49c68e821640712cd147359bae10132/build-deep-learning-models-like-cnn-rnn-lstm-etc.jpeg",
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/283246277/original/429acbe58934b8cec350f0d669d9dfa11fd07225/build-deep-learning-models-like-cnn-rnn-lstm-etc.jpg",
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/283246277/original/9c66f73c5896de36dc0f3623139c44b3f928bf9f/build-deep-learning-models-like-cnn-rnn-lstm-etc.png"
+        ],
+        "tags": [
+            "trending"
+        ]
+    },
+    {
+        "title": "I will setup google analytics and event tracking in 24hrs",
+        "about": "Hello, I am Google Analytics & Google Tag Manager Expert. I will provide a great professionalism and expertise in work i do. ORDER MY GIG, and I assure you will be happy to see the end results.",
+        "price": 45,
+        "owner": {
+            "_id": { "$oid": "63d235a02634de3397159ca6" },
+            "fullname": "resumely_",
+            "country": "Bangladesh",
+            "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/39eaa29cabd3b730bbc2cda8d126bc89-1668942455731/dfc45ab3-18e2-4e0d-8582-e7dd732bf62f.png",
+            "level": "Level 1 Seller",
+            "rate": 4.7,
+            "ratingsCount": 540
+        },
+        "daysToMake": 1,
+        "description": "I'm a Google Analytics (Google Certified) consultant with experience since 2016 year. I have worked with more than 150+ sites from simple event tracking to complex projects for big companies. I can identify for you what need to track for your business before implementation if you want. In just $10 only, I will setup Google analytics & I will also setup Google tag manager and integrate it with your site for Free. Additionally i can also setup and fix all errors related to Google Ads, Google Search Console & Facebook Pixel.",
+        "imgUrl": [
+            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/167848338/original/acc9be1557285515a122c482bb4c058902dbadd8/setup-google-analytics-and-event-tracking-within-24-hours.png",
+            "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/58bcf3494105632f24e1a60c48a43d63-1674752317/1/setup-google-analytics-and-event-tracking-within-24-hours.png",
+            "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/6c89866606ced08b2dcecf199142a9e8-1674329801/1/setup-google-analytics-and-event-tracking-within-24-hours.png"
+        ],
+        "tags": [
+            "digital-marketing",
+            "digital"
+        ]
+    },
+    {
+        "title": "I will mix your playlist into professional dj set",
+        "about": "Hi, I'm Vladimir from Belgrade, a professional musician (producer, performer, multi-instrumentalist, composer, sound engineer). If you want high-quality results in a short time, then you are in the right place.",
+        "price": 15,
+        "owner": {
+            "_id": { "$oid": "63d23e26783371eb434731d5" },
+            "fullname": "asaftech",
+            "country": "Nigeria",
+            "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/7090875b4a5ab765c79118a5eda39fa6-1612066106133/759d9e55-ec05-4150-a171-a8b9e56a13a9.png",
+            "level": "level 2 seller",
+            "rate": 4.8,
+            "ratingsCount": 463
+        },
+        "daysToMake": 6,
+        "description": "Fiver's choice! Over 300 satisfied customers!!! Hi Fiverr, I'm a multi-instrumentalist, professional musician, DJ, composer, and producer with over 10 years of experience. I will professionally mix your playlist of any genre based on your specific needs and deliver you in high-quality MP3 format (320 kbps).",
+        "imgUrl": [
+            "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/94588376/original/a9aab9f14763e51ae44e0450ec0bfcd8d17ff9a3.jpg",
+            "https://fiverr-res.cloudinary.com/q_auto,f_auto,dpr_2.0/general_assets/gig_gallery_package/assets/audio-delivery-bg.png",
+            "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/199819007/original/29b14ad9f70fe733d34bffb7a8938afc5150f470.jpg"
+        ],
+        "tags": [
+            "music-audio", 
+            "audio"
         ]
     },
 ]
 
 const users = [
     {
-        "fullname": "loftydesignshop",
-        "username": "loftydesignshop",
+        "fullname": "lofty",
+        "username": "lofty",
         "password": "secret",
         "country": "India",
         "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d93001bdcba7f9235745299f61850b71-1657200241990/24f7d64e-5d25-41b3-8175-c79ea47e35d1.jpg",
