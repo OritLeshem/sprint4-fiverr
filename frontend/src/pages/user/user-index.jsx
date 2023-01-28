@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 
 import { loadGigs, removeGig } from '../../store/gig/gig.actions.js'
 import { loadOrders } from '../../store/order/order.actions.js'
-import {SET_GIGS } from '../../store/gig/gig.reducer'
+import { SET_GIGS } from '../../store/gig/gig.reducer'
 
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
 import { UserList } from '../../cmps/user/user-list.jsx'
@@ -48,8 +48,8 @@ export function UserIndex() {
     }
     console.log("User from index", user, loginUser)
     if (!user) return <div className="loader-contauner">
-    <div className="loader"></div>
-</div>
+        <div className="loader"></div>
+    </div>
     return (
         <section className="user-index">
             <aside className="user-info">

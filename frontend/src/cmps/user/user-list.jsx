@@ -17,8 +17,9 @@ export function UserList({ gigs, onRemoveGig, user }) {
       <li className="gig-preview" key={gig._id}>
         <GigPreview gig={gig} />
         {user && loginUser && (loginUser._id === user._id) && <div className="user-preview-btns">
-          <button className="gig-edit-btn" onClick={() => { onRemoveGig(gig._id) }}>x</button>
-          <Link className="gig-edit-btn fa-solid fa-pencil" to={`/gig/edit/${gig._id}`}></Link>
+          {/* <button className="fa-solid ellipsis-vertical"></button> */}
+          <button className="gig-edit-btn-left fa-solid xmark" onClick={() => { onRemoveGig(gig._id) }}></button>
+          <Link className="gig-edit-btn-right fa-solid fa-pencil" to={`/gig/edit/${gig._id}`}></Link>
         </div>}
       </li>)
     }

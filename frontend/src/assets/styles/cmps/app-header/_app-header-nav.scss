@@ -67,6 +67,15 @@
         margin-inline-start: em(24px, 16px);
     }
 
+    .user-header-img {
+        line-height: 1;
+    }
+
+    .user-header-img,
+    .user-orders {
+        position: relative;
+    }
+
     img {
         border-radius: 50%;
         width: em(32px, 16px);

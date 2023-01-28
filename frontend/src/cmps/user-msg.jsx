@@ -15,7 +15,7 @@ export function UserMsg() {
         timeoutIdRef.current = null
         clearTimeout(timeoutIdRef.current)
       }
-      timeoutIdRef.current = setTimeout(closeMsg, 1500)
+      timeoutIdRef.current = setTimeout(closeMsg, 3000)
     })
 
     socketService.on(SOCKET_EVENT_ORDER_FROM_YOU, (order) => {
@@ -34,7 +34,7 @@ export function UserMsg() {
 
   if (!msg) return <span></span>
   return <section className={`user-msg ${msg.type}`}>
-    <button className="fa-solid xmark" onClick={closeMsg}></button>
+    {/* <button className="fa-solid xmark" onClick={closeMsg}></button> */}
     {msg.txt}
   </section>
 }
