@@ -9,6 +9,7 @@ import { SortyBy } from '../../cmps/gig/sortBy.jsx'
 
 import { loadGigs } from '../../store/gig/gig.actions.js'
 import { SET_FILTER, SET_SORT, SET_GIGS } from '../../store/gig/gig.reducer'
+import {LOADING_START, LOADING_DONE } from '../../store/system.reducer'
 import { socketService, SOCKET_EVENT_ORDER_FROM_YOU } from '../../services/socket.service.js'
 import { showSuccessMsg } from '../../services/event-bus.service.js'
 
@@ -17,25 +18,29 @@ export function GigIndex() {
 
     const filterByFromStore = useSelector(storeState => storeState.gigModule.filterBy)
     const sortBy = useSelector((storeState) => storeState.gigModule.sortBy)
-
+    const isLoading = useSelector((storeState) => storeState.systemModule.isLoading)
     let gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
-
+console.log(isLoading);
     const dispatch = useDispatch()
     const [searchParams] = useSearchParams()
     const navigate = useNavigate()
-
+    
     console.log('gigs from index outsie', gigs);
 
     useEffect(() => {
         renderUiByQueryStringParams()
-        return (() => {
-            dispatch({ type: SET_GIGS, gigs: [] })
-        })
+        // return (() => {
+        //     dispatch({ type: SET_GIGS, gigs: [] })
+        // })
     }, [])
 
     useEffect(() => {
+        dispatch({ type: LOADING_START})
+        console.log('from use effect', isLoading)
         loadGigs(filterBy, sortBy)
+        dispatch({ type: LOADING_DONE})
+        console.log('from use effect after', isLoading)
     }, [filterBy, sortBy, searchParams])
 
     function renderUiByQueryStringParams() {
@@ -124,9 +129,10 @@ export function GigIndex() {
 
     }
 
-    if (!gigs) return <div className="loader-contauner">
+    if (isLoading) return <div className="loader-contauner">
         <div className="loader"></div>
     </div>
+    if(!gigs.length&&!isLoading) return <div>sorry no gigs</div>
     return <section className="gig-index">
         {(searchParams.get('title') && searchParams.get('title') !== '') && <h1>Results for "{searchParams.get('title')}"</h1>
             || searchParams.get('category') && getCategoryName(searchParams.get('category')) || <h1>All</h1>}
