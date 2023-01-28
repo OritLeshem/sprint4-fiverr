@@ -24,7 +24,6 @@ export function GigIndex() {
     const dispatch = useDispatch()
     const [searchParams] = useSearchParams()
     const navigate = useNavigate()
-    console.log('from index', isLoading)
 
     useEffect(() => {
         renderUiByQueryStringParams()
@@ -34,11 +33,9 @@ export function GigIndex() {
     }, [])
 
     useEffect(() => {
-        console.log('hi you changed category')
         // dispatch({ type: LOADING_START})
         loadGigs(filterBy, sortBy)
         // dispatch({ type: LOADING_DONE })
-        console.log('from use effect after loadGigs', isLoading)
     }, [filterBy, sortBy, searchParams])
 
     function renderUiByQueryStringParams() {
@@ -124,7 +121,6 @@ export function GigIndex() {
 
     function onSort(sortBy) {
         dispatch({ type: SET_SORT, sortBy })
-
     }
 
 

@@ -17,6 +17,75 @@
     }
 }
 
+.top-filter-bar{
+    .active-delivery{
+        background-color: aqua;
+    }
+}
+
+.delivery-filter-options{
+    z-index: 99;
+    width: 317px;
+    border: 1px solid #dadbdd;
+    background-color: $clr3;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 4px;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    justify-content: space-between;
+    padding: 12px 24px;
+
+    .delivery-option {
+        padding: 6px 0px;
+
+        label {
+            cursor: pointer;
+            font-family: macan-bold;
+            font-size: 14px;
+            display: flex;
+            margin-inline-end: 8px;
+            margin-top: 4px;
+            padding: 6px 0px;
+        }
+
+        input[type="radio"] {
+            display: none;
+            margin-left: 8px;
+        }
+
+        input[type="radio"]+label span {
+            width: 18px;
+            height: 18px;
+            margin-left: 8px;
+            margin: 0px 8px 0 0;
+            vertical-align: middle;
+            cursor: pointer;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+        }
+
+        input[type="radio"]+label span {
+            background-color: transparent;
+            border: 1px #95979d solid;
+        }
+
+        input[type="radio"]:checked+label .checked-input {
+            background-color: #95979d;
+            width: 8px;
+            height: 8px;
+            vertical-align: middle;
+            cursor: pointer;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+    }
+}
+
 .price-filter-scroll {
     z-index: 99;
     width: 317px;
@@ -94,10 +163,11 @@
 }
 
 .filter-days {
-    option option{
-background-color: aqua;
-line-height: 2;
+    option option {
+        background-color: aqua;
+        line-height: 2;
     }
+
     option:checked,
     option:not(:checked) {
         font-family: macan-regular;
@@ -107,4 +177,3 @@ line-height: 2;
         line-height: 2;
     }
 }
-
