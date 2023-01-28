@@ -26,6 +26,7 @@ export function TopFilterBar({ onSetFilter }) {
     function handleChange(e) {
         const { target } = e
         let { value, name: field, type } = target
+        console.log(field);
         value = (type === 'number') ? +value : value
         let newFilterBy = ({ ...filterByToEdit, [field]: value })
         setFilterByToEdit((prevFilter) => ({ ...prevFilter, [field]: value }))

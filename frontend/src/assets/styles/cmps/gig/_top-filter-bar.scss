@@ -92,3 +92,19 @@
         background-color: grey;
     }
 }
+
+.filter-days {
+    option option{
+background-color: aqua;
+line-height: 2;
+    }
+    option:checked,
+    option:not(:checked) {
+        font-family: macan-regular;
+        font-size: 14px;
+        display: block;
+        padding: 50px;
+        line-height: 2;
+    }
+}
+
