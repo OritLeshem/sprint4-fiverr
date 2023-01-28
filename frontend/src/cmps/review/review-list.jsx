@@ -23,7 +23,7 @@ export function ReviewList({ userReviews, length = 240 }) {
                         < StarRating value={review.rate} />
                         <span className="rate padding">{review.rate}</span>
                         <span className="divider"></span>
-                        <span>{utilService.formatTime(review.createdAt)}</span>
+                        <span>{review.createdAt}</span>
                     </div>
 
                     <LongTxt txt={review.txt} length={length} />

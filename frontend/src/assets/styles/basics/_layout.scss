@@ -1,6 +1,6 @@
 .main-layout {
     display: grid;
-    grid-template-columns: $layoutPadding 1fr $layoutPadding;
+    grid-template-columns: 16px 1fr 16px;
     
     > * {
         grid-column: 2;

@@ -8,6 +8,6 @@ export function ProgressChart({ percent, bgc }) {
             <circle cx="40" cy="40" r="35" strokeLinecap="round" />
             <circle cx="40" cy="40" r="35" strokeLinecap="round" strokeDashoffset={strokPercent} stroke={bgc} />
         </svg>
-        <span>{(percent * 100).toFixed(1)}%</span>
+        <span>{(percent * 100).toFixed(0)}%</span>
     </section>
 }

@@ -12,10 +12,12 @@ import Paper from '@mui/material/Paper';
 import { updateOrder } from "../../../store/order/order.actions";
 import { ProgressChart } from "../../progress-chart";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function UserSellerTable({ orders }) {
   const [isModal, setIsModal] = useState({ id: '', status: false })
   const [totalSum, settotalSum] = useState(0)
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (!orders) return
@@ -43,6 +45,8 @@ export default function UserSellerTable({ orders }) {
     updateOrder(order)
     setIsModal(!isModal)
   }
+
+  console.log('orders:', orders)
 
   const pending = statistic.pending ? statistic.pending : 0
   const approved = statistic.approved ? statistic.approved : 0
@@ -73,7 +77,8 @@ export default function UserSellerTable({ orders }) {
     <ul className="orders-dashboard">
       {orders.map(order =>
         <li key={order._id}>
-          <div><small>Gig</small>{order.gig.title}</div>
+          <div className="img-container"><img src={order.gig.imgUrl[0]} alt="" onClick={() => navigate(`/gig/${order.gig._id}`)} /></div>
+          <div className="gig-title"><small>Gig</small>{order.gig.title}</div>
           <div><small>Buyer</small>{order.buyer.fullname}</div>
           <div><small>Price</small>${order.gig.price}</div>
           <div>
