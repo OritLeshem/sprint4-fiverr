@@ -19,7 +19,6 @@ export function GigEdit() {
     const [imgToGig, setImgToEdit] = useState()
     const gigForFormik = { ...gigToEdit, tags2: '' }
     const loginUser = userService.getLoggedinUser()
-    console.log(loginUser)
 
     useEffect(() => {
         if (!gigId) return
@@ -28,7 +27,6 @@ export function GigEdit() {
 
     const loadGig = async () => {
         const gig = await gigService.getById(gigId)
-        console.log('gig from edit:', gig)
         setGigToEdit(gig)
     }
 
@@ -51,7 +49,6 @@ export function GigEdit() {
 
     const onSave = async () => {
         try {
-            console.log(gigToEdit);
             await addGig(gigToEdit)
             navigate(`/user/${loginUser._id}`)
         } catch (err) {

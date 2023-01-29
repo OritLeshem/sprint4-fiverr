@@ -3,16 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
-import { GigList } from '../../cmps/gig/gig-list.jsx'
-import { TopFilterBar } from '../../cmps/gig/top-filter-bar.jsx'
-import { SortyBy } from '../../cmps/gig/sortBy.jsx'
-
-import { loadGigs } from '../../store/gig/gig.actions.js'
-import { SET_FILTER, SET_SORT, SET_GIGS } from '../../store/gig/gig.reducer'
-import { LOADING_START, LOADING_DONE } from '../../store/system.reducer'
-import { socketService, SOCKET_EVENT_ORDER_FROM_YOU } from '../../services/socket.service.js'
-import { showSuccessMsg } from '../../services/event-bus.service.js'
-
+import { GigList } from '../../cmps/gig/gig-list'
+import { TopFilterBar } from '../../cmps/gig/top-filter-bar'
+import { SortyBy } from '../../cmps/gig/sort-by'
+import { loadGigs } from '../../store/gig/gig.actions'
+import { SET_FILTER, SET_SORT } from '../../store/gig/gig.reducer'
 
 export function GigIndex() {
 
@@ -27,15 +22,10 @@ export function GigIndex() {
 
     useEffect(() => {
         renderUiByQueryStringParams()
-        // return (() => {
-        //     dispatch({ type: SET_GIGS, gigs: [] })
-        // })
     }, [])
 
     useEffect(() => {
-        // dispatch({ type: LOADING_START})
         loadGigs(filterBy, sortBy)
-        // dispatch({ type: LOADING_DONE })
     }, [filterBy, sortBy, searchParams])
 
     function renderUiByQueryStringParams() {
@@ -62,7 +52,6 @@ export function GigIndex() {
     }
 
     function onSetFilter(filterBy) {
-        // console.log("filterby index", filterBy)
         if (filterByFromStore.tags[0]) {
             filterBy.tags = filterByFromStore.tags
         }
@@ -123,11 +112,9 @@ export function GigIndex() {
         dispatch({ type: SET_SORT, sortBy })
     }
 
-
-    if (!gigs.length&&isLoading) return <div className="loader-contauner">
+    if (!gigs.length && isLoading) return <div className="loader-container">
         <div className="loader"></div>
     </div>
-    // if(gigs.length&&!isLoading) return <div>sorry no gigs</div>
     return <section className="gig-index">
         {(searchParams.get('title') && searchParams.get('title') !== '') && <h1>Results for "{searchParams.get('title')}"</h1>
             || searchParams.get('category') && getCategoryName(searchParams.get('category')) || <h1>All</h1>}

@@ -16,7 +16,6 @@ export function ReviewBar({ userReviews }) {
 
             return acc
         }, accInit)
-
         return stars
     }
 
@@ -28,7 +27,6 @@ export function ReviewBar({ userReviews }) {
                     <span className="percent" style={{ width: `${(count / stars.sumCount) * 100}%` }}></span>
                 </div>
                 <span>{`(${count})`}</span>
-            </div>
-        )}
+            </div>)}
     </div>
 }

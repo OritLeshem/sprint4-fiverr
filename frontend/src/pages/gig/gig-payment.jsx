@@ -24,7 +24,7 @@ export function GigPayment() {
         catch (err) {
             console.log('had issue in gig details', err)
             showErrorMsg('cannot load gig')
-            // navigate('/gig')
+            navigate('/gig')
         }
     }
 
@@ -58,7 +58,9 @@ export function GigPayment() {
         }
     }
 
-    if (!gig) return "lodaing..."
+    if (!gig) return <div className="loader-container">
+        <div className="loader"></div>
+    </div>
     return <section className="gig-payment">
         <div className="main-content">
 

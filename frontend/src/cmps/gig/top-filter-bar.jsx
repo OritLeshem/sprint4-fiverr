@@ -12,7 +12,6 @@ export function TopFilterBar({ onSetFilter }) {
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
-            console.log(e.target.className);
             if (isPriceFilterShown && ref.current && !ref.current.contains(e.target)) {
                 setIsPriceFilterShown(false)
             }

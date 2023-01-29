@@ -23,7 +23,6 @@ window.socketService = socketService
 
 socketService.setup()
 
-
 function createSocketService() {
   var socket = null;
   const socketService = {
@@ -99,7 +98,6 @@ function createDummySocketService() {
   window.listenersMap = listenersMap;
   return socketService
 }
-
 
 // Basic Tests
 // function cb(x) {console.log('Socket Test - Expected Puk, Actual:', x)}
