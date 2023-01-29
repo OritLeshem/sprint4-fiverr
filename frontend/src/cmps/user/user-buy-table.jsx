@@ -17,7 +17,7 @@ export default function UserBuyTable() {
 
   return (
     <div className="buy-order-list">
-      {orders.map(order => <div className='order-container' key={order._id}>
+      {orders.reverse().map(order => <div className='order-container' key={order._id}>
         <img className='buy-order-img' src={order.gig.imgUrl[0]} />
         <div className='buy-order-info'>
           <div>{order.gig.title}</div>
