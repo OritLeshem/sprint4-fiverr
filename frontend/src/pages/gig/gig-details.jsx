@@ -28,19 +28,12 @@ export function GigDetails() {
             navigate('/gig')
         }
     }
-    function handleContactSeller() {
-        console.log(gig)
-        if (gig) navigate(`/user/${gig.owner._id}`)
 
-    }
-
-    if (!gig) return <div className="loader-contauner">
+    if (!gig) return <div className="loader-container">
         <div className="loader"></div>
     </div>
 
     const { imgUrl, fullname, rate, level, country } = gig.owner
-
-
     return <section className="gig-details">
         <div className="gig-details-preview gig-details-info">
             <nav>{`Graphics & design > Logo Design`}</nav>
@@ -55,8 +48,6 @@ export function GigDetails() {
                     <StarRating value={rate} />
                     <span className="rate padding">{rate}</span>
                 </div>
-
-                {/* <p>(10) 1 Order in Queue</p> */}
             </div>
             <SlideDetails gig={gig} />
         </div>
@@ -66,7 +57,6 @@ export function GigDetails() {
                 <h3>About This Gig</h3>
                 <p>{gig.description}</p>
             </div>
-
             <div className="gig-about-owner">
                 <h3>About The Seller</h3>
                 <div className="owner-details">
@@ -76,12 +66,10 @@ export function GigDetails() {
                         <div className="star-preview">
                             <StarRating value={rate} />
                             <span className="rate padding">{rate}</span>
-                            {/* <p>(10)</p> */}
                         </div>
                         {gig && <Link to={`/user/${gig.owner._id}`}>Contact Me</Link>}
                     </div>
                 </div>
-
             </div>
 
             <div className="owner-description">
@@ -92,7 +80,6 @@ export function GigDetails() {
                     <li><span>Last delivery</span><span>about 1 hour</span></li>
                     <li><span>Languages</span><span>English</span></li>
                 </ul>
-
                 <article>{gig.about}</article>
             </div>
             <ReviewIndex gig={gig} />

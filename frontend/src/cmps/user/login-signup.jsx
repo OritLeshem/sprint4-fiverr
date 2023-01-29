@@ -26,7 +26,6 @@ export function LoginSignup(props) {
     }
 
     function onLogin(ev = null) {
-        console.log('credentials:', credentials)
         if (ev) ev.preventDefault()
         if (!credentials.username) return
         props.onLogin(credentials)
@@ -35,7 +34,6 @@ export function LoginSignup(props) {
     }
 
     function onSignup(ev = null) {
-        console.log('credentials:', credentials)
         if (ev) ev.preventDefault()
         if (!credentials.username || !credentials.password || !credentials.fullname) return
         props.onSignup(credentials)

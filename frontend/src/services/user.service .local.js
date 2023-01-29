@@ -1,9 +1,9 @@
 import { storageService } from './async-storage.service'
-import { httpService } from './http.service'
 import { utilService } from './util.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 const STORAGE_KEY = 'user'
+
 _createUsers()
 
 export const userService = {
@@ -21,7 +21,6 @@ export const userService = {
 }
 
 window.userService = userService
-
 
 function getUsers() {
     return storageService.query('user')
@@ -46,7 +45,6 @@ function remove(userId) {
 }
 
 async function update(user) {
-    // console.log(_id, imgUrl)
     // const user = await storageService.get('user', _id)
     // user.imgUrl = user.imgUrl
     await storageService.put('user', user)
@@ -99,92 +97,16 @@ function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
-
 // ;(async ()=>{
 //     await userService.signup({fullname: 'Puki Norma', username: 'puki', password:'123',score: 10000, isAdmin: false})
 //     await userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 10000, isAdmin: true})
 //     await userService.signup({fullname: 'Muki G', username: 'muki', password:'123', score: 10000})
 // })()
 
-
-
-
 function _createUsers() {
     let users = utilService.loadFromStorage(STORAGE_KEY)
     if (!users || !users.length) {
         users = [
-            // {
-            //     _id: "user100",
-            //     fullname: "andreacarvalho_",
-            //     imgUrl: "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5344c10fd4820db3626c4fc24968783d-1588608774469/1e4a3bd9-b71d-48ce-8ac0-0ff6d667caf4.jpeg",
-            //     username: "user100",
-            //     password: "secret",
-            //     level: "basic/premium",
-            //     country: "Brazil",
-            //     reviews: [
-            //         {
-            //             id: utilService.makeId(),
-            //             txt: "Incredibly grateful for the amazing experience working with you . You are so talented and a kind soul! I highly recommend if you want high quality art to work with her every time",
-            //             createdAt: utilService.randomPastTime(),
-            //             by: {
-            //                 _id: "u140",
-            //                 country: "United States",
-            //                 flag: "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
-            //                 fullname: "rachelrbarnes1",
-            //                 imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
-            //             }
-            //         },
-            //         {
-            //             id: utilService.makeId(),
-            //             txt: "The artist was very kind and polite also very fast at the communication. The delivery of the project was on time. And her work is worth the money. I'm really excited about the painting she did. I can truely recommend the Aritst and her work. Big Thanks! :)",
-            //             createdAt: utilService.randomPastTime(),
-            //             by: {
-            //                 _id: "u141",
-            //                 country: "Austria",
-            //                 flag: "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e6-1f1f9.png",
-            //                 fullname: "mark001994",
-            //                 imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
-            //             }
-            //         },
-            //         {
-            //             id: utilService.makeId(),
-            //             txt: "incredible on how precise that art is, picture perfect. 100% amazing job and I will use your services again ...",
-            //             createdAt: utilService.randomPastTime(),
-            //             by: {
-            //                 _id: "u143",
-            //                 country: "United States",
-            //                 flag: "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
-            //                 fullname: "thurstonrobby",
-            //                 imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
-            //             }
-            //         },
-            //         {
-            //             id: utilService.makeId(),
-            //             txt: "amazing saller and great work",
-            //             createdAt: utilService.randomPastTime(),
-            //             by: {
-            //                 _id: "u144",
-            //                 country: "Israel",
-            //                 flag: "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f1.png",
-            //                 fullname: "gavrielm",
-            //                 imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
-            //             }
-            //         },
-            //         {
-            //             id: utilService.makeId(),
-            //             name: "garebear52",
-            //             txt: "Beautiful drawing! Just what I wanted.",
-            //             createdAt: utilService.randomPastTime(),
-            //             by: {
-            //                 _id: "u145",
-            //                 country: "United States",
-            //                 flag: "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
-            //                 fullname: "garebear52",
-            //                 imgUrl: 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg',
-            //             }
-            //         },
-            //     ]
-            // },
             {
                 _id: "u102",
                 fullname: "Dudu Sa",

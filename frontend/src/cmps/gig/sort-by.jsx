@@ -27,7 +27,6 @@ export function SortyBy({ onSort }) {
     }
   }, [isSortByShown])
 
-
   function handleChangeSort({ target }) {
     setisSortByShown(false)
     let { value } = target
@@ -36,13 +35,6 @@ export function SortyBy({ onSort }) {
       return { ...prevSort, category: value }
     })
   }
-
-  // return <div className="gig-sort">
-  //   <select name="sort-by" onChange={handleChangeSort} className="gig-sort-option">
-  //     <option value="recommended">Recommended</option>
-  //     <option value="price">Price</option>
-  //   </select>
-  // </div>
 
   return <div className="gig-sort">
     <div>Sort by</div><div className="filter-menu sort-by" ref={ref}>{sortBy.category}<span className="fa-solid angle-down"></span>

@@ -1,8 +1,6 @@
-import { httpService } from './http.service'
-
-import { storageService } from './async-storage.service.js'
-import { utilService } from './util.service.js'
-import { userService } from './user.service.js'
+import { storageService } from './async-storage.service'
+import { utilService } from './util.service'
+import { userService } from './user.service'
 
 const STORAGE_KEY = 'gig'
 _createGigs()
@@ -41,7 +39,6 @@ async function query(filterBy = { title: '', tags: [], daysToMake: '' }, sortBy,
         gigs = gigs.filter(gig => gig.tags.some(tag => filterBy.tags.includes(tag)))
     }
     if (filterBy.daysToMake) {
-        console.log(filterBy.daysToMake);
         gigs = gigs.filter(gig => +gig.daysToMake <= +filterBy.daysToMake)
     }
     if (filterBy.minPrice) {
@@ -58,7 +55,6 @@ function getById(gigId) {
 }
 
 async function remove(gigId) {
-    // throw new Error('Nope')
     await storageService.remove(STORAGE_KEY, gigId)
 }
 
@@ -73,7 +69,6 @@ async function save(gig) {
     }
     return savedGig
 }
-
 
 function getGigSlides() {
     return [
@@ -155,32 +150,6 @@ function _createGigs() {
     let gigs = utilService.loadFromStorage(STORAGE_KEY)
     if (!gigs || !gigs.length) {
         gigs = [
-            // {
-            //     _id: "i100",
-            //     title: "I will draw a hyperrealistic portrait of face or entire body and animals",
-            //     about: "Hello! I'm a brazilian artist specialized in hyperrealistic drawings and paintings of human figures and animals, i use a diversity of techniques like Oil painting, dry pastel drawing and pencil. I have over 30 years of experience, check out my portfolio.",
-            //     price: 198,
-            //     owner: {
-            //         "fullname": "andreacarvalho_",
-            //         "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5344c10fd4820db3626c4fc24968783d-1588608774469/1e4a3bd9-b71d-48ce-8ac0-0ff6d667caf4.jpeg",
-            //         "level": "basic/premium",
-            //         "rate": 4.9
-            //     },
-            //     country: "Brazil",
-            //     daysToMake: 4,
-            //     description: "Desenho de lápis hiperrealista da sua foto, posso adicionar detalhes de fundo e personalizar o desenho do jeito que você quiser.",
-            //     imgUrl: "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
-            //     tags: [
-            //         "pencil",
-            //         "drawing",
-            //         "portrait",
-            //         "realistic",
-            //         "painting"
-            //     ],
-            //     likedByUsers: [
-            //         "mini-user"
-            //     ],
-            // },
             {
                 _id: 'i102',
                 title: "I will provide a great logo for you",
@@ -739,6 +708,3 @@ function getEmptyGig(title = '', description = '', price = 0, tags = [], daysToM
         imgUrl,
     }
 }
-
-
-

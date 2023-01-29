@@ -1,19 +1,19 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
-import { loadGigs, removeGig } from '../../store/gig/gig.actions.js'
-import { loadOrders } from '../../store/order/order.actions.js'
+import { loadGigs, removeGig } from '../../store/gig/gig.actions'
+import { loadOrders } from '../../store/order/order.actions'
 import { SET_GIGS } from '../../store/gig/gig.reducer'
 
-import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
-import { UserList } from '../../cmps/user/user-list.jsx'
+import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service'
+import { UserList } from '../../cmps/user/user-list'
 import { UserProfile } from '../../cmps/user/user-dashboard/user-profile'
-import { userService } from '../../services/user.service.js'
-import { loadUser } from '../../store/user/user.actions.js'
-import { ReviewList } from '../../cmps/review/review-list.jsx'
-import { ReviewBar } from '../../cmps/review/review-bar.jsx'
-import UserSellerTable from '../../cmps/user/user-dashboard/user-seller-table.jsx'
+import { userService } from '../../services/user.service'
+import { loadUser } from '../../store/user/user.actions'
+import { ReviewList } from '../../cmps/review/review-list'
+import { ReviewBar } from '../../cmps/review/review-bar'
+import UserSellerTable from '../../cmps/user/user-dashboard/user-seller-table'
 
 export function UserIndex() {
     const orders = useSelector(storeState => storeState.orderModule.orders)
@@ -23,7 +23,6 @@ export function UserIndex() {
     const sortBy = useSelector((storeState) => storeState.gigModule.sortBy)
     const { userId } = useParams()
     const loginUser = userService.getLoggedinUser()
-    console.log(gigs);
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -46,8 +45,8 @@ export function UserIndex() {
             showErrorMsg('Cannot remove gig')
         }
     }
-    console.log("User from index", user, loginUser)
-    if (!user) return <div className="loader-contauner">
+
+    if (!user) return <div className="loader-container">
         <div className="loader"></div>
     </div>
     return (
