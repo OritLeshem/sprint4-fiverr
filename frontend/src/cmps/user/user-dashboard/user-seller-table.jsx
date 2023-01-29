@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import * as React from 'react'
-
-import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { updateOrder } from "../../../store/order/order.actions"
 import { ProgressChart } from "../../progress-chart"
+
+import { socketService, SOCKET_EVENT_ORDER_UPDATED } from "../../../services/socket.service"
 
 export default function UserSellerTable({ orders }) {
   const [isModal, setIsModal] = useState({ id: '', status: false })
@@ -36,6 +36,12 @@ export default function UserSellerTable({ orders }) {
   function updateStatus(status, order) {
     order.status = status
     updateOrder(order)
+    socketService.emit(SOCKET_EVENT_ORDER_UPDATED,
+      {
+        sellerName: order.seller.fullname,
+        status: order.status,
+        buyerId: order.buyer._id
+      })
     setIsModal(!isModal)
   }
 

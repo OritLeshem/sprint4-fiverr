@@ -3,18 +3,10 @@ const gigService = require('./gig.service.js')
 const logger = require('../../services/logger.service')
 
 async function getGigs(req, res) {
-  // const {filterBy} = req.query.params
-  // const filterBy = { title: '', tags: [], daysToMake: '', minPrice: 1, maxPrice: 2000 }
-  // let filterBy1 = {req.query.params.filterBy}
-  // const filterBy = {
-  //   txt: req.query.txt || ''
-  // }
   const { filterBy } = JSON.parse(req.query.params)
   const { sortBy } = JSON.parse(req.query.params)
   const { userId } = JSON.parse(req.query.params)
-  console.log('req.query.params controller gig', filterBy)
   try {
-    // const { filterBy } = req.query.params
     logger.debug('Getting Gigs')
     const gigs = await gigService.query(filterBy, sortBy, userId)
     res.json(gigs)
@@ -35,28 +27,10 @@ async function getGigById(req, res) {
   }
 }
 
-// async function addGig(req, res) {
-//   const { loggedinUser } = req
-
-//   try {
-//     const gig = req.body
-//     gig.owner = loggedinUser
-//     const addedGig = await gigService.add(gig)
-//     res.json(addedGig)
-//   } catch (err) {
-//     logger.error('Failed to add gig', err)
-//     res.status(500).send({ err: 'Failed to add gig' })
-//   }
-// }
 async function addGig(req, res) {
   const { loggedinUser } = req
-  // console.log('loggedinUser:', loggedinUser);
-  console.log('loggedinUser:', loggedinUser);
-
-
   try {
     const gig = req.body
-    // gig.owner = loggedinUser
     const addedGig = await gigService.add(gig)
     res.json(addedGig)
   } catch (err) {
@@ -64,7 +38,6 @@ async function addGig(req, res) {
     res.status(500).send({ err: 'Failed to add gig' })
   }
 }
-
 
 async function updateGig(req, res) {
   try {

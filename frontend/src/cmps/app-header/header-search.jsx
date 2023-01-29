@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import { gigService } from "../../services/gig.service"
 
@@ -6,6 +6,16 @@ export function Search({ onSetFilter }) {
   const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
   const elInputRef = useRef(null)
   const { pathname } = window.location
+  const [windowSize, setWindowSize] = useState(null)
+
+  useEffect(() => {
+    function handleResize() {
+        setWindowSize(window.innerWidth)
+    }
+    window.addEventListener("resize", handleResize)
+    handleResize()
+    return () => window.removeEventListener("resize", handleResize)
+}, [])
 
   function handleChange({ target }) {
     let { value, name: field, type } = target
@@ -18,13 +28,24 @@ export function Search({ onSetFilter }) {
     onSetFilter(filterByToEdit)
   }
 
+  function onPlaceholder() {
+    let placeholder = 'What service are you looking for today?'
+
+    if(pathname === '/') {
+      placeholder = 'Try \"logo design\"'
+    } else if(pathname !== '/' && windowSize < 900) {
+      placeholder = 'Search...'
+    }
+
+    return placeholder
+  }
 
   return <form className="gig-search" onSubmit={onSubmitFilter}>
     <input type="text"
       className="gig-search"
       id="title"
       name="title"
-      placeholder={pathname === '/' ? " Try \"logo design\"" : "What service are you looking for today?"}
+      placeholder= {onPlaceholder()}
       value={filterByToEdit.title}
       onChange={handleChange}
       ref={elInputRef}

@@ -4,7 +4,6 @@ const utilService = require('../../services/util.service')
 const ObjectId = require('mongodb').ObjectId
 // let filterBy="draw"
 async function query(filterBy, sortBy, userId) {
-    console.log("query filter by", filterBy.title)
     try {
         const criteria = _buildCriteria(filterBy, userId)
         const collection = await dbService.getCollection('gig')
@@ -19,9 +18,7 @@ async function query(filterBy, sortBy, userId) {
     }
 }
 function _buildCriteria(filterBy, userId) {
-    console.log("criteria filter by", filterBy.title)
     let criteria = {}
-    console.log(filterBy)
     if (userId) {
         criteria = { "owner._id": ObjectId(userId) }
     } else {
@@ -40,8 +37,6 @@ function _buildCriteria(filterBy, userId) {
             criteria.tags = { $in: filterBy.tags }
         }
     }
-
-    console.log("criteria", criteria)
     return criteria
 }
 

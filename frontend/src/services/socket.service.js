@@ -10,6 +10,9 @@ export const SOCKET_EVENT_USER_UPDATED = 'user-updated'
 export const SOCKET_EVENT_ORDER_ADDED = 'order-added'
 export const SOCKET_EVENT_ORDER_FROM_YOU = 'order-from-you'
 
+export const SOCKET_EMIT_ORDER_WATCH = 'order-watch'
+export const SOCKET_EVENT_ORDER_UPDATED = 'order-updated'
+
 const SOCKET_EMIT_LOGIN = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
 

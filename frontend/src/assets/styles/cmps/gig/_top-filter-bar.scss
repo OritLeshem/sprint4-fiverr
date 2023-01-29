@@ -1,6 +1,7 @@
 .top-filter-bar {
     display: flex;
-    .active-filter{
+
+    .active-filter {
         background-color: #e8faf4;
         // color:#1dbf73;
         border-color: #a6eaca;
@@ -22,13 +23,13 @@
     }
 }
 
-.top-filter-bar{
-    .active-delivery{
+.top-filter-bar {
+    .active-delivery {
         background-color: aqua;
     }
 }
 
-.delivery-filter-options{
+.delivery-filter-options {
     z-index: 99;
     width: 317px;
     border: 1px solid #dadbdd;

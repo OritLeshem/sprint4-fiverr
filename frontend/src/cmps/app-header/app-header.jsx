@@ -33,9 +33,9 @@ export function AppHeader() {
         function handleResize() {
             setWindowSize(window.innerWidth)
         }
-        window.addEventListener("resize", handleResize);
+        window.addEventListener("resize", handleResize)
         handleResize()
-        return () => window.removeEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize)
     }, [])
 
     useEffect(() => {
@@ -140,12 +140,8 @@ export function AppHeader() {
                         onClick={() => {
                             onSetFilter(gigService.getDefaultFilter())
                         }}>Explore</Link>}
-                    {/* <Link to="gig">Become a seller</Link> */}
                     {user &&
                         <>
-                            {/* <button className="user-link fa-regular bell" title="Notifications"></button> */}
-                            {/* <button className="user-link fa-regular envelope" title="Messages"></button> */}
-                            {/* <Link className="user-link fa-regular heart" title="Lists"></Link> */}
                             {(windowSize > 900) && <div className="user-orders">
                                 <button onClick={handleOrder} className="user-link">Orders</button>
                                 {isOrder && <UserBuyTable />}

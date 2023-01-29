@@ -1,7 +1,7 @@
 import { store } from '../store.js'
-import { ADD_ORDER, SET_ORDERS, UPDATE_ORDER } from "./order.reducer.js";
-import { orderService } from "../../services/order.service.js";
-import { socketService, SOCKET_EVENT_ORDER_ADDED } from '../../services/socket.service.js';
+import { ADD_ORDER, SET_ORDERS, UPDATE_ORDER } from "./order.reducer.js"
+import { orderService } from "../../services/order.service.js"
+import { socketService, SOCKET_EVENT_ORDER_ADDED } from '../../services/socket.service.js'
 
 export function getActionAddOrder(order) {
     return {
@@ -32,7 +32,11 @@ export async function loadOrders(userId) {
 export async function addOrder(order) {
     try {
         const savedOrder = await orderService.save(order)
-        socketService.emit(SOCKET_EVENT_ORDER_ADDED, order)
+        socketService.emit(SOCKET_EVENT_ORDER_ADDED,
+            {
+                buyerName: order.buyer.fullname,
+                sellerId: order.seller._id
+            })
         store.dispatch(getActionAddOrder(savedOrder))
         return savedOrder
     } catch (err) {
@@ -44,7 +48,6 @@ export async function addOrder(order) {
 export function updateOrder(order) {
     return orderService.save(order)
         .then(savedOrder => {
-            console.log('Updated order:', savedOrder)
             store.dispatch(getActionUpdateOrder(savedOrder))
             return savedOrder
         })

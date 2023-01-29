@@ -42,10 +42,13 @@ function setupSocketAPI(http) {
             logger.info(`Removing socket.userId for socket [id: ${socket.id}]`)
             delete socket.userId
         })
-        socket.on('order-added', order => {
-            console.log('order:', order)
-            console.log('order.seller._id:', order.seller._id)
-            emitToUser({ type: 'order-from-you', data: order, userId: order.seller._id })
+        socket.on('order-added', data => {
+            const { buyerName, sellerId } = data
+            emitToUser({ type: 'order-from-you', data: buyerName, userId: sellerId })
+        })
+        socket.on('order-updated', data => {
+            const { sellerName, status, buyerId } = data
+            emitToUser({ type: 'order-watch', data: { sellerName, status }, userId: buyerId })
         })
     })
 }
@@ -56,10 +59,11 @@ function emitTo({ type, data, label }) {
 }
 
 async function emitToUser({ type, data, userId }) {
-    // userId = userId.toString()
-    const socket = await _getUserSocket(userId)
+    userId = userId.toString()
 
+    const socket = await _getUserSocket(userId)
     if (socket) {
+        console.log('userId:', userId)
         logger.info(`Emiting event: ${type} to user: ${userId} socket [id: ${socket.id}]`)
         socket.emit(type, data)
     } else {

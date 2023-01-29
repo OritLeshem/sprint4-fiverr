@@ -1,6 +1,6 @@
 import { eventBus, showSuccessMsg } from "../services/event-bus.service.js"
 import { useState, useEffect, useRef } from 'react'
-import { socketService, SOCKET_EVENT_ORDER_FROM_YOU, SOCKET_EVENT_REVIEW_ABOUT_YOU } from "../services/socket.service.js"
+import { socketService, SOCKET_EMIT_ORDER_WATCH, SOCKET_EVENT_ORDER_FROM_YOU } from "../services/socket.service.js"
 
 export function UserMsg() {
   const [msg, setMsg] = useState(null)
@@ -18,14 +18,18 @@ export function UserMsg() {
       timeoutIdRef.current = setTimeout(closeMsg, 3000)
     })
 
-    socketService.on(SOCKET_EVENT_ORDER_FROM_YOU, (order) => {
-      showSuccessMsg(`New order from ${order.buyer.fullname}`)
+    socketService.on(SOCKET_EVENT_ORDER_FROM_YOU, (userName) => {
+      showSuccessMsg(`New order from ${userName}`)
     })
 
-    return () => {
-      socketService.off(SOCKET_EVENT_ORDER_FROM_YOU)
-    }
+    socketService.on(SOCKET_EMIT_ORDER_WATCH, ({ sellerName, status }) => {
+      showSuccessMsg(`Your order from ${sellerName} ${status}`)
+    })
 
+    // return () => {
+    // socketService.off(SOCKET_EVENT_ORDER_FROM_YOU)
+    // socketService.off(SOCKET_EMIT_ORDER_WATCH)
+    // }
   }, [])
 
   function closeMsg() {
@@ -34,7 +38,6 @@ export function UserMsg() {
 
   if (!msg) return <span></span>
   return <section className={`user-msg ${msg.type}`}>
-    {/* <button className="fa-solid xmark" onClick={closeMsg}></button> */}
     {msg.txt}
   </section>
 }
