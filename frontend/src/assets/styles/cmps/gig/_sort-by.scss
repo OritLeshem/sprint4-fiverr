@@ -1,12 +1,15 @@
 .gig-sort {
-  font-size: 14px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   span {
     color: $clr5;
   }
   .sort-by{
-    border: none
+    border: none;
+    font-family: macan-bold;
+    font-size: 16px;
+    text-transform: capitalize;
   }
 
   .angle-down {

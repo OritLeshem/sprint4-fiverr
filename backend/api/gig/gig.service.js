@@ -8,7 +8,7 @@ async function query(filterBy, sortBy, userId) {
     try {
         const criteria = _buildCriteria(filterBy, userId)
         const collection = await dbService.getCollection('gig')
-        const sort = (sortBy.category === 'recommended') ? { "owner.rate": -1 } : { "price": -1 }
+        const sort = (sortBy.category === 'recommended') ? { "owner.rate": -1 } : { "price": 1 }
         var gigs = await collection.find(criteria).sort(sort).toArray()
         // var gigs = await collection.find({ "$and": [{ "owner._id": ObjectId(userId) }, criteria] }).sort(sort).toArray()
 
