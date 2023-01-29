@@ -25,6 +25,7 @@ function _buildCriteria(filterBy, userId) {
         if (filterBy.title) {
             criteria.title = { $regex: filterBy.title, $options: 'i' }
         }
+        if(filterBy.maxPrice==='')filterBy.maxPrice = 10000
         if (filterBy.minPrice || filterBy.maxPrice) {
             console.log("minprice", filterBy.minPrice)
             criteria = { ...criteria, "$and": [{ "price": { "$gt": +filterBy.minPrice } }, { "price": { "$lte": +filterBy.maxPrice } }] }
