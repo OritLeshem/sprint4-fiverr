@@ -5,7 +5,6 @@ const ObjectId = require('mongodb').ObjectId
 // let filterBy="draw"
 async function query(filterBy, sortBy, userId) {
     console.log("hello from service")
-    const test = await Promise.resolve("hello from resolve")
     try {
         const criteria = _buildCriteria(filterBy, userId)
         const collection = await dbService.getCollection('gig')
