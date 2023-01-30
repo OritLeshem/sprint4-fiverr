@@ -9,7 +9,7 @@ export function CategoryMenu({ onSetFilter }) {
     const [categoryMenuClassName, setCategoryMenuClassName] = useState('')
     const [linesSetDisplay, setLinesSetDisplay] = useState('')
     const { pathname } = window.location
-console.log('im in the category');
+
     useEffect(() => {
         function handleScroll() {
             if (window.innerWidth > 600&&window.scrollY >= 300 && pathname === '/') {
