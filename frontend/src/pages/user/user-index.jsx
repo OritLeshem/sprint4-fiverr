@@ -17,7 +17,7 @@ import UserSellerTable from '../../cmps/user/user-dashboard/user-seller-table'
 
 export function UserIndex() {
     const orders = useSelector(storeState => storeState.orderModule.orders)
-    const user = useSelector(storeState => storeState.userModule.watchedUser)
+    const user = useSelector(storeState => storeState.userModule.user)
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
     const sortBy = useSelector((storeState) => storeState.gigModule.sortBy)

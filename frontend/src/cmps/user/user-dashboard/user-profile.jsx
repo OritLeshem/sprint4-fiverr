@@ -1,12 +1,43 @@
+import { useEffect } from "react"
+import { useState } from "react"
+import { useSelector } from "react-redux"
+import { useParams } from "react-router-dom"
 import { userService } from "../../../services/user.service"
-import { updateUser } from "../../../store/user/user.actions"
+import { loadUser, updateUser } from "../../../store/user/user.actions"
 import { ImgUploader } from "../../img-uploader"
 
-export function UserProfile({ user }) {
+export function UserProfile() {
+
   const loginUser = userService.getLoggedinUser()
+  const [isSameUser, setIsSameUser] = useState(false)// if loggin ===user
+  const [user, setUser] = useState(false)
+  const { userId } = useParams()
+
+  const loginStoreUser = useSelector(storeState => storeState.userModule.user)
+
+
+  useEffect(() => {
+    loginUser && loadUser(loginUser._id)
+    onSetUser(userId)
+    if (userId === loginUser._id) setIsSameUser(true)
+    else setIsSameUser(false)
+
+
+  }, [userId])
+
+  async function onSetUser(userId) {
+    try {
+      const currUser = await userService.getById(userId)
+      setUser(currUser)
+    }
+    catch (err) {
+      console.log("cannot find user")
+    }
+
+  }
 
   function onUploaded(data) {
-    const newUser = { ...loginUser, imgUrl: data }
+    const newUser = { ...loginStoreUser, imgUrl: data }
     updateUser(newUser)
   }
 
@@ -15,9 +46,11 @@ export function UserProfile({ user }) {
       {user && <>
         <div className="user-profile-info" >
           <div className="img-profile-container">
-            <div className="upload-camera fa-solid fa-camera"></div>
-            <img src={user.imgUrl}></img>
-            {loginUser && (loginUser._id === user._id) && <ImgUploader onUploaded={onUploaded} />}
+            {isSameUser && <div className="upload-camera fa-solid fa-camera"></div>}
+            {isSameUser && <img src={loginStoreUser.imgUrl}></img>}
+            {!isSameUser && <img src={user.imgUrl}></img>}
+
+            {isSameUser && <ImgUploader onUploaded={onUploaded} />}
           </div>
           <h2>{user.username}</h2>
         </div>
