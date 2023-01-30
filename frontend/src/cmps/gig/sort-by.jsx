@@ -9,6 +9,10 @@ export function SortyBy({ onSort }) {
 
   useEffect(() => {
     onSort(sortBy)
+  }, [])
+
+  useEffect(() => {
+    onSort(sortBy)
   }, [sortBy])
 
   useEffect(() => {

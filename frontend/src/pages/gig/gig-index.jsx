@@ -26,7 +26,7 @@ export function GigIndex() {
 
     useEffect(() => {
         loadGigs(filterBy, sortBy)
-    }, [filterBy, sortBy, searchParams])
+    }, [filterBy, sortBy])
 
     function renderUiByQueryStringParams() {
         if (searchParams.get('title')) {
@@ -120,7 +120,7 @@ export function GigIndex() {
             || searchParams.get('category') && getCategoryName(searchParams.get('category')) || <h1>All</h1>}
         <div className='filter-sort'>
             <TopFilterBar onSetFilter={onSetFilter} />
-            <SortyBy onSort={onSort} />
+            {/* <SortyBy onSort={onSort} /> */}
         </div>
         {gigs.length > 0 && <p>{gigs.length} services available</p>}
         {gigs.length === 0 && <p>We are sorry. We were not able to find a match</p>}
