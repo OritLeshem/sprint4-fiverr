@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
@@ -19,6 +19,17 @@ export function GigIndex() {
     const dispatch = useDispatch()
     const [searchParams] = useSearchParams()
     const navigate = useNavigate()
+    const [filterSortClassName, setFilterSortClassName] = useState('')
+
+    useEffect(() => {
+        function handleScroll() {
+            if (window.scrollY >= 140) setFilterSortClassName('filter-sort full main-layout filter-sort-shadow')
+            else setFilterSortClassName('filter-sort full main-layout')
+        }
+        window.addEventListener("scroll", handleScroll)
+        handleScroll()
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
 
     useEffect(() => {
         renderUiByQueryStringParams()
@@ -116,13 +127,14 @@ export function GigIndex() {
     if (!gigs.length && isLoading) return <div className="loader-container">
         <div className="loader"></div>
     </div>
-    return <section className="gig-index">
+    return <section className="gig-index full main-layout">
         {(searchParams.get('title') && searchParams.get('title') !== '') && <h1>Results for "{searchParams.get('title')}"</h1>
             || searchParams.get('category') && getCategoryName(searchParams.get('category')) || <h1>All</h1>}
-        <div className='filter-sort'>
-            <TopFilterBar onSetFilter={onSetFilter} />
-
-            <SortyBy onSort={onSort} />
+        <div className={`${filterSortClassName}`}>
+            <div className="filter-sort-container">
+                <TopFilterBar onSetFilter={onSetFilter} />
+                <SortyBy onSort={onSort} />
+            </div>
         </div>
         {gigs.length > 0 && <p>{gigs.length} services available</p>}
         {gigs.length === 0 && <p>We are sorry. We were not able to find a match</p>}

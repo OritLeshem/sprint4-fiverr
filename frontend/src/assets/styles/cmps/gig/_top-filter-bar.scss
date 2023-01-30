@@ -18,13 +18,14 @@
     margin: 0 6px;
     cursor: pointer;
     position: relative;
-
+    
     &:first-child {
         margin: 0;
     }
 }
 
 .top-filter-bar {
+
     .active-delivery {
         background-color: aqua;
     }

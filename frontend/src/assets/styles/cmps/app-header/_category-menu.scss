@@ -5,6 +5,8 @@
     margin: auto;
     width: 100%;
     overflow-x: scroll;
+    transition: background-color .8s ease;
+
     ul {
         @include flex;
         width: 100%;
@@ -53,21 +55,22 @@ ul::-webkit-scrollbar {
 .category-btn {
     display: none;
 }
-@media (max-width: 1345px) {    
-.category-btn {
-    display: block;
-    z-index: 1;
-    color: $clr5;
-    background-color: transparent;
-    width: 3em;
-    height: 3em;
-}
 
-.right {
-    right: 0;
-}
+@media (max-width: 1345px) {
+    .category-btn {
+        display: block;
+        z-index: 1;
+        color: $clr5;
+        background-color: transparent;
+        width: 3em;
+        height: 3em;
+    }
 
-.left {
-    left: 0;
-}
+    .right {
+        right: 0;
+    }
+
+    .left {
+        left: 0;
+    }
 }

@@ -13,6 +13,7 @@ export function HomePageSlider() {
     let intervalIdRef = useRef(null)
 
     const slides = [
+        { name: "Valentina", title: "AI Artist", url: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/1b6990afe0934244dda2c9aeed5de8d9-1674663021930/bg-hero-6-1792-x1.png' },
         { name: "Andrea", title: "Fashion Designer", url: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png' },
         { name: "Moon", title: "Marketing Expert", url: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203045/bg-hero-2-1792-x1.png' },
         { name: "Ritika", title: "Shoemaker and Designer", url: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png' },
@@ -48,7 +49,7 @@ export function HomePageSlider() {
     function setSlides() {
         intervalIdRef.current = setInterval(() => {
             setCurrentIndex((prevCount) => prevCount + 1)
-        }, 6000)
+        }, 5000)
     }
 
     return <section className="home-page-slider full main-layout">

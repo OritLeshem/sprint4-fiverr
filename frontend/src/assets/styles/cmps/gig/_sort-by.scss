@@ -2,10 +2,12 @@
   font-size: 16px;
   display: flex;
   align-items: center;
+
   span {
     color: $clr5;
   }
-  .sort-by{
+
+  .sort-by {
     border: none;
     font-family: macan-bold;
     font-size: 16px;
@@ -14,37 +16,39 @@
 
   .angle-down {
     margin-left: 6px;
-}
-
-.sort-option{
-  display: flex;
-  label{
-    width: 100%;
-    font-size: 14px;
-    margin: 4px 0 10px;
-    padding: 6px 2px;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
   }
-  input{
-    display: none;
-  }
-}
 
-.sort-by-options {
-  z-index: 99;
-  width: 132px;
-  border: 1px solid #dadbdd;
-  background-color: $clr3;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 4px;
-  position: absolute;
-  top: 45px;
-  right: 0;
-  justify-content: space-between;
-  padding: 12px 12px;
-}
+  .sort-option {
+    display: flex;
+
+    label {
+      width: 100%;
+      font-size: 14px;
+      margin: 4px 0 10px;
+      padding: 6px 2px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  .sort-by-options {
+    z-index: 99;
+    width: 132px;
+    border: 1px solid #dadbdd;
+    background-color: $clr3;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 4px;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    justify-content: space-between;
+    padding: 12px 12px;
+  }
 
   select.gig-sort-option {
     border: none;

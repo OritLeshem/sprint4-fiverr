@@ -5,6 +5,10 @@
     min-width: rem(245px);
     min-height: rem(370px);
 
+    a:hover {
+        color: $clr1;
+    }
+
     img {
         width: 100%;
     }
