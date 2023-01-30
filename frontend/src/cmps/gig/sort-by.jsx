@@ -27,7 +27,7 @@ export function SortyBy({ onSort }) {
   function handleChangeSort({ target }) {
     setisSortByShown(false)
     let { value } = target
-    sortBy.current.category =value
+    sortBy.current.category = value
     onSort(sortBy.current)
     // setSortBy((prevSort) => {
     //   if (target.name === "sort-by") return { ...prevSort, category: value }
