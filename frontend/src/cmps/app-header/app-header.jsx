@@ -16,7 +16,7 @@ import { userService } from '../../services/user.service'
 
 export function AppHeader() {
     const loginUser = userService.getLoggedinUser()
-
+    const [headerClassName, setHeaderClassName] = useState('')
     const user = useSelector(storeState => storeState.userModule.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -37,6 +37,17 @@ export function AppHeader() {
         handleResize()
         return () => window.removeEventListener("resize", handleResize)
     }, [])
+
+    useEffect(() => {
+        function handleScroll() {
+            if(window.scrollY>=150 && pathname === '/') setHeaderClassName('app-header header-home-page main-layout sticky full')
+            else if(window.scrollY<150&&pathname === '/')setHeaderClassName('app-header header-home-page main-layout')
+            else setHeaderClassName('main-layout grid-full')
+        }
+        window.addEventListener("scroll", handleScroll)
+        handleScroll()
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [pathname,setWindowSize])
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -122,8 +133,8 @@ export function AppHeader() {
         setIsOrder(prev => !prev)
     }
 
-    return <>
-        <section className={`app-header ${pathname === '/' && 'header-home-page main-layout'}`} >
+    return <div className={`${headerClassName}`}>
+                {/* <section className={`app-header ${pathname === '/' && 'header-home-page main-layout'}`} > */}
 
             <nav className="app-header-nav" ref={headerRef}>
                 <button className={`fa-solid fa-bars menu-toggle-btn ${pathname === '/' && 'home-page-link'}`}
@@ -167,12 +178,12 @@ export function AppHeader() {
                     }
                 </div>
             </nav>
-        </section>
-        {pathname !== '/' && <>
-            <div className="main-app-header full"></div>
+        {/* </section> */}
+        {/* {pathname !== '/' && <> */}
+            {/* <div className="main-app-header full"></div> */}
             <CategoryMenu onSetFilter={onSetFilter} />
-            <div className="main-app-header full"></div>
-        </>
-        }
-    </>
+            {/* <div className="main-app-header full"></div> */}
+        {/* </> */}
+        {/* // } */}
+    </div>
 }

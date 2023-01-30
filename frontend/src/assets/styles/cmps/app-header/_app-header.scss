@@ -52,3 +52,23 @@
 .debug {
     border: 1px solid red;
 }
+
+.sticky {
+    z-index: 20;
+    position: sticky;
+    background-color: $clr3;
+    top: 0;
+
+    & * {
+        color: black;
+    }
+    transition: all 0.5s;
+}
+
+.no-display {
+    display: none;
+}
+
+.grid-full {
+    grid-column: 1/-1;
+}
