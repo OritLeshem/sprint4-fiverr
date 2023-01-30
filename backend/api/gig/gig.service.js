@@ -4,6 +4,8 @@ const utilService = require('../../services/util.service')
 const ObjectId = require('mongodb').ObjectId
 // let filterBy="draw"
 async function query(filterBy, sortBy, userId) {
+    console.log("hello from service")
+    const test = await Promise.resolve("hello from resolve")
     try {
         const criteria = _buildCriteria(filterBy, userId)
         const collection = await dbService.getCollection('gig')
@@ -25,7 +27,7 @@ function _buildCriteria(filterBy, userId) {
         if (filterBy.title) {
             criteria.title = { $regex: filterBy.title, $options: 'i' }
         }
-        if(filterBy.maxPrice==='')filterBy.maxPrice = 10000
+        if (filterBy.maxPrice === '') filterBy.maxPrice = 10000
         if (filterBy.minPrice || filterBy.maxPrice) {
             console.log("minprice", filterBy.minPrice)
             criteria = { ...criteria, "$and": [{ "price": { "$gt": +filterBy.minPrice } }, { "price": { "$lte": +filterBy.maxPrice } }] }
@@ -77,11 +79,11 @@ async function update(gig) {
     try {
         const gigToSave = {
             price: gig.price,
-            title:gig.title,
-            description:gig.description,
-            tags:gig.tags,
-            daysToMake:gig.daysToMake,
-            imgUrl:gig.imgUrl
+            title: gig.title,
+            description: gig.description,
+            tags: gig.tags,
+            daysToMake: gig.daysToMake,
+            imgUrl: gig.imgUrl
         }
         const collection = await dbService.getCollection('gig')
         await collection.updateOne({ _id: ObjectId(gig._id) }, { $set: gigToSave })

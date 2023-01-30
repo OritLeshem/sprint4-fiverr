@@ -26,7 +26,7 @@ export function GigIndex() {
 
     useEffect(() => {
         loadGigs(filterBy, sortBy)
-    }, [filterBy, sortBy, searchParams])
+    }, [filterBy, sortBy])
 
     function renderUiByQueryStringParams() {
         if (searchParams.get('title')) {
