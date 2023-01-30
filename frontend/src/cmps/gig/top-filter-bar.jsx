@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react"
 import { gigService } from "../../services/gig.service"
-import { useSelector } from 'react-redux'
 
 export function TopFilterBar({ onSetFilter }) {
     const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())

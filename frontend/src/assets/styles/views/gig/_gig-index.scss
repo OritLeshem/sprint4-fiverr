@@ -5,7 +5,6 @@
         font-size: rem(26px);
         font-family: macan-semibold;
         margin-top: 30px;
-        margin-bottom: 15px;
     }
 
     p {
@@ -18,14 +17,21 @@
 }
 
 .filter-sort {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: em(24px, 16px);
-    
-    // border: 1px solid red;
-    background-color: $clr3;
+    margin-bottom: .5em;
+    background-color: transparent;
     position: sticky;
     top: 0;
-    z-index: 3;
+    z-index: 1;
+    padding: 1em 0;
+    transition: background-color .3s ease;
+
+}
+
+.filter-sort-container {
+    @include flex;
+}
+
+.filter-sort-shadow {
+    background-color: $clr3;
+    box-shadow: 0 .266px 1.13052px rgba(0,0,0,.069),0 .89345px 3.79717px rgba(0,0,0,.101),0 5px 17px rgba(0,0,0,.17);
 }

@@ -195,11 +195,8 @@
 
 .hidden-hero {
     @media (min-width: 900px) {
-        animation: fade 2s linear;
         opacity: 0;
-        transition: opacity .9s ease;
         position: absolute;
-        -webkit-transition: opacity .9s;
     }
 
     @media (max-width: 900px) {
@@ -214,8 +211,6 @@
     animation: fade 2s linear;
     opacity: 1;
     transition: opacity .9s ease;
-    // position : relative;
-    -webkit-transition: opacity .9s;
     direction: rtl;
 
     h4 {
@@ -231,7 +226,5 @@
     small {
         font-family: macan-light;
         font-size: .875rem;
-        // display: block;
-        // line-height: 1.4;
     }
 }

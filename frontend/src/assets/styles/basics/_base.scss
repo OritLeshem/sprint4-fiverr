@@ -2,11 +2,6 @@
     box-sizing: border-box;
 }
 
-::selection {
-    background-color: $clr1;
-    color: $clr6;
-}
-
 html {
     font-family: macan-regular;
     line-height: 1.6;
@@ -46,10 +41,6 @@ p {
 a {
     text-decoration: none;
     color: inherit;
-}
-
-a:hover {
-    color: $clr1;
 }
 
 select {

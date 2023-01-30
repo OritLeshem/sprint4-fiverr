@@ -1,12 +1,13 @@
 .menu-toggle-btn {
-    cursor: pointer;
     display: none;
 }
 
 @media (max-width: $narrow-breakpoint) {
-
+    
     .menu-toggle-btn {
+        cursor: pointer;
         display: block;
+        color: $clr2;
     }
 
     .main-screen {
@@ -26,7 +27,22 @@
         height: 100%;
         width: 50%;
         background-color: $clr3;
-        color: $clr6;
+        z-index: 4;
+        
+        *:not(.join-btn) {
+            color: $clr6;
+            background-color: transparent;
+        }
+
+        .join-btn {
+            color: $clr1;
+            border: 1px solid $clr1;
+        
+            &:hover {
+                background-color: $clr1;
+                color: $clr3
+            }  
+        }
 
         .user {
             display: flex;

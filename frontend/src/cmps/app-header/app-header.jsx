@@ -40,14 +40,14 @@ export function AppHeader() {
 
     useEffect(() => {
         function handleScroll() {
-            if(window.scrollY>=150 && pathname === '/') setHeaderClassName('app-header header-home-page main-layout sticky full')
-            else if(window.scrollY<150&&pathname === '/')setHeaderClassName('app-header header-home-page main-layout')
+            if (window.scrollY >= 150 && pathname === '/') setHeaderClassName('app-header header-home-page main-layout sticky full')
+            else if (window.scrollY < 150 && pathname === '/') setHeaderClassName('app-header header-home-page main-layout')
             else setHeaderClassName('main-layout grid-full')
         }
         window.addEventListener("scroll", handleScroll)
         handleScroll()
         return () => window.removeEventListener("scroll", handleScroll)
-    }, [pathname,setWindowSize])
+    }, [pathname, setWindowSize])
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -134,56 +134,49 @@ export function AppHeader() {
     }
 
     return <div className={`${headerClassName}`}>
-                {/* <section className={`app-header ${pathname === '/' && 'header-home-page main-layout'}`} > */}
 
-            <nav className="app-header-nav" ref={headerRef}>
-                <button className={`fa-solid fa-bars menu-toggle-btn ${pathname === '/' && 'home-page-link'}`}
-                    onClick={() => onToggleMenu()}></button>
-                {(windowSize < 900) && isOpenMenu &&
-                    <AppHeaderMobile onToggleMenu={onToggleMenu} user={user} onLogout={onLogout} onOpenModal={onOpenModal} setIsSignup={setIsSignup} />}
+        <nav className="app-header-nav" ref={headerRef}>
+            <button className="fa-solid fa-bars menu-toggle-btn"
+                onClick={() => onToggleMenu()}></button>
+            {(windowSize < 900) && isOpenMenu &&
+                <AppHeaderMobile onToggleMenu={onToggleMenu} user={user} onLogout={onLogout} onOpenModal={onOpenModal} setIsSignup={setIsSignup} />}
 
-                <div className="app-header-aside">
-                    <Link to="/"><h3 className={`logo ${pathname === '/' && 'home-page-link'}`}>finderr<span>.</span></h3></Link>
-                    {pathname !== '/' && <Search onSetFilter={onSetFilter} />}
-                </div>
-                <div className="app-header-main">
-                    {(windowSize > 900) && <Link to="/gig"
-                        onClick={() => {
-                            onSetFilter(gigService.getDefaultFilter())
-                        }}>Explore</Link>}
-                    {user &&
-                        <>
-                            {(windowSize > 900) && <div className="user-orders">
-                                <button onClick={handleOrder} className="user-link">Orders</button>
-                                {isOrder && <UserBuyTable />}
-                            </div>}
-                            {(windowSize > 900) && <div className="user-header-img">
-                                <img src={user.imgUrl}
-                                    onClick={() => {
-                                        setIsOrder(false)
-                                        setIsDropdown(!isDropdown)
-                                    }} />
-                                {isDropdown && <Dropdown loginUser={loginUser} onLogout={onLogout} setIsDropdown={setIsDropdown} user={user} />}
-                            </div>}
-                        </>
-                    }
-                    {!user &&
-                        <>
-                            {isModal && <ModalLogin onLogin={onLogin} onSignup={onSignup}
-                                onCloseModal={onCloseModal} setIsSignup={setIsSignup} isSignup={isSignup} />}
-                            {(windowSize > 900) && <Link onClick={() => { onOpenModal(); setIsSignup(false) }}>Sign in</Link>}
-                            {(windowSize > 900) && <button className={`join-btn ${pathname === '/' && 'home-page-btn'}`}
-                                onClick={() => { onOpenModal(); setIsSignup(true) }}>Join</button>}
-                        </>
-                    }
-                </div>
-            </nav>
-        {/* </section> */}
-        {/* {pathname !== '/' && <> */}
-            {/* <div className="main-app-header full"></div> */}
-            <CategoryMenu onSetFilter={onSetFilter} />
-            {/* <div className="main-app-header full"></div> */}
-        {/* </> */}
-        {/* // } */}
+            <div className="app-header-aside">
+                <h3 className="logo"><Link to="/">finderr</Link><span>.</span></h3>
+                {pathname !== '/' && <Search onSetFilter={onSetFilter} />}
+            </div>
+            <div className="app-header-main">
+                {(windowSize > 900) && <Link to="/gig"
+                    onClick={() => {
+                        onSetFilter(gigService.getDefaultFilter())
+                    }}>Explore</Link>}
+                {user &&
+                    <>
+                        {(windowSize > 900) && <div className="user-orders">
+                            <Link onClick={handleOrder}>Orders</Link>
+                            {isOrder && <UserBuyTable />}
+                        </div>}
+                        {(windowSize > 900) && <div className="user-header-img">
+                            <img src={user.imgUrl}
+                                onClick={() => {
+                                    setIsOrder(false)
+                                    setIsDropdown(!isDropdown)
+                                }} />
+                            {isDropdown && <Dropdown loginUser={loginUser} onLogout={onLogout} setIsDropdown={setIsDropdown} user={user} />}
+                        </div>}
+                    </>
+                }
+                {!user &&
+                    <>
+                        {isModal && <ModalLogin onLogin={onLogin} onSignup={onSignup}
+                            onCloseModal={onCloseModal} setIsSignup={setIsSignup} isSignup={isSignup} />}
+                        {(windowSize > 900) && <Link onClick={() => { onOpenModal(); setIsSignup(false) }}>Sign in</Link>}
+                        {(windowSize > 900) && <button className="join-btn"
+                            onClick={() => { onOpenModal(); setIsSignup(true) }}>Join</button>}
+                    </>
+                }
+            </div>
+        </nav>
+        <CategoryMenu onSetFilter={onSetFilter} />
     </div>
 }
