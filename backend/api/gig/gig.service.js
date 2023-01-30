@@ -66,6 +66,9 @@ async function add(gig) {
     try {
         console.log('gig.owner', gig.owner)
         gig.owner._id = ObjectId(gig.owner._id)
+        gig.owner.rate = 4
+        gig.owner.ratingsCount = 638
+        gig.owner.level= 'basic/premium'
         const collection = await dbService.getCollection('gig')
         await collection.insertOne(gig)
         return gig

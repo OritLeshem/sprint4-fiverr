@@ -2,11 +2,12 @@ import { useEffect, useRef, useState } from "react"
 import { gigService } from "../../services/gig.service"
 
 export function SortyBy({ onSort }) {
-  // const [sortBy, setSortBy] = useState(gigService.getDefaultSort())
-  const sortBy = useRef(gigService.getDefaultSort())
+  const [sortBy, setSortBy] = useState(gigService.getDefaultSort())
+  // const sortBy = useRef(gigService.getDefaultSort())
   const [isSortByShown, setisSortByShown] = useState(false)
   const checkedCategory = sortBy.category
   const ref = useRef()
+
 
   useEffect(() => {
     const checkIfClickedOutside = e => {
@@ -27,16 +28,18 @@ export function SortyBy({ onSort }) {
   function handleChangeSort({ target }) {
     setisSortByShown(false)
     let { value } = target
-    sortBy.current.category = value
-    onSort(sortBy.current)
+    // sortBy.current.category = value
+    // onSort(sortBy.current)
     // setSortBy((prevSort) => {
     //   if (target.name === "sort-by") return { ...prevSort, category: value }
     //   return { ...prevSort, category: value }
     // })
+    setSortBy({ ...sortBy, category: value })
+    onSort({ ...sortBy, category: value })
   }
 
   return <div className="gig-sort">
-    <div>Sort by</div><div className="filter-menu sort-by" ref={ref}>{sortBy.current.category}<span className="fa-solid angle-down"></span>
+    <div>Sort by</div><div className="filter-menu sort-by" ref={ref}>{sortBy.category}<span className="fa-solid angle-down"></span>
       {isSortByShown && <div className="sort-by-options">
         <div className="sort-option">
           <input type="radio" id="recommended" name="sort-by" value="recommended" onChange={handleChangeSort} checked={checkedCategory === 'recommended'} />

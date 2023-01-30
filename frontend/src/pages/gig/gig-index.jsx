@@ -46,7 +46,7 @@ export function GigIndex() {
         }
 
         if (searchParams.get('daysToMake')) {
-            filterBy.maxPrice = [searchParams.get('daysToMake')]
+            filterBy.daysToMake = [searchParams.get('daysToMake')]
         }
         onSetFilter(filterBy)
     }
@@ -109,6 +109,7 @@ export function GigIndex() {
     }
 
     function onSort(sortBy) {
+        console.log(sortBy);
         dispatch({ type: SET_SORT, sortBy })
     }
 

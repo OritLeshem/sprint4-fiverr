@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from "react"
 import { gigService } from "../../services/gig.service.js"
 
 export function CategoryMenu({ onSetFilter }) {
-    const filterByToEdit = useRef(gigService.getDefaultFilter())
+    // const filterByToEdit = useRef(gigService.getDefaultFilter())
+    const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
     const CategorysliderRef = useRef()
     const [lastDirection, setLastDirection] = useState('')
     const [categoryMenuClassName, setCategoryMenuClassName] = useState('')
@@ -34,10 +35,15 @@ export function CategoryMenu({ onSetFilter }) {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [pathname])
 
-    function filterByCategory(categories) {
-        filterByToEdit.current.tags = categories
-        onSetFilter(filterByToEdit.current)
+        function filterByCategory(categories) {
+            setFilterByToEdit({ ...filterByToEdit, tags: categories })
+            onSetFilter({ ...filterByToEdit, tags: categories })
     }
+
+    // function filterByCategory(categories) {
+    //     filterByToEdit.current.tags = categories
+    //     onSetFilter(filterByToEdit.current)
+    // }
 
     const slideLeft = () => {
         if (lastDirection !== 'left') {

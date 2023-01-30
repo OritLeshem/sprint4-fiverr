@@ -122,7 +122,7 @@ function getGigSelling() {
 function getEmptyGig(
     title = '',
     description = '',
-    price = 5,
+    price = 30,
     tags = [],
     daysToMake = 1,
     imgUrl = [],
