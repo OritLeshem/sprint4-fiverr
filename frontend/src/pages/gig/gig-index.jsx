@@ -120,9 +120,8 @@ export function GigIndex() {
             || searchParams.get('category') && getCategoryName(searchParams.get('category')) || <h1>All</h1>}
         <div className='filter-sort'>
             <TopFilterBar onSetFilter={onSetFilter} />
-            hello
+
             <SortyBy onSort={onSort} />
-            {/* add sortBy */}
         </div>
         {gigs.length > 0 && <p>{gigs.length} services available</p>}
         {gigs.length === 0 && <p>We are sorry. We were not able to find a match</p>}
