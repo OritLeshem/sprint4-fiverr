@@ -9,26 +9,18 @@ export function CategoryMenu({ onSetFilter }) {
     const [categoryMenuClassName, setCategoryMenuClassName] = useState('')
     const [linesSetDisplay, setLinesSetDisplay] = useState('')
     const { pathname } = window.location
-    const [windowSize, setWindowSize] = useState(null)
-
-    useEffect(() => {
-        function handleResize() {
-            setWindowSize(window.innerWidth)
-            console.log(window.scrollY)
-        }
-        window.addEventListener("resize", handleResize)
-        handleResize()
-        return () => window.removeEventListener("resize", handleResize)
-    }, [])
 
     useEffect(() => {
         function handleScroll() {
-            console.log(window.scrollY);
-            if (window.scrollY >= 300 && pathname === '/') {
+            if (window.innerWidth > 600&&window.scrollY >= 300 && pathname === '/') {
                 setCategoryMenuClassName('categories-menu')
                 setLinesSetDisplay('main-app-header full')
             }
             else if (window.scrollY < 300 && pathname === '/') {
+                setCategoryMenuClassName('no-display')
+                setLinesSetDisplay('no-display')
+            }
+            else if (window.innerWidth < 600) {
                 setCategoryMenuClassName('no-display')
                 setLinesSetDisplay('no-display')
             }
@@ -40,7 +32,7 @@ export function CategoryMenu({ onSetFilter }) {
         window.addEventListener("scroll", handleScroll)
         handleScroll()
         return () => window.removeEventListener("scroll", handleScroll)
-    }, [pathname, setWindowSize])
+    }, [pathname])
 
     function filterByCategory(categories) {
         filterByToEdit.current.tags = categories
