@@ -44,8 +44,8 @@ export function UserProfile({ watchedUser }) {
         <div className="user-profile-info" >
           <div className="img-profile-container">
             {isSameUser && <div className="upload-camera fa-solid fa-camera"></div>}
-            {isSameUser && <img src={loginUser.imgUrl}></img>}
-            {!isSameUser && <img src={watchedUser.imgUrl}></img>}
+            {isSameUser && <img src={loginUser?.imgUrl}></img>}
+            {!isSameUser && <img src={watchedUser?.imgUrl}></img>}
 
             {isSameUser && <ImgUploader onUploaded={onUploaded} />}
           </div>
