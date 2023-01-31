@@ -10,14 +10,14 @@ import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service'
 import { UserList } from '../../cmps/user/user-list'
 import { UserProfile } from '../../cmps/user/user-dashboard/user-profile'
 import { userService } from '../../services/user.service'
-import { loadUser } from '../../store/user/user.actions'
+import { loadWatchedUser } from '../../store/user/user.actions'
 import { ReviewList } from '../../cmps/review/review-list'
 import { ReviewBar } from '../../cmps/review/review-bar'
 import UserSellerTable from '../../cmps/user/user-dashboard/user-seller-table'
 
 export function UserIndex() {
     const orders = useSelector(storeState => storeState.orderModule.orders)
-    const user = useSelector(storeState => storeState.userModule.user)
+    const watchedUser = useSelector(storeState => storeState.userModule.watchedUser)
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
     const filterBy = useSelector((storeState) => storeState.gigModule.filterBy)
     const sortBy = useSelector((storeState) => storeState.gigModule.sortBy)
@@ -25,14 +25,15 @@ export function UserIndex() {
     const loginUser = userService.getLoggedinUser()
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        return (() => {
-            dispatch({ type: SET_GIGS, gigs: [] })
-        })
-    }, [])
+    // useEffect(() => {
+    //     return (() => {
+    //         dispatch({ type: SET_GIGS, gigs: [] })
+    //     })
+    // }, [])
 
     useEffect(() => {
-        userId && loadUser(userId)
+        userId && loadWatchedUser(userId)
+        console.log(userId)
         loadOrders()
         loadGigs(filterBy, sortBy, userId)
     }, [filterBy, userId])
@@ -46,20 +47,20 @@ export function UserIndex() {
         }
     }
 
-    if (!user) return <div className="loader-container">
+    if (!userId) return <div className="loader-container">
         <div className="loader"></div>
     </div>
     return (
         <section className="user-index">
             <aside className="user-info">
-                <UserProfile user={user} />
-                <div className="user-review-bar">{user && loginUser && user.reviews && <ReviewBar userReviews={user.reviews} />}</div>
-                {loginUser && user.reviews && <ReviewList userReviews={user.reviews} />}
+                <UserProfile watchedUser={watchedUser} />
+                <div className="user-review-bar">{watchedUser && watchedUser.reviews && <ReviewBar userReviews={watchedUser.reviews} />}</div>
+                {watchedUser && watchedUser.reviews && <ReviewList userReviews={watchedUser.reviews} />}
             </aside>
             <main className="user-main">
-                {orders.filter(order => order.seller._id === user._id).length !== 0 && loginUser && (loginUser._id === user._id) && <UserSellerTable
-                    orders={orders.filter(order => order.seller._id === user._id)} length={120} />}
-                {user && gigs && <UserList gigs={gigs.filter(gig => gig.owner._id === userId)} onRemoveGig={onRemoveGig} user={user} />}
+                {loginUser?._id === userId && orders.filter(order => order.seller._id === loginUser._id).length !== 0 && loginUser && <UserSellerTable
+                    orders={orders.filter(order => order.seller._id === loginUser._id)} length={120} />}
+                {watchedUser && gigs && <UserList gigs={gigs.filter(gig => gig.owner._id === userId)} onRemoveGig={onRemoveGig} user={watchedUser} />}
             </main>
         </section>
     )

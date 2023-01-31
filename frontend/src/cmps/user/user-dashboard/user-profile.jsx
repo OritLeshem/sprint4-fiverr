@@ -6,59 +6,56 @@ import { userService } from "../../../services/user.service"
 import { loadUser, updateUser } from "../../../store/user/user.actions"
 import { ImgUploader } from "../../img-uploader"
 
-export function UserProfile() {
+export function UserProfile({ watchedUser }) {
+  const user = useSelector(storeState => storeState.userModule.user)
 
   const loginUser = userService.getLoggedinUser()
   const [isSameUser, setIsSameUser] = useState(false)// if loggin ===user
-  const [user, setUser] = useState(false)
+  // const [user, setUser] = useState(false)
   const { userId } = useParams()
 
-  const loginStoreUser = useSelector(storeState => storeState.userModule.user)
 
 
   useEffect(() => {
     loginUser && loadUser(loginUser._id)
-    onSetUser(userId)
-    if (userId === loginUser._id) setIsSameUser(true)
+    if (userId === loginUser?._id) setIsSameUser(true)
     else setIsSameUser(false)
-
-
   }, [userId])
 
-  async function onSetUser(userId) {
-    try {
-      const currUser = await userService.getById(userId)
-      setUser(currUser)
-    }
-    catch (err) {
-      console.log("cannot find user")
-    }
+  // async function onSetUser(userId) {
+  //   try {
+  //     const currUser = await userService.getById(userId)
+  //     setUser(currUser)
+  //   }
+  //   catch (err) {
+  //     console.log("cannot find user")
+  //   }
 
-  }
+  // }
 
   function onUploaded(data) {
-    const newUser = { ...loginStoreUser, imgUrl: data }
+    const newUser = { ...user, imgUrl: data }
     updateUser(newUser)
   }
 
   return (
     <div className="user-profile">
-      {user && <>
+      {watchedUser && <>
         <div className="user-profile-info" >
           <div className="img-profile-container">
             {isSameUser && <div className="upload-camera fa-solid fa-camera"></div>}
-            {isSameUser && <img src={loginStoreUser.imgUrl}></img>}
-            {!isSameUser && <img src={user.imgUrl}></img>}
+            {isSameUser && <img src={loginUser.imgUrl}></img>}
+            {!isSameUser && <img src={watchedUser.imgUrl}></img>}
 
             {isSameUser && <ImgUploader onUploaded={onUploaded} />}
           </div>
-          <h2>{user.username}</h2>
+          <h2>{watchedUser.username}</h2>
         </div>
 
         <ul className="user-stats-desc">
           <li>
             <div><span className="fa-solid location-dot"></span><span>From</span></div>
-            <span>{user.country}</span>
+            <span>{watchedUser.country}</span>
           </li>
           <li>
             <div><span className="fa-solid user"></span><span>Member since</span></div>
