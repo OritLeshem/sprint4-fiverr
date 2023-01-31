@@ -40,7 +40,7 @@ export function UserProfile({ watchedUser }) {
 
   return (
     <div className="user-profile">
-      {watchedUser && <>
+      {userId && <>
         <div className="user-profile-info" >
           <div className="img-profile-container">
             {isSameUser && <div className="upload-camera fa-solid fa-camera"></div>}
