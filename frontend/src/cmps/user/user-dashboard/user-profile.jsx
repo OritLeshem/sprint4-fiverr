@@ -49,13 +49,13 @@ export function UserProfile({ watchedUser }) {
 
             {isSameUser && <ImgUploader onUploaded={onUploaded} />}
           </div>
-          <h2>{watchedUser.username}</h2>
+          <h2>{watchedUser?.username}</h2>
         </div>
 
         <ul className="user-stats-desc">
           <li>
             <div><span className="fa-solid location-dot"></span><span>From</span></div>
-            <span>{watchedUser.country}</span>
+            <span>{watchedUser?.country}</span>
           </li>
           <li>
             <div><span className="fa-solid user"></span><span>Member since</span></div>
