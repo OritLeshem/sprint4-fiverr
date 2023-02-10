@@ -38,7 +38,7 @@ Seller profile
 
 ![2023-02-10_09-12-49](https://user-images.githubusercontent.com/80868084/218113087-db6ad256-0c43-48ab-b9ea-b8c94752f412.png)
 
-![2023-02-10_08-51-27](https://user-images.githubusercontent.com/80868084/218108354-52301c68-c983-4e7a-ba17-1420c14609b0.png)
+![2023-02-10_09-14-50](https://user-images.githubusercontent.com/80868084/218113516-7a6160cc-5bf6-48b1-874d-cf1c8b945123.png)
 
 
 ### Contributors:
@@ -52,7 +52,6 @@ Seller profile
 - [ ] Filter gig by other categories
 - [ ] Allow user to update their other details (besides their picture)
 - [ ] Add more real-time notifications for users to see the seller's progress with their order (besides the ones that already exist:  on purchase and when the gig is complete) 
-- [ ] Add propagation
 
 
 
