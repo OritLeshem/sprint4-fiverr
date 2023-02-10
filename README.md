@@ -10,11 +10,13 @@ Users can choose freelancers filtered by subject, price, and delivery time
 ### Built With:
 
 - Node.js
-- React
 - Express
 - MongoDB
-- Material-UI
 - cloudinary
+- Socket.IO
+- React.js
+- Material-UI
+- font awesome
 - Javascript
 - sass
 - HTML
