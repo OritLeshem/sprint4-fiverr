@@ -56,7 +56,7 @@ Seller profile
 
 
 ### Credits:
-fontawesome
+fontawesome, 
 icon8
 
 
