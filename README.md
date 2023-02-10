@@ -28,17 +28,6 @@ Home Page
 List
 ![2023-02-10_08-44-03](https://user-images.githubusercontent.com/80868084/218106866-fa08f1d7-f841-4f8f-bc8c-1adec4ca9ad1.png)
 
-
-![Signup](/Docs/screenshots/signup.png)
-
-Categories
-
-![Categories](/Docs/screenshots/categoryPage.png)
-
-Add Report
-
-![Add Report](/Docs/screenshots/addReport.png)
-
 Gig Detail
 
 ![2023-02-10_08-47-38](https://user-images.githubusercontent.com/80868084/218107590-02aff361-a4ec-46b9-a03b-eb0d1587aaf0.png)
