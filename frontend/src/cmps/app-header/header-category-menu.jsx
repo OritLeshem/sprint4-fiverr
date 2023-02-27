@@ -13,7 +13,7 @@ export function CategoryMenu({ onSetFilter }) {
 
     useEffect(() => {
         function handleScroll() {
-            if (window.innerWidth > 600&&window.scrollY >= 300 && pathname === '/') {
+            if (window.innerWidth > 600 && window.scrollY >= 300 && pathname === '/') {
                 setCategoryMenuClassName('categories-menu')
                 setLinesSetDisplay('main-app-header full')
             }
@@ -35,9 +35,9 @@ export function CategoryMenu({ onSetFilter }) {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [pathname])
 
-        function filterByCategory(categories) {
-            setFilterByToEdit({ ...filterByToEdit, tags: categories })
-            onSetFilter({ ...filterByToEdit, tags: categories })
+    function filterByCategory(categories) {
+        setFilterByToEdit({ ...filterByToEdit, tags: categories })
+        onSetFilter({ ...filterByToEdit, tags: categories })
     }
 
     // function filterByCategory(categories) {

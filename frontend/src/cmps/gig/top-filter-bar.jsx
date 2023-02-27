@@ -1,13 +1,15 @@
 import { useEffect, useState, useRef } from "react"
+import { useSelector } from "react-redux"
 import { gigService } from "../../services/gig.service"
 
 export function TopFilterBar({ onSetFilter }) {
+    const filterByFromStore = useSelector((storeState) => storeState.gigModule.filterBy)
     const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
     const [isPriceFilterShown, setIsPriceFilterShown] = useState(false)
     const [isDeliveryshown, setisDeliveryshown] = useState(false)
     const ref = useRef()
     const deliveryRef = useRef()
-    const checkedDelivery = filterByToEdit.daysToMake
+    const checkedDelivery = filterByFromStore.daysToMake
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -85,7 +87,7 @@ export function TopFilterBar({ onSetFilter }) {
             }
         </div>
         
-        <div className={`filter-menu filter-price ${(filterByToEdit.minPrice!==''||filterByToEdit.maxPrice!=='' ) ? "active-filter" : ""}`} ref={ref}>Budget  <span className="fa-solid angle-down"></span>
+        <div className={`filter-menu filter-price ${(filterByFromStore.minPrice!==''||filterByFromStore.maxPrice!=='' ) ? "active-filter" : ""}`} ref={ref}>Budget  <span className="fa-solid angle-down"></span>
             {isPriceFilterShown && <form className="price-filter-scroll">
                 <div className="price-filter-inputs">
                     <div>
