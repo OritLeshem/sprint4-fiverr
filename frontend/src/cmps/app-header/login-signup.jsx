@@ -1,18 +1,7 @@
-import { useState, useEffect } from 'react'
-import { userService } from '../../services/user.service'
+import { useState } from 'react'
 
 export function LoginSignup(props) {
     const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
-    const [users, setUsers] = useState([])
-
-    useEffect(() => {
-        loadUsers()
-    }, [])
-
-    async function loadUsers() {
-        const users = await userService.getUsers()
-        setUsers(users)
-    }
 
     function clearState() {
         setCredentials({ username: '', password: '', fullname: '', imgUrl: '' })
