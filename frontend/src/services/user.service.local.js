@@ -72,6 +72,7 @@ async function signup(userCred) {
     // socketService.login(user._id)
     return saveLocalUser(user)
 }
+
 async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
     // socketService.logout()
@@ -540,5 +541,4 @@ function _createUsers() {
         ]
         utilService.saveToStorage(STORAGE_KEY, users)
     }
-
 }

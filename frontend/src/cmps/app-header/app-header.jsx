@@ -135,6 +135,8 @@ export function AppHeader() {
 
     return <div className={`${headerClassName}`}>
 
+
+
         <nav className="app-header-nav" ref={headerRef}>
             <button className="fa-solid fa-bars menu-toggle-btn"
                 onClick={() => onToggleMenu()}></button>
@@ -143,6 +145,22 @@ export function AppHeader() {
 
             <div className="app-header-aside">
                 <h3 className="logo"><Link to="/">finderr</Link><span>.</span></h3>
+                {/* <Link to="/">
+                    {window.scrollY >= 150 && <svg height="32" width="115">
+                        <text fill="#404145" font-size="32" font-family="macan-bold"
+                            x="1" y="30">finderr
+                        </text>
+                        <text fill="#1dbf73" font-size="32" font-family="macan-bold"
+                            x="104" y="30">.</text>
+                    </svg>}
+                    {pathname === '/' && window.scrollY < 150 && <svg height="32" width="115">
+                        <text fill="#fff" font-size="32" font-family="macan-bold"
+                            x="1" y="30">finderr
+                        </text>
+                        <text fill="#1dbf73" font-size="32" font-family="macan-bold"
+                            x="104" y="30">.</text>
+                    </svg>}
+                </Link> */}
                 {pathname !== '/' && <Search onSetFilter={onSetFilter} />}
             </div>
             <div className="app-header-main">
