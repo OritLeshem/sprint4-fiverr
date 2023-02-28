@@ -51,7 +51,7 @@ export function AppHeader() {
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
-            if (isModal && e.target.className) {
+            if (isModal && e.target.className && e.target.className !== "btn-link") {
                 setIsModal(false)
             }
             if (isDropdown && e.target.className) {
@@ -188,9 +188,9 @@ export function AppHeader() {
                     <>
                         {isModal && <ModalLogin onLogin={onLogin} onSignup={onSignup}
                             onCloseModal={onCloseModal} setIsSignup={setIsSignup} isSignup={isSignup} />}
-                        {(windowSize > 900) && <Link onClick={() => { onOpenModal(); setIsSignup(false) }}>Sign in</Link>}
+                        {(windowSize > 900) && <Link onClick={() => { onOpenModal(); setIsSignup(true) }}>Sign in</Link>}
                         {(windowSize > 900) && <button className="join-btn"
-                            onClick={() => { onOpenModal(); setIsSignup(true) }}>Join</button>}
+                            onClick={() => { onOpenModal(); setIsSignup(false) }}>Join</button>}
                     </>
                 }
             </div>
