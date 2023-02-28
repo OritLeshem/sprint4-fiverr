@@ -1,13 +1,15 @@
 import { useEffect, useState, useRef } from "react"
+import { useSelector } from "react-redux"
 import { gigService } from "../../services/gig.service"
 
 export function TopFilterBar({ onSetFilter }) {
+    const filterByFromStore = useSelector((storeState) => storeState.gigModule.filterBy)
     const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
     const [isPriceFilterShown, setIsPriceFilterShown] = useState(false)
     const [isDeliveryshown, setisDeliveryshown] = useState(false)
     const ref = useRef()
     const deliveryRef = useRef()
-    const checkedDelivery = filterByToEdit.daysToMake
+    const checkedDelivery = filterByFromStore.daysToMake
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -63,29 +65,29 @@ export function TopFilterBar({ onSetFilter }) {
     }
 
     return <div className="top-filter-bar">
-        <div className={`filter-menu filter-delivery ${checkedDelivery!=='' ? "active-filter" : "" ? "active-filter" : ""}`} ref={deliveryRef}>Delivery Time<span className="fa-solid angle-down"></span>
+        <div className={`filter-menu filter-delivery ${checkedDelivery !== '' ? "active-filter" : "" ? "active-filter" : ""}`} ref={deliveryRef}>Delivery Time<span className="fa-solid angle-down"></span>
             {isDeliveryshown && <div className="delivery-filter-options">
                 <div className="delivery-option">
                     <input type="radio" id="daysToMake1" name="daysToMake" value="1" onChange={handleChange} checked={checkedDelivery === '1'} />
                     <label htmlFor="daysToMake1"><span><div className="checked-input"></div></span>Express 24H</label>
-                    </div>
-                    <div className="delivery-option">
-                        <input type="radio" id="daysToMake3" name="daysToMake" value="3" onChange={handleChange} checked={checkedDelivery === '3'} />
-                        <label htmlFor="daysToMake3"><span><div className="checked-input"></div></span>Up to 3 days</label>
-                    </div>
-                    <div className="delivery-option">
-                        <input type="radio" id="daysToMake7" name="daysToMake" value="7" onChange={handleChange} checked={checkedDelivery === '7'} />
-                        <label htmlFor="daysToMake7"><span><div className="checked-input"></div></span>Up to 7 days</label>
-                    </div>
-                    <div className="delivery-option">
-                        <input type="radio" id="daysToMake" name="daysToMake" value="" onChange={handleChange} checked={checkedDelivery === ''} />
-                        <label htmlFor="daysToMake"><span><div className="checked-input"></div></span>Anytime</label>
-                    </div>
+                </div>
+                <div className="delivery-option">
+                    <input type="radio" id="daysToMake3" name="daysToMake" value="3" onChange={handleChange} checked={checkedDelivery === '3'} />
+                    <label htmlFor="daysToMake3"><span><div className="checked-input"></div></span>Up to 3 days</label>
+                </div>
+                <div className="delivery-option">
+                    <input type="radio" id="daysToMake7" name="daysToMake" value="7" onChange={handleChange} checked={checkedDelivery === '7'} />
+                    <label htmlFor="daysToMake7"><span><div className="checked-input"></div></span>Up to 7 days</label>
+                </div>
+                <div className="delivery-option">
+                    <input type="radio" id="daysToMake" name="daysToMake" value="" onChange={handleChange} checked={checkedDelivery === ''} />
+                    <label htmlFor="daysToMake"><span><div className="checked-input"></div></span>Anytime</label>
+                </div>
             </div>
             }
         </div>
-        
-        <div className={`filter-menu filter-price ${(filterByToEdit.minPrice!==''||filterByToEdit.maxPrice!=='' ) ? "active-filter" : ""}`} ref={ref}>Budget  <span className="fa-solid angle-down"></span>
+
+        <div className={`filter-menu filter-price ${(filterByFromStore.minPrice !== '' || filterByFromStore.maxPrice !== '') ? "active-filter" : ""}`} ref={ref}>Budget  <span className="fa-solid angle-down"></span>
             {isPriceFilterShown && <form className="price-filter-scroll">
                 <div className="price-filter-inputs">
                     <div>
