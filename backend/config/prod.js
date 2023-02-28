@@ -1,4 +1,5 @@
 module.exports = {
-  dbURL: 'mongodb+srv://admin:admin@cluster0.pdpx5xb.mongodb.net/?retryWrites=true&w=majority',
-  dbName: 'finderr_db'
+  dbURL: process.env.DB_KEY,
+  dbName: process.env.DB_KEY_COLLECTION
+
 }

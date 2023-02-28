@@ -115,7 +115,7 @@ export function GigPayment() {
                             <span>Last Name</span>
                             <input type="text"
                                 name="lastname"
-                                value='Deere'
+                                value='Doe'
                             />
                         </label>
                     </div>
