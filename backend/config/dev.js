@@ -1,7 +1,7 @@
 module.exports = {
   // dbURL: 'mongodb://127.0.0.1:27017',
-  dbURL: 'mongodb+srv://admin:admin@cluster0.pdpx5xb.mongodb.net/?retryWrites=true&w=majority',
-  dbName: 'finderr_db'
-  // dbName: 'gig_db'
+  dbURL: process.env.DB_KEY,
 
+  dbName: process.env.DB_KEY_COLLECTION
+  // dbName: 'gig_db'
 }
