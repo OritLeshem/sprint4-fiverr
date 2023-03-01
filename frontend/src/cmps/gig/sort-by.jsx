@@ -39,7 +39,10 @@ export function SortyBy({ onSort }) {
   }
 
   return <div className="gig-sort">
-      <span>Sort by</span><div className="filter-menu sort-by" ref={ref}>{sortBy.category}<span className="fa-solid angle-down"></span>
+    <span>Sort by</span>
+    <div className="filter-menu sort-by" ref={ref}>
+      {sortBy.category}
+      <span className="fa-solid angle-down"></span>
       {isSortByShown && <div className="sort-by-options">
         <div className="sort-option">
           <input type="radio" id="recommended" name="sort-by" value="recommended" onChange={handleChangeSort} checked={checkedCategory === 'recommended'} />

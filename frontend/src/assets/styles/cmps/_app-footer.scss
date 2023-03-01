@@ -38,12 +38,15 @@
         border-radius: 50%;
         width: em(40px, 16px);
         height: em(40px, 16px);
-        margin-inline-start: 1em;
         line-height: normal;
 
         &:hover {
             background-color: #efeff0;
         }
+    }
+
+    li:not(:first-child) {
+        margin-inline-start: 1em;
     }
 }
 

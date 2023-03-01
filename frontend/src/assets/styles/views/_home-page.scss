@@ -149,8 +149,8 @@
 
 .selling-proposition {
     background-color: #f1fdf7;
-    padding: em(96px, 16px) 0;
-    margin-bottom: em(96px, 16px);
+    padding: em(48px) 0;
+    margin-bottom: em(48px);
 
     .img-container {
         flex-basis: 53%;
@@ -166,9 +166,17 @@
     }
 
     @include for-narrow-layout {
+        padding: em(64px) 0;
+        margin-bottom: em(80px);
+
         .flex {
             flex-direction: row;
         }
+    }
+
+    @include for-normal-layout {
+        padding: em(96px) 0;
+        margin-bottom: em(96px);
     }
 }
 
@@ -208,6 +216,7 @@
     @media (max-width: 900px) {
         display: none;
     }
+
     animation: fade 2s linear;
     opacity: 1;
     transition: opacity .9s ease;
