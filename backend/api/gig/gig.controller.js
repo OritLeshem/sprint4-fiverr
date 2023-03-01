@@ -42,6 +42,7 @@ async function addGig(req, res) {
 async function updateGig(req, res) {
   try {
     const gig = req.body
+    console.log("gig from controller", gig)
     const updatedGig = await gigService.update(gig)
     res.json(updatedGig)
   } catch (err) {

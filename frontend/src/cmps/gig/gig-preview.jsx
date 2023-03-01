@@ -3,11 +3,58 @@ import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
 
 import { SlideGigPreview } from '../slide/slide-gig-preview'
+import { useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { updateGig } from '../../store/gig/gig.actions'
+import { gigService } from '../../services/gig.service'
+
 
 export function GigPreview({ gig }) {
+    const user = useSelector((storeState) => storeState.userModule.user)
+    const [heart, setHeart] = useState(false)
+    const [gigToEdit, setGigToEdit] = useState(gigService.getEmptyGig())
+
+    useEffect(() => {
+        if (user) {
+            if (gig.wishList.includes(user._id)) {
+                setHeart(true)
+            }
+        } else {
+            setHeart(false)
+        }
+    }, [user])
 
     function getTxtToShow(txt, length) {
         return (txt.length < length) ? txt : txt.substring(0, length + 1) + '...'
+    }
+
+    async function onHandleHeart() {
+        try {
+
+            console.log("hi")
+            let index = gig.wishList.indexOf(user._id)
+            if (index > -1) {
+                gig.wishList.splice(index, 1)
+                setHeart(false)
+
+            } else {
+                gig.wishList.push(user._id)
+                setHeart(true)
+
+
+            }
+            console.log("gig.wishlist", gig.wishList)
+            await updateGig({ ...gig })
+        }
+        catch (err) {
+            console.log(err)
+        }
+
+
+
+
+
+
     }
 
     return <>
@@ -42,7 +89,7 @@ export function GigPreview({ gig }) {
 
         <footer>
             <div className="btn-container">
-                <button className="fa-solid heart" title="save to list"></button>
+                <button onClick={onHandleHeart} className="fa-solid heart" title="save to list" style={heart ? { color: "red" } : { color: "#b5b6ba" }}></button>
             </div>
             <Link className="price" to={`/gig/${gig._id}`}>
                 <small>Starting at</small>
@@ -54,3 +101,35 @@ export function GigPreview({ gig }) {
         </footer>
     </>
 }
+
+// async function onHandleHeart(gig) {
+//     try {
+//         console.log('heart', heart)
+//         setHeart(!heart)
+//         console.log('heart', heart)
+
+//         setGigToEdit(gig)
+//         console.log('gigToEdit', gigToEdit.wishList)
+
+
+//         if (user && heart) {
+//             // gig.wishList.push(user._id)
+//             // setGigToEdit({ ...gig })
+//             setGigToEdit({ ...gig, wishList: [...gig.wishList, user._id] })
+
+//             console.log('gigToEdit', gigToEdit._id)
+//             console.log("add it to list", gig.wishList.length)
+//         }
+//         // if (user && !heart) {
+//         //     let index = gig.wishList.indexOf(user._id)
+//         //     gig.wishList.splice(index, 1)
+//         //     setGigToEdit({ ...gig, wishList: [...gig.wishList, user._id] })
+//         //     console.log("took it of")
+//         // }
+//         await updateGig(gigToEdit)
+
+//     } catch (err) {
+//         console.log('Cannot save gig: ', err)
+//     }
+// }
+

@@ -8,14 +8,15 @@ export function GigProgram({ gig }) {
     if (num === 1) setProgram(1)
     if (num === 2) setProgram(2)
     if (num === 3) setProgram(3)
+
   }
 
   return <div className="gig-details-side">
     <div className="gig-program">
       <div className="gig-program-name">
-        <button onClick={() => handleProgram(1)} className="active-basic">Basic</button>
-        <button onClick={() => handleProgram(2)}>Standard </button>
-        <button onClick={() => handleProgram(3)}>Premium </button>
+        <button onClick={() => handleProgram(1)} className={program === 1 ? "active-basic" : ""}>Basic</button>
+        <button onClick={() => handleProgram(2)} className={program === 2 ? "active-basic" : ""}>Standard </button>
+        <button onClick={() => handleProgram(3)} className={program === 3 ? "active-basic" : ""}>Premium </button>
       </div>
 
       {program === 1 && <div className="gig-program-info">

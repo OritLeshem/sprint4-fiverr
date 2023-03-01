@@ -64,11 +64,12 @@ async function remove(gigId) {
 }
 async function add(gig) {
     try {
-        console.log('gig.owner', gig.owner)
+        // console.log('gig.owner', gig.owner)
         gig.owner._id = ObjectId(gig.owner._id)
         gig.owner.rate = 4
         gig.owner.ratingsCount = 638
-        gig.owner.level= 'basic/premium'
+        gig.owner.level = 'basic/premium'
+        // gig.wishList = []
         const collection = await dbService.getCollection('gig')
         await collection.insertOne(gig)
         return gig
@@ -78,6 +79,7 @@ async function add(gig) {
     }
 }
 async function update(gig) {
+    console.log('backend service', gig.wishList)
     try {
         const gigToSave = {
             price: gig.price,
@@ -85,7 +87,8 @@ async function update(gig) {
             description: gig.description,
             tags: gig.tags,
             daysToMake: gig.daysToMake,
-            imgUrl: gig.imgUrl
+            imgUrl: gig.imgUrl,
+            wishList: gig.wishList
         }
         const collection = await dbService.getCollection('gig')
         await collection.updateOne({ _id: ObjectId(gig._id) }, { $set: gigToSave })
