@@ -1,9 +1,12 @@
+.user-review-bar {
+    display: flex;
+    justify-content: center;
+}
+
 .review-bars {
     display: flex;
     flex-direction: column-reverse;
     margin-bottom: em(24px, 16px);
-
-    // border: 1px solid red;
 }
 
 .review-count {

@@ -29,9 +29,14 @@
 
 .filter-sort-container {
     @include flex;
+    font-size: rem(12px);
+
+    @media (min-width: $mobile-breakpoint) {
+        font-size: 1rem;
+    }
 }
 
 .filter-sort-shadow {
     background-color: $clr3;
-    box-shadow: 0 .266px 1.13052px rgba(0,0,0,.069),0 .89345px 3.79717px rgba(0,0,0,.101),0 5px 17px rgba(0,0,0,.17);
+    box-shadow: 0 .266px 1.13052px rgba(0, 0, 0, .069), 0 .89345px 3.79717px rgba(0, 0, 0, .101), 0 5px 17px rgba(0, 0, 0, .17);
 }
