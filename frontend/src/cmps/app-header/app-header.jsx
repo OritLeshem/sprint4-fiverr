@@ -15,6 +15,8 @@ import { AppHeaderMobile } from './app-header-mobile'
 import { userService } from '../../services/user.service'
 
 export function AppHeader() {
+    const [heart, setHeart] = useState(false)
+
     const loginUser = userService.getLoggedinUser()
     const [headerClassName, setHeaderClassName] = useState('')
     const user = useSelector(storeState => storeState.userModule.user)
@@ -75,7 +77,7 @@ export function AppHeader() {
         let categoryParams
         let queryStringParams
 
-        if (!filterBy.title == '') {
+        if (filterBy.title !== '') {
             queryStringParams = `?title=${filterBy.title}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
             navigate(`/gig${queryStringParams}`)
         }
@@ -172,6 +174,8 @@ export function AppHeader() {
                     <>
                         {(windowSize > 900) && <div className="user-orders">
                             <Link onClick={handleOrder}>Orders</Link>
+                            <Link to="/wishlist" className="fa-solid heart" title="save to list" style={heart ? { color: "red" } : { color: "#b5b6ba" }}></Link>
+
                             {isOrder && <UserBuyTable />}
                         </div>}
                         {(windowSize > 900) && <div className="user-header-img">
@@ -188,9 +192,9 @@ export function AppHeader() {
                     <>
                         {isModal && <ModalLogin onLogin={onLogin} onSignup={onSignup}
                             onCloseModal={onCloseModal} setIsSignup={setIsSignup} isSignup={isSignup} />}
-                        {(windowSize > 900) && <Link onClick={() => { onOpenModal(); setIsSignup(true) }}>Sign in</Link>}
+                        {(windowSize > 900) && <Link onClick={() => { onOpenModal(); setIsSignup(false) }}>Sign in</Link>}
                         {(windowSize > 900) && <button className="join-btn"
-                            onClick={() => { onOpenModal(); setIsSignup(false) }}>Join</button>}
+                            onClick={() => { onOpenModal(); setIsSignup(true) }}>Join</button>}
                     </>
                 }
             </div>

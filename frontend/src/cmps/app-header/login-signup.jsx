@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 
 export function LoginSignup(props) {
@@ -37,7 +38,7 @@ export function LoginSignup(props) {
     const { username, password } = credentials
     return <section className="login-signup">
         {!props.isSignup && <>
-            <h4>Join Finderr</h4>
+            <h4>Sign in to Finderr</h4>
             <form className="login-form" onSubmit={onLogin}>
                 <input
                     type="text"
@@ -61,13 +62,13 @@ export function LoginSignup(props) {
         </>}
         <div className="signup-section">
             {props.isSignup && <>
-                <h4>Sign In to Finderr</h4>
+                <h4>Join to Finderr</h4>
                 <form className="signup-form" onSubmit={onSignup}>
                     <input
                         type="text"
                         name="fullname"
                         value={credentials.fullname}
-                        placeholder="Fullname"
+                        placeholder="Full Name"
                         onChange={handleChange}
                         required
                     />
@@ -90,7 +91,7 @@ export function LoginSignup(props) {
                     <button>Continue</button>
                 </form>
             </>}
-            <button className="btn-link" onClick={toggleSignup}>{props.isSignup ? 'Not a member yet? Join now' : 'Already a member? Sign In'}</button>
+            <button className="btn-link" onClick={toggleSignup}>{props.isSignup ? 'Already a member? Sign In' : 'Not a member yet? Join now'}</button>
         </div>
     </section>
 }

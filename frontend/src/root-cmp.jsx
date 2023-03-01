@@ -11,6 +11,7 @@ import { GigPayment } from './pages/gig/gig-payment'
 import { GigEdit } from './pages/gig/gig-edit'
 import { UserMsg } from './cmps/user-msg'
 import { UserIndex } from './pages/user/user-index'
+import UserWishList from './pages/user/user-wish-list'
 // import { OrderDetails } from './pages/order/order-details'
 
 
@@ -29,6 +30,7 @@ export function RootCmp() {
                     <Route path="/gig/edit/:gigId" element={<GigEdit />} />
                     <Route path="/gig/edit" element={<GigEdit />} />
                     <Route path="/payment/:gigId" element={<GigPayment />} />
+                    <Route path="/wishlist" element={<UserWishList />} />
 
 
                     {/* <Route path="/chat" element={<ChatApp />} /> */}
