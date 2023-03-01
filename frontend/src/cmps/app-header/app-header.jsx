@@ -188,9 +188,9 @@ export function AppHeader() {
                     <>
                         {isModal && <ModalLogin onLogin={onLogin} onSignup={onSignup}
                             onCloseModal={onCloseModal} setIsSignup={setIsSignup} isSignup={isSignup} />}
-                        {(windowSize > 900) && <Link onClick={() => { onOpenModal(); setIsSignup(true) }}>Sign in</Link>}
+                        {(windowSize > 900) && <Link onClick={() => { onOpenModal(); setIsSignup(false) }}>Sign in</Link>}
                         {(windowSize > 900) && <button className="join-btn"
-                            onClick={() => { onOpenModal(); setIsSignup(false) }}>Join</button>}
+                            onClick={() => { onOpenModal(); setIsSignup(true) }}>Join</button>}
                     </>
                 }
             </div>
