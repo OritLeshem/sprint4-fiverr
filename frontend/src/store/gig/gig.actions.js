@@ -1,9 +1,9 @@
-import { gigService } from "../../services/gig.service.js";
-import { userService } from "../../services/user.service.js";
-import { store } from '../store.js'
-import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
-import { ADD_GIG, ADD_TO_CART, CLEAR_CART, REMOVE_GIG, REMOVE_FROM_CART, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG } from "./gig.reducer.js";
-import { LOADING_DONE, LOADING_START } from "../system.reducer"
+import { store } from '../store'
+import { ADD_GIG, REMOVE_GIG, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG } from './gig.reducer'
+import { LOADING_DONE, LOADING_START } from '../system.reducer'
+
+import { gigService } from '../../services/gig.service'
+import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service'
 
 export function getActionRemoveGig(gigId) {
     return {
@@ -28,12 +28,7 @@ export async function loadGigs(filterBy, sortBy, userId) {
     try {
         store.dispatch({ type: LOADING_START })
         const gigs = await gigService.query(filterBy, sortBy, userId)
-
-        store.dispatch({
-            type: SET_GIGS,
-            gigs
-        })
-
+        store.dispatch({ type: SET_GIGS, gigs })
     } catch (err) {
         console.log('Cannot load gigs', err)
         throw err
@@ -65,34 +60,23 @@ export async function addGig(gig) {
 }
 
 export async function updateGig(gig) {
-    return gigService.save(gig)
-        .then(savedGig => {
-            console.log('Updated Gig action store:', savedGig)
-            store.dispatch(getActionUpdateGig(savedGig))
-            return savedGig
-        })
-        .catch(err => {
-            console.log('Cannot save gig', err)
-            throw err
-        })
+    try {
+        const savedGig = await gigService.save(gig)
+        console.log('Updated Gig action store:', savedGig)
+        store.dispatch(getActionUpdateGig(savedGig))
+        return savedGig
+    } catch (err) {
+        console.log('Cannot save gig', err)
+        throw err
+    }
 }
-
-
-
-
-
-
 
 // Demo for Optimistic Mutation 
 // (IOW - Assuming the server call will work, so updating the UI first)
 export function onRemoveGigOptimistic(gigId) {
-    store.dispatch({
-        type: REMOVE_GIG,
-        gigId
-    })
+    store.dispatch({ type: REMOVE_GIG, gigId })
     showSuccessMsg('Gig removed')
-
-    gigService.remove(gigId)
+    gigService.remove(gigId) 
         .then(() => {
             console.log('Server Reported - Deleted Succesfully');
         })

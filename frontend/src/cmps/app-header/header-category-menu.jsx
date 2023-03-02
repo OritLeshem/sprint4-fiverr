@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from 'react'
 
-import { gigService } from "../../services/gig.service.js"
+import { gigService } from '../../services/gig.service'
 
 export function CategoryMenu({ onSetFilter }) {
-    // const filterByToEdit = useRef(gigService.getDefaultFilter())
     const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
     const CategorysliderRef = useRef()
     const [lastDirection, setLastDirection] = useState('')
@@ -39,11 +38,6 @@ export function CategoryMenu({ onSetFilter }) {
         setFilterByToEdit({ ...filterByToEdit, tags: categories })
         onSetFilter({ ...filterByToEdit, tags: categories })
     }
-
-    // function filterByCategory(categories) {
-    //     filterByToEdit.current.tags = categories
-    //     onSetFilter(filterByToEdit.current)
-    // }
 
     const slideLeft = () => {
         if (lastDirection !== 'left') {

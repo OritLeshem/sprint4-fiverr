@@ -1,37 +1,24 @@
-import { useEffect } from "react"
-import { useState } from "react"
-import { useSelector } from "react-redux"
-import { useParams } from "react-router-dom"
-import { userService } from "../../../services/user.service"
-import { loadUser, updateUser } from "../../../store/user/user.actions"
-import { ImgUploader } from "../../img-uploader"
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+
+import { loadUser, updateUser } from '../../../store/user/user.actions'
+import { ImgUploader } from '../../img-uploader'
+
+import { userService } from '../../../services/user.service'
 
 export function UserProfile({ watchedUser }) {
   const user = useSelector(storeState => storeState.userModule.user)
 
   const loginUser = userService.getLoggedinUser()
-  const [isSameUser, setIsSameUser] = useState(false)// if loggin ===user
-  // const [user, setUser] = useState(false)
+  const [isSameUser, setIsSameUser] = useState(false)
   const { userId } = useParams()
-
-
 
   useEffect(() => {
     loginUser && loadUser(loginUser._id)
     if (userId === loginUser?._id) setIsSameUser(true)
     else setIsSameUser(false)
   }, [userId])
-
-  // async function onSetUser(userId) {
-  //   try {
-  //     const currUser = await userService.getById(userId)
-  //     setUser(currUser)
-  //   }
-  //   catch (err) {
-  //     console.log("cannot find user")
-  //   }
-
-  // }
 
   function onUploaded(data) {
     const newUser = { ...user, imgUrl: data }

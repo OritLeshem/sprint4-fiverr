@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+
 import { GigPreview } from '../../cmps/gig/gig-preview'
 import { loadGigs } from '../../store/gig/gig.actions'
 
@@ -8,6 +9,7 @@ function UserWishList() {
   const navigate = useNavigate()
   const user = useSelector((storeState) => storeState.userModule.user)
   let gigs = useSelector(storeState => storeState.gigModule.gigs)
+
   useEffect(() => {
     if (user) loadGigs()
     else navigate("/gig")

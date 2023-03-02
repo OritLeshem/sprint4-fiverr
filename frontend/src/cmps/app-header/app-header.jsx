@@ -15,8 +15,6 @@ import { AppHeaderMobile } from './app-header-mobile'
 import { userService } from '../../services/user.service'
 
 export function AppHeader() {
-    const [heart, setHeart] = useState(false)
-
     const loginUser = userService.getLoggedinUser()
     const [headerClassName, setHeaderClassName] = useState('')
     const user = useSelector(storeState => storeState.userModule.user)
@@ -69,7 +67,6 @@ export function AppHeader() {
             document.removeEventListener("mousedown", checkIfClickedOutside)
         }
     }, [isModal, isDropdown, isOrder])
-
 
     function onSetFilter(filterBy) {
         dispatch({ type: SET_FILTER, filterBy })
@@ -147,22 +144,6 @@ export function AppHeader() {
 
             <div className="app-header-aside">
                 <h3 className="logo"><Link to="/">finderr</Link><span>.</span></h3>
-                {/* <Link to="/">
-                    {window.scrollY >= 150 && <svg height="32" width="115">
-                        <text fill="#404145" font-size="32" font-family="macan-bold"
-                            x="1" y="30">finderr
-                        </text>
-                        <text fill="#1dbf73" font-size="32" font-family="macan-bold"
-                            x="104" y="30">.</text>
-                    </svg>}
-                    {pathname === '/' && window.scrollY < 150 && <svg height="32" width="115">
-                        <text fill="#fff" font-size="32" font-family="macan-bold"
-                            x="1" y="30">finderr
-                        </text>
-                        <text fill="#1dbf73" font-size="32" font-family="macan-bold"
-                            x="104" y="30">.</text>
-                    </svg>}
-                </Link> */}
                 {pathname !== '/' && <Search onSetFilter={onSetFilter} />}
             </div>
             <div className="app-header-main">

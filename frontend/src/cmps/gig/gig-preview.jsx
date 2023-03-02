@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { updateGig } from '../../store/gig/gig.actions'
 
-
 export function GigPreview({ gig }) {
     const user = useSelector((storeState) => storeState.userModule.user)
     const [heart, setHeart] = useState(false)
@@ -28,8 +27,6 @@ export function GigPreview({ gig }) {
 
     async function onHandleHeart() {
         try {
-
-            console.log("hi")
             let index = gig.wishList.indexOf(user._id)
             if (index > -1) {
                 gig.wishList.splice(index, 1)
@@ -38,7 +35,6 @@ export function GigPreview({ gig }) {
                 gig.wishList.push(user._id)
                 setHeart(true)
             }
-            console.log("gig.wishlist", gig.wishList)
             await updateGig({ ...gig })
         }
         catch (err) {

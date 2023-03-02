@@ -1,8 +1,8 @@
 import { store } from '../store'
-import { LOADING_DONE, LOADING_START } from "../system.reducer"
-import { REMOVE_USER, SET_USER, SET_USERS, SET_WATCHED_USER, UPDATE_USER } from "./user.reducer"
+import { LOADING_DONE, LOADING_START } from '../system.reducer'
+import { REMOVE_USER, SET_USER, SET_USERS, SET_WATCHED_USER, UPDATE_USER } from './user.reducer'
 
-import { userService } from "../../services/user.service"
+import { userService } from '../../services/user.service'
 import { showErrorMsg } from '../../services/event-bus.service'
 import { socketService } from '../../services/socket.service'
 

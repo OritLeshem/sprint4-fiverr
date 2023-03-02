@@ -39,11 +39,6 @@
     &:not(:last-of-type) {
       border-right: 1px solid $clr7;
     }
-
-    // &:hover {
-    //   color: $clr1;
-    //   border-bottom: 2px solid $clr1;
-    // }
   }
 }
 
@@ -67,7 +62,8 @@
     }
   }
 
-  p, ul {
+  p,
+  ul {
     margin-bottom: em(24px, 16px);
   }
 
@@ -133,5 +129,4 @@
     background-color: $clr5;
     color: $clr3;
   }
-
 }

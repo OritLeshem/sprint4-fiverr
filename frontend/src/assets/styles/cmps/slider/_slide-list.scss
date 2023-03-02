@@ -32,7 +32,6 @@
 
     :not([overflow]) {
         margin-right: 3%;
-        // padding: 0 18px;
     }
 
     img {
@@ -46,7 +45,6 @@
     }
 
     // Breakpoints- card//
-
     @media (min-width:1240px) {
         width: 20%;
     }
@@ -68,7 +66,6 @@
     }
 
     // Text-card//
-
     h4 {
         font-family: macan-bold;
         font-size: 1.5rem;
@@ -88,9 +85,7 @@
     }
 }
 
-
 //btn//
-
 .slide-btn {
     z-index: 2;
     color: $clr5;

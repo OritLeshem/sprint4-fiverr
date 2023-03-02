@@ -1,12 +1,12 @@
-import { useRef, useState } from "react"
-import { gigService } from "../../services/gig.service"
+import { useRef, useState } from 'react'
+
+import { gigService } from '../../services/gig.service'
 
 export function SlideList({onSetFilter}) {
     const slides = gigService.getGigSlides()
     const sliderRef = useRef()
     const [lastDirection, setLastDirection] = useState('')
     const filterByToEdit = useRef(gigService.getDefaultFilter())
-    const CategorysliderRef = useRef()
 
     function filterByCategory(categories) {
         filterByToEdit.current.tags = categories

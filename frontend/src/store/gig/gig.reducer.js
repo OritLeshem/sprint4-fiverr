@@ -1,4 +1,4 @@
-import { gigService } from "../../services/gig.service"
+import { gigService } from '../../services/gig.service'
 
 export const SET_GIGS = 'SET_GIGS'
 export const REMOVE_GIG = 'REMOVE_GIG'
@@ -18,7 +18,6 @@ const initialState = {
     lastRemovedGig: null,
     filterBy: gigService.getDefaultFilter(),
     sortBy: gigService.getDefaultSort()
-
 }
 
 export function gigReducer(state = initialState, action) {

@@ -1,13 +1,11 @@
-import { useEffect, useRef, useState } from "react"
-import { gigService } from "../../services/gig.service"
+import { useEffect, useRef, useState } from 'react'
+import { gigService } from '../../services/gig.service'
 
 export function SortyBy({ onSort }) {
   const [sortBy, setSortBy] = useState(gigService.getDefaultSort())
-  // const sortBy = useRef(gigService.getDefaultSort())
   const [isSortByShown, setisSortByShown] = useState(false)
   const checkedCategory = sortBy.category
   const ref = useRef()
-
 
   useEffect(() => {
     const checkIfClickedOutside = e => {
@@ -28,12 +26,6 @@ export function SortyBy({ onSort }) {
   function handleChangeSort({ target }) {
     setisSortByShown(false)
     let { value } = target
-    // sortBy.current.category = value
-    // onSort(sortBy.current)
-    // setSortBy((prevSort) => {
-    //   if (target.name === "sort-by") return { ...prevSort, category: value }
-    //   return { ...prevSort, category: value }
-    // })
     setSortBy({ ...sortBy, category: value })
     onSort({ ...sortBy, category: value })
   }

@@ -16,7 +16,6 @@
     }
 }
 
-
 .main-content {
     flex-basis: 58%;
     height: fit-content;
@@ -44,9 +43,18 @@
             line-height: 1;
         }
 
-        svg {
+        img {
             margin-left: .5em;
+            height: 20px;
         }
+    }
+
+    .payment-option img {
+        width: 199px;
+    }
+
+    .paypal img {
+        width: 73px;
     }
 
     .payment-container {

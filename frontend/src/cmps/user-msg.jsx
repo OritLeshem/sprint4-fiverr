@@ -1,11 +1,11 @@
-import { eventBus, showSuccessMsg } from "../services/event-bus.service.js"
 import { useState, useEffect, useRef } from 'react'
-import { socketService, SOCKET_EMIT_ORDER_WATCH, SOCKET_EVENT_ORDER_FROM_YOU } from "../services/socket.service.js"
+
+import { socketService, SOCKET_EMIT_ORDER_WATCH, SOCKET_EVENT_ORDER_FROM_YOU } from '../services/socket.service'
+import { eventBus, showSuccessMsg } from '../services/event-bus.service'
 
 export function UserMsg() {
   const [msg, setMsg] = useState(null)
   const timeoutIdRef = useRef()
-
 
   useEffect(() => {
     const unsubscribe = eventBus.on('show-msg', (msg) => {
@@ -25,11 +25,6 @@ export function UserMsg() {
     socketService.on(SOCKET_EMIT_ORDER_WATCH, ({ sellerName, status }) => {
       showSuccessMsg(`Your order from ${sellerName} ${status}`)
     })
-
-    // return () => {
-    // socketService.off(SOCKET_EVENT_ORDER_FROM_YOU)
-    // socketService.off(SOCKET_EMIT_ORDER_WATCH)
-    // }
   }, [])
 
   function closeMsg() {

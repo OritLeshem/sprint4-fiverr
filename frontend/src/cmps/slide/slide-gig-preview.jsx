@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from 'react'
 
 export function SlideGigPreview({ gig }) {
     let slides = gig.imgUrl
@@ -19,8 +19,6 @@ export function SlideGigPreview({ gig }) {
             setSlideIndex((prevSlide) => (prevSlide + n))
             setIsDynamic(slideIndex + n)
         }
-
-
     }
 
     function onDot(ev, slideIndex) {
@@ -28,7 +26,6 @@ export function SlideGigPreview({ gig }) {
         setSlideIndex(slideIndex)
         setIsDynamic(slideIndex)
     }
-
 
     return <div className="gig-preview-img">
         <div className="prev fa-solid chevron-left" onClick={(ev) => plusSlides(ev, -1)}></div>

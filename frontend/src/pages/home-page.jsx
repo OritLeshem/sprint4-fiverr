@@ -1,9 +1,12 @@
-import { HomePageSlider } from '../cmps/home-page/home-page-slider'
-import { SlideList } from '../cmps/slide/slide-list'
-import { gigService } from '../services/gig.service'
-import { SET_FILTER } from '../store/gig/gig.reducer'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
+
+import { HomePageSlider } from '../cmps/home-page/home-page-slider'
+import { SlideList } from '../cmps/slide/slide-list'
+import { SET_FILTER } from '../store/gig/gig.reducer'
+
+import { gigService } from '../services/gig.service'
+
 export function HomePage() {
 
     const sellingTxts = gigService.getGigSelling()
