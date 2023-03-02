@@ -70,21 +70,3 @@ export async function updateGig(gig) {
         throw err
     }
 }
-
-// Demo for Optimistic Mutation 
-// (IOW - Assuming the server call will work, so updating the UI first)
-export function onRemoveGigOptimistic(gigId) {
-    store.dispatch({ type: REMOVE_GIG, gigId })
-    showSuccessMsg('Gig removed')
-    gigService.remove(gigId) 
-        .then(() => {
-            console.log('Server Reported - Deleted Succesfully');
-        })
-        .catch(err => {
-            showErrorMsg('Cannot remove gig')
-            console.log('Cannot load gigs', err)
-            store.dispatch({
-                type: UNDO_REMOVE_GIG,
-            })
-        })
-}

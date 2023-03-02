@@ -697,7 +697,7 @@ function _createGig(title, price, tags, imgUrl) {
     return gig
 }
 
-function getEmptyGig(title = '', description = '', price = 0, tags = [], daysToMake = '', imgUrl = []) {
+function getEmptyGig(title = '', description = '', price = 0, tags = [], daysToMake = '', imgUrl = [], wishList = []) {
     return {
         _id: '',
         title,
@@ -706,5 +706,6 @@ function getEmptyGig(title = '', description = '', price = 0, tags = [], daysToM
         tags,
         daysToMake,
         imgUrl,
+        wishList
     }
 }
