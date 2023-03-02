@@ -89,7 +89,7 @@ export function GigPreview({ gig }) {
 
         <footer>
             <div className="btn-container">
-                <button onClick={onHandleHeart} className="fa-solid heart" title="save to list" style={heart ? { color: "red" } : { color: "#b5b6ba" }}></button>
+                <button onClick={onHandleHeart} className="fa-solid heart" title="save to my list" style={heart ? { color: "#f74040", transition: "color .6s ease" } : { color: "#b5b6ba", transition: "color .6s ease" }}></button>
             </div>
             <Link className="price" to={`/gig/${gig._id}`}>
                 <small>Starting at</small>

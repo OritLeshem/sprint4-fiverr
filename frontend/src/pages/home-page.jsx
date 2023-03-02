@@ -15,10 +15,10 @@ export function HomePage() {
 
         let categoryParams
         let queryStringParams
-            if (filterBy.tags[0] !== undefined) categoryParams = filterBy.tags[0]
-            else { categoryParams = '' }
-            queryStringParams = `?category=${categoryParams}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
-            navigate(`/gig${queryStringParams}`)
+        if (filterBy.tags[0] !== undefined) categoryParams = filterBy.tags[0]
+        else { categoryParams = '' }
+        queryStringParams = `?category=${categoryParams}&minPrice=${filterBy.minPrice}&maxPrice=${filterBy.maxPrice}&daysToMake=${filterBy.daysToMake}`
+        navigate(`/gig${queryStringParams}`)
     }
 
     return <section className="home-page full">
@@ -27,7 +27,7 @@ export function HomePage() {
             <div className="trusted-by full">
             </div>
             <h2>Popular professional services</h2>
-            <SlideList onSetFilter={onSetFilter}/>
+            <SlideList onSetFilter={onSetFilter} />
             <div className="selling-proposition full main-layout">
                 <div className="flex">
                     <div className="selling-text">

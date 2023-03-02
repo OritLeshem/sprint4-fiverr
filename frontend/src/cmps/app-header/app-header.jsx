@@ -10,7 +10,7 @@ import { gigService } from '../../services/gig.service'
 import { useEffect, useRef, useState } from 'react'
 import { ModalLogin } from './modal-login'
 import { Dropdown } from './dropdown'
-import UserBuyTable from '../user/user-buy-table'
+import { UserBuyTable } from '../user/user-buy-table'
 import { AppHeaderMobile } from './app-header-mobile'
 import { userService } from '../../services/user.service'
 
@@ -174,10 +174,9 @@ export function AppHeader() {
                     <>
                         {(windowSize > 900) && <div className="user-orders">
                             <Link onClick={handleOrder}>Orders</Link>
-                            <Link to="/wishlist" className="fa-solid heart" title="save to list" style={heart ? { color: "red" } : { color: "#b5b6ba" }}></Link>
-
                             {isOrder && <UserBuyTable />}
                         </div>}
+                        <Link to="/wishlist" className="fa-regular heart" title="save to list"></Link>
                         {(windowSize > 900) && <div className="user-header-img">
                             <img src={user.imgUrl}
                                 onClick={() => {

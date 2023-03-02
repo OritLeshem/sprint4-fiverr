@@ -1,11 +1,10 @@
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
-import { Link } from "react-router-dom"
 
 import { userService } from "../../services/user.service"
 import { loadOrders } from "../../store/order/order.actions"
 
-export default function UserBuyTable() {
+export function UserBuyTable() {
   let orders = useSelector((storeState) => storeState.orderModule.orders)
   const user = userService.getLoggedinUser()
 
