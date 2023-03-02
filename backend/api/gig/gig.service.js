@@ -79,7 +79,6 @@ async function add(gig) {
     }
 }
 async function update(gig) {
-    console.log('backend service', gig.wishList)
     try {
         const gigToSave = {
             price: gig.price,

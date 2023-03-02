@@ -4,6 +4,8 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import { gigService } from "../../services/gig.service"
 import { showErrorMsg } from "../../services/event-bus.service"
 import { GigProgram } from "../../cmps/gig/gig-program"
+import { GigChat } from "../../cmps/gig/gig-chat"
+
 import { SlideDetails } from "../../cmps/slide/slide-details"
 import { ReviewIndex } from "../../cmps/review/review-index"
 import { StarRating } from "../../cmps/review/star-rating"
@@ -83,6 +85,8 @@ export function GigDetails() {
                 <article>{gig.about}</article>
             </div>
             <ReviewIndex gig={gig} />
+            {/* <GigChat gig={gig} /> */}
+
         </div>
 
         <GigProgram gig={gig} />

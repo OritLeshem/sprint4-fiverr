@@ -16,6 +16,9 @@ export const SOCKET_EVENT_ORDER_UPDATED = 'order-updated'
 const SOCKET_EMIT_LOGIN = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
 
+// CHAT
+export const SOCKET_JOIN_ROOM = 'join-room'
+
 
 const baseUrl = (process.env.NODE_ENV === 'production') ? '' : '//localhost:3030'
 export const socketService = createSocketService()
@@ -31,7 +34,7 @@ function createSocketService() {
   const socketService = {
     setup() {
       socket = io(baseUrl)
-      setTimeout(()=>{
+      setTimeout(() => {
         const user = userService.getLoggedinUser()
         if (user) this.login(user._id)
       }, 500)
@@ -56,7 +59,21 @@ function createSocketService() {
     terminate() {
       socket = null
     },
-
+    // CHAT
+    joinRoom(user, gig) {
+      if (user && gig) {
+        socket.emit("join_room", gig._id)
+        console.log(`User with ID: ${socket.id} joined room: ${gig._id}`);
+      }
+    },
+    sendMessage(messageData) {
+      socket.emit("send_message", messageData)
+    },
+    receiveMessage() {
+      socket.on("receive_message", (data) => {
+        console.log("receive_message", data)
+      })
+    }
   }
   return socketService
 }
@@ -72,9 +89,9 @@ function createDummySocketService() {
     terminate() {
       this.setup()
     },
-    login() {   
+    login() {
     },
-    logout() {   
+    logout() {
     },
     on(eventName, cb) {
       listenersMap[eventName] = [...(listenersMap[eventName]) || [], cb]
@@ -95,7 +112,7 @@ function createDummySocketService() {
       this.emit(SOCKET_EVENT_ADD_MSG, { from: 'Someone', txt: 'Aha it worked!' })
     },
     testUserUpdate() {
-      this.emit(SOCKET_EVENT_USER_UPDATED, {...userService.getLoggedinUser(), score: 555})
+      this.emit(SOCKET_EVENT_USER_UPDATED, { ...userService.getLoggedinUser(), score: 555 })
     }
   }
   window.listenersMap = listenersMap;

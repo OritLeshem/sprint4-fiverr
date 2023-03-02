@@ -174,7 +174,7 @@ export function AppHeader() {
                     <>
                         {(windowSize > 900) && <div className="user-orders">
                             <Link onClick={handleOrder}>Orders</Link>
-                            <Link to="/wishlist" className="fa-solid heart" title="save to list" style={heart ? { color: "red" } : { color: "#b5b6ba" }}></Link>
+                            <Link to="/wishlist" className="fa-solid heart" title="save to list" ></Link>
 
                             {isOrder && <UserBuyTable />}
                         </div>}
