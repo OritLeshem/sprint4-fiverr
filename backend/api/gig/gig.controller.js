@@ -47,7 +47,6 @@ async function updateGig(req, res) {
   } catch (err) {
     logger.error('Failed to update gig', err)
     res.status(500).send({ err: 'Failed to update gig' })
-
   }
 }
 

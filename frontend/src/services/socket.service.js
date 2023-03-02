@@ -60,20 +60,20 @@ function createSocketService() {
       socket = null
     },
     // CHAT
-    joinRoom(user, gig) {
-      if (user && gig) {
-        socket.emit("join_room", gig._id)
-        console.log(`User with ID: ${socket.id} joined room: ${gig._id}`);
-      }
-    },
-    sendMessage(messageData) {
-      socket.emit("send_message", messageData)
-    },
-    receiveMessage() {
-      socket.on("receive_message", (data) => {
-        console.log("receive_message", data)
-      })
-    }
+    // joinRoom(user, gig) {
+    //   if (user && gig) {
+    //     socket.emit("join_room", gig._id)
+    //     console.log(`User with ID: ${socket.id} joined room: ${gig._id}`);
+    //   }
+    // },
+    // sendMessage(messageData) {
+    //   socket.emit("send_message", messageData)
+    // },
+    // receiveMessage() {
+    //   socket.on("receive_message", (data) => {
+    //     console.log("receive_message", data)
+    //   })
+    // }
   }
   return socketService
 }

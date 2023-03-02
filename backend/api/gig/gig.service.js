@@ -4,7 +4,6 @@ const utilService = require('../../services/util.service')
 const ObjectId = require('mongodb').ObjectId
 // let filterBy="draw"
 async function query(filterBy, sortBy, userId) {
-    console.log("hello from service")
     try {
         const criteria = _buildCriteria(filterBy, userId)
         const collection = await dbService.getCollection('gig')
@@ -28,7 +27,6 @@ function _buildCriteria(filterBy, userId) {
         }
         if (filterBy.maxPrice === '') filterBy.maxPrice = 10000
         if (filterBy.minPrice || filterBy.maxPrice) {
-            console.log("minprice", filterBy.minPrice)
             criteria = { ...criteria, "$and": [{ "price": { "$gt": +filterBy.minPrice } }, { "price": { "$lte": +filterBy.maxPrice } }] }
         }
         if (filterBy.daysToMake) {
@@ -64,12 +62,10 @@ async function remove(gigId) {
 }
 async function add(gig) {
     try {
-        // console.log('gig.owner', gig.owner)
         gig.owner._id = ObjectId(gig.owner._id)
         gig.owner.rate = 4
         gig.owner.ratingsCount = 638
         gig.owner.level = 'basic/premium'
-        // gig.wishList = []
         const collection = await dbService.getCollection('gig')
         await collection.insertOne(gig)
         return gig

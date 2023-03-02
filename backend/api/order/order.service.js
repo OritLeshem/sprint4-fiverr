@@ -1,7 +1,6 @@
 const dbService = require('../../services/db.service')
 const logger = require('../../services/logger.service')
 const ObjectId = require('mongodb').ObjectId
-const asyncLocalStorage = require('../../services/als.service')
 
 async function add(order) {
     try {
@@ -15,7 +14,6 @@ async function add(order) {
 }
 
 async function query() {
-
     try {
         const collection = await dbService.getCollection('order')
         var orders = await collection.find().toArray()
@@ -27,13 +25,9 @@ async function query() {
     }
 }
 
-
-
-
 async function update(order) {
     try {
         const orderToSave = {
-
             status: order.status
         }
         const collection = await dbService.getCollection('order')

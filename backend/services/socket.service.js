@@ -2,17 +2,11 @@ const logger = require('./logger.service')
 
 var gIo = null
 
-
-
-
-
-
 function setupSocketAPI(http) {
     gIo = require('socket.io')(http, {
         cors: {
             origin: '*',
         }
-
     })
     gIo.on('connection', socket => {
         logger.info(`New connected socket [id: ${socket.id}]`)
@@ -38,7 +32,6 @@ function setupSocketAPI(http) {
         socket.on('user-watch', userId => {
             logger.info(`user-watch from socket [id: ${socket.id}], on user ${userId}`)
             socket.join('watching:' + userId)
-
         })
         socket.on('set-user-socket', userId => {
             logger.info(`Setting socket.userId = ${userId} for socket [id: ${socket.id}]`)
@@ -57,15 +50,15 @@ function setupSocketAPI(http) {
             emitToUser({ type: 'order-watch', data: { sellerName, status }, userId: buyerId })
         })
         // CHAT
-        socket.on("join_room", (data) => {
-            socket.join(data);
-            console.log(`User with ID: ${socket.id} joined room: ${data}`);
-        })
-        socket.on("send_message", (data) => {
-            socket.to(data.gigId).emit("receive_message", data);
+        // socket.on("join_room", (data) => {
+        //     socket.join(data);
+        //     console.log(`User with ID: ${socket.id} joined room: ${data}`);
+        // })
+        // socket.on("send_message", (data) => {
+        //     socket.to(data.gigId).emit("receive_message", data);
 
-            console.log(data)
-        })
+        //     console.log(data)
+        // })
 
     })
 }
@@ -80,7 +73,6 @@ async function emitToUser({ type, data, userId }) {
 
     const socket = await _getUserSocket(userId)
     if (socket) {
-        console.log('userId:', userId)
         logger.info(`Emiting event: ${type} to user: ${userId} socket [id: ${socket.id}]`)
         socket.emit(type, data)
     } else {
@@ -127,6 +119,7 @@ async function _printSockets() {
     console.log(`Sockets: (count: ${sockets.length}):`)
     sockets.forEach(_printSocket)
 }
+
 function _printSocket(socket) {
     console.log(`Socket - socketId: ${socket.id} userId: ${socket.userId}`)
 }
