@@ -1,10 +1,9 @@
-import { useState } from "react"
+import { useState } from 'react'
 
 export function SlideDetails({ gig }) {
     let slides = gig.imgUrl
     const [slideIndex, setSlideIndex] = useState(0)
     const [isDynamic, setIsDynamic] = useState(0)
-
 
     // Next/previous controls
     function plusSlides(n) {
@@ -40,7 +39,6 @@ export function SlideDetails({ gig }) {
             {/* <!-- Next and previous buttons --> */}
             <a className="prev fa-solid chevron-left" onClick={() => plusSlides(-1)}></a>
             <a className="next fa-solid chevron-right" onClick={() => plusSlides(1)}></a>
-
 
             {/* <!-- Thumbnail images --> */}
             <div className="row">

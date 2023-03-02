@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react"
-import * as React from 'react'
-import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-import { updateOrder } from "../../../store/order/order.actions"
-import { ProgressChart } from "../../progress-chart"
+import { updateOrder } from '../../../store/order/order.actions'
+import { ProgressChart } from '../../progress-chart'
 
-import { socketService, SOCKET_EVENT_ORDER_UPDATED } from "../../../services/socket.service"
+import { socketService, SOCKET_EVENT_ORDER_UPDATED } from '../../../services/socket.service'
 
 export default function UserSellerTable({ orders }) {
   const [isModal, setIsModal] = useState({ id: '', status: false })

@@ -1,7 +1,5 @@
-import { StarRating } from "./star-rating"
-
-import { utilService } from "../../services/util.service"
-import { LongTxt } from "../long-txt"
+import { StarRating } from './star-rating'
+import { LongTxt } from '../long-txt'
 
 export function ReviewList({ userReviews, length = 240 }) {
 

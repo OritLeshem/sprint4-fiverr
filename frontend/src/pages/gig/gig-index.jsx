@@ -10,7 +10,6 @@ import { loadGigs } from '../../store/gig/gig.actions'
 import { SET_FILTER, SET_SORT } from '../../store/gig/gig.reducer'
 
 export function GigIndex() {
-
     const filterByFromStore = useSelector(storeState => storeState.gigModule.filterBy)
     const sortBy = useSelector((storeState) => storeState.gigModule.sortBy)
     const isLoading = useSelector((storeState) => storeState.systemModule.isLoading)
@@ -90,37 +89,27 @@ export function GigIndex() {
         switch (category) {
             case "graphic-design":
                 return <h1>Graphic & Design</h1>
-
             case "digital-marketing":
                 return <h1>Digital & Marketing</h1>
-
             case "writing-translation":
                 return <h1>Writing & Translation</h1>
-
             case "video-animation":
                 return <h1>Video & Animation</h1>
-
             case "music-audio":
                 return <h1>Music & Audio</h1>
-
             case "programming-tech":
                 return <h1>Programming & Tech</h1>
-
             case "business":
                 return <h1>Business</h1>
-
             case "lifestyle":
                 return <h1>Lifestyle</h1>
-
             case "trending":
                 return <h1>Trending</h1>
-
             default: return
         }
     }
 
     function onSort(sortBy) {
-        console.log(sortBy);
         dispatch({ type: SET_SORT, sortBy })
     }
 

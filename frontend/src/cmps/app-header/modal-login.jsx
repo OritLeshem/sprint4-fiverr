@@ -1,4 +1,4 @@
-import { LoginSignup } from "./login-signup"
+import { LoginSignup } from './login-signup'
 
 export function ModalLogin({ onLogin, onSignup, onCloseModal, setIsSignup, isSignup }) {
 

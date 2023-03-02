@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from "react"
-import { useDispatch } from "react-redux"
-import { useNavigate } from "react-router-dom"
+import { useEffect, useRef, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
-import { SET_FILTER } from "../../store/gig/gig.reducer"
-import { Search } from "../app-header/header-search"
-import { StarRating } from "../review/star-rating"
+import { SET_FILTER } from '../../store/gig/gig.reducer'
+import { Search } from '../app-header/header-search'
+import { StarRating } from '../review/star-rating'
 
 export function HomePageSlider() {
     const [currentIndex, setCurrentIndex] = useState(0)

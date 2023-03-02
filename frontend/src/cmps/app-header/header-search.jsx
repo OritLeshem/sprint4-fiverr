@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from 'react'
 
-import { gigService } from "../../services/gig.service"
+import { gigService } from '../../services/gig.service'
 
 export function Search({ onSetFilter }) {
   const [filterByToEdit, setFilterByToEdit] = useState(gigService.getDefaultFilter())
@@ -10,12 +10,12 @@ export function Search({ onSetFilter }) {
 
   useEffect(() => {
     function handleResize() {
-        setWindowSize(window.innerWidth)
+      setWindowSize(window.innerWidth)
     }
     window.addEventListener("resize", handleResize)
     handleResize()
     return () => window.removeEventListener("resize", handleResize)
-}, [])
+  }, [])
 
   function handleChange({ target }) {
     let { value, name: field, type } = target
@@ -31,9 +31,9 @@ export function Search({ onSetFilter }) {
   function onPlaceholder() {
     let placeholder = 'What service are you looking for today?'
 
-    if(pathname === '/') {
+    if (pathname === '/') {
       placeholder = 'Try \"logo design\"'
-    } else if(pathname !== '/' && windowSize < 900) {
+    } else if (pathname !== '/' && windowSize < 900) {
       placeholder = 'Search...'
     }
 
@@ -45,7 +45,7 @@ export function Search({ onSetFilter }) {
       className="gig-search"
       id="title"
       name="title"
-      placeholder= {onPlaceholder()}
+      placeholder={onPlaceholder()}
       value={filterByToEdit.title}
       onChange={handleChange}
       ref={elInputRef}

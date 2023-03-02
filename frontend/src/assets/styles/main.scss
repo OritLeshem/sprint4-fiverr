@@ -5,55 +5,56 @@
 @import "setup/typography";
 
 // Basics
-@import "basics/helpers";
 @import "basics/layout";
 @import "basics/base";
-@import "basics/links";
 @import "basics/forms";
 @import "basics/loader";
 
-@import "cmps/gig/gig-list";
-
 // Views
+@import "views/home-page";
+@import "views/user/user-details";
 @import "views/gig/gig-index";
 @import "views/gig/gig-details";
 @import "views/gig/gig-payment";
-@import "views/user/user-details";
 @import "views/gig/gig-edit";
+
+// Components
+@import "cmps/user-msg";
+@import "cmps/long-txt";
+@import "cmps/progress-chart";
+@import "cmps/app-footer";
 
 @import "cmps/user/user-index";
 @import "cmps/user/user-wishlist";
-@import "views/home-page";
+@import "cmps/user/login-signup";
+@import "cmps/user/review-app";
+@import "cmps/user/review-list";
+@import "cmps/user/review-bar";
+@import "cmps/user/user-list";
+@import "cmps/user/user-profile";
+@import "cmps/user/user-buy-table";
+@import "cmps/user/user-seller-table";
 
-// Components
+@import "cmps/gig/gig-list";
+@import "cmps/gig/gig-preview";
+@import "cmps/gig/top-filter-bar";
+@import "cmps/gig/sort-by";
+@import "cmps/gig/gig-program";
+
 @import "cmps/app-header/app-header";
 @import "cmps/app-header/app-header-mobile";
 @import "cmps/app-header/app-header-nav";
 @import "cmps/app-header/modal";
 @import "cmps/app-header/dropdown";
-@import "cmps/user/login-signup";
-@import "cmps/app-footer";
-@import "cmps/user-msg";
-@import "cmps/user/review-app";
-@import "cmps/user/review-list";
-@import "cmps/user/review-bar";
-@import "cmps/gig/gig-preview";
 @import "cmps/app-header/category-menu";
 @import "cmps/app-header/gig-search";
-@import "cmps/gig/top-filter-bar";
-@import "cmps/gig/sort-by";
-@import "cmps/long-txt";
-@import "cmps/progress-chart";
 
-@import "cmps/gig/gig-program";
 @import "cmps/slider/details-carousel";
 @import "cmps/slider/slide-details";
-@import "cmps/user/user-list";
-@import "cmps/user/user-profile";
 @import "cmps/slider/slide-gig-preview";
-@import "cmps/user/user-buy-table";
-@import "cmps/user/user-seller-table";
-
-
-
 @import "cmps/slider/slide-list";
+
+
+
+
+

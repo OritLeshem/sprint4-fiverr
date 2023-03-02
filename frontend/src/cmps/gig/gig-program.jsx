@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export function GigProgram({ gig }) {
   const [program, setProgram] = useState(1)
@@ -8,7 +8,6 @@ export function GigProgram({ gig }) {
     if (num === 1) setProgram(1)
     if (num === 2) setProgram(2)
     if (num === 3) setProgram(3)
-
   }
 
   return <div className="gig-details-side">
@@ -69,8 +68,5 @@ export function GigProgram({ gig }) {
       </div>}
     </div>
     <div to={`/user/${gig.owner._id}`} className="contact-seller"><button className="contact-seller-btn" >Contact Seller</button></div>
-    {/* <Link to={`/user/${gig.owner._id}`} className="contact-seller"><button className="contact-seller-btn" >Contact Seller</button></Link> */}
-
-
   </div>
 } 

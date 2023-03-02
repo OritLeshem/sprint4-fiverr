@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-
 import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 import Button from '@mui/material/Button'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
+
 import { addGig } from '../../store/gig/gig.actions'
+import { ImgUploader } from '../../cmps/img-uploader'
 
 import { gigService } from '../../services/gig.service'
-import { ImgUploader } from '../../cmps/img-uploader'
 import { userService } from '../../services/user.service'
 
 export function GigEdit() {

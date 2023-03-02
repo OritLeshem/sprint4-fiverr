@@ -1,6 +1,5 @@
 
 export function ProgressChart({ percent, bgc }) {
-
     const strokPercent = 236 - (236 * percent)
 
     return <section className="progress-chart">

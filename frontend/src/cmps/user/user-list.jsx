@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 
-import { userService } from "../../services/user.service"
 import { GigPreview } from '../gig/gig-preview'
+
+import { userService } from '../../services/user.service'
 
 export function UserList({ gigs, onRemoveGig, user }) {
   const loginUser = userService.getLoggedinUser()
@@ -17,7 +18,6 @@ export function UserList({ gigs, onRemoveGig, user }) {
       <li className="gig-preview" key={gig._id}>
         <GigPreview gig={gig} />
         {user && loginUser && (loginUser._id === user._id) && <div className="user-preview-btns">
-          {/* <button className="fa-solid ellipsis-vertical"></button> */}
           <button className="gig-edit-btn-left fa-solid xmark" onClick={() => { onRemoveGig(gig._id) }}></button>
           <Link className="gig-edit-btn-right fa-solid fa-pencil" to={`/gig/edit/${gig._id}`}></Link>
         </div>}
