@@ -44,7 +44,7 @@ export function LoginSignup(props) {
                     type="text"
                     name="username"
                     value={username}
-                    placeholder="Username"
+                    placeholder="Username: try lofty"
                     onChange={handleChange}
                     required
                     autoFocus
@@ -53,7 +53,7 @@ export function LoginSignup(props) {
                     type="password"
                     name="password"
                     value={password}
-                    placeholder="Password"
+                    placeholder="Password: try 123"
                     onChange={handleChange}
                     required
                 />

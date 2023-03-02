@@ -15,7 +15,7 @@ const gigs = [
         "daysToMake": 2,
         "description": "I'm Alpa. I am running loftydesignshop studio on the Fiverr platform with more than 4 years of experience. We are a creative team. We help buyers to provide their business identity through their logo.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/115533372/original/67ec94a37b1b51862162ffd326912ebd1616e725/do-modern-minimalist-logo-design-for-your-business.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677748995/do-modern-minimalist-logo-design-for-your-business_ekv75g.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/d563f1245ae0132d4c1ca21f533b62e5-1673262633/27428_Vadken%20medical_JK_M-01/do-modern-minimalist-logo-design-for-your-business.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/ae80a50afc70ce3f177a22c9362ee394-1673346768/27447_Chaussures_RD_KC_M-01/do-modern-minimalist-logo-design-for-your-business.jpg"
         ],
@@ -40,7 +40,7 @@ const gigs = [
         "daysToMake": 1,
         "description": "Welcome, I can provide you with a modern, elegant, minimal, luxury, flat, and minimal logo design for your brand. A minimal logo can well represent your brand and is easy to remember which targets the brand recognition factor. To make it easier for you to make a decision, I can do any of the following styles: Minimal Logo, Luxury, Elegant, Initials, Typographic, Abstract, Geometric Shapes.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/122501197/original/3acf4aeee6f62ace404d17a217a0ddf12c6b350e/design-a-modern-and-luxury-minimalist-logo.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677749338/design-a-modern-and-luxury-minimalist-logo_ticxqi.jpg",
             "https://fiverr-res.cloudinary.com/image/upload/t_gig_pdf_gallery_view_ver4,f_jpg/20201210/PDF%201_ubdtfh.jpg",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/0a7f819428568645cf5069d59c28dc10-1674551944/Mockup%20/design-a-modern-and-luxury-minimalist-logo.jpg"
         ],
@@ -89,7 +89,7 @@ const gigs = [
         "daysToMake": 4,
         "description": "Welcome to my minimal logo design gig! Being the face of a brand, the logo design should be a prime need for any brand. I will make a unique logo for your business that will help you stand out from the competition. I've been working as an Expert Logo Designer & Branding Specialist and am trusted by over 13K+ various clients worldwide. I guarantee you will love your new logo, or I will make it right. Check out my gig portfolio and swipe to the right.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/110847760/original/00bbe27e2dc6b3b34bd1a6c02b9b5867e1aff783/do-minimalist-logo-design.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677749472/do-minimalist-logo-design_kepznl.png",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/110847760/original/948ec8c14dea3d904aaee2c2010ffa4e12d3e725/do-minimalist-logo-design.jpg",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/110847760/original/3871307663dfe4568d7abcbbe52cdf2ded4e4d47/do-minimalist-logo-design.jpg"
         ],
@@ -114,7 +114,7 @@ const gigs = [
         "daysToMake": 6,
         "description": "Hello friends, You're warmly welcome to my 'Prepare a Complete Business Plan, page I come with years of experience in Business consultancy and Plan writing, with 1000+ successfully completed online and offline projects. I am vast and versed with several industries, which implies that I'll not present templates to you but a plan perfectly worked out from scratch.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/212270039/original/ee20df9f6997d30c308388e28ed3ac0ffc712a98/prepare-restaurant-bar-real-estate-and-night-club-business-plan.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677749581/prepare-restaurant-bar-real-estate-and-night-club-business-plan_bd8knl.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_gig_pdf_gallery_view_ver4,q_auto,f_auto/attachments/delivery/asset/665af1c64d0011eaba110af4bf9f1e7d-1674127110/Luxe%20%20Mimosa%20Bar%20LLC%202/prepare-restaurant-bar-real-estate-and-night-club-business-plan.pdf",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_gig_pdf_gallery_view_ver4,q_auto,f_auto/attachments/delivery/asset/d17150818feceba1652f72cc645d67ef-1673631839/From%20The%20Ground%20Up%20Bplan/prepare-restaurant-bar-real-estate-and-night-club-business-plan.pdf"
         ],
@@ -125,7 +125,7 @@ const gigs = [
     {
         "title": "I will advise the best hairstyle and outfits for your makeover",
         "about": "A beauty advisor and a business consultant who has so many hobbies :) I love creativity and enjoy helping others.",
-        "price": 30,
+        "price": 31,
         "owner": {
             "_id": { "$oid": "63d24094783371eb434731d7" },
             "fullname": "ras567",
@@ -137,7 +137,7 @@ const gigs = [
         "daysToMake": 2,
         "description": "This gig is ideal if you want a complete makeover in addition to personalized looks with shopping links. You will receive a professional PDF report that includes details on what look suits you depending on your character, face shape, skin color and body shape. Please refer to package details below.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/218270333/original/ab8afb68ce5ef800606526a03804e25853cec5cc/give-you-advice-for-a-complete-makeover.png",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677749688/give-you-advice-for-a-complete-makeover_x94wxe.jpg",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/218270333/original/771d19dcc700b4f09a8408a94b36fe342a7dcf8d/give-you-advice-for-a-complete-makeover.png"
         ],
         "tags": [
@@ -160,7 +160,7 @@ const gigs = [
         "daysToMake": 2,
         "description": "I will design custom and timeless geometric logo design for your company/service or your personal brand that will definitely catch your potential clients attention and will be beneficial for your brand/business. I am here to share skills and create personalized logos for your needs! ",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/186043505/original/cd6ec7860d996a3ca0b0a86b46f00505102ee2e1/do-creative-geometric-line-art-logo-design.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677749763/do-creative-geometric-line-art-logo-design_qvligx.png",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/186043505/original/42dc9143f5c16991717b81126ad7d0c992b36d2c/do-creative-geometric-line-art-logo-design.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/cd8bf02378d2c08441e8e22815721eb0-1613021919/18971_Konvex_SS_M-01/do-creative-geometric-line-art-logo-design.jpg"
         ],
@@ -185,7 +185,7 @@ const gigs = [
         "daysToMake": 2,
         "description": "Welcome, I can provide you with a modern, elegant, minimal, luxury, flat, and minimal logo design for your brand. A minimal logo can well represent your brand and is easy to remember which targets the brand recognition factor. To make it easier for you to make a decision, I can do any of the following styles: Minimal Logo, Luxury, Elegant, Initials, Typographic, Abstract, Geometric Shapes.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/1094285/original/30f75e896954dc0ea9e28a87209a28053bcccc18/design-2-outstanding-logo.png",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677749819/design-2-outstanding-logo_l1xbwx.png",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/1094285/original/e2a835f360f5fcbcf15e14eb01ffde9892f85e85/design-2-outstanding-logo.png",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/1094285/original/0149d53275d914f681e8685b9e6c263dcc4309ab/design-2-outstanding-logo.png"
         ],
@@ -198,7 +198,7 @@ const gigs = [
     {
         "title": "I will design creative and minimalist negative space logo",
         "about": "Hey, I'm Alpa. I am a graphics designer as well as business woman. My hobby is drawing. Because it's brings a lot of benefits besides simply boosting my creativity. It's make me feel relaxed. Another hobby is cycling. It's makes me healthy and fit.",
-        "price": 110,
+        "price": 111,
         "owner": {
             "_id": { "$oid": "63d232af3c0a9d375fbdf91c" },
             "fullname": "loftydesignshop",
@@ -211,7 +211,7 @@ const gigs = [
         "daysToMake": 2,
         "description": "I'm Alpa. I am running loftydesignshop studio on the Fiverr platform with more than 4 years of experience. We are a creative team. We help buyers to provide their business identity through their logo.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/b560eb2150ed019a68de3a373bb463f4-1613021001/18968_My%20village%20diary_RD_M-01/do-minimalist-negative-space-logo-design.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677749878/do-minimalist-negative-space-logo-design_okx2za.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/0aa5b9120fa8c0a1942fe3453e99ae57-1613198504/18978_Triangle%20farm_Logo_M-01/do-minimalist-negative-space-logo-design.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/293221bc2938301e10c5af32e78cb964-1612001664/18923_ocean%20abrasive_JK_M-01/do-minimalist-negative-space-logo-design.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/3cd2c467857c30488f86d9fda32b7f47-1595078794/mockup-01/do-minimalist-negative-space-logo-design.jpg"
@@ -237,7 +237,7 @@ const gigs = [
         "daysToMake": 6,
         "description": "Hallo, Um Ihre Dienstleistung oder Ihr Produkt auf den Punkt zu bringen, kommen wir ins Spiel. Das Ergebnis ist ein effektives und kreatives Video, das Sie sofort verwenden können.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/n0lwy5pdptoenq7mnx9g/make-a-professional-2d-animation-explainer.png",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677750076/create-outstanding-2d-animation-explainer-video-in-24h_acknp8.jpg",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/187471328/original/6e2abe7deebe602ac26282122074021129584122/make-a-professional-2d-animation-explainer.png",
             "https://fiverr-res.cloudinary.com/videos/t_smartwm/t_main1,q_auto,f_auto/h9uzskfowplyin92xji3/make-a-professional-2d-animation-explainer.png"
         ],
@@ -261,7 +261,7 @@ const gigs = [
         "daysToMake": 3,
         "description": "Please contact before buying to discuss the details of your project! Every project is different and requires specific attention :) My goal is to use audio to enhance the player's experience. Using different recording, composing and sound design tools and techniques to develop the right voice for each project. I have experience working in a wide variety of projects from small mobile games to indie pc games to AAA and larger projects. From realistic recordings to fantasy sound design and sci-fi synthesizing or minimalist puzzle sounds, I'll use the best tools and techniques to deliver top quality audio.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/q_auto,f_auto,dpr_2.0/general_assets/gig_gallery_package/assets/audio-delivery-bg.png",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677750207/audio-delivery-bg_urcrku.png",
             "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/177060719/original/3a766e8693e1ed5c623b09fc767a05dee3a631f4.png",
             "https://fiverr-res.cloudinary.com/videos/t_main1,q_auto,f_auto/uzrta0x7ma8sosxfaj0m/create-sound-effects-for-games.png",
             "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/177060719/original/78e6e31851506281169ac7d6732df3b972d5035f.jpg"
@@ -274,7 +274,7 @@ const gigs = [
     {
         "title": "I will design a custom and elegant watercolor logo for you",
         "about": "Hey ! I'm highly motivated woman having a team of accomplished and artful graphic designers with expertise in designing conceptual yet minimal designs and artwork. Hire me for extravagant service. What are you waiting for ? Let's get started with team Illustriouss!",
-        "price": 25,
+        "price": 26,
         "owner": {
             "_id": { "$oid": "63d23b122634de3397159ca8" },
             "fullname": "illustriouss",
@@ -286,7 +286,7 @@ const gigs = [
         "daysToMake": 4,
         "description": "Welcome to my minimal logo design gig! Being the face of a brand, the logo design should be a prime need for any brand. I will make a unique logo for your business that will help you stand out from the competition. I've been working as an Expert Logo Designer & Branding Specialist and am trusted by over 13K+ various clients worldwide. I guarantee you will love your new logo, or I will make it right. Check out my gig portfolio and swipe to the right.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/125990268/original/3be6a8a488e7fb386509e2b9c68132ca3d17c240/elegant-feminine-original-watercolor-logo-for-entrepreneurs.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677750277/elegant-feminine-original-watercolor-logo-for-entrepreneurs_kfjve6.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/c6ef8bf4e2e409bb52404b788aa9d6e1-1674164655/mockup%20copy/elegant-feminine-original-watercolor-logo-for-entrepreneurs.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/2279c45db1a889b4fe8e00df9c2800d8-1673886721/mockup/elegant-feminine-original-watercolor-logo-for-entrepreneurs.jpg"
         ],
@@ -311,7 +311,7 @@ const gigs = [
         "daysToMake": 4,
         "description": "Welcome to my minimal logo design gig! Being the face of a brand, the logo design should be a prime need for any brand. I will make a unique logo for your business that will help you stand out from the competition. I've been working as an Expert Logo Designer & Branding Specialist and am trusted by over 13K+ various clients worldwide. I guarantee you will love your new logo, or I will make it right. Check out my gig portfolio and swipe to the right.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/140370968/original/8e6ace9686e7b2426f762a300de621680e0b3e09/design-feminine-custom-watercolor-logo-for-you.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677750344/design-feminine-custom-watercolor-logo-for-you_untgxm.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/0cfda7ba4d0387ff220beac541988f38-1674496649/riverside/design-feminine-custom-watercolor-logo-for-you.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/b5a5efeca754bb472aa0693798f74dd6-1673581341/CHARLY%20BALDWIN/design-feminine-custom-watercolor-logo-for-you.jpg"
         ],
@@ -324,7 +324,7 @@ const gigs = [
     {
         "title": "I will design and create a full tech pack for bags, handbags, purses, and backpacks",
         "about": "A beauty advisor and a business consultant who has so many hobbies :) I love creativity and enjoy helping others.",
-        "price": 30,
+        "price": 32,
         "owner": {
             "_id": { "$oid": "63d24094783371eb434731d7" },
             "fullname": "ras567",
@@ -336,7 +336,7 @@ const gigs = [
         "daysToMake": 2,
         "description": "If you have a design, you'll need to send your supplier a full technical spec to get the sample made. Every supplier requires a Tech Pack before they'll work with you. We can take your sketch or concept and turn it into a full spec with different CAD angles of your design, all the dimensions your supplier will need.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/287605807/original/9817211fc24da51ad82c0347e675ada6843c6770/design-and-create-a-full-tech-pack-for-bags-purses-and-backpacks.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677750558/design-and-create-a-full-tech-pack-for-bags-purses-and-backpacks_rwri3s.jpg",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/287605807/original/c3f0e44ed31d35b13357e4a8ca889aa3a21b3751/design-and-create-a-full-tech-pack-for-bags-purses-and-backpacks.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_gig_pdf_gallery_view_ver4,q_auto,f_auto/attachments/delivery/asset/b00c965e83c6033f312dd156e9ca0b33-1673892676/CE_01/design-and-create-a-full-tech-pack-for-bags-purses-and-backpacks.pdf"
         ],
@@ -347,7 +347,7 @@ const gigs = [
     {
         "title": "I will design a custom landing page for your business website",
         "about": "I have so many hobbies :) I love creativity and enjoy helping others.",
-        "price": 45,
+        "price": 455,
         "owner": {
             "_id": { "$oid": "63d24094783371eb434731d7" },
             "fullname": "ras567",
@@ -359,7 +359,7 @@ const gigs = [
         "daysToMake": 6,
         "description": "Welcome to the gig with the Most Amazing and High Converting Landing Page designs. I will be designing a custom eye-catching Homepage for your website. The reviews and the gig images are enough to tell you the story. Please see my portfolio here https://www.fiverr.com/users/massivework/portfolio ",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/264406915/original/08be4b3b74a435af1f23ef7e76ba0a4ec1e93bee/design-professional-landing-page-design-for-your-website.png",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677750657/design-professional-landing-page-design-for-your-website_kjwnnt.jpg",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/264406915/original/e1818624c7228c30ea7c2df18ca4c102dcda3179/design-professional-landing-page-design-for-your-website.png",
             "https://fiverr-res.cloudinary.com/image/upload/t_gig_pdf_gallery_view_ver4,f_jpg/20220918/harghar_full_twicse.jpg"
         ],
@@ -371,7 +371,7 @@ const gigs = [
     {
         "title": "I will do monogram, lettering, and text logo design",
         "about": "Hey, I'm Alpa. I am a graphics designer as well as business woman. My hobby is drawing. Because it's brings a lot of benefits besides simply boosting my creativity. It's make me feel relaxed. Another hobby is cycling. It's makes me healthy and fit.",
-        "price": 110,
+        "price": 114,
         "owner": {
             "_id": { "$oid": "63d232af3c0a9d375fbdf91c" },
             "fullname": "lofty",
@@ -384,7 +384,7 @@ const gigs = [
         "daysToMake": 2,
         "description": "I'm Alpa. I am running loftydesignshop studio on the Fiverr platform with more than 4 years of experience. We are a creative team. We help buyers to provide their business identity through their logo.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/232468080/original/6ed19bbd16730fc81df9ff0c91fd4448a6300be7/do-a-creative-monogram-logo-design.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677750759/do-a-creative-monogram-logo-design_tmikgv.jpg",
             "https://www.fiverr.com/loftydesignshop/do-classic-vintage-retro-logo-design-for-your-business?context_referrer=user_page&ref_ctx_id=01b1030e9765f192f564f129f9c63057&pckg_id=1&pos=7&seller_online=true&imp_id=07bcb9d4-c4b0-403a-b997-69a4a655f3e3",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/bad7166ce21cd365da06a69a058be439-1612850449/18961_LondonVR_C_M-01/do-minimalist-negative-space-logo-design.jpg"
         ],
@@ -410,7 +410,7 @@ const gigs = [
         "daysToMake": 2,
         "description": "I'm Alpa. I am running loftydesignshop studio on the Fiverr platform with more than 4 years of experience. We are a creative team. We help buyers to provide their business identity through their logo.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/118973381/original/bb3b37b31a25ce413cb5aa3674002ecebef06897/do-minimalist-negative-space-logo-design.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677750893/do-minimalist-negative-space-logo-design_bcopfr.png",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/118973381/original/48aa12cc75f49850691ec0db6108f68cf017b0a8/do-minimalist-negative-space-logo-design.jpg",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/118973381/original/e9aa019c83a50446a03d3ee1a77baf65965f7c6d/do-minimalist-negative-space-logo-design.jpg"
         ],
@@ -423,7 +423,7 @@ const gigs = [
     {
         "title": "I will write or update your ats resume, cv, cover letter and optimize linkedin profile",
         "about": "Hi Fiverr Community, Welcome to Resumely. We are a team of 10 resume writers and designers with extensive experience writing, reviewing, and rewriting job-winning resumes in standard or ATS-optimized formats. Whether you are a rising professional or a fresh graduate in IT, Engineering, Medical, Graphic Design, Business, or Marketing, we can help you with professional cover letters and LinkedIn profile optimizations. Want to learn more about how will we get things done? Just shoot us a message, and let's get together and discuss more.",
-        "price": 45,
+        "price": 43,
         "owner": {
             "_id": { "$oid": "63d235a02634de3397159ca6" },
             "fullname": "resumely_",
@@ -435,7 +435,7 @@ const gigs = [
         "daysToMake": 1,
         "description": "Hi Fiverr Community, Are you looking for a top-notch ATS and HR-compatible resume, resume writing, and cover letter writing services with an optimized LinkedIn profile for your next dream job? No worries; you got a resume writer Pro to help you. As a former HR professional, I know how recruiters think - what gets their attention, what makes a resume and cover letter stand out, and how to tell the story of why you're the best candidate. I have written, and rewritten over 100 ATS-friendly resumes for various industries using simple but professional ATS-compliant formats, making the content easily scannable with industry-related keywords and phrases.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/286615743/original/5037a904eba32c42a8e6b7ec3c822b991583f094/ats-resume-cv-cover-letter-and-optimize-linkedin.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677750958/ats-resume-cv-cover-letter-and-optimize-linkedin_sybzxx.jpg",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/286615743/original/b4b08561f9e3e0b56202b756066cd1f8101c019e/ats-resume-cv-cover-letter-and-optimize-linkedin.jpg",
             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/286615743/original/a368444ff7f66f464a75523cd3e8fd3a43217666/ats-resume-cv-cover-letter-and-optimize-linkedin.jpg"
         ],
@@ -447,7 +447,7 @@ const gigs = [
     {
         "title": "I will build deep learning models like CNN, rnn, lstm etc",
         "about": "I have over 15 years of consulting and business experience. I am a Master of Business Administration and a BA in Business Operations Management. I have developed and incorporated business plans for, large corporations, small businesses, and new startups",
-        "price": 30,
+        "price": 39,
         "owner": {
             "_id": { "$oid": "63d23e26783371eb434731d5" },
             "fullname": "asaftech",
@@ -459,9 +459,8 @@ const gigs = [
         "daysToMake": 6,
         "description": "Hello friends, You're warmly welcome to my 'Prepare a Complete Business Plan, page I come with years of experience in Business consultancy and Plan writing, with 1000+ successfully completed online and offline projects. I am vast and versed with several industries, which implies that I'll not present templates to you but a plan perfectly worked out from scratch.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/283246277/original/899deab4e49c68e821640712cd147359bae10132/build-deep-learning-models-like-cnn-rnn-lstm-etc.jpeg",
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/283246277/original/429acbe58934b8cec350f0d669d9dfa11fd07225/build-deep-learning-models-like-cnn-rnn-lstm-etc.jpg",
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/283246277/original/9c66f73c5896de36dc0f3623139c44b3f928bf9f/build-deep-learning-models-like-cnn-rnn-lstm-etc.png"
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677751102/cd7eb59e2902fb4be0d7da86ad781666c6c1bba9_btc3n5.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677751176/272537596efa3fe77c79db06ff72b44299d9f7fe_adtbdu.jpg",
         ],
         "tags": [
             "trending"
@@ -470,7 +469,7 @@ const gigs = [
     {
         "title": "I will setup google analytics and event tracking in 24hrs",
         "about": "Hello, I am Google Analytics & Google Tag Manager Expert. I will provide a great professionalism and expertise in work i do. ORDER MY GIG, and I assure you will be happy to see the end results.",
-        "price": 45,
+        "price": 48,
         "owner": {
             "_id": { "$oid": "63d235a02634de3397159ca6" },
             "fullname": "resumely_",
@@ -483,7 +482,7 @@ const gigs = [
         "daysToMake": 1,
         "description": "I'm a Google Analytics (Google Certified) consultant with experience since 2016 year. I have worked with more than 150+ sites from simple event tracking to complex projects for big companies. I can identify for you what need to track for your business before implementation if you want. In just $10 only, I will setup Google analytics & I will also setup Google tag manager and integrate it with your site for Free. Additionally i can also setup and fix all errors related to Google Ads, Google Search Console & Facebook Pixel.",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/167848338/original/acc9be1557285515a122c482bb4c058902dbadd8/setup-google-analytics-and-event-tracking-within-24-hours.png",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677751329/setup-google-analytics-and-event-tracking-within-24-hours_pqhpbg.jpg",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/58bcf3494105632f24e1a60c48a43d63-1674752317/1/setup-google-analytics-and-event-tracking-within-24-hours.png",
             "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/6c89866606ced08b2dcecf199142a9e8-1674329801/1/setup-google-analytics-and-event-tracking-within-24-hours.png"
         ],
@@ -495,7 +494,7 @@ const gigs = [
     {
         "title": "I will mix your playlist into professional dj set",
         "about": "Hi, I'm Vladimir from Belgrade, a professional musician (producer, performer, multi-instrumentalist, composer, sound engineer). If you want high-quality results in a short time, then you are in the right place.",
-        "price": 15,
+        "price": 12,
         "owner": {
             "_id": { "$oid": "63d23e26783371eb434731d5" },
             "fullname": "asaftech",
@@ -508,12 +507,12 @@ const gigs = [
         "daysToMake": 6,
         "description": "Fiver's choice! Over 300 satisfied customers!!! Hi Fiverr, I'm a multi-instrumentalist, professional musician, DJ, composer, and producer with over 10 years of experience. I will professionally mix your playlist of any genre based on your specific needs and deliver you in high-quality MP3 format (320 kbps).",
         "imgUrl": [
-            "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/94588376/original/a9aab9f14763e51ae44e0450ec0bfcd8d17ff9a3.jpg",
+            "https://res.cloudinary.com/dnjusxgg3/image/upload/v1677751399/a9aab9f14763e51ae44e0450ec0bfcd8d17ff9a3_dt5nzo.jpg",
             "https://fiverr-res.cloudinary.com/q_auto,f_auto,dpr_2.0/general_assets/gig_gallery_package/assets/audio-delivery-bg.png",
             "https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/199819007/original/29b14ad9f70fe733d34bffb7a8938afc5150f470.jpg"
         ],
         "tags": [
-            "music-audio", 
+            "music-audio",
             "audio"
         ]
     },
