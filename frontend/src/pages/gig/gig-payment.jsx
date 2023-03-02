@@ -33,10 +33,15 @@ export function GigPayment() {
 
     async function onSubmitPayment(ev) {
         ev.preventDefault()
+        if (!user) {
+            showErrorMsg('Please login before continue ordering')
+            return
+        }
+
         const order = {
             buyer: {
-                _id: user?._id || '123', 
-                fullname: user?.fullname || 'guest'
+                _id: user._id,
+                fullname: user.fullname
             },
             seller: {
                 _id: gig.owner._id,
