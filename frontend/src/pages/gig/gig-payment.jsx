@@ -35,8 +35,8 @@ export function GigPayment() {
         ev.preventDefault()
         const order = {
             buyer: {
-                _id: user._id,
-                fullname: user.fullname
+                _id: user?._id || '123', 
+                fullname: user?.fullname || 'guest'
             },
             seller: {
                 _id: gig.owner._id,
