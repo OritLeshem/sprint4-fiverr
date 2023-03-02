@@ -24,6 +24,8 @@
 @import "cmps/progress-chart";
 @import "cmps/app-footer";
 
+@import "cmps/gig/gig-list"; // most be here
+
 @import "cmps/user/user-index";
 @import "cmps/user/user-wishlist";
 @import "cmps/user/login-signup";
@@ -35,7 +37,6 @@
 @import "cmps/user/user-buy-table";
 @import "cmps/user/user-seller-table";
 
-@import "cmps/gig/gig-list";
 @import "cmps/gig/gig-preview";
 @import "cmps/gig/top-filter-bar";
 @import "cmps/gig/sort-by";
