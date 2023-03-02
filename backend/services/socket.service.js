@@ -2,11 +2,17 @@ const logger = require('./logger.service')
 
 var gIo = null
 
+
+
+
+
+
 function setupSocketAPI(http) {
     gIo = require('socket.io')(http, {
         cors: {
             origin: '*',
         }
+
     })
     gIo.on('connection', socket => {
         logger.info(`New connected socket [id: ${socket.id}]`)
@@ -50,6 +56,17 @@ function setupSocketAPI(http) {
             const { sellerName, status, buyerId } = data
             emitToUser({ type: 'order-watch', data: { sellerName, status }, userId: buyerId })
         })
+        // CHAT
+        socket.on("join_room", (data) => {
+            socket.join(data);
+            console.log(`User with ID: ${socket.id} joined room: ${data}`);
+        })
+        socket.on("send_message", (data) => {
+            socket.to(data.gigId).emit("receive_message", data);
+
+            console.log(data)
+        })
+
     })
 }
 
