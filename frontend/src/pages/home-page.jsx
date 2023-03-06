@@ -9,6 +9,7 @@ import { gigService } from '../services/gig.service'
 
 export function HomePage() {
 
+    // Home page
     const sellingTxts = gigService.getGigSelling()
     const dispatch = useDispatch()
     const navigate = useNavigate()
