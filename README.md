@@ -53,7 +53,7 @@ Seller profile
 
 - [ ] Filter gig by other categories
 - [ ] Allow user to update their other details (besides their picture)
-- [ ] Add more real-time notifications for users to see the seller's progress with their order (besides the ones that already exist:  on purchase and when the gig is complete) 
+- [ ] Add more real-time notifications for users to see the seller's progress with their order (besides the ones that already exist:  on purchase and when the gig is completed) 
 
 
 
