@@ -83,7 +83,8 @@ async function update(gig) {
             tags: gig.tags,
             daysToMake: gig.daysToMake,
             imgUrl: gig.imgUrl,
-            wishList: gig.wishList
+            wishList: gig.wishList,
+            chat: gig.chat
         }
         const collection = await dbService.getCollection('gig')
         await collection.updateOne({ _id: ObjectId(gig._id) }, { $set: gigToSave })
@@ -92,7 +93,36 @@ async function update(gig) {
         logger.error(`cannot update gig ${gig._id}`, err)
         throw err
     }
+
 }
+async function addMsgToChat(msg, gigId) {
+    try {
+        console.log('gigId', gigId);
+        const collection = await dbService.getCollection('gig')
+        // const toy = await collection.findOne({ "_id": ObjectId(toyId) })
+        // toy.chatHistory = toy.chatHistory ? [...toy.chatHistory, msg] : [msg]
+        // await collection.replaceOne({ '_id': ObjectId(toyId) }, toy)
+        // Can be done with $push!
+        await collection.updateOne({ '_id': ObjectId(gigId) }, { $push: { chat: msg } })
+    } catch (err) {
+        console.log(`ERROR: cannot add message to gig`)
+        throw err;
+    }
+}
+// async function addMsgToChat(msg, gigId) {
+//     try {
+//         console.log('gigId', gigId);
+//         const collection = await dbService.getCollection('gig')
+//         // const toy = await collection.findOne({ "_id": ObjectId(gigId) })
+//         // toy.chatHistory = toy.chatHistory ? [...toy.chatHistory, msg] : [msg]
+//         // await collection.replaceOne({ '_id': ObjectId(gigId) }, toy)
+//         // Can be done with $push!
+//         await collection.updateOne({ '_id': ObjectId(gigId) }, { $push: { chatHistory: msg } })
+//     } catch (err) {
+//         console.log(`ERROR: cannot add message to gig`)
+//         throw err;
+//     }
+// }
 // async function addGigMsg(gigId, msg) {
 //     try {
 //         msg.id = utilService.makeId()
@@ -120,6 +150,8 @@ module.exports = {
     getById,
     add,
     update,
+    addMsgToChat
+    // addMsgToChat
     // addGigMsg,
     // removeGigMsg
 }

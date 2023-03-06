@@ -127,7 +127,8 @@ function getEmptyGig(
     daysToMake = 1,
     imgUrl = [],
     about = "I have many hobbies :) I love creativity and enjoy helping others.",
-    wishList = []
+    wishList = [],
+    chat = []
 ) {
     return {
         title,
@@ -137,6 +138,7 @@ function getEmptyGig(
         daysToMake,
         imgUrl,
         about,
-        wishList
+        wishList,
+        chat
     }
 }

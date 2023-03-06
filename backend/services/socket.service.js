@@ -1,4 +1,6 @@
 const logger = require('./logger.service')
+const gigService = require("../api/gig/gig.service")
+
 
 var gIo = null
 
@@ -13,6 +15,7 @@ function setupSocketAPI(http) {
         socket.on('disconnect', socket => {
             logger.info(`Socket disconnected [id: ${socket.id}]`)
         })
+        // Join room
         socket.on('chat-set-topic', topic => {
             if (socket.myTopic === topic) return
             if (socket.myTopic) {
@@ -20,6 +23,7 @@ function setupSocketAPI(http) {
                 logger.info(`Socket is leaving topic ${socket.myTopic} [id: ${socket.id}]`)
             }
             socket.join(topic)
+            console.log("topic - gig Id", topic)
             socket.myTopic = topic
         })
         socket.on('chat-send-msg', msg => {
@@ -27,6 +31,8 @@ function setupSocketAPI(http) {
             // emits to all sockets:
             // gIo.emit('chat addMsg', msg)
             // emits only to sockets in the same room
+            gigService.addMsgToChat(msg, socket.myTopic)
+
             gIo.to(socket.myTopic).emit('chat-add-msg', msg)
         })
         socket.on('user-watch', userId => {
@@ -49,16 +55,20 @@ function setupSocketAPI(http) {
             const { sellerName, status, buyerId } = data
             emitToUser({ type: 'order-watch', data: { sellerName, status }, userId: buyerId })
         })
-        // CHAT
-        // socket.on("join_room", (data) => {
-        //     socket.join(data);
-        //     console.log(`User with ID: ${socket.id} joined room: ${data}`);
-        // })
-        // socket.on("send_message", (data) => {
-        //     socket.to(data.gigId).emit("receive_message", data);
 
-        //     console.log(data)
-        // })
+        socket.on('chat-user-typing', user => {
+            logger.info(`User is typing from socket [id: ${socket.id}], emitting to topic ${socket.myTopic}`)
+            socket.broadcast.to(socket.myTopic).emit('chat-add-typing', user)
+            // broadcast({ type: 'chat typing', data: user, room: socket.toyId, userId: socket.userId })
+        })
+
+        socket.on('chat-stop-typing', user => {
+            logger.info(`User has stopped typing from socket [id: ${socket.id}], emitting to topic ${socket.myTopic}`)
+            socket.broadcast.to(socket.myTopic).emit('chat-remove-typing', user)
+            // broadcast({ type: 'chat stop-typing', data: user, room: socket.toyId, userId: socket.userId })
+        })
+
+
 
     })
 }

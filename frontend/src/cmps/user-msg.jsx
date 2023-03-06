@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 
 import { socketService, SOCKET_EMIT_ORDER_WATCH, SOCKET_EVENT_ORDER_FROM_YOU } from '../services/socket.service'
 import { eventBus, showSuccessMsg } from '../services/event-bus.service'
+import { changeUserMsg } from '../store/system/system.actions'
 
 export function UserMsg() {
   const [msg, setMsg] = useState(null)
@@ -23,8 +24,9 @@ export function UserMsg() {
     })
 
     socketService.on(SOCKET_EMIT_ORDER_WATCH, ({ sellerName, status }) => {
-      showSuccessMsg(`Your order from ${sellerName} ${status}`)
+      showSuccessMsg(`Your order from ${sellerName} was ${status}`)
     })
+
   }, [])
 
   function closeMsg() {

@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux'
 
 import { socketService, SOCKET_EMIT_SEND_MSG, SOCKET_EVENT_ADD_MSG, SOCKET_EMIT_SET_TOPIC } from '../services/socket.service'
 
-export function ChatApp() {
+export function ChatApp({ gig }) {
     const [msg, setMsg] = useState({ txt: '' })
-    const [msgs, setMsgs] = useState([])
-    const [topic, setTopic] = useState('Love')
+    const [msgs, setMsgs] = useState(gig.chat)
+    const [topic, setTopic] = useState(gig._id)
     const [isBotMode, setIsBotMode] = useState(false)
 
     const loggedInUser = useSelector(storeState => storeState.userModule.user)
@@ -55,15 +55,18 @@ export function ChatApp() {
 
     return (
         <section className="chat-app">
-            <h2>Lets Chat about {topic}</h2>
 
-            <label>
+            <h2>Lets Chat </h2>
+            {/* <h2>Lets Chat about {topic}</h2> */}
+
+
+            {/* <label>
                 <input type="checkbox" name="isBotMode" checked={isBotMode}
                     onChange={({ target }) => setIsBotMode(target.checked)} />
                 Bot Mode
-            </label>
+            </label> */}
 
-            <div>
+            {/* <div>
                 <label>
                     <input type="radio" name="topic" value="Love"
                         checked={topic === 'Love'} onChange={({ target }) => setTopic(target.value)} />
@@ -77,7 +80,7 @@ export function ChatApp() {
                     Politics
                 </label>
 
-            </div>
+            </div> */}
 
             <form onSubmit={sendMsg}>
                 <input

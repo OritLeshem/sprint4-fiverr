@@ -3,7 +3,7 @@ import { createStore, combineReducers } from 'redux'
 import { gigReducer } from './gig/gig.reducer.js'
 import { userReducer } from './user/user.reducer.js'
 import { orderReducer } from './order/order.reducer.js'
-import { systemReducer } from './system.reducer'
+import { systemReducer } from './system/system.reducer.js'
 
 const rootReducer = combineReducers({
     gigModule: gigReducer,

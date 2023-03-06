@@ -1,6 +1,6 @@
 import { store } from '../store'
 import { ADD_GIG, REMOVE_GIG, SET_GIGS, UNDO_REMOVE_GIG, UPDATE_GIG } from './gig.reducer'
-import { LOADING_DONE, LOADING_START } from '../system.reducer'
+import { LOADING_DONE, LOADING_START } from '../system/system.reducer'
 
 import { gigService } from '../../services/gig.service'
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service'

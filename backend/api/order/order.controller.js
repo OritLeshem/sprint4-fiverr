@@ -1,5 +1,6 @@
 const logger = require('../../services/logger.service')
 const orderService = require('./order.service')
+const socketService = require('../../services/socket.service')
 
 async function getOrders(req, res) {
     try {
@@ -13,6 +14,8 @@ async function getOrders(req, res) {
 
 async function addOrder(req, res) {
     try {
+        // const { loggedinUser } = asyncLocalStorage.getStore()
+
         var order = req.body
         order = await orderService.add(order)
         res.send(order)
@@ -24,6 +27,8 @@ async function addOrder(req, res) {
 
 async function updateOrder(req, res) {
     try {
+        // const { loggedinUser } = asyncLocalStorage.getStore()
+
         const order = req.body
         const updatedOrder = await orderService.update(order)
         res.json(updatedOrder)

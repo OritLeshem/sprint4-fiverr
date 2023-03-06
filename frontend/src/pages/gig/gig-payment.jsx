@@ -8,6 +8,7 @@ import { addOrder } from '../../store/order/order.actions'
 
 import credit from '../../assets/img/credit.svg'
 import paypal from '../../assets/img/paypal.svg'
+import { socketService, SOCKET_EMIT_SET_TOPIC } from '../../services/socket.service'
 
 export function GigPayment() {
     const user = userService.getLoggedinUser()
@@ -16,6 +17,8 @@ export function GigPayment() {
     const { gigId } = useParams()
 
     useEffect(() => {
+
+
         loadGig()
     }, [gigId])
 
@@ -58,6 +61,8 @@ export function GigPayment() {
         try {
             await addOrder(order)
             showSuccessMsg('Your order has been sent')
+            socketService.emit(SOCKET_EMIT_SET_TOPIC, order._id)//add socket
+
             navigate('/gig')
         }
         catch (err) {

@@ -8,6 +8,8 @@ import { GigProgram } from '../../cmps/gig/gig-program'
 import { SlideDetails } from '../../cmps/slide/slide-details'
 import { ReviewIndex } from '../../cmps/review/review-index'
 import { StarRating } from '../../cmps/review/star-rating'
+import { ChatApp } from '../chat-app'
+import { GigChat } from '../../cmps/gig/gig-chat'
 
 export function GigDetails() {
     const { gigId } = useParams()
@@ -84,6 +86,10 @@ export function GigDetails() {
                 <article>{gig.about}</article>
             </div>
             <ReviewIndex gig={gig} />
+            <GigChat gig={gig} />
+            <hr />
+
+
         </div>
         <GigProgram gig={gig} />
     </section >

@@ -4,20 +4,24 @@ import { userService } from './user.service'
 export const SOCKET_EVENT_ADD_MSG = 'chat-add-msg'
 export const SOCKET_EMIT_SEND_MSG = 'chat-send-msg'
 export const SOCKET_EMIT_SET_TOPIC = 'chat-set-topic'
+export const SOCKET_EMIT_TYPING = 'chat-user-typing';
+export const SOCKET_EMIT_STOP_TYPING = 'chat-stop-typing';
 export const SOCKET_EMIT_USER_WATCH = 'user-watch'
 export const SOCKET_EVENT_USER_UPDATED = 'user-updated'
 
+export const SOCKET_EMIT_NEW_MSG = 'chat-new-msg'; //new msg
+
 export const SOCKET_EVENT_ORDER_ADDED = 'order-added'
 export const SOCKET_EVENT_ORDER_FROM_YOU = 'order-from-you'
-
+export const SOCKET_EVENT_TYPING = 'chat-add-typing';
+export const SOCKET_EVENT_STOP_TYPING = 'chat-remove-typing';
 export const SOCKET_EMIT_ORDER_WATCH = 'order-watch'
 export const SOCKET_EVENT_ORDER_UPDATED = 'order-updated'
 
 const SOCKET_EMIT_LOGIN = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
 
-// CHAT
-export const SOCKET_JOIN_ROOM = 'join-room'
+
 
 
 const baseUrl = (process.env.NODE_ENV === 'production') ? '' : '//localhost:3030'
@@ -59,21 +63,7 @@ function createSocketService() {
     terminate() {
       socket = null
     },
-    // CHAT
-    // joinRoom(user, gig) {
-    //   if (user && gig) {
-    //     socket.emit("join_room", gig._id)
-    //     console.log(`User with ID: ${socket.id} joined room: ${gig._id}`);
-    //   }
-    // },
-    // sendMessage(messageData) {
-    //   socket.emit("send_message", messageData)
-    // },
-    // receiveMessage() {
-    //   socket.on("receive_message", (data) => {
-    //     console.log("receive_message", data)
-    //   })
-    // }
+
   }
   return socketService
 }
