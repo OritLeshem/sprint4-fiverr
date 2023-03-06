@@ -51,8 +51,6 @@ export function GigChat({ gig, onSetChat }) {
     const newMsg = { from, txt: msg }
     socketService.emit(SOCKET_EMIT_SEND_MSG, newMsg)
     socketService.emit(SOCKET_EMIT_STOP_TYPING, from)
-
-    console.log("message has been sent")
     clearTimeout(timeoutId.current)
     timeoutId.current = null
     setMsg('')
@@ -61,7 +59,6 @@ export function GigChat({ gig, onSetChat }) {
   function handleChange(ev) {
     ev.preventDefault()
     setMsg(ev.target.value)
-    console.log(msg)
     // If there is no timeout yet - emit typing! - will happen only once!
     if (!timeoutId.current) socketService.emit(SOCKET_EMIT_TYPING, user?.fullname || 'Guest')
     // If there is a timeout - clear it!
