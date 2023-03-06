@@ -8,13 +8,13 @@ import { GigProgram } from '../../cmps/gig/gig-program'
 import { SlideDetails } from '../../cmps/slide/slide-details'
 import { ReviewIndex } from '../../cmps/review/review-index'
 import { StarRating } from '../../cmps/review/star-rating'
-import { ChatApp } from '../chat-app'
 import { GigChat } from '../../cmps/gig/gig-chat'
 
 export function GigDetails() {
     const { gigId } = useParams()
     const navigate = useNavigate()
     const [gig, setGig] = useState()
+    const [isChat, setIsChat] = useState(false)
 
     useEffect(() => {
         loadGig()
@@ -30,6 +30,10 @@ export function GigDetails() {
             showErrorMsg('cannot load gig')
             navigate('/gig')
         }
+    }
+
+    function onSetChat() {
+        setIsChat(prev => !prev)
     }
 
     if (!gig) return <div className="loader-container">
@@ -70,7 +74,7 @@ export function GigDetails() {
                             <StarRating value={rate} />
                             <span className="rate padding">{rate}</span>
                         </div>
-                        {gig && <Link to={`/user/${gig.owner._id}`}>Contact Me</Link>}
+                        {gig && <button><Link to={`/user/${gig.owner._id}`}>Contact Me</Link></button>}
                     </div>
                 </div>
             </div>
@@ -86,11 +90,9 @@ export function GigDetails() {
                 <article>{gig.about}</article>
             </div>
             <ReviewIndex gig={gig} />
-            <GigChat gig={gig} />
-            <hr />
-
+            {isChat && <GigChat gig={gig} onSetChat={onSetChat}/>}
 
         </div>
-        <GigProgram gig={gig} />
+        <GigProgram gig={gig} onSetChat={onSetChat} />
     </section >
 }

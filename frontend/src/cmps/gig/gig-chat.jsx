@@ -1,16 +1,14 @@
 import { useEffect, useRef, useState } from "react"
 import { useSelector } from "react-redux"
+
 import { socketService, SOCKET_EMIT_SET_TOPIC, SOCKET_EMIT_SEND_MSG, SOCKET_EVENT_TYPING, SOCKET_EVENT_STOP_TYPING, SOCKET_EVENT_ADD_MSG, SOCKET_EMIT_STOP_TYPING, SOCKET_EMIT_TYPING } from "../../services/socket.service"
 
-
-export function GigChat({ gig }) {
+export function GigChat({ gig, onSetChat }) {
   const user = useSelector((storeState) => storeState.userModule.user)
   const [msg, setMsg] = useState('')
   const [msgs, setMsgs] = useState(gig.chat || [])
   const [typingUsers, setTypingUsers] = useState([])
   const timeoutId = useRef(null)
-
-
 
   useEffect(() => {
     // Join room
@@ -29,7 +27,6 @@ export function GigChat({ gig }) {
     // socketService.on(SOCKET_EVENT_ADD_MSG, addMsg)
     // socketService.on(SOCKET_EVENT_STOP_TYPING, addTypingUser)
     // socketService.on(SOCKET_EVENT_STOP_TYPING, removeTypingUser)
-
 
   }, [])
   function addMsg(newMsg) {
@@ -72,26 +69,30 @@ export function GigChat({ gig }) {
     timeoutId.current = setTimeout(() => {
       socketService.emit(SOCKET_EMIT_STOP_TYPING, user?.fullname || 'Guest')
       timeoutId.current = null
-    }, 2000);
-
+    }, 2000)
   }
 
-
-  return <div>
-    <h2>Chat with the seller</h2>
+  return <section className="gig-chat">
+    <div>
+      <img src={gig.owner.imgUrl} alt="" />
+      <p>{`Message ${gig.owner.fullname}`}</p>
+      <button className="fa-solid xmark" onClick={() => onSetChat()}></button>
+    </div>
     <form onSubmit={sendMessage}>
-      <input type="text" placeholder="Enter message here..." value={msg} onChange={handleChange} />
-      <button>Send</button>
       <ul>
-        {msgs.map((msg, idx) => <li key={idx}>{msg.from}:{msg.txt}</li>)}
+        {msgs.map((msg, idx) => 
+        <li key={idx}>
+          <span className="from">{msg.from}:</span>
+          <span>{msg.txt}</span>
+          </li>
+        )}
+        <p style={{ color: "#b5b6ba" }} className="typing-msg">{typingUsers.length ? `${typingUsers[0]} is typing....` : ''}</p>
       </ul>
-      <p style={{ color: "#b5b6ba" }} className="typing-msg">{typingUsers.length ? `${typingUsers[0]} is typing....` : ''}</p>
       {/* <p style={{ color: "#b5b6ba" }} className="typing-msg">{typingUsers.length ? `Typing users: ${typingUsers.join(', ')}` : ''}</p> */}
-
+      <aside>
+        <input type="text" placeholder={`Ask ${gig.owner.fullname} a question`} value={msg} onChange={handleChange} />
+        <button type="submit">Send</button>
+      </aside>
     </form>
-
-
-
-  </div >
-
+  </section >
 }

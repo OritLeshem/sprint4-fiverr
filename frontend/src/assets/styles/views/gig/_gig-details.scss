@@ -1,5 +1,6 @@
 .gig-details {
   display: grid;
+  position: relative;
 
   nav {
     font-size: rem(14px);
@@ -94,7 +95,6 @@
     display: grid;
     grid-template-columns: em(125px, 16px) 1fr;
     margin-bottom: em(36px, 16px);
-
 
     .owner-content {
       display: flex;

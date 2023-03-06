@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export function GigProgram({ gig }) {
+export function GigProgram({ gig, onSetChat }) {
   const [program, setProgram] = useState(1)
 
   function handleProgram(num) {
@@ -67,6 +67,6 @@ export function GigProgram({ gig }) {
         <Link className="gig-program-link-continue" to={`/payment/${gig._id}`}>Continue<span className="fa-solid arrow-rigth"></span></Link>
       </div>}
     </div>
-    <div to={`/user/${gig.owner._id}`} className="contact-seller"><button className="contact-seller-btn" >Contact Seller</button></div>
+    <div to={`/user/${gig.owner._id}`} className="contact-seller" onClick={() => onSetChat()}><button className="contact-seller-btn" >Contact Seller</button></div>
   </div>
 } 
