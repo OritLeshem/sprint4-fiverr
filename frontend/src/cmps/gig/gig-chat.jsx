@@ -46,6 +46,7 @@ export function GigChat({ gig, onSetChat }) {
   }
   function sendMessage(ev) {
     ev.preventDefault()
+    if (!msg) return
     const from = user?.fullname || 'Guest'
     const newMsg = { from, txt: msg }
     socketService.emit(SOCKET_EMIT_SEND_MSG, newMsg)
@@ -80,10 +81,10 @@ export function GigChat({ gig, onSetChat }) {
     </div>
     <form onSubmit={sendMessage}>
       <ul>
-        {msgs.map((msg, idx) => 
-        <li key={idx}>
-          <span className="from">{msg.from}:</span>
-          <span>{msg.txt}</span>
+        {msgs.map((msg, idx) =>
+          <li key={idx}>
+            <span className="from">{msg.from}:</span>
+            <span>{msg.txt}</span>
           </li>
         )}
         <p style={{ color: "#b5b6ba" }} className="typing-msg">{typingUsers.length ? `${typingUsers[0]} is typing....` : ''}</p>

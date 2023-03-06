@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.379a8986.css",
-    "main.js": "/static/js/main.943bb3ce.js",
+    "main.css": "/static/css/main.8f3e5bcc.css",
+    "main.js": "/static/js/main.4517ce51.js",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.b1a653db79258eeccc5d.ttf",
     "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.450a5c898f0b184b968b.ttf",
     "static/media/PlayfairDisplay-SemiBoldItalic.ttf": "/static/media/PlayfairDisplay-SemiBoldItalic.a46cded80ffbbcd662c0.ttf",
@@ -14,11 +14,11 @@
     "static/media/macan-regular.woff2": "/static/media/macan-regular.60c84fbe6363b59af251.woff2",
     "static/media/paypal.svg": "/static/media/paypal.2268abba910e45e692258282d2801b10.svg",
     "index.html": "/index.html",
-    "main.379a8986.css.map": "/static/css/main.379a8986.css.map",
-    "main.943bb3ce.js.map": "/static/js/main.943bb3ce.js.map"
+    "main.8f3e5bcc.css.map": "/static/css/main.8f3e5bcc.css.map",
+    "main.4517ce51.js.map": "/static/js/main.4517ce51.js.map"
   },
   "entrypoints": [
-    "static/css/main.379a8986.css",
-    "static/js/main.943bb3ce.js"
+    "static/css/main.8f3e5bcc.css",
+    "static/js/main.4517ce51.js"
   ]
 }

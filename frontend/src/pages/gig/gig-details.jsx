@@ -18,7 +18,7 @@ export function GigDetails() {
 
     useEffect(() => {
         loadGig()
-    }, [gigId])
+    }, [gigId, isChat])
 
     async function loadGig() {
         try {
@@ -90,7 +90,7 @@ export function GigDetails() {
                 <article>{gig.about}</article>
             </div>
             <ReviewIndex gig={gig} />
-            {isChat && <GigChat gig={gig} onSetChat={onSetChat}/>}
+            {isChat && <GigChat gig={gig} onSetChat={onSetChat} />}
 
         </div>
         <GigProgram gig={gig} onSetChat={onSetChat} />
