@@ -12,14 +12,14 @@ export function GigPreview({ gig }) {
   const [heart, setHeart] = useState(false);
 
   useEffect(() => {
-    if (!gig) return;
+    if (!gig || !user) return;
 
-    if (user) {
-      if (gig?.wishList?.includes(user._id)) {
+    if (gig.wishList && Array.isArray(gig.wishList)) {
+      if (gig.wishList.includes(user._id)) {
         setHeart(true);
+      } else {
+        setHeart(false);
       }
-    } else {
-      setHeart(false);
     }
   }, [user, gig]);
 
