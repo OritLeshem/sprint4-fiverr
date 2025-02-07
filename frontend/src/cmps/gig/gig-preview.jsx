@@ -12,6 +12,8 @@ export function GigPreview({ gig }) {
   const [heart, setHeart] = useState(false);
 
   useEffect(() => {
+    if (!gig) return;
+
     if (user) {
       if (gig?.wishList?.includes(user._id)) {
         setHeart(true);
@@ -19,9 +21,10 @@ export function GigPreview({ gig }) {
     } else {
       setHeart(false);
     }
-  }, [user]);
+  }, [user, gig]);
 
   function getTxtToShow(txt, length) {
+    if (!txt) return "";
     return txt.length < length ? txt : txt.substring(0, length + 1) + "...";
   }
 
@@ -43,6 +46,8 @@ export function GigPreview({ gig }) {
     }
   }
 
+  if (!gig) return null;
+
   return (
     <>
       <Link to={`/gig/${gig._id}`} className="img-container">
@@ -51,12 +56,10 @@ export function GigPreview({ gig }) {
 
       <div className="content">
         <div className="owner-info">
-          <img src={gig.owner && gig.owner.imgUrl} alt="" />
+          <img src={gig.owner?.imgUrl} alt="" />
           <div className="owner">
-            <Link to={`/user/${gig.owner._id}`}>
-              {gig.owner && gig.owner.fullname}
-            </Link>
-            <span>{gig.owner && gig.owner.level}</span>
+            <Link to={`/user/${gig.owner?._id}`}>{gig.owner?.fullname}</Link>
+            <span>{gig.owner?.level}</span>
           </div>
         </div>
         <Link className="title" to={`/gig/${gig._id}`}>
@@ -67,7 +70,7 @@ export function GigPreview({ gig }) {
         <div className="rate">
           <Box sx={{ "& > legend": { mt: 2 } }}>
             <Rating
-              value={gig.owner.rate}
+              value={gig.owner?.rate}
               name="half-rating-read"
               size="small"
               precision={0.5}
@@ -75,10 +78,8 @@ export function GigPreview({ gig }) {
               readOnly
             />
           </Box>
-          <div>{gig.owner && gig.owner.rate}</div>
-          <div className="ratings-count">
-            ({gig.owner && gig.owner.ratingsCount})
-          </div>
+          <div>{gig.owner?.rate}</div>
+          <div className="ratings-count">({gig.owner?.ratingsCount})</div>
         </div>
       </div>
 
