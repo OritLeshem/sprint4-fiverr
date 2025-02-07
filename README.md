@@ -1,7 +1,7 @@
 # finderr
 
 Freelances marketplace inspired by fiverr.
-[Live on render ](https://finderr.onrender.com/)
+[Live on render ](https://finderr-50fu.onrender.com/)
 
 Features include an easy to use filter functionality coupled with a pixel-perfect and responsive user interface.
 
